@@ -1,0 +1,137 @@
+{
+     "type": "FeatureCollection",
+     "features": [
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1552829, 49.2709727]
+               },
+               "properties": {
+                    "id": "001",
+                    "name": "Chewies Smoke Oyster Bar Kitsilano",
+                    "address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.148459, 49.2682664]
+               },
+               "properties": {
+                    "id": "002",
+                    "name": "Tacofino Kitsilano",
+                    "address": "1909 W 4th Ave, Vancouver, BC V6J 3L9"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1522758, 49.268323]
+               },
+               "properties": {
+                    "id": "003",
+                    "name": "Las Magaritas",
+                    "address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1522758, 49.268323]
+               },
+               "properties": {
+                    "id": "004",
+                    "name": "Local Public Eatery Kitsilano",
+                    "address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1553864, 49.2715713]
+               },
+               "properties": {
+                    "id": "005",
+                    "name": "The Ellis",
+                    "address": "2204 York Ave, Vancouver, BC V6K 1C6"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.154838, 49.2713176]
+               },
+               "properties": {
+                    "id": "006",
+                    "name": "The King's Head Public House",
+                    "address": "1618 Yew St, Vancouver, BC V6K 3E7"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1557779, 49.2680231]
+               },
+               "properties": {
+                    "id": "007",
+                    "name": "Jackson's Meat & Deli",
+                    "address": "2214 W 4th Ave, Vancouver, BC V6K 4S2"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1548187, 49.271514]
+               },
+               "properties": {
+                    "id": "008",
+                    "name": "The Cider House",
+                    "address": "1602 Yew St, Vancouver, BC V6K 3E7"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1552032, 49.2710421]
+               },
+               "properties": {
+                    "id": "009",
+                    "name": "Lucky Taco",
+                    "address": "1685 Yew St, Vancouver, BC V6K 3E6"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.155021, 49.2695539]
+               },
+               "properties": {
+                    "id": "010",
+                    "name": "Bimini's Neighbourhood Pub",
+                    "address": "2010 W 4th Ave, Vancouver, BC V6J 1M9"
+               }
+          },
+          {
+               "type": "Feature",
+               "geometry": {
+                    "type": "Point",
+                    "coordinates": [-123.1486534, 49.2679391]
+               },
+               "properties": {
+                    "id": "011",
+                    "name": "Fable Kitchen",
+                    "address": "1944 W 4th Ave, Vancouver, BC V6J 1M5"
+               }
+          }
+     ]
+}

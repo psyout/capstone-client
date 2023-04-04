@@ -1,15 +1,18 @@
+import axios from 'axios';
 import mapboxgl from 'mapbox-gl';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ZoomControl } from 'mapbox-gl-controls';
 import { GeolocateControl } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
-import geoJson from '../../data/places.json';
 import './Map.scss';
+
+export const apiUrl = 'http://localhost:3001';
 
 function Map() {
    const mapContainer = useRef([]);
    const accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+   const [restaurants, setRestaurants] = useState([]);
 
    const mapRef = useRef({});
 
@@ -20,7 +23,7 @@ function Map() {
       mapRef.current = new mapboxgl.Map({
          container: mapContainer.current,
          style: 'mapbox://styles/mapbox/light-v10',
-         center: [-123.1607, 49.269],
+         center: [-123.151, 49.269],
          zoom: 14,
       });
 
@@ -38,11 +41,45 @@ function Map() {
       // zoom control
       mapRef.current.addControl(new ZoomControl(), 'bottom-right');
 
-      // Getting markers from GeoJson
-      geoJson.features.map((feature) => new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).addTo(mapRef.current));
-   });
+      // fetch restaurants data from the server
+      axios
+         .get(`${apiUrl}/api/restaurants`)
+         .then((response) => {
+            setRestaurants(response.data.businesses);
 
-   return <div className='map' ref={mapContainer}></div>;
+            // Getting markers from restaurants data
+            response.data.businesses.forEach((business) => {
+               const popup = new mapboxgl.Popup().setHTML(`
+            <div>
+              ${business.name}
+              ${business.location.address1}
+              ${business.location.city}, ${business.location.state} ${business.location.zip_code}
+              Rating: ${business.rating} | Reviews: ${business.review_count}
+            </div>`);
+
+               const marker = new mapboxgl.Marker()
+                  .setLngLat([business.coordinates.longitude, business.coordinates.latitude])
+                  .setPopup(popup)
+                  .addTo(mapRef.current);
+
+               marker.getElement().addEventListener('click', function () {
+                  console.log(business);
+                  marker.togglePopup();
+               });
+            });
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+   }, [accessToken]);
+
+   return (
+      <div className='map' ref={mapContainer}>
+         {restaurants.map((restaurant) => (
+            <div key={restaurant.id}>{restaurant.name}</div>
+         ))}
+      </div>
+   );
 }
 
 export default Map;

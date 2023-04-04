@@ -10,7 +10,84 @@
          "properties": {
             "id": "001",
             "name": "Chewies Smoke Oyster Bar Kitsilano",
-            "address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6"
+            "address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
+            "hours": "Monday - Thursday 3 PM - 6 PM, 5 PM - 7 PM Friday, 4 PM - 6 PM Saturday & Sunday",
+            "drinks-menu": [
+               {
+                  "name": "Tanqueray 1oz",
+                  "price": "$5"
+               },
+               {
+                  "name": "Original 16 Chewies Lager",
+                  "price": "$7"
+               },
+               {
+                  "name": "Strange Fellows Talisman Pale Ale",
+                  "price": "$7"
+               },
+               {
+                  "name": "Parallel 49 Trash Panda Hazy Ipa",
+                  "price": "$7"
+               },
+               {
+                  "name": "Parkside Graffiti Ipa",
+                  "price": "$7"
+               },
+               {
+                  "name": "Red Truck Rotating Tap",
+                  "price": "$7"
+               },
+               {
+                  "name": "Boardwalk Brewing Seasonal Sour",
+                  "price": "$7"
+               },
+               {
+                  "name": "Lone Tree Dry Cider",
+                  "price": "$7"
+               },
+               {
+                  "name": "Mt. Boucherie Marlot",
+                  "price": "$8"
+               },
+               {
+                  "name": "Road 13 Honest Johns",
+                  "price": "$8"
+               },
+               {
+                  "name": "Dirty Laundry Sparkling White",
+                  "price": "$8"
+               },
+               {
+                  "name": "Tanquenry 2oz",
+                  "price": "$9"
+               }
+            ],
+            "food-menu": [
+               {
+                  "name": "Beach Oyster",
+                  "price": "$1.75"
+               },
+               {
+                  "name": "Premium Oyster",
+                  "price": "$2.5"
+               },
+               {
+                  "name": "Spicy Fried Broccoli",
+                  "price": "$11"
+               },
+               {
+                  "name": "Andouille Poutine",
+                  "price": "$14"
+               },
+               {
+                  "name": " Crispy Calamari",
+                  "price": "$15"
+               },
+               {
+                  "name": "Chewies Hotwings",
+                  "price": "$15"
+               }
+            ]
          }
       },
       {

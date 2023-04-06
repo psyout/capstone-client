@@ -2,6 +2,13 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 
+.main{
+    height: calc(100vh - 90px);
+    // box-shadow: 5px 5px 0px #515B5F;
+    overflow: hidden;
+    grid-area: main;
+}
+
 
 .map {
     width: 100%;

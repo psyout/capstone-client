@@ -38,6 +38,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // background-color: #cbd2d3;
 }
 
 img {
@@ -49,4 +50,25 @@ img {
 a,
 a:visited {
   text-decoration: none;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  // gap: 1rem;
+  // padding: 1rem;
+  min-height: 100vh;
+  grid-template-areas: 
+  'header'
+  'aside'
+  'main';
+
+  @include tablet{
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+  'header header'
+  'aside main';
+  }
 }

@@ -1,0 +1,60 @@
+@use "../../styles//partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  flex: 1 1 50%;
+  
+  @include mobile{
+    flex: 1 1 40%;
+  }
+
+  @include tablet{
+    flex: 1 1 100%;
+  }
+
+  @include large-desktop{
+    flex: 1 1 40%;
+  }
+
+  &__header {
+    background-color: #8A8BA6;
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+
+  &__title{
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: white;
+    // color: #2B2840;
+  }
+
+  &__content {
+    background-color: lightgrey;
+    min-height: 200px !important; /* set a maximum height */
+    overflow: hidden;
+    position: relative;
+  
+    img {
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &__caption {
+    padding: 1rem;
+    font-size: 0.7rem;
+    color: #2B2840;
+  }
+}

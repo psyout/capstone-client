@@ -32,80 +32,62 @@
                }
             ],
 
-            "drinks_menu": [
+            "drinks": [
                {
-                  "name": "Tanqueray 1oz",
-                  "price": "$5"
+                  "Tanqueray 1oz": "$5"
                },
                {
-                  "name": "Original 16 Chewies Lager",
-                  "price": "$7"
+                  "Tanquenry 2oz": "$9"
                },
                {
-                  "name": "Strange Fellows Talisman Pale Ale",
-                  "price": "$7"
+                  "Original 16 Chewies Lager": "$7"
                },
                {
-                  "name": "Parallel 49 Trash Panda Hazy Ipa",
-                  "price": "$7"
+                  "Strange Fellows Talisman Pale Ale": "$7"
                },
                {
-                  "name": "Parkside Graffiti Ipa",
-                  "price": "$7"
+                  "Parallel 49 Trash Panda Hazy Ipa": "$7"
                },
                {
-                  "name": "Red Truck Rotating Tap",
-                  "price": "$7"
+                  "Parkside Graffiti Ipa": "$7"
                },
                {
-                  "name": "Boardwalk Brewing Seasonal Sour",
-                  "price": "$7"
+                  "Red Truck Rotating Tap": "$7"
                },
                {
-                  "name": "Lone Tree Dry Cider",
-                  "price": "$7"
+                  "Boardwalk Brewing Seasonal Sour": "$7"
                },
                {
-                  "name": "Mt. Boucherie Marlot",
-                  "price": "$8"
+                  "Lone Tree Dry Cider": "$7"
                },
                {
-                  "name": "Road 13 Honest Johns",
-                  "price": "$8"
+                  "Mt. Boucherie Marlot": "$8"
                },
                {
-                  "name": "Dirty Laundry Sparkling White",
-                  "price": "$8"
+                  "Road 13 Honest Johns": "$8"
                },
                {
-                  "name": "Tanquenry 2oz",
-                  "price": "$9"
+                  "Dirty Laundry Sparkling White": "$8"
                }
             ],
-            "food_menu": [
+            "food": [
                {
-                  "name": "Beach Oyster",
-                  "price": "$1.75"
+                  "Beach Oyster": "$1.75"
                },
                {
-                  "name": "Premium Oyster",
-                  "price": "$2.5"
+                  "Premium Oyster": "$2.5"
                },
                {
-                  "name": "Spicy Fried Broccoli",
-                  "price": "$11"
+                  "Spicy Fried Broccoli": "$11"
                },
                {
-                  "name": "Andouille Poutine",
-                  "price": "$14"
+                  "Andouille Poutine": "$14"
                },
                {
-                  "name": " Crispy Calamari",
-                  "price": "$15"
+                  "Crispy Calamari": "$15"
                },
                {
-                  "name": "Chewies Hotwings",
-                  "price": "$15"
+                  "Chewies Hotwings": "$15"
                }
             ]
          }
@@ -128,6 +110,16 @@
                {
                   "Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
                }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
+               }
             ]
          }
       },
@@ -142,6 +134,7 @@
             "name": "Local Public Eatery",
             "address": "2210 Cornwall Ave, Vancouver",
             "contact_number": "(604) 558-4448",
+            "website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
             "full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
             "hours": [
                {
@@ -149,6 +142,16 @@
                },
                {
                   "Friday to Saturday": "22:00 - CLOSE"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -163,6 +166,8 @@
             "id": "005",
             "name": "The Ellis",
             "address": "2204 York Ave, Vancouver",
+            "contact_number": "(604) 428-2456",
+            "website": "https://www.theellis.ca/menu",
             "full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
             "hours": [
                {
@@ -173,6 +178,16 @@
                },
                {
                   "Saturday - Sunday": "4 PM - 6 PM"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -187,11 +202,22 @@
             "id": "006",
             "name": "The King's Head",
             "address": "1618 Yew St, Vancouver",
-            "contact_number": "(604) 558-4448",
+            "contact_number": "(604) 738-6966",
+            "website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
             "full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
             "hours": [
                {
                   "Everyday": "15:00 - 18:00"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -206,11 +232,22 @@
             "id": "007",
             "name": "Jackson's Meat & Deli",
             "address": "2214 W 4th Ave, Vancouver",
-            "contact_number": "(604) 558-4448",
+            "contact_number": "(778) 379-2929",
+            "website": "https://www.jacksonsrestobutcher.com/happy-hour",
             "full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
             "hours": [
                {
                   "Monday - Friday": "3 PM - 6 PM"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -225,11 +262,22 @@
             "id": "008",
             "name": "The Cider House",
             "address": "1602 Yew St, Vancouver",
-            "contact_number": "(604) 558-4448",
+            "contact_number": "(604) 558-1975",
+            "website": "https://ciderhouserules.ca/happy-hour/",
             "full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
             "hours": [
                {
                   "Monday - Friday": "4 PM - 5 PM"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -244,7 +292,8 @@
             "id": "009",
             "name": "Lucky Taco",
             "address": "1685 Yew St, Vancouver",
-            "contact_number": "(604) 558-4448",
+            "contact_number": "(604) 739-4677",
+            "website": "https://www.luckytaco.ca/menu/happy-hour",
             "full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
             "hours": [
                {
@@ -253,24 +302,15 @@
                {
                   "Friday - Sunday": "4 PM - 6 PM"
                }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.155021, 49.2695539]
-         },
-         "properties": {
-            "id": "010",
-            "name": "Bimini's Pub",
-            "address": "2010 W 4th Ave, Vancouver",
-            "contact_number": "(604) 558-4448",
-            "full_address": "2010 W 4th Ave, Vancouver, BC V6J 1M9",
-            "hours": [
+            ],
+            "drinks": [
                {
-                  "Monday - Friday": "3 PM - 6 PM | 10 PM - Late"
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -285,11 +325,22 @@
             "id": "011",
             "name": "Fable Kitchen",
             "address": "1944 W 4th Ave, Vancouver",
-            "contact_number": "(604) 558-4448",
+            "contact_number": "(604) 732 1322",
+            "website": "https://www.fablekitchen.ca/#menu",
             "full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
             "hours": [
                {
                   "Everyday": "9 PM - CLOSE"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tanqueray 1oz": "$5"
+               }
+            ],
+            "food": [
+               {
+                  "Beach Oyster": "$1.75"
                }
             ]
          }
@@ -310,12 +361,40 @@
             "hours": [
                {
                   "Daily": "3 PM - 6 PM"
+               }
+            ],
+            "drinks": [
+               {
+                  "Tequila Margaritas": "9.5"
                },
                {
-                  "Daily": "3 PM - 6 PM"
+                  "Mezcal Margartias": "11.5"
                },
                {
-                  "Daily": "3 PM - 6 PM"
+                  "Natural Wine By The Glass": "8"
+               },
+               {
+                  "Draft Beer": "6"
+               },
+               {
+                  "Tricky Sangria": "5"
+               }
+            ],
+            "food": [
+               {
+                  "Lamb Taquitos (Birria Broth)": "$6"
+               },
+               {
+                  "Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6"
+               },
+               {
+                  "Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7"
+               },
+               {
+                  "Smoked Tuna Tostadas": "$8"
+               },
+               {
+                  "Chicken Wings (Valentina Butter Sauce)": "$14"
                }
             ]
          }

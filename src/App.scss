@@ -3,7 +3,7 @@
 @use "./styles/partials/fonts" as *;
 
 html {
-  font-family: 'AvenirNext LT Pro', sans-serif;
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
 
@@ -66,9 +66,10 @@ a:visited {
 
   @include tablet{
     grid-auto-flow: row;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 35rem 2fr;
     grid-template-areas: 
   'header header'
   'aside main';
   }
+  
 }

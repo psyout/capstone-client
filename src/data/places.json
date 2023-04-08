@@ -8,11 +8,31 @@
             "coordinates": [-123.1552829, 49.2709727]
          },
          "properties": {
-            "id": "001",
+            "id": "M4jkJHewQXZvDV34Tuon8g",
             "name": "Chewies Smoke Oyster Bar Kitsilano",
-            "address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
-            "hours": "Monday - Thursday 3 PM - 6 PM, 5 PM - 7 PM Friday, 4 PM - 6 PM Saturday & Sunday",
-            "drinks-menu": [
+            "address": "2201 W 1st Ave, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "website": "https://www.chewies.ca/kitsmenu",
+            "full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
+            "categories": [
+               {
+                  "title": "Seafood"
+               }
+            ],
+
+            "hours": [
+               {
+                  "Monday - Thursday": "3 PM - 6 PM"
+               },
+               {
+                  "Friday": "5 PM - 7 PM"
+               },
+               {
+                  "Saturday - Sunday": "4 PM - 6 PM"
+               }
+            ],
+
+            "drinks_menu": [
                {
                   "name": "Tanqueray 1oz",
                   "price": "$5"
@@ -62,7 +82,7 @@
                   "price": "$9"
                }
             ],
-            "food-menu": [
+            "food_menu": [
                {
                   "name": "Beach Oyster",
                   "price": "$1.75"
@@ -90,18 +110,7 @@
             ]
          }
       },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.148459, 49.2682664]
-         },
-         "properties": {
-            "id": "002",
-            "name": "Tacofino Kitsilano",
-            "address": "1909 W 4th Ave, Vancouver, BC V6J 3L9"
-         }
-      },
+
       {
          "type": "Feature",
          "geometry": {
@@ -111,7 +120,15 @@
          "properties": {
             "id": "003",
             "name": "Las Magaritas",
-            "address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7"
+            "address": "1999 W 4th Ave, Vancouver",
+            "contact_number": "(604) 734-7117",
+            "website": "https://lasmargaritas.com/happy-hour/",
+            "full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
+            "hours": [
+               {
+                  "Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
+               }
+            ]
          }
       },
       {
@@ -122,8 +139,18 @@
          },
          "properties": {
             "id": "004",
-            "name": "Local Public Eatery Kitsilano",
-            "address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5"
+            "name": "Local Public Eatery",
+            "address": "2210 Cornwall Ave, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
+            "hours": [
+               {
+                  "Sunday to Thursday": "21:00 - CLOSE"
+               },
+               {
+                  "Friday to Saturday": "22:00 - CLOSE"
+               }
+            ]
          }
       },
       {
@@ -135,7 +162,19 @@
          "properties": {
             "id": "005",
             "name": "The Ellis",
-            "address": "2204 York Ave, Vancouver, BC V6K 1C6"
+            "address": "2204 York Ave, Vancouver",
+            "full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
+            "hours": [
+               {
+                  "Monday - Thursday": "3 PM - 6 PM"
+               },
+               {
+                  "Friday": "5 PM - 7 PM"
+               },
+               {
+                  "Saturday - Sunday": "4 PM - 6 PM"
+               }
+            ]
          }
       },
       {
@@ -146,8 +185,15 @@
          },
          "properties": {
             "id": "006",
-            "name": "The King's Head Public House",
-            "address": "1618 Yew St, Vancouver, BC V6K 3E7"
+            "name": "The King's Head",
+            "address": "1618 Yew St, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
+            "hours": [
+               {
+                  "Everyday": "15:00 - 18:00"
+               }
+            ]
          }
       },
       {
@@ -159,7 +205,14 @@
          "properties": {
             "id": "007",
             "name": "Jackson's Meat & Deli",
-            "address": "2214 W 4th Ave, Vancouver, BC V6K 4S2"
+            "address": "2214 W 4th Ave, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
+            "hours": [
+               {
+                  "Monday - Friday": "3 PM - 6 PM"
+               }
+            ]
          }
       },
       {
@@ -171,7 +224,14 @@
          "properties": {
             "id": "008",
             "name": "The Cider House",
-            "address": "1602 Yew St, Vancouver, BC V6K 3E7"
+            "address": "1602 Yew St, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
+            "hours": [
+               {
+                  "Monday - Friday": "4 PM - 5 PM"
+               }
+            ]
          }
       },
       {
@@ -183,7 +243,17 @@
          "properties": {
             "id": "009",
             "name": "Lucky Taco",
-            "address": "1685 Yew St, Vancouver, BC V6K 3E6"
+            "address": "1685 Yew St, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
+            "hours": [
+               {
+                  "Monday - Thursday": "5 PM - 7 PM"
+               },
+               {
+                  "Friday - Sunday": "4 PM - 6 PM"
+               }
+            ]
          }
       },
       {
@@ -194,8 +264,15 @@
          },
          "properties": {
             "id": "010",
-            "name": "Bimini's Neighbourhood Pub",
-            "address": "2010 W 4th Ave, Vancouver, BC V6J 1M9"
+            "name": "Bimini's Pub",
+            "address": "2010 W 4th Ave, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "2010 W 4th Ave, Vancouver, BC V6J 1M9",
+            "hours": [
+               {
+                  "Monday - Friday": "3 PM - 6 PM | 10 PM - Late"
+               }
+            ]
          }
       },
       {
@@ -207,7 +284,40 @@
          "properties": {
             "id": "011",
             "name": "Fable Kitchen",
-            "address": "1944 W 4th Ave, Vancouver, BC V6J 1M5"
+            "address": "1944 W 4th Ave, Vancouver",
+            "contact_number": "(604) 558-4448",
+            "full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
+            "hours": [
+               {
+                  "Everyday": "9 PM - CLOSE"
+               }
+            ]
+         }
+      },
+      {
+         "type": "Feature",
+         "geometry": {
+            "type": "Point",
+            "coordinates": [-123.148459, 49.2682664]
+         },
+         "properties": {
+            "id": "002",
+            "name": "Tacofino Kitsilano",
+            "address": "1909 W 4th Ave, Vancouver",
+            "website": "https://www.chewies.ca/kitsmenu",
+            "contact_number": "(604) 620-8729",
+            "full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
+            "hours": [
+               {
+                  "Daily": "3 PM - 6 PM"
+               },
+               {
+                  "Daily": "3 PM - 6 PM"
+               },
+               {
+                  "Daily": "3 PM - 6 PM"
+               }
+            ]
          }
       }
    ]

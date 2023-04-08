@@ -1,6 +1,6 @@
 //Breakpoints
 $mobile-breakpoint: 580px;
-$tablet-breakpoint: 900px;
+$tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 $large-desktop-breakpoint: 1440px;
 
@@ -19,5 +19,15 @@ $fs-350: 3.5rem;
 
 //Weight
 $fw-400: 400;
+$fw-500: 500;
 $fw-600: 600;
 $fw-700: 700;
+
+//Colours
+$color-header: #d36662;
+$color-aside: #BFB3A8;
+$color-card-header: #2b2840;
+$color-logo: #fff;
+$color-filter: invert(99%) sepia(0%) saturate(524%) hue-rotate(148deg) brightness(116%) contrast(100%);
+$color-span: #487a7a;
+$color-text: #2c3359;

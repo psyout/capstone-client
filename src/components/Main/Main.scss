@@ -3,10 +3,14 @@
 @use "../../styles/partials/fonts" as *;
 
 .main{
-    height: calc(100vh - 90px);
+    height: calc(50vh - 10px);
     // box-shadow: 5px 5px 0px #515B5F;
     overflow: hidden;
     grid-area: main;
+
+    @include tablet{
+      height: calc(100vh - 90px);
+    }
 }
 
 

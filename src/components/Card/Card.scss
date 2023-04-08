@@ -2,11 +2,10 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 
-.card {
+.restaurant-card {
   font-family: 'Rubik', sans-serif;
   display: flex;
   flex-direction: column;
-  // margin: 0.5rem 0;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   flex: 1 1 100%;
@@ -14,7 +13,6 @@
   marker: none;
   border-radius: 0.4rem;
   overflow: hidden;
-  
 
   @include mobile{
     flex: 1 1 40%;
@@ -38,29 +36,33 @@
     color: white;
   }
 
-  &__subtitle{
-    border-top: solid 1px white;
-    font-size: 0.7em;
-    font-weight: 300;
-    margin-top: 0.3rem;
-    padding-top: 0.3rem;
-  }
-
   &__content {
-    background-color: lightgrey;
+    background-color: #f2f2f2;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
     color: $color-text;
+    // box-shadow: 0px 1px 5px rgba($color-header, 0.4);
+    box-shadow: 0px 1px 4px rgba(black, 0.2);
 
+    &--full {
+      flex: 1 1 100%;
+    }
+    
     @include tablet{
       flex-direction: row;
     }
   }
 
   &__image{
-    flex: 2;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
     display: flex;
+    flex: 1;
+
+    &--hidden {
+      display: none;
+    }
 
     &--img{
       width: 100%;
@@ -71,87 +73,181 @@
 
       @include tablet{
         aspect-ratio: 4/3;
-        min-height: 210px;
+        min-height: 230px;
+        min-width: 250px;
       }
     }
 
   }
 
   &__info{
-    flex: 2;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     font-size: 0.7rem;
-    padding: 0 1rem;
-    width: 100%;
-
-    &--subtitle{
-      font-weight: $fw-400;
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.5rem;
-
-      span{
-        width: 1.5rem;
-        height: 1.5rem;
-        background-color: $color-span;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 0.5rem;
-        font-size: 0.8rem;
-        color: #ffffff;
-      }
-    }
+    margin-left: 1rem;
+    padding-right: 0.5rem;
+    font-family: 'Lato', sans-serif;
 
     &--text{
       font-weight: $fw-600;
       margin-top: 0.5rem;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
     }
   }
 
   &__menu{
-    border-bottom: solid 1px $color-span;
-    margin: 0 0 0.8rem;
-    padding: 0.5rem 0;
+  border-bottom: solid 1px $color-text;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 
-    &--list{
-      display: flex;
+  &--list{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+
+    &-drinks{
       list-style-type: none;
-      justify-content: space-between;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+  }
+
+  &--item{
+    font-size: 1.35rem;
+    gap: 0.5rem;
+    color: #ffffff;
+    font-weight: $fw-500;
+    flex-wrap: wrap;
+
+    &-disabled {
+      opacity: 0.5;
+
     }
 
-    &--link{
-      font-size: 1rem;
-      color: $color-text;
+    &-list{
+      margin-bottom: 1rem;
     }
 
-    &--item{
-      font-size: 1.35rem;
+    &-food{
+      list-style-type: none;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+  }
+  &--link{
+    font-size: 0.9rem;
+    font-weight: $fw-600;
+    color: $color-header;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+
+    span{
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
       display: flex;
-      gap: 0.5rem;
-      color: #ffffff;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+      font-size: 1.4rem;
+      justify-content: center;
       align-items: center;
-      font-weight: $fw-500;
-
-      span{
-        width: 2.2rem;
-        height: 2.2rem;
+      color: $color-header;
+      transition: all 0.3s;
+    
+      &-active {
         background-color: $color-header;
+        color: #fff;
+      }
+
+      &:hover{
+        background-color: $color-header;
+        color: #ffffff;
+      }
+    }
+    
+    &.restaurant-card__menu--link-active {
+      span {
+        background-color: $color-header;
+        color: #fff;
+      }
+    }
+
+  }
+}
+
+
+  &__contact {
+    margin: 1rem 0;
+    display: flex;
+  
+    &--list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    &--text{
+      font-size: 0.8rem;
+    }
+  
+    &--item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      flex-direction: row;
+  
+      span {
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: $color-span;
+
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        color: #fff;
       }
     }
+  
+    &--link {
+      color: $color-text;
+    }
   }
+  
 
   &__caption {
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     height: auto;
     color: $color-text;
 
-    p{
+    &--container{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      span{
+        font-size: 0.9rem;
+        display: flex;
+      }
+    }
+
+    &--title{
+      font-size: 0.9rem;
+    }
+
+    &--text{
       font-size: 0.8rem;
+      line-height: 1.3;
     }
   }
 }

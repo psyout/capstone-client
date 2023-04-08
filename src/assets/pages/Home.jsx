@@ -71,7 +71,7 @@ function Home() {
             console.log('marker', marker.id);
             // set the selected marker as part of the array
             setSelectedBusiness(marker.id);
-            setSelectedCard(marker.id);
+            setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
          });
          marker.addTo(mapRef.current);
       });

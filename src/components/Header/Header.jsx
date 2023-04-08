@@ -17,11 +17,11 @@ function Header() {
             <div className='header-container__search'>
                <input type='text' placeholder='Type bar name or keyword...' className='header-container__search-input' />
                <button className='header-container__search-button'>
-                  <FaSearch style={{ color: '#46A694' }} />
+                  <FaSearch style={{ color: '#d36662' }} />
                </button>
             </div>
             <div className='header-container__avatar'>
-               <FaUserAlt style={{ color: '#46A694' }} />
+               <FaUserAlt style={{ color: '#d36662' }} />
             </div>
          </div>
       </header>

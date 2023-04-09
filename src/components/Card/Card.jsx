@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { ImPhone, ImLocation } from 'react-icons/im';
 import { FaBeer, FaHamburger } from 'react-icons/fa';
 import { BsStarFill, BsStar, BsStarHalf, BsFillClockFill } from 'react-icons/bs';
-import { FiArrowDownCircle } from 'react-icons/fi';
+import { FiArrowDownCircle, FiChevronsRight, FiShare, FiHeart } from 'react-icons/fi';
 import { useState } from 'react';
 
-function Card({ title, address, imageSrc, caption, number, drinks, food }) {
+function Card({ title, address, imageSrc, caption, number, drinks, food, website }) {
    const [selectedMenu, setSelectedMenu] = useState('menu');
    // eslint-disable-next-line
    const [isDisabled, setIsDisabled] = useState(false);
@@ -41,6 +41,12 @@ function Card({ title, address, imageSrc, caption, number, drinks, food }) {
                               </li>
                            ))}
                         </ul>
+                        <Link to={website} target='blank' className='restaurant-card__menu--item-website'>
+                           Check their full menu here
+                           <span>
+                              <FiChevronsRight />
+                           </span>
+                        </Link>
                      </div>
                   </div>
                )}
@@ -51,17 +57,19 @@ function Card({ title, address, imageSrc, caption, number, drinks, food }) {
                         <FiArrowDownCircle />
                      </h2>
                      <div className='restaurant-card__menu'>
-                        <ul className='restaurant-card__menu--item-list'>
+                        <ul className='restaurant-card__menu--list-food'>
                            {food.map((food, index) => (
-                              <li className='restaurant-card__menu--item-food' key={index}>
+                              <li className={'restaurant-card__menu--item-food'} key={index}>
                                  {food}
                               </li>
                            ))}
                         </ul>
-                        <p className='restaurant-card__menu--item-text'>Please advise the server of any allergies.</p>
-                        <p className='restaurant-card__menu--item-text'>
-                           Tax not included. 18% gratuity may be added to groups of six or more
-                        </p>
+                        <Link to={website} target='blank' className='restaurant-card__menu--item-website'>
+                           Check their full menu here
+                           <span>
+                              <FiChevronsRight />
+                           </span>
+                        </Link>
                      </div>
                   </div>
                )}
@@ -115,12 +123,26 @@ function Card({ title, address, imageSrc, caption, number, drinks, food }) {
                         {number}
                      </li>
                      <li className='restaurant-card__contact--item'>
-                        <p className='restaurant-card__contact--text'>Reviews</p>
-                        <BsStarFill style={{ color: '#F2BE22' }} />
-                        <BsStarFill style={{ color: '#F2BE22' }} />
-                        <BsStarFill style={{ color: '#F2BE22' }} />
-                        <BsStarHalf style={{ color: '#F2BE22' }} />
-                        <BsStar style={{ color: '#F2BE22' }} />
+                        <div className='restaurant-card__contact--social'>
+                           <div className='restaurant-card__contact--social-reviews'>
+                              <p className='restaurant-card__contact--text'>Reviews</p>
+                              <BsStarFill style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
+                              <BsStarFill style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
+                              <BsStarFill style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
+                              <BsStarHalf style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
+                              <BsStar style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
+                           </div>
+                           <div className='restaurant-card__contact--social-reactions'>
+                              <div className='restaurant-card__contact--social-like'>
+                                 Like
+                                 <FiHeart className='restaurant-card__contact--social-red' />
+                              </div>
+                              <div className='restaurant-card__contact--social-share'>
+                                 Share
+                                 <FiShare className='restaurant-card__contact--social-red' />
+                              </div>
+                           </div>
+                        </div>
                      </li>
                   </ul>
                </div>

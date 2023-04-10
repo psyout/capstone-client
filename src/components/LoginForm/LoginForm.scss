@@ -1,0 +1,90 @@
+@use '../../styles//partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 2rem;
+
+	h1 {
+		text-align: center;
+		color: $color-text;
+		font-weight: 500;
+	}
+
+	&__name,
+	&__password {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		gap: 0.5rem;
+
+		&--icon {
+			margin-top: 0.8rem;
+			color: $color-icon;
+		}
+
+		&--field {
+			flex: 1;
+		}
+	}
+
+	&__social {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+
+		&--icon {
+			font-size: 1.5rem;
+			background-color: #8a8ba6;
+			border-radius: 50%;
+			width: 2.2rem;
+			height: 2.2rem;
+			padding: 0.4rem;
+			color: #fff;
+			transition: all 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $color-card-header;
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		gap: 1rem;
+		justify-content: flex-end;
+		align-items: flex-start;
+
+		&--btn {
+			flex: 1;
+		}
+
+		&--login {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			gap: 1rem;
+		}
+
+		&--text {
+			text-align: center;
+			font-size: 0.9rem;
+			margin: 0.5rem 0 0 0;
+		}
+
+		&--signUp {
+			border-top: solid 1px rgba(0, 0, 0, 0.1);
+			padding-top: 0.5rem;
+			text-align: center;
+			font-size: 0.7rem;
+
+			span {
+				color: $color-icon;
+			}
+		}
+	}
+}

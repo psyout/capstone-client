@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import { ImPhone, ImLocation } from 'react-icons/im';
 import { FaBeer, FaHamburger } from 'react-icons/fa';
 import { BsStarFill, BsStar, BsStarHalf, BsFillClockFill } from 'react-icons/bs';
-import { FiArrowDownCircle, FiChevronsRight, FiShare, FiHeart } from 'react-icons/fi';
+import { FiArrowDownCircle, FiChevronsRight, FiShare, FiHeart, FiXCircle } from 'react-icons/fi';
 import { useState } from 'react';
 
 function Card({ title, address, imageSrc, caption, number, drinks, food, website }) {
    const [selectedMenu, setSelectedMenu] = useState('menu');
-   // eslint-disable-next-line
-   const [isDisabled, setIsDisabled] = useState(false);
+   const [isLiked, setIsLiked] = useState(false);
+
+   const handleLikeClick = () => {
+      setIsLiked(!isLiked);
+   };
 
    return (
       <li className='restaurant-card'>
@@ -29,10 +32,18 @@ function Card({ title, address, imageSrc, caption, number, drinks, food, website
                )}
                {selectedMenu === 'drinks' && (
                   <div>
-                     <h2 className='restaurant-card__info--text'>
-                        Drinks Menu
-                        <FiArrowDownCircle />
-                     </h2>
+                     <div className='restaurant-card__info--text-close'>
+                        <h2 className='restaurant-card__info--text'>
+                           Drinks Menu
+                           <FiArrowDownCircle />
+                        </h2>
+                        <div style={{ cursor: 'pointer' }} onClick={() => setSelectedMenu('menu')}>
+                           <h2 className='restaurant-card__info--text'>
+                              Close
+                              <FiXCircle />
+                           </h2>
+                        </div>
+                     </div>
                      <div className='restaurant-card__menu'>
                         <ul className='restaurant-card__menu--list-drinks'>
                            {drinks.map((drink, index) => (
@@ -52,10 +63,18 @@ function Card({ title, address, imageSrc, caption, number, drinks, food, website
                )}
                {selectedMenu === 'food' && (
                   <div>
-                     <h2 className='restaurant-card__info--text'>
-                        Food Menu
-                        <FiArrowDownCircle />
-                     </h2>
+                     <div className='restaurant-card__info--text-close'>
+                        <h2 className='restaurant-card__info--text'>
+                           Food Menu
+                           <FiArrowDownCircle />
+                        </h2>
+                        <div style={{ cursor: 'pointer' }} onClick={() => setSelectedMenu('menu')}>
+                           <h2 className='restaurant-card__info--text'>
+                              Close
+                              <FiXCircle />
+                           </h2>
+                        </div>
+                     </div>
                      <div className='restaurant-card__menu'>
                         <ul className='restaurant-card__menu--list-food'>
                            {food.map((food, index) => (
@@ -128,14 +147,15 @@ function Card({ title, address, imageSrc, caption, number, drinks, food, website
                               <p className='restaurant-card__contact--text'>Reviews</p>
                               <BsStarFill style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
                               <BsStarFill style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
-                              <BsStarFill style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
                               <BsStarHalf style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
                               <BsStar style={{ color: '#F2BE22', fontSize: '0.9rem' }} />
                            </div>
                            <div className='restaurant-card__contact--social-reactions'>
-                              <div className='restaurant-card__contact--social-like'>
-                                 Like
-                                 <FiHeart className='restaurant-card__contact--social-red' />
+                              <div className='restaurant-card__contact--social-like' onClick={handleLikeClick}>
+                                 {isLiked ? 'Liked' : 'Like'}
+                                 <FiHeart
+                                    className={isLiked ? 'restaurant-card__contact--social-fill' : 'restaurant-card__contact--social-red'}
+                                 />
                               </div>
                               <div className='restaurant-card__contact--social-share'>
                                  Share

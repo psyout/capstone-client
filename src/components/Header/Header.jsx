@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FaUserAlt } from 'react-icons/fa';
 import logo from '../../assets/images/logo.svg';
 import './Header.scss';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import LoginForm from '../LoginForm/LoginForm';
 
-function Header() {
+const styleBg = {
+   bgcolor: 'rgba(43, 40, 64, 0.2)',
+};
+
+const styleBox = {
+   width: '500px',
+   height: '450px',
+   display: 'flex',
+   alignItems: 'center',
+};
+
+function Header({ cards, setCards }) {
+   const [open, setOpen] = useState(false);
+   const [searchQuery, setSearchQuery] = useState('');
+   const theme = useTheme();
+   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+   const handleClickOpen = () => {
+      setOpen(true);
+   };
+
+   const handleClose = () => {
+      setOpen(false);
+   };
+
+   const handleSearchQueryChange = (event) => {
+      setSearchQuery(event.target.value);
+   };
+
    return (
       <header className='header-container'>
          <div className='header-container__logo'>
@@ -15,15 +48,26 @@ function Header() {
          </div>
          <div className='header-container__row'>
             <div className='header-container__search'>
-               <input type='text' placeholder='Type bar name or keyword...' className='header-container__search-input' />
+               <input
+                  type='text'
+                  placeholder='Type bar name or keyword...'
+                  className='header-container__search-input'
+                  value={searchQuery}
+                  onChange={handleSearchQueryChange}
+               />
                <button className='header-container__search-button'>
                   <FaSearch style={{ color: '#278C8C' }} />
                </button>
             </div>
-            <div className='header-container__avatar'>
+            <div onClick={handleClickOpen} className='header-container__avatar'>
                <FaUserAlt style={{ color: '#278C8C' }} />
             </div>
          </div>
+         <Dialog sx={styleBg} fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
+            <DialogContent sx={styleBox}>
+               <LoginForm />
+            </DialogContent>
+         </Dialog>
       </header>
    );
 }

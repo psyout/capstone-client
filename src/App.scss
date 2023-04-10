@@ -1,18 +1,18 @@
-@use "./styles/partials/variables" as *;
-@use "./styles/partials/mixins" as *;
-@use "./styles/partials/fonts" as *;
+@use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
+@use './styles/partials/fonts' as *;
 
 html {
-  font-family: 'Rubik', sans-serif;
-  box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
 }
 
 article,
@@ -26,50 +26,56 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+	display: block;
 }
 
 button {
-  border: 0;
-  background: transparent;
+	border: 0;
+	background: transparent;
 }
 
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // background-color: #cbd2d3;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 img {
-  width: 100%;
-  height: auto;
-  outline: none;
+	width: 100%;
+	height: auto;
+	outline: none;
 }
 
 a,
 a:visited {
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  // gap: 1rem;
-  // padding: 1rem;
-  min-height: 100vh;
-  grid-template-areas: 
-  'header'
-  'main'
-  'aside';
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	// gap: 1rem;
+	// padding: 1rem;
+	min-height: 100vh;
+	grid-template-areas:
+		'header'
+		'main'
+		'aside';
 
-  @include tablet{
-    grid-auto-flow: row;
-    grid-template-columns: 35rem 2fr;
-    grid-template-areas: 
-  'header header'
-  'aside main';
-  }
-  
+	@include tablet {
+		grid-auto-flow: row;
+		grid-template-columns: 35rem 2fr;
+		grid-template-areas:
+			'header header'
+			'aside main';
+	}
+}
+
+:focus-visible {
+	outline: 0.1px solid $color-card-header;
+}
+
+a:focus-visible {
+	background-color: $color-card-header;
 }

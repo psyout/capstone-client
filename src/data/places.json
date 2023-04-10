@@ -1,748 +1,503 @@
 {
-   "type": "FeatureCollection",
-   "features": [
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1552829, 49.2709727]
-         },
-         "properties": {
-            "id": "M4jkJHewQXZvDV34Tuon8g",
-            "name": "Chewies Smoke Oyster Bar Kitsilano",
-            "address": "2201 W 1st Ave, Vancouver",
-            "contact_number": "(604) 558-4448",
-            "website": "https://www.chewies.ca/kitsmenu",
-            "full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
-            "categories": [
-               {
-                  "title": "Seafood"
-               }
-            ],
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1552829, 49.2709727]
+			},
+			"properties": {
+				"id": "M4jkJHewQXZvDV34Tuon8g",
+				"name": "Chewies Smoke Oyster Bar Kitsilano",
+				"address": "2201 W 1st Ave, Vancouver",
+				"contact_number": "(604) 558-4448",
+				"website": "https://www.chewies.ca/kitsmenu",
+				"full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
+				"categories": {
+					"title": "Seafood"
+				},
 
-            "hours": [
-               {
-                  "Monday - Thursday": "3 PM - 6 PM"
-               },
-               {
-                  "Friday": "5 PM - 7 PM"
-               },
-               {
-                  "Saturday - Sunday": "4 PM - 6 PM"
-               }
-            ],
+				"hours": {
+					"Monday - Thursday": "3 PM - 6 PM",
+					"Friday": "5 PM - 7 PM",
+					"Saturday - Sunday": "4 PM - 6 PM"
+				},
 
-            "drinks": [
-               {
-                  "Tanqueray 1oz": "$5.00"
-               },
-               {
-                  "Tanquenry 2oz": "$9.00"
-               },
-               {
-                  "Original 16 Chewies Lager": "$7.00"
-               },
-               {
-                  "Strange Fellows Talisman Pale Ale": "$7.00"
-               },
-               {
-                  "Parallel 49 Trash Panda Hazy Ipa": "$7.00"
-               },
-               {
-                  "Parkside Graffiti Ipa": "$7.00"
-               },
-               {
-                  "Red Truck Rotating Tap": "$7.00"
-               },
-               {
-                  "Boardwalk Brewing Seasonal Sour": "$7.00"
-               },
-               {
-                  "Lone Tree Dry Cider": "$7.00"
-               },
-               {
-                  "Mt. Boucherie Marlot": "$8.00"
-               },
-               {
-                  "Road 13 Honest Johns": "$8.00"
-               },
-               {
-                  "Dirty Laundry Sparkling White": "$8.00"
-               }
-            ],
-            "food": [
-               {
-                  "Beach Oyster": "$1.75"
-               },
-               {
-                  "Premium Oyster": "$2.50"
-               },
-               {
-                  "Spicy Fried Broccoli": "$11.00"
-               },
-               {
-                  "Andouille Poutine": "$14.00"
-               },
-               {
-                  "Crispy Calamari": "$15.00"
-               },
-               {
-                  "Chewies Hotwings": "$15.00"
-               }
-            ]
-         }
-      },
+				"drinks": {
+					"Tanqueray 1oz": "$5.00",
+					"Tanquenry 2oz": "$9.00",
+					"Strange Fellows Talisman Pale Ale": "$7.00",
+					"Parallel 49 Trash Panda Hazy Ipa": "$7.00",
+					"Parkside Graffiti Ipa": "$7.00",
+					"Red Truck Rotating Tap": "$7.00",
+					"Boardwalk Brewing Seasonal Sour": "$7.00",
+					"Lone Tree Dry Cider": "$7.00",
+					"Mt. Boucherie Marlot": "$8.00",
+					"Road 13 Honest Johns": "$8.00",
+					"Dirty Laundry Sparkling White": "$8.00"
+				},
+				"food": {
+					"Beach Oyster": "$1.75",
+					"Premium Oyster": "$2.50",
+					"Spicy Fried Broccoli": "$11.00",
+					"Andouille Poutine": "$14.00",
+					"Crispy Calamari": "$15.00",
+					"Chewies Hotwings": "$15.00"
+				}
+			}
+		},
 
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1522758, 49.268323]
-         },
-         "properties": {
-            "id": "003",
-            "name": "Las Magaritas",
-            "address": "1999 W 4th Ave, Vancouver",
-            "contact_number": "(604) 734-7117",
-            "website": "https://lasmargaritas.com/happy-hour/",
-            "full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
-            "hours": [
-               {
-                  "Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
-               }
-            ],
-            "drinks": [
-               {
-                  "Slushy Margarita (Lime, Strawberry, Or Mango. 1 Oz)": "$7.00"
-               },
-               {
-                  "Classic Margarita (2.5 Oz)": "$11.00"
-               },
-               {
-                  "House Red Or White Wine": "$1 An Oz"
-               },
-               {
-                  "1516 Lager Or Pale Ale (14 Oz)": "$6.00"
-               }
-            ],
-            "food": [
-               {
-                  "Tortilla Soup Cup": "$5.00"
-               },
-               {
-                  "Mini Chimis (Served with sour cream)": "$6.00"
-               },
-               {
-                  "Tijuana Style Caesar Salad": "$7.00"
-               },
-               {
-                  "Taquitos (Served with sour cream)": "$7.00"
-               },
-               {
-                  "Nachos": "$12.00"
-               },
-               {
-                  "Chicharron Street Tacos": "$6.00"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.155348375446, 49.272342824435]
-         },
-         "properties": {
-            "id": "004",
-            "name": "Local Public Eatery",
-            "address": "2210 Cornwall Ave, Vancouver",
-            "contact_number": "(604) 558-4448",
-            "website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
-            "full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
-            "hours": [
-               {
-                  "Sunday to Thursday": "21:00 - CLOSE"
-               },
-               {
-                  "Friday to Saturday": "22:00 - CLOSE"
-               }
-            ],
-            "drinks": [
-               {
-                  "Local House Lager or Ale 0.35l": "$4.00"
-               },
-               {
-                  "Always-on Taps 0.35l": "$5.00"
-               },
-               {
-                  "Mystery Wine": "$5.00"
-               },
-               {
-                  "1oz Rail Highballs": "$5.00"
-               },
-               {
-                  "Shot of Jameson": "$5.00"
-               },
-               {
-                  "Crush Cocktails Aperol / Sassy Sangria / Blue / Colada": "$7.00"
-               },
-               {
-                  "Start Me Up Baileys, Kahlua, Vodka and Coffee on Ice": "$8.00"
-               },
-               {
-                  "Italian Margarita (Tequila, Aperol, Grapefruit and Lime Juice)": "$8.00"
-               }
-            ],
-            "food": [
-               {
-                  "Beach Oyster": "$1.75"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1553864, 49.2715713]
-         },
-         "properties": {
-            "id": "005",
-            "name": "The Ellis",
-            "address": "2204 York Ave, Vancouver",
-            "contact_number": "(604) 428-2456",
-            "website": "https://www.theellis.ca/menu",
-            "full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
-            "hours": [
-               {
-                  "Monday - Thursday": "3 PM - 6 PM"
-               },
-               {
-                  "Friday": "5 PM - 7 PM"
-               },
-               {
-                  "Saturday - Sunday": "4 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Tanqueray 1oz": "$5"
-               }
-            ],
-            "food": [
-               {
-                  "Beach Oyster": "$1.75"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.154838, 49.2713176]
-         },
-         "properties": {
-            "id": "006",
-            "name": "The King's Head",
-            "address": "1618 Yew St, Vancouver",
-            "contact_number": "(604) 738-6966",
-            "website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
-            "full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
-            "hours": [
-               {
-                  "Everyday": "15:00 - 18:00"
-               }
-            ],
-            "drinks": [
-               {
-                  "Shots including highballs": "$5.00/9.00"
-               },
-               {
-                  "House wine (red, white, rosé)": "$6.00/$9.00"
-               },
-               {
-                  "Jameson": "$5.5"
-               }
-            ],
-            "food": [
-               {
-                  "2 Pc Samosas": "$7.00"
-               },
-               {
-                  "Parmesan Truffle Fries": "$8.00"
-               },
-               {
-                  "Yam Fries": "$9.00"
-               },
-               {
-                  "Poutine": "$10.00"
-               },
-               {
-                  "King's Wings (Choice Of Hot Sauce, Honey Bourbon Sauce, Barbecue Sauce, Teriyaki Sauce, Salt And Pepper)": "$13.00"
-               },
-               {
-                  "Chips And Salsa": "$9.00"
-               },
-               {
-                  "3 Pc Chicken Fingers And Fries": "$13.00"
-               },
-               {
-                  "Roasted Cauliflower": "$13.00"
-               },
-               {
-                  "2 Pc Crispy Chicken Taco": "$10.00"
-               },
-               {
-                  "2 Pc Crispy Fish Taco": "$10.00"
-               },
-               {
-                  "Nachos (Only After 9pm)": "$17.00"
-               },
-               {
-                  "Popcorn": "$6.00"
-               },
-               {
-                  "Toasties": "$10.00"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1557779, 49.2680231]
-         },
-         "properties": {
-            "id": "007",
-            "name": "Jackson's Meat & Deli",
-            "address": "2214 W 4th Ave, Vancouver",
-            "contact_number": "(778) 379-2929",
-            "website": "https://www.jacksonsrestobutcher.com/happy-hour",
-            "full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
-            "hours": [
-               {
-                  "Monday - Friday": "3 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Main Street Lager - 16 oz": "$5"
-               },
-               {
-                  "Narrative Merlot Cab Franc - 6oz glass (Okanagan Falls)": "$9"
-               },
-               {
-                  "Batched Old Fashioned - 2oz": "$9"
-               },
-               {
-                  "Negroni - 3 oz": "$9"
-               },
-               {
-                  "Ramification Pinot Gris - 6 oz glass (Oliver)": "$9"
-               }
-            ],
-            "food": [
-               {
-                  "Bowl of Fries (Choice of adobo ketchup or honey mustard)": "$8.00"
-               },
-               {
-                  "Chicken Wings": "$13.00"
-               },
-               {
-                  "Italian Deli Salad": "$14.00"
-               },
-               {
-                  "Chicken Schnitzel Sandwich": "$13.00"
-               },
-               {
-                  "Smoked Beef Brisket Sandwich": "$13.00"
-               },
-               {
-                  "The Jackson Burger": "$13.00"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1548187, 49.271514]
-         },
-         "properties": {
-            "id": "008",
-            "name": "The Cider House",
-            "address": "1602 Yew St, Vancouver",
-            "contact_number": "(604) 558-1975",
-            "website": "https://ciderhouserules.ca/happy-hour/",
-            "full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
-            "hours": [
-               {
-                  "Monday - Friday": "4 PM - 5 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Pina colada": "$7.88"
-               },
-               {
-                  "Cider house flight": "$13.90"
-               },
-               {
-                  "Rum raisin": "$9.88"
-               },
-               {
-                  "Apple pie": "$7.88"
-               },
-               {
-                  "Raspberry limoncello": "$8.77"
-               },
-               {
-                  "Mulled cider": "$10.50"
-               },
-               {
-                  "Cider house spritz": "$10.00"
-               },
-               {
-                  "Cider 75": "$10.00"
-               },
-               {
-                  "House red or white wine": "$9.00"
-               }
-            ],
-            "food": [
-               {
-                  "Mini Nachos(GF)": "$12.00"
-               },
-               {
-                  "Olives(GF)": "6.50"
-               },
-               {
-                  "Guan and Chips(GF)": "9.00"
-               },
-               {
-                  "Chips and Salsa(GF)": "7.00"
-               },
-               {
-                  "Tofu Bites(GF)": "11.00"
-               },
-               {
-                  "Yam Fries(GF)": "8.50"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1552032, 49.2710421]
-         },
-         "properties": {
-            "id": "009",
-            "name": "Lucky Taco",
-            "address": "1685 Yew St, Vancouver",
-            "contact_number": "(604) 739-4677",
-            "website": "https://www.luckytaco.ca/menu/happy-hour",
-            "full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
-            "hours": [
-               {
-                  "Monday - Thursday": "5 PM - 7 PM"
-               },
-               {
-                  "Friday - Sunday": "4 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "For": "$5.00"
-               },
-               {
-                  "Tequila shot, Fireball shot": ""
-               },
-               {
-                  "For": "$6.00"
-               },
-               {
-                  "Premium shot, Sleeve of beer": ""
-               },
-               {
-                  "For": "$9.00"
-               },
-               {
-                  "Pineapple bellini, Watermelon paloma": ""
-               }
-            ],
-            "food": [
-               {
-                  "For": "$5.00"
-               },
-               {
-                  "Chicharrones, Chips & salsa, Grilled corn taco, Mexi fries": ""
-               },
-               {
-                  "For": "$6.00"
-               },
-               {
-                  "Carnitas taco, Fried chicken taco, Cauliflower taco, Barbacoa taco, Spicy chorizo taco (double decker), Baja pescado taco, Calabaza taco": ""
-               },
-               {
-                  "For": "$7.00"
-               },
-               {
-                  "Churros, Chicken tinga, Pink sangria, Glass of wine, Chicken tinga taco, Camarones taco": ""
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1486534, 49.2679391]
-         },
-         "properties": {
-            "id": "011",
-            "name": "Fable Kitchen",
-            "address": "1944 W 4th Ave, Vancouver",
-            "contact_number": "(604) 732 1322",
-            "website": "https://www.fablekitchen.ca/#menu",
-            "full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
-            "hours": [
-               {
-                  "Everyday": "9 PM - CLOSE"
-               }
-            ],
-            "drinks": [
-               {
-                  "Tanqueray 1oz": "$5"
-               }
-            ],
-            "food": [
-               {
-                  "Beach Oyster": "$1.75"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.148459, 49.2682664]
-         },
-         "properties": {
-            "id": "002",
-            "name": "Tacofino Kitsilano",
-            "address": "1909 W 4th Ave, Vancouver",
-            "website": "https://www.chewies.ca/kitsmenu",
-            "contact_number": "(604) 620-8729",
-            "full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
-            "hours": [
-               {
-                  "Daily": "3 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Tequila Margaritas": "9.5"
-               },
-               {
-                  "Mezcal Margartias": "11.5"
-               },
-               {
-                  "Natural Wine By The Glass": "8"
-               },
-               {
-                  "Draft Beer": "6"
-               },
-               {
-                  "Tricky Sangria": "5"
-               }
-            ],
-            "food": [
-               {
-                  "Lamb Taquitos (Birria Broth)": "$6"
-               },
-               {
-                  "Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6"
-               },
-               {
-                  "Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7"
-               },
-               {
-                  "Smoked Tuna Tostadas": "$8"
-               },
-               {
-                  "Chicken Wings (Valentina Butter Sauce)": "$14"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.114422, 49.284049]
-         },
-         "properties": {
-            "id": "013",
-            "name": "Malone's Taphouse",
-            "address": "608 W Pender Street, Vancouver",
-            "website": "http://malones.bc.ca",
-            "contact_number": "(604) 684-9977",
-            "full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
-            "hours": [
-               {
-                  "Daily": "3 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Tequila Margaritas": "9.5"
-               },
-               {
-                  "Mezcal Margartias": "11.5"
-               },
-               {
-                  "Natural Wine By The Glass": "8"
-               },
-               {
-                  "Draft Beer": "6"
-               },
-               {
-                  "Tricky Sangria": "5"
-               }
-            ],
-            "food": [
-               {
-                  "Lamb Taquitos (Birria Broth)": "$6"
-               },
-               {
-                  "Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6"
-               },
-               {
-                  "Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7"
-               },
-               {
-                  "Smoked Tuna Tostadas": "$8"
-               },
-               {
-                  "Chicken Wings (Valentina Butter Sauce)": "$14"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.11679, 49.285598]
-         },
-         "properties": {
-            "id": "014",
-            "name": "Moose's Down Under Bar and Grill",
-            "address": "830 W Pender St, Vancouver",
-            "website": "https://moosesdownunder.com/specials/",
-            "contact_number": "(604)683 3300",
-            "full_address": "830 W Pender St, Vancouver, BC V6C 1J8",
-            "hours": [
-               {
-                  "Daily": "3 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Tequila Margaritas": "9.5"
-               },
-               {
-                  "Mezcal Margartias": "11.5"
-               },
-               {
-                  "Natural Wine By The Glass": "8"
-               },
-               {
-                  "Draft Beer": "6"
-               },
-               {
-                  "Tricky Sangria": "5"
-               }
-            ],
-            "food": [
-               {
-                  "Lamb Taquitos (Birria Broth)": "$6"
-               },
-               {
-                  "Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6"
-               },
-               {
-                  "Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7"
-               },
-               {
-                  "Smoked Tuna Tostadas": "$8"
-               },
-               {
-                  "Chicken Wings (Valentina Butter Sauce)": "$14"
-               }
-            ]
-         }
-      },
-      {
-         "type": "Feature",
-         "geometry": {
-            "type": "Point",
-            "coordinates": [-123.109198, 49.282961]
-         },
-         "properties": {
-            "id": "015",
-            "name": "The Cambie Bar & Grill",
-            "address": "300 Cambie St, Vancouver",
-            "website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
-            "contact_number": "(604) 688 9158",
-            "full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
-            "hours": [
-               {
-                  "Daily": "3 PM - 6 PM"
-               }
-            ],
-            "drinks": [
-               {
-                  "Tequila Margaritas": "9.5"
-               },
-               {
-                  "Mezcal Margartias": "11.5"
-               },
-               {
-                  "Natural Wine By The Glass": "8"
-               },
-               {
-                  "Draft Beer": "6"
-               },
-               {
-                  "Tricky Sangria": "5"
-               }
-            ],
-            "food": [
-               {
-                  "Lamb Taquitos (Birria Broth)": "$6"
-               },
-               {
-                  "Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6"
-               },
-               {
-                  "Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7"
-               },
-               {
-                  "Smoked Tuna Tostadas": "$8"
-               },
-               {
-                  "Chicken Wings (Valentina Butter Sauce)": "$14"
-               }
-            ]
-         }
-      }
-   ]
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.15007987746175, 49.2683195]
+			},
+			"properties": {
+				"id": "003",
+				"name": "Las Magaritas",
+				"address": "1999 W 4th Ave, Vancouver",
+				"contact_number": "(604) 734-7117",
+				"website": "https://lasmargaritas.com/happy-hour/",
+				"full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
+				"hours": {
+					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
+				},
+
+				"drinks": {
+					"Slushy Margarita (Lime, Strawberry, Or Mango. 1 Oz)": "$7.00",
+					"Classic Margarita (2.5 Oz)": "$11.00",
+					"House Red Or White Wine": "$1 An Oz",
+					"1516 Lager Or Pale Ale (14 Oz)": "$6.00"
+				},
+				"food": {
+					"Tortilla Soup Cup": "$5.00",
+					"Mini Chimis (Served with sour cream)": "$6.00",
+					"Tijuana Style Caesar Salad": "$7.00",
+					"Taquitos (Served with sour cream)": "$7.00",
+					"Nachos": "$12.00"
+				}
+			}
+		},
+
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.155348375446, 49.272342824435]
+			},
+			"properties": {
+				"id": "004",
+				"name": "Local Public Eatery",
+				"address": "2210 Cornwall Ave, Vancouver",
+				"contact_number": "(604) 558-4448",
+				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
+				"full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
+				"hours": {
+					"Sunday to Thursday": "21:00 - CLOSE",
+					"Friday to Saturday": "22:00 - CLOSE"
+				},
+				"drinks": {
+					"Local House Lager or Ale 0.35l": "$4.00",
+					"Always-on Taps 0.35l": "$5.00",
+					"Mystery Wine": "$5.00",
+					"1oz Rail Highballs": "$5.00",
+					"Shot of Jameson": "$5.00",
+					"Crush Cocktails Aperol / Sassy Sangria / Blue / Colada": "$7.00",
+					"Start Me Up Baileys, Kahlua, Vodka and Coffee on Ice": "$8.00",
+					"Italian Margarita (Tequila, Aperol, Grapefruit and Lime Juice)": "$8.00"
+				},
+
+				"food": {
+					"Beach Oyster": "$1.75"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1553864, 49.2715713]
+			},
+			"properties": {
+				"id": "005",
+				"name": "The Ellis",
+				"address": "2204 York Ave, Vancouver",
+				"contact_number": "(604) 428-2456",
+				"website": "https://www.theellis.ca/menu",
+				"full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
+				"hours": {
+					"Monday - Thursday": "15:00 - 18:00",
+					"Friday": "17:00 - 19:00",
+					"Saturday - Sunday": "16:00 - 18:00"
+				},
+				"drinks": {
+					"Tanqueray 1oz": "$5.00"
+				},
+				"food": {
+					"Beach Oyster": "$1.75"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.154838, 49.2713176]
+			},
+			"properties": {
+				"id": "006",
+				"name": "The King's Head",
+				"address": "1618 Yew St, Vancouver",
+				"contact_number": "(604) 738-6966",
+				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
+				"full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
+				"hours": {
+					"Everyday": "15:00 - 18:00"
+				},
+				"drinks": {
+					"Shots including highballs": "$5.00/9.00",
+					"House wine (red, white, rosé)": "$6.00/$9.00",
+					"Jameson": "$5.50"
+				},
+
+				"food": {
+					"2 Pc Samosas": "$7.00",
+					"Parmesan Truffle Fries": "$8.00",
+					"Yam Fries": "$9.00",
+					"Poutine": "$10.00",
+					"King's Wings (Choice Of Hot Sauce, Honey Bourbon Sauce, Barbecue Sauce, Teriyaki Sauce, Salt And Pepper)": "$13.00",
+					"Chips And Salsa": "$9.00",
+					"3 Pc Chicken Fingers And Fries": "$13.00",
+					"Roasted Cauliflower": "$13.00",
+					"2 Pc Crispy Chicken Taco": "$10.00",
+					"2 Pc Crispy Fish Taco": "$10.00",
+					"Nachos (Only After 9pm)": "$17.00",
+					"Popcorn": "$6.00",
+					"Toasties": "$10.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1557779, 49.2680231]
+			},
+			"properties": {
+				"id": "007",
+				"name": "Jackson's Meat & Deli",
+				"address": "2214 W 4th Ave, Vancouver",
+				"contact_number": "(778) 379-2929",
+				"website": "https://www.jacksonsrestobutcher.com/happy-hour",
+				"full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
+				"hours": {
+					"Monday - Friday": "15:00 - 18:00"
+				},
+				"drinks": {
+					"Main Street Lager - 16 oz": "$5.00",
+					"Narrative Merlot Cab Franc - 6oz glass (Okanagan Falls)": "$9.00",
+					"Batched Old Fashioned - 2oz": "$9.00",
+					"Negroni - 3 oz": "$9.00",
+					"Ramification Pinot Gris - 6 oz glass (Oliver)": "$9.00"
+				},
+
+				"food": {
+					"Bowl of Fries (Choice of adobo ketchup or honey mustard)": "$8.00",
+					"Chicken Wings": "$13.00",
+					"Italian Deli Salad": "$14.00",
+					"Chicken Schnitzel Sandwich": "$13.00",
+					"Smoked Beef Brisket Sandwich": "$13.00",
+					"The Jackson Burger": "$13.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1548187, 49.271514]
+			},
+			"properties": {
+				"id": "008",
+				"name": "The Cider House",
+				"address": "1602 Yew St, Vancouver",
+				"contact_number": "(604) 558-1975",
+				"website": "https://ciderhouserules.ca/happy-hour/",
+				"full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
+				"hours": {
+					"Monday - Friday": "16:00 - 17:00"
+				},
+				"drinks": {
+					"Pina colada": "$7.88",
+					"Cider house flight": "$13.90",
+					"Rum raisin": "$9.88",
+					"Apple pie": "$7.88",
+					"Raspberry limoncello": "$8.77",
+					"Mulled cider": "$10.50",
+					"Cider house spritz": "$10.00",
+					"Cider 75": "$10.00",
+					"House red or white wine": "$9.00"
+				},
+
+				"food": {
+					"Mini Nachos(GF)": "$12.00",
+					"Olives(GF)": "$6.50",
+					"Guan and Chips(GF)": "$9.00",
+					"Chips and Salsa(GF)": "$7.00",
+					"Tofu Bites(GF)": "$11.00",
+					"Yam Fries(GF)": "$8.50"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1552032, 49.2710421]
+			},
+			"properties": {
+				"id": "009",
+				"name": "Lucky Taco",
+				"address": "1685 Yew St, Vancouver",
+				"contact_number": "(604) 739-4677",
+				"website": "https://www.luckytaco.ca/menu/happy-hour",
+				"full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
+				"hours": {
+					"Monday - Thursday": "17:00 - 19:00",
+					"Friday - Sunday": "16:00 - 18:00"
+				},
+				"drinks": {
+					"Tequila shot, Fireball shot": "$5.00",
+					"Premium shot, Sleeve of beer": "$6.00",
+					"Pineapple bellini, Watermelon paloma": "$9.00"
+				},
+				"food": {
+					"Chicharrones, Chips & salsa, Grilled corn taco, Mexi fries": "$5.00",
+					"Carnitas taco, Fried chicken taco, Cauliflower taco, Barbacoa taco, Spicy chorizo taco (double decker), Baja pescado taco, Calabaza taco": "$6.00",
+					"Churros, Chicken tinga, Pink sangria, Glass of wine, Chicken tinga taco, Camarones taco": "$7.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1486534, 49.2679391]
+			},
+			"properties": {
+				"id": "011",
+				"name": "Fable Kitchen",
+				"address": "1944 W 4th Ave, Vancouver",
+				"contact_number": "(604) 732 1322",
+				"website": "https://www.fablekitchen.ca/#menu",
+				"full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
+				"hours": {
+					"Everyday": "21:00 - CLOSE"
+				},
+				"drinks": {
+					"Tanqueray 1oz": "$5"
+				},
+				"food": {
+					"Beach Oyster": "$1.75"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.148459, 49.2682664]
+			},
+			"properties": {
+				"id": "002",
+				"name": "Tacofino Kitsilano",
+				"address": "1909 W 4th Ave, Vancouver",
+				"website": "https://www.chewies.ca/kitsmenu",
+				"contact_number": "(604) 620-8729",
+				"full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
+				"hours": {
+					"Daily": "15:00 - 18:00"
+				},
+				"drinks": {
+					"Tequila Margaritas": "$9.50",
+					"Mezcal Margartias": "$11.50",
+					"Natural Wine By The Glass": "$8.00",
+					"Draft Beer": "$6.00",
+					"Tricky Sangria": "$5.00"
+				},
+
+				"food": {
+					"Lamb Taquitos (Birria Broth)": "$6.00",
+					"Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6.00",
+					"Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7.00",
+					"Smoked Tuna Tostadas": "$8.00",
+					"Chicken Wings (Valentina Butter Sauce)": "$14.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.114422, 49.284049]
+			},
+			"properties": {
+				"id": "013",
+				"name": "Malone's Taphouse",
+				"address": "608 W Pender Street, Vancouver",
+				"website": "http://malones.bc.ca",
+				"contact_number": "(604) 684-9977",
+				"full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
+				"hours": {
+					"Daily": "15:00 - 18:00"
+				},
+				"drinks": {
+					"Tequila Margaritas": "$9.50",
+					"Mezcal Margartias": "$11.50",
+					"Natural Wine By The Glass": "$8.00",
+					"Draft Beer": "$6.00",
+					"Tricky Sangria": "$5.00"
+				},
+				"food": {
+					"Lamb Taquitos (Birria Broth)": "$6.00",
+					"Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6.00",
+					"Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7.00",
+					"Smoked Tuna Tostadas": "$8.00",
+					"Chicken Wings (Valentina Butter Sauce)": "$14.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.11679, 49.285598]
+			},
+			"properties": {
+				"id": "014",
+				"name": "Moose's Down Under Bar and Grill",
+				"address": "830 W Pender St, Vancouver",
+				"website": "https://moosesdownunder.com/specials/",
+				"contact_number": "(604)683 3300",
+				"full_address": "830 W Pender St, Vancouver, BC V6C 1J8",
+				"hours": {
+					"Daily": "15:00 - 18:00"
+				},
+				"drinks": {
+					"Tequila Margaritas": "$9.50",
+					"Mezcal Margartias": "$11.50",
+					"Natural Wine By The Glass": "$8.00",
+					"Draft Beer": "$6.00",
+					"Tricky Sangria": "$5.00"
+				},
+				"food": {
+					"Lamb Taquitos (Birria Broth)": "$6.00",
+					"Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6.00",
+					"Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7.00",
+					"Smoked Tuna Tostadas": "$8.00",
+					"Chicken Wings (Valentina Butter Sauce)": "$14.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.109198, 49.282961]
+			},
+			"properties": {
+				"id": "015",
+				"name": "The Cambie Bar & Grill",
+				"address": "300 Cambie St, Vancouver",
+				"website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
+				"contact_number": "(604) 688 9158",
+				"full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
+				"hours": {
+					"Daily": "15:00 - 18:00"
+				},
+				"drinks": {
+					"Tequila Margaritas": "$9.50",
+					"Mezcal Margartias": "$11.50",
+					"Natural Wine By The Glass": "$8.00",
+					"Draft Beer": "$6.00",
+					"Tricky Sangria": "$5.00"
+				},
+				"food": {
+					"Lamb Taquitos (Birria Broth)": "$6.00",
+					"Pumpkin Seed Dip & Chips (Pickled Onion, Cilantro) (vg)": "$6.00",
+					"Fried Asadero Cheese Sticks (Salsa Roja) (v)": "$7.00",
+					"Smoked Tuna Tostadas": "$8.00",
+					"Chicken Wings (Valentina Butter Sauce)": "$14.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.156452, 49.268102]
+			},
+			"properties": {
+				"id": "016",
+				"name": "Delara Restaurant",
+				"address": "2272 W 4th Ave, Vancouver",
+				"website": "https://delararestaurant.ca/menu",
+				"contact_number": "(604) 730-4325",
+				"full_address": "2272 W 4th Ave, Vancouver, BC V6K 1N8",
+				"hours": {
+					"Daily": "15:00 - 17:00"
+				},
+				"drinks": {
+					"Gin Ayshil The Emerald": "$12.00",
+					"Raha Fallen Leaves": "$12.00",
+					"Pomegranate Margarita": "$12.00",
+					"Hop Plum Spritzer": "12.00",
+					"Lemon Drop And Rose": "$12.00",
+					"Persian Godfather": "$12.00",
+					"All Bottles Of Wine 10% Off": ""
+				},
+				"food": {
+					"Grilled sourdough flatbread and seasonal dips": "$12.00",
+					"Spring salad": "$12.00",
+					"Roasted cauliflower and yogurt": "$12.00",
+					"Koofteh": "$12.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.148199, 49.272657]
+			},
+			"properties": {
+				"id": "017",
+				"name": "Charqui",
+				"address": "1955 Cornwall Ave, Vancouver",
+				"website": "https://delararestaurant.ca/menu",
+				"contact_number": "(604) 733-3323",
+				"full_address": "1955 Cornwall Ave, Vancouver, BC V6J 1C9",
+				"hours": {
+					"Daily": "15:00 - 17:00"
+				},
+				"drinks": {
+					"Gin Ayshil The Emerald": "$12.00",
+					"Raha Fallen Leaves": "$12.00",
+					"Pomegranate Margarita": "$12.00",
+					"Hop Plum Spritzer": "12.00",
+					"Lemon Drop And Rose": "$12.00",
+					"Persian Godfather": "$12.00",
+					"All Bottles Of Wine 10% Off": ""
+				},
+				"food": {
+					"Grilled sourdough flatbread and seasonal dips": "$12.00",
+					"Spring salad": "$12.00",
+					"Roasted cauliflower and yogurt": "$12.00",
+					"Koofteh": "$12.00"
+				}
+			}
+		}
+	]
 }

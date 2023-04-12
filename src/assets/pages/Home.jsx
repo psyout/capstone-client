@@ -10,11 +10,19 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
 import geoJson from '../../data/places.json';
 
-export const apiUrl = 'http://localhost:3008';
+export const apiUrl = 'http://localhost:3006';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);
 	const [selectedCard, setSelectedCard] = useState([]);
+	const [businesses, setBusinesses] = useState([]);
+
+	// search
+	const [search, setSearch] = useState('');
+	const handleSearchInput = (event) => {
+		const { value } = event.target;
+		setSearch(value);
+	};
 
 	const mapContainer = useRef(null);
 	const accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
@@ -26,11 +34,13 @@ function Home() {
 		const markers = geojson.features.map((feature) => {
 			const { coordinates } = feature.geometry;
 			const { name } = feature.properties;
+			const color = '#8a8ba6';
 			const popup = new mapboxgl.Popup().setHTML(`
-         <div>
-            ${name}
-         </div>`);
-			const marker = new mapboxgl.Marker().setLngLat(coordinates).setPopup(popup);
+			<div>
+			  <p>${name}</p>
+			</div>
+		  `);
+			const marker = new mapboxgl.Marker({ color }).setLngLat(coordinates).setPopup(popup);
 			marker.id = name;
 			return marker;
 		});
@@ -38,6 +48,7 @@ function Home() {
 	};
 
 	useEffect(() => {
+		// init map
 		mapboxgl.accessToken = accessToken;
 
 		// set map style and original location
@@ -49,12 +60,21 @@ function Home() {
 			zoom: 15,
 		});
 
+		// get my current location
+		const getLocation = () => {
+			navigator.geolocation.getCurrentPosition((response) => {
+				console.log(response);
+			});
+		};
+		getLocation();
+
 		// get current location
 		const geolocate = new GeolocateControl({
 			positionOptions: { enableHighAccuracy: true },
 			trackUserLocation: true,
 		});
 
+		// location map control
 		mapRef.current.addControl(geolocate);
 		geolocate.on('geolocate', function (event) {
 			console.log(event.coords.latitude, event.coords.longitude);
@@ -76,20 +96,34 @@ function Home() {
 			marker.addTo(mapRef.current);
 		});
 
-		// setMarkers(markers);
-
+		// 		Promise.all(requests)
+		//   .then((responses) => {
+		//     const businesses = responses.map((response) => response.data.businesses).flat();
+		//     setBusinesses(businesses);
+		//     console.log('businesses: ', businesses);
+		//   })
+		//   .catch((error) => {
+		//     console.log(error);
+		//   });
 		// fetch restaurants data from the server
 		let endpoints = [
-			// `${apiUrl}/api/seafood`,
-			// `${apiUrl}/api/restaurants`,
-			// `${apiUrl}/api/bars`,
-			// `${apiUrl}/api/canadian`,
-			// `${apiUrl}/api/karaoke`,
-			// `${apiUrl}/api/delis`,
-			// `${apiUrl}/api/cideries`,
-			// `${apiUrl}/api/mexican`,
+			`${apiUrl}/api/seafood`,
+			`${apiUrl}/api/restaurants`,
+			`${apiUrl}/api/bars`,
+			`${apiUrl}/api/canadian`,
+			`${apiUrl}/api/karaoke`,
+			`${apiUrl}/api/delis`,
+			`${apiUrl}/api/cideries`,
+			`${apiUrl}/api/mexican`,
 			// `${apiUrl}/api/lounges`,
+			`${apiUrl}/api/spanish`,
+			`${apiUrl}/api/australian`,
+			`${apiUrl}/api/pubs`,
+			`${apiUrl}/api/dive-bars`,
 			// `${apiUrl}/api/gastropubs`,
+			// `${apiUrl}/api/persian`,
+			// `${apiUrl}/api/breakfast-brunch`,
+			`${apiUrl}/api/burgers`,
 		];
 
 		axios
@@ -97,20 +131,8 @@ function Home() {
 			.then(
 				axios.spread((...responses) => {
 					const businesses = responses.map((response) => response.data.businesses).flat();
-
-					businesses.forEach((business) => {
-						// Adding markers
-						const marker = new mapboxgl.Marker()
-							.setLngLat([business.coordinates.longitude, business.coordinates.latitude])
-							//  .setPopup(popup)
-							.addTo(mapRef.current);
-
-						marker.getElement().addEventListener('click', function () {
-							console.log(business);
-							setSelectedBusiness(business);
-							marker.togglePopup();
-						});
-					});
+					setBusinesses(businesses);
+					console.log('businessess: ', businesses);
 				})
 			)
 			.catch((error) => {
@@ -120,8 +142,8 @@ function Home() {
 
 	return (
 		<div className='container'>
-			<Header />
-			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} />
+			<Header handleSearchInput={handleSearchInput} />
+			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

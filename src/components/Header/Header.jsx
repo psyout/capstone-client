@@ -10,66 +10,60 @@ import { useTheme } from '@mui/material/styles';
 import LoginForm from '../LoginForm/LoginForm';
 
 const styleBg = {
-   bgcolor: 'rgba(43, 40, 64, 0.2)',
+	bgcolor: 'rgba(43, 40, 64, 0.2)',
 };
 
 const styleBox = {
-   width: '500px',
-   height: '450px',
-   display: 'flex',
-   alignItems: 'center',
+	width: '500px',
+	height: '450px',
+	display: 'flex',
+	alignItems: 'center',
 };
 
-function Header({ cards, setCards }) {
-   const [open, setOpen] = useState(false);
-   const [searchQuery, setSearchQuery] = useState('');
-   const theme = useTheme();
-   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+function Header({ handleSearchInput }) {
+	const [open, setOpen] = useState(false);
+	const theme = useTheme();
+	const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-   const handleClickOpen = () => {
-      setOpen(true);
-   };
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
 
-   const handleClose = () => {
-      setOpen(false);
-   };
+	const handleClose = () => {
+		setOpen(false);
+	};
 
-   const handleSearchQueryChange = (event) => {
-      setSearchQuery(event.target.value);
-   };
-
-   return (
-      <header className='header-container'>
-         <div className='header-container__logo'>
-            <img src={logo} alt='Logo' className='header-container__logo--img' />
-            <h1 className='header-container__logo--title'>
-               Wülen <span>| Happy Hour Finder</span>
-            </h1>
-         </div>
-         <div className='header-container__row'>
-            <div className='header-container__search'>
-               <input
-                  type='text'
-                  placeholder='Type bar name or keyword...'
-                  className='header-container__search-input'
-                  value={searchQuery}
-                  onChange={handleSearchQueryChange}
-               />
-               <button className='header-container__search-button'>
-                  <FaSearch style={{ color: '#278C8C' }} />
-               </button>
-            </div>
-            <div onClick={handleClickOpen} className='header-container__avatar'>
-               <FaUserAlt style={{ color: '#278C8C' }} />
-            </div>
-         </div>
-         <Dialog sx={styleBg} fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
-            <DialogContent sx={styleBox}>
-               <LoginForm />
-            </DialogContent>
-         </Dialog>
-      </header>
-   );
+	return (
+		<header className='header-container'>
+			<div className='header-container__logo'>
+				<img src={logo} alt='Logo' className='header-container__logo--img' />
+				<h1 className='header-container__logo--title'>
+					Wülen <span>| Happy Hour Finder</span>
+				</h1>
+			</div>
+			<div className='header-container__row'>
+				<div className='header-container__search'>
+					<input
+						type='text'
+						placeholder='Type bar name or keyword...'
+						className='header-container__search-input'
+						onChange={handleSearchInput}
+					/>
+					<button className='header-container__search-button'>
+						<FaSearch style={{ color: '#278C8C' }} />
+					</button>
+				</div>
+				<div onClick={handleClickOpen} className='header-container__avatar'>
+					<FaUserAlt style={{ color: '#278C8C' }} />
+				</div>
+			</div>
+			<Dialog sx={styleBg} fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby='responsive-dialog-title'>
+				<DialogContent sx={styleBox}>
+					<LoginForm />
+				</DialogContent>
+			</Dialog>
+		</header>
+	);
 }
 
 export default Header;

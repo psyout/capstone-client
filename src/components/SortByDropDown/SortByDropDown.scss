@@ -7,7 +7,8 @@
 	display: flex;
 	margin: 0.7rem 0 1rem;
 	justify-content: space-between;
-	background-color: #8a8ba6;
+	background-color: $color-sorting;
+	// background-color: #8a8ba6;
 	border-radius: 0.4rem;
 	padding: 1rem;
 	flex-direction: column;
@@ -30,10 +31,10 @@
 		font-family: Rubik;
 		font-weight: 500;
 		font-size: 0.85rem;
-		color: #ffffff;
+		color: $color-logo;
 
 		&--label {
-			color: #ffffff;
+			color: $color-logo;
 			font-size: 0.85rem;
 		}
 	}

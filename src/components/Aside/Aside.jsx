@@ -1,5 +1,4 @@
 import './Aside.scss';
-import placeHolder from '../../assets/images/placeholder.jpg';
 import Card from '../Card/Card';
 import SortByDropDown from '../SortByDropDown/SortByDropDown';
 import { useState } from 'react';
@@ -30,14 +29,29 @@ function formatFood(food) {
 	));
 }
 
-function Aside({ selectedBusiness, setSelectedBusiness, geoJson }) {
+function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, businesses }) {
 	const [sortBy, setSortBy] = useState(options[0].value);
 
 	const handleSortByChange = (event) => {
 		setSortBy(event.target.value);
 	};
 
-	const sortedFeatures = [...geoJson.features].sort((a, b) => {
+	// search function
+	const excludeColumns = ['id'];
+
+	const filteredFeatures = geoJson.features.filter((feature) => {
+		const lowerCasedSearch = search.toLowerCase();
+		if (search === '') {
+			return true;
+		} else {
+			return Object.keys(feature.properties).some((key) => {
+				return excludeColumns.includes(key) ? false : feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch);
+			});
+		}
+	});
+
+	//sorting by
+	const sortedFeatures = [...filteredFeatures].sort((a, b) => {
 		if (sortBy === 'name') {
 			return a.properties.name.localeCompare(b.properties.name);
 		}
@@ -45,7 +59,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson }) {
 	});
 
 	const cards = sortedFeatures.map((feature) => {
-		const { id, name, address, contact_number, website } = feature.properties;
+		const { id, name, website } = feature.properties;
 		const hours = formatHours(feature.properties.hours);
 		const drinks = formatDrinks(feature.properties.drinks);
 		const food = formatFood(feature.properties.food);
@@ -54,16 +68,22 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson }) {
 			setSelectedBusiness(name);
 		};
 
+		// match image from yelp with name from json
+		const matchingBusinessFromYelp = businesses.find((business) => business.name === name);
+		// eslint-disable-next-line
+		if (!matchingBusinessFromYelp) return;
+
 		return (
 			<Card
 				key={id}
 				title={name.slice(0, 25)}
-				address={address}
-				number={contact_number}
-				imageSrc={placeHolder}
+				address={matchingBusinessFromYelp.location.address1}
+				number={matchingBusinessFromYelp.display_phone}
+				image={matchingBusinessFromYelp.image_url}
 				caption={hours}
 				drinks={drinks}
 				food={food}
+				rating={matchingBusinessFromYelp.rating}
 				onClick={handleClick}
 				website={website}
 				name={name}
@@ -73,6 +93,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson }) {
 
 	// Move selectedBusiness card to the front of the list
 	if (selectedBusiness) {
+		console.log('selected business: ', selectedBusiness);
 		const selectedIndex = sortedFeatures.findIndex((feature) => feature.properties.name === selectedBusiness);
 		const selectedCard = cards.splice(selectedIndex, 1)[0];
 		cards.unshift(selectedCard);

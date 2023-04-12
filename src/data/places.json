@@ -8,12 +8,14 @@
 				"coordinates": [-123.1552829, 49.2709727]
 			},
 			"properties": {
-				"id": "M4jkJHewQXZvDV34Tuon8g",
-				"name": "Chewies Smoke Oyster Bar Kitsilano",
+				"id": "001",
+				"name": "Chewies Steam & Oyster Bar - Kits",
 				"address": "2201 W 1st Ave, Vancouver",
 				"contact_number": "(604) 558-4448",
 				"website": "https://www.chewies.ca/kitsmenu",
 				"full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
+				"neighborhoods": "Kitsilano",
+				"price": "2",
 				"categories": {
 					"title": "Seafood"
 				},
@@ -55,12 +57,13 @@
 				"coordinates": [-123.15007987746175, 49.2683195]
 			},
 			"properties": {
-				"id": "003",
-				"name": "Las Magaritas",
+				"id": "002",
+				"name": "Las Margaritas Restaurant",
 				"address": "1999 W 4th Ave, Vancouver",
 				"contact_number": "(604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
 				},
@@ -88,12 +91,13 @@
 				"coordinates": [-123.155348375446, 49.272342824435]
 			},
 			"properties": {
-				"id": "004",
+				"id": "003",
 				"name": "Local Public Eatery",
 				"address": "2210 Cornwall Ave, Vancouver",
 				"contact_number": "(604) 558-4448",
 				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
 				"full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Sunday to Thursday": "21:00 - CLOSE",
 					"Friday to Saturday": "22:00 - CLOSE"
@@ -121,12 +125,13 @@
 				"coordinates": [-123.1553864, 49.2715713]
 			},
 			"properties": {
-				"id": "005",
+				"id": "004",
 				"name": "The Ellis",
 				"address": "2204 York Ave, Vancouver",
 				"contact_number": "(604) 428-2456",
 				"website": "https://www.theellis.ca/menu",
 				"full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00",
 					"Friday": "17:00 - 19:00",
@@ -147,12 +152,13 @@
 				"coordinates": [-123.154838, 49.2713176]
 			},
 			"properties": {
-				"id": "006",
-				"name": "The King's Head",
+				"id": "005",
+				"name": "King's Head Public House",
 				"address": "1618 Yew St, Vancouver",
 				"contact_number": "(604) 738-6966",
 				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
 				"full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Everyday": "15:00 - 18:00"
 				},
@@ -186,12 +192,13 @@
 				"coordinates": [-123.1557779, 49.2680231]
 			},
 			"properties": {
-				"id": "007",
+				"id": "006",
 				"name": "Jackson's Meat & Deli",
 				"address": "2214 W 4th Ave, Vancouver",
 				"contact_number": "(778) 379-2929",
 				"website": "https://www.jacksonsrestobutcher.com/happy-hour",
 				"full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Monday - Friday": "15:00 - 18:00"
 				},
@@ -220,12 +227,13 @@
 				"coordinates": [-123.1548187, 49.271514]
 			},
 			"properties": {
-				"id": "008",
+				"id": "007",
 				"name": "The Cider House",
 				"address": "1602 Yew St, Vancouver",
 				"contact_number": "(604) 558-1975",
 				"website": "https://ciderhouserules.ca/happy-hour/",
 				"full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Monday - Friday": "16:00 - 17:00"
 				},
@@ -258,12 +266,13 @@
 				"coordinates": [-123.1552032, 49.2710421]
 			},
 			"properties": {
-				"id": "009",
+				"id": "008",
 				"name": "Lucky Taco",
 				"address": "1685 Yew St, Vancouver",
 				"contact_number": "(604) 739-4677",
 				"website": "https://www.luckytaco.ca/menu/happy-hour",
 				"full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Monday - Thursday": "17:00 - 19:00",
 					"Friday - Sunday": "16:00 - 18:00"
@@ -284,15 +293,16 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.1486534, 49.2679391]
+				"coordinates": [-123.149019, 49.2679331]
 			},
 			"properties": {
-				"id": "011",
+				"id": "009",
 				"name": "Fable Kitchen",
 				"address": "1944 W 4th Ave, Vancouver",
 				"contact_number": "(604) 732 1322",
 				"website": "https://www.fablekitchen.ca/#menu",
 				"full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Everyday": "21:00 - CLOSE"
 				},
@@ -311,12 +321,13 @@
 				"coordinates": [-123.148459, 49.2682664]
 			},
 			"properties": {
-				"id": "002",
-				"name": "Tacofino Kitsilano",
+				"id": "010",
+				"name": "Tacofino",
 				"address": "1909 W 4th Ave, Vancouver",
 				"website": "https://www.chewies.ca/kitsmenu",
 				"contact_number": "(604) 620-8729",
 				"full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -344,12 +355,13 @@
 				"coordinates": [-123.114422, 49.284049]
 			},
 			"properties": {
-				"id": "013",
+				"id": "011",
 				"name": "Malone's Taphouse",
 				"address": "608 W Pender Street, Vancouver",
 				"website": "http://malones.bc.ca",
 				"contact_number": "(604) 684-9977",
 				"full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
+				"neighborhoods": "Downtown",
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -376,12 +388,13 @@
 				"coordinates": [-123.11679, 49.285598]
 			},
 			"properties": {
-				"id": "014",
-				"name": "Moose's Down Under Bar and Grill",
+				"id": "012",
+				"name": "Moose's Down Under",
 				"address": "830 W Pender St, Vancouver",
 				"website": "https://moosesdownunder.com/specials/",
 				"contact_number": "(604)683 3300",
 				"full_address": "830 W Pender St, Vancouver, BC V6C 1J8",
+				"neighborhoods": "Downtown",
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -408,12 +421,13 @@
 				"coordinates": [-123.109198, 49.282961]
 			},
 			"properties": {
-				"id": "015",
-				"name": "The Cambie Bar & Grill",
+				"id": "013",
+				"name": "Cambie Bar & Grill",
 				"address": "300 Cambie St, Vancouver",
 				"website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
 				"contact_number": "(604) 688 9158",
 				"full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
+				"neighborhoods": "Downtown",
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -440,12 +454,13 @@
 				"coordinates": [-123.156452, 49.268102]
 			},
 			"properties": {
-				"id": "016",
-				"name": "Delara Restaurant",
+				"id": "014",
+				"name": "Delara",
 				"address": "2272 W 4th Ave, Vancouver",
 				"website": "https://delararestaurant.ca/menu",
 				"contact_number": "(604) 730-4325",
 				"full_address": "2272 W 4th Ave, Vancouver, BC V6K 1N8",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Daily": "15:00 - 17:00"
 				},
@@ -473,12 +488,13 @@
 				"coordinates": [-123.148199, 49.272657]
 			},
 			"properties": {
-				"id": "017",
+				"id": "015",
 				"name": "Charqui",
 				"address": "1955 Cornwall Ave, Vancouver",
 				"website": "https://delararestaurant.ca/menu",
 				"contact_number": "(604) 733-3323",
 				"full_address": "1955 Cornwall Ave, Vancouver, BC V6J 1C9",
+				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Daily": "15:00 - 17:00"
 				},
@@ -496,6 +512,290 @@
 					"Spring salad": "$12.00",
 					"Roasted cauliflower and yogurt": "$12.00",
 					"Koofteh": "$12.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.16398, 49.263744]
+			},
+			"properties": {
+				"id": "016",
+				"name": "WhiteSpot Kitsilano",
+				"address": "2518 W Broadway, Vancouver",
+				"website": "https://delararestaurant.ca/menu",
+				"contact_number": "(604) 731-2434",
+				"rating": "rating",
+				"full_address": "2518 West Broadway, Vancouver, BC V6K 2G1",
+				"neighborhoods": "Kitsilano",
+				"hours": {
+					"Sunday to Thursday": "14:00 - 17:00 | 20:00 - 22:00",
+					"Friday to Saturday": "14:00 - 17:00 | 20:00 - 23:00"
+				},
+				"drinks": {
+					"Nat's Spiked Soda (1.25 oz)": "$5.00",
+					"Nat Bailey Lager Sleeve (14.5oz)": "$5.0",
+					"Nat Bailey Lager Spot Size (20oz)": "$6.00",
+					"Nat Bailey Pale Ale Sleeve (14.5oz)": "$6.00",
+					"Classic Bellini OR Wildberry Bellini OR Twisted Bellini (1.5oz)": "$6.00",
+					"Jackson-Triggs Okanagan Estate 'Reserve' Wines (6oz)": "$6.00",
+					"Nat Bailey Pale Ale Spot Size (20oz)": "$7.00",
+					"Jackson-Triggs Okanagan Estate 'Reserve' Wines (9oz)": "$7.00"
+				},
+				"food": {
+					"The Spot's Poutine": "$6.00",
+					"Onion Rings": "$6.00",
+					"Cheesy Bacon Perogies": "$6.00",
+					"The Spot's Zoo Sticks": "$8.00",
+					"Mushroom Gruyere Flatbread": "$8.00",
+					"Coconut Prawns": "$8.00",
+					"Southwest Chicken Quesadilla": "$10.00",
+					"Humbolt Squid": "$10.00",
+					"Nat's Crispy Dry Ribs": "$10.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.178684, 49.264411]
+			},
+			"properties": {
+				"id": "017",
+				"name": "Elwoods",
+				"address": "3357 W Broadway, Vancouver",
+				"website": "https://elwoods.ca/",
+				"contact_number": "(604) 731-2434",
+				"full_address": "3357 W Broadway, Vancouver, BC V6R 2B1",
+				"neighborhoods": "Kitsilano",
+				"hours": {
+					"Everyday": "15:00 - 16:00 | 16:00 - 17:00 | 17:00 - 18:00"
+				},
+				"drinks": {
+					"Rotating Craft Tap (All Day, Every Day)": "$5.50",
+					"Highballs (15:00 - 16:00)": "$3.75",
+					"Stanley Park Peach Wheat Ale Or Amber Ale (16:00 - 17:00)": "$4.00",
+					"Stanley Park Peach Wheat Ale Or Amber Ale (17:00 - 18:00)": "$4.25"
+				},
+				"food": {
+					"The Spot's Poutine": "$6.00",
+					"Onion Rings": "$6.00",
+					"Cheesy Bacon Perogies": "$6.00",
+					"The Spot's Zoo Sticks": "$8.00",
+					"Mushroom Gruyere Flatbread": "$8.00",
+					"Coconut Prawns": "$8.00",
+					"Southwest Chicken Quesadilla": "$10.00",
+					"Humbolt Squid": "$10.00",
+					"Nat's Crispy Dry Ribs": "$10.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.0997112, 49.2752787]
+			},
+			"properties": {
+				"id": "018",
+				"name": "Bodega On Main",
+				"address": "1014 Main St Vancouver",
+				"website": "https://www.bodegaonmain.ca/menu/#happyhour",
+				"contact_number": "(604) 565-8815",
+				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
+				"neighborhoods": "Strathcona",
+				"hours": {
+					"Monday": "15:30 - 18:00",
+					"Tuesday - Sunday": "15:30 - 18:00",
+					"Sunday - Thuersday": "22:00 - LATE"
+				},
+				"drinks": {
+					"Wine (red, white, rose)": "$7.00 | $10.00",
+					"Highballs": "$5.00",
+					"Bodega Lager (20oz)": "$6.00",
+					"Vermut": "$3.00 off"
+				},
+				"food": {
+					"Ensalada Mixta": "$10.00",
+					"Arroz Español": "$12.00",
+					"Montaditos de Lomo": "$9.00",
+					"Patatas Bravas": "$7.00",
+					"Jamon Serrano": "$12.00",
+					"Calamares Fritos": "$12.00",
+					"Pollo Frito": "$10.00",
+					"Albondigas": "$12.00",
+					"Churros": "$8.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1144244, 49.283842]
+			},
+			"properties": {
+				"id": "019",
+				"name": "The 515 bar",
+				"address": "521 Seymour Street, Vancouver",
+				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"contact_number": "(604) 428-8226",
+				"full_address": "521 Seymour Street, Vancouver BC, V6B 3H6",
+				"neighborhoods": "Downtown",
+				"hours": {
+					"Everyday": "16:00 - 18:00"
+				},
+				"drinks": {
+					"All house wine": "$7.00 6oz | $10.00 9oz",
+					"Stella Artois": "$8.00 20oz",
+					"Negroni": "$10.00 20z",
+					"Jefferson County": "$10.00"
+				},
+				"food": {
+					"Yuca Fries (GF)": "$9.00",
+					"Duo Of Dips": "$9.00",
+					"Crispy Cauliflower Bites (VG)": "$11.00",
+					"Crispy Pork Dry Ribs (GF)": "$13.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.12213376164436, 49.27561357311521]
+			},
+			"properties": {
+				"id": "020",
+				"name": "The Stock Room",
+				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"neighborhoods": "Downtown",
+				"hours": {
+					"Everyday": "16:00 - 18:00"
+				},
+				"drinks": {
+					"All house wine": "$7.00 6oz | $10.00 9oz",
+					"Stella Artois": "$8.00 20oz",
+					"Negroni": "$10.00 20z",
+					"Jefferson County": "$10.00"
+				},
+				"food": {
+					"Yuca Fries (GF)": "$9.00",
+					"Duo Of Dips": "$9.00",
+					"Crispy Cauliflower Bites (VG)": "$11.00",
+					"Crispy Pork Dry Ribs (GF)": "$13.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1193528, 49.2761722]
+			},
+			"properties": {
+				"id": "021",
+				"name": "Bartholomew Bar",
+				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"neighborhoods": "Downtown",
+				"hours": {
+					"Everyday": "16:00 - 18:00"
+				},
+				"drinks": {
+					"All house wine": "$7.00 6oz | $10.00 9oz",
+					"Stella Artois": "$8.00 20oz",
+					"Negroni": "$10.00 20z",
+					"Jefferson County": "$10.00"
+				},
+				"food": {
+					"Yuca Fries (GF)": "$9.00",
+					"Duo Of Dips": "$9.00",
+					"Crispy Cauliflower Bites (VG)": "$11.00",
+					"Crispy Pork Dry Ribs (GF)": "$13.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1219457, 49.279954]
+			},
+			"properties": {
+				"id": "022",
+				"name": "The Roxy",
+				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"neighborhoods": "Downtown",
+				"hours": {
+					"Everyday": "16:00 - 18:00"
+				},
+				"drinks": {
+					"All house wine": "$7.00 6oz | $10.00 9oz",
+					"Stella Artois": "$8.00 20oz",
+					"Negroni": "$10.00 20z",
+					"Jefferson County": "$10.00"
+				},
+				"food": {
+					"Yuca Fries (GF)": "$9.00",
+					"Duo Of Dips": "$9.00",
+					"Crispy Cauliflower Bites (VG)": "$11.00",
+					"Crispy Pork Dry Ribs (GF)": "$13.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.12316775322, 49.2827851242953]
+			},
+			"properties": {
+				"id": "023",
+				"name": "JOEY Burrard",
+				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"neighborhoods": "Downtown",
+				"hours": {
+					"Daily": "14:00 - 17:00 ",
+					"Sunday - Thuersday": "21:00 - CLOSE"
+				},
+				"drinks": {
+					"Red Truck Road Trip Lager": "$5.00",
+					"Single Supers Highballs - 1 oz": "$5.75",
+					"Signature Sangria": "$6.00",
+					"Okanagan Springs 1516": "$6.00",
+					"Red Truck Amber Ale": "$6.00",
+					"Cuvee Jean Paul (W)": "$6.50",
+					"Cuvee Jean Paul (R)": "$.50",
+					"Real Peach Bellini": "$6.50",
+					"Original Supers (2 oz)": "$8.75",
+					"The Mule": "$8.75",
+					"Stella Artois": "$8.00",
+					"Whatchamacallit (W) (5 oz)": "$8.75",
+					"El Petit Bonhomme Red Blend (5 oz)": "$8.75"
+				},
+				"food": {
+					"HH Yam Fries": "$5.50",
+					"Sushi Cone": "$5.50",
+					"Truffle Parmesan Fries": "$8.50",
+					"Sliders Royale Duo": "$11.25",
+					"Chili Chicken": "$11.25",
+					"Roasted Corn Guacamole": "$11.50",
+					"Gyoza": "$13.00",
+					"Hummus": "$13.25",
+					"Hand-Pressed Burger": "$16.2",
+					"Sliders Royale Trio": "$16.25",
+					"California Chicken Club": "$18.00",
+					"Szechuan Tofu Lettuce Wraps": "$19.75",
+					"Szechuan Chicken Lettuce Wraps": "$19.75",
+					"Bacon Cheddar Burger": "$19.75",
+					"Spaghetti Pomodoro": "$19.75",
+					"Szechuan Prawn Lettuce Wraps": "$22.50",
+					"Crispy Tofu Bowl": "$22.50",
+					"Tuna Poke Bowl": "$22.50",
+					"Steak Frites": "$25.75"
 				}
 			}
 		}

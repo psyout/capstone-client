@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SortByDropDown.scss';
 
-function SortByDropDown({ options, value, onChange, filterByValue, onFilterByChange }) {
-	const sortedOptions = [...options];
+function SortByDropDown({ options, value, onChange, onFilterByChange, filters, selectedFilterValue }) {
+	const filteredOptions = selectedFilterValue === '' ? options : options.filter((option) => option.category === selectedFilterValue);
+
+	const sortedOptions = [...filteredOptions];
 	sortedOptions[0] = {
 		...sortedOptions[0],
 	};
@@ -26,25 +28,15 @@ function SortByDropDown({ options, value, onChange, filterByValue, onFilterByCha
 				</select>
 			</div>
 			<div className='filter-dropdown'>
-				<label className='options-dropdown__label'>Filter By:</label>
 				<div>
-					<input type='radio' id='open' name='filterBy' value='open' checked={filterByValue === 'open'} onChange={onFilterByChange} />
-					<label className='options-dropdown__label--label' htmlFor='option1'>
-						Open
-					</label>
-				</div>
-				<div>
-					<input
-						type='radio'
-						id='closed'
-						name='filterBy'
-						value='closed'
-						checked={filterByValue === 'closed'}
-						onChange={onFilterByChange}
-					/>
-					<label className='options-dropdown__label--label' htmlFor='option2'>
-						Closed
-					</label>
+					<label className='options-dropdown__label'>Filter By:</label>
+					<select className='options-dropdown__select' value={selectedFilterValue} onChange={onFilterByChange}>
+						{filters.map((filter) => (
+							<option key={filter.value} value={filter.value}>
+								{filter.label}
+							</option>
+						))}
+					</select>
 				</div>
 			</div>
 		</div>
@@ -56,12 +48,19 @@ SortByDropDown.propTypes = {
 		PropTypes.shape({
 			value: PropTypes.string.isRequired,
 			label: PropTypes.string.isRequired,
+			category: PropTypes.string.isRequired,
 		})
 	).isRequired,
 	value: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
-	filterByValue: PropTypes.string.isRequired,
 	onFilterByChange: PropTypes.func.isRequired,
+	filters: PropTypes.arrayOf(
+		PropTypes.shape({
+			value: PropTypes.string.isRequired,
+			label: PropTypes.string.isRequired,
+		})
+	).isRequired,
+	selectedFilterValue: PropTypes.string.isRequired,
 };
 
 export default SortByDropDown;

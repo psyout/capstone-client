@@ -6,7 +6,27 @@ import { useState } from 'react';
 const options = [
 	{ value: 'name', label: 'Name' },
 	{ value: 'distance', label: 'Distance' },
-	{ value: 'price', label: 'Price' },
+];
+
+const filters = [
+	{ value: '', label: 'All Categories' },
+	{ value: 'Seafood', label: 'Seafood' },
+	{ value: 'Restaurants', label: 'Restaurants' },
+	{ value: 'Bars', label: 'Bars' },
+	{ value: 'Canadian', label: 'Canadian' },
+	{ value: 'Karaoke', label: 'Karaoke' },
+	{ value: 'Delis', label: 'Delis' },
+	{ value: 'Cideries', label: 'Cideries' },
+	{ value: 'Mexican', label: 'Mexican' },
+	{ value: 'Lounges', label: 'Lounges' },
+	{ value: 'Spanish', label: 'Spanish' },
+	{ value: 'Australian', label: 'Australian' },
+	{ value: 'Pub', label: 'Pub' },
+	{ value: 'Gastropub', label: 'Gastropub' },
+	{ value: 'Persian', label: 'Persian' },
+	{ value: 'Burger', label: 'Burger' },
+	{ value: 'Breakfast/Brunch', label: 'Breakfast/Brunch' },
+	{ value: 'Dive Bars', label: 'Dive Bars' },
 ];
 
 function formatHours(hours) {
@@ -32,8 +52,14 @@ function formatFood(food) {
 function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, businesses }) {
 	const [sortBy, setSortBy] = useState(options[0].value);
 
+	const [filterBy, setFilterBy] = useState(filters[0].value);
+
 	const handleSortByChange = (event) => {
 		setSortBy(event.target.value);
+	};
+
+	const handleFilterByChange = (event) => {
+		setFilterBy(event.target.value);
 	};
 
 	// search function
@@ -58,7 +84,11 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		return 0;
 	});
 
-	const cards = sortedFeatures.map((feature) => {
+	const filteredFeaturesByCategory = filterBy
+		? sortedFeatures.filter((feature) => feature.properties.category === filterBy)
+		: sortedFeatures;
+
+	const cards = filteredFeaturesByCategory.map((feature) => {
 		const { id, name, website } = feature.properties;
 		const hours = formatHours(feature.properties.hours);
 		const drinks = formatDrinks(feature.properties.drinks);
@@ -101,7 +131,14 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 
 	return (
 		<div className='aside'>
-			<SortByDropDown options={options} value={sortBy} onChange={handleSortByChange} />
+			<SortByDropDown
+				options={options}
+				value={sortBy}
+				onChange={handleSortByChange}
+				filterByValue={filterBy}
+				onFilterByChange={handleFilterByChange}
+				filters={filters}
+			/>
 			<ul className='aside__list'>{cards}</ul>
 		</div>
 	);

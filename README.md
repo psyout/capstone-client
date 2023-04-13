@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Wülen | Happy Hour Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project displays business markers on a map using Mapbox and allows users to search, and filter them by category.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+## 1.1 Description
+
+Develop an interactive app that allow users to search or filter happy hour special, click on markers to see more details about the place and leave reviews or ratings (Maybe login without auth). Mobile first design accessible from a smartphone, tablet or desktop computer.
+
+## 1.2 Problem
+
+Happy hours a great way to save money on drinks or food at restaurants and bars. Maybe the user is new in the area or isn't familiar with the local neighborhood. This is when user can easily find the nearest places that offer happy hour deals. Only a few online blogs provide some information, and usually hasn’t been updated. Also, there are no workings apps in the city of Vancouver, only one web page that does the job but is not friendly enough to provide just the necessary information, therefore this is a great opportunity for those who haven’t found what they are been looking for.
+
+## 1.3 User Profile
+
+The final user would likely be people who are interested in finding the best happy hour deals in their area. Could be anyone who enjoys going out for drinks or food with friends or coworkers, but wants to save money.
+
+## 1.4 Requirements: Use Cases and Features
+
+• User location-based search for happy hour deals.
+• Filter search by distance, price range, food/drink type (ideally). • Detailed information, including operation hours and ratings.
+• Map markers for business offering happy hour deals.
+
+## 1.5 Tech Stack and APIs
+
+• React.js for front-end development.
+• Mapbox API for interactive mapping and geolocation (ideally)..
+• Material-UI for pre-built design components and styles.
+• React Router for client-side routing and navigation.
+• Axios for making API requests.
+• API keys or token may need it to managed and secured properly.
+
+## Installation
+
+Clone the repository and run npm install to install the dependencies.
+
+### `npm install`
+
+Create a .env file at the root directory of the project with your Mapbox access token, as follows:
+
+REACT_APP_MAPBOX_ACCESS_TOKEN=your_access_token_here
+
+## Usage
+
+Run npm start to start the application, and it will be available at http://localhost:3000.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+axios: ^0.24.0
+mapbox-gl: ^2.4.1
+mapbox-gl-controls: ^4.2.0
+react: ^17.0.2
+react-dom: ^17.0.2
+react-scripts: 4.0.3
+emotion/react": "^11.10.6",
+emotion/styled": "^11.10.6",
+material-ui/core": "^4.12.4",
+material-ui/icons": "^4.11.3",
+mui/icons-material": "^5.11.11",
+mui/material": "^5.11.16",
+mui/styled-engine-sc": "^5.11.11",
+react-md/icon": "^5.1.3",
+dotenv": "^16.0.3",
+sass": "^1.60.0
 
-### `npm test`
+## API Reference
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use of Yelp API to fetch data such as image, address, contact number and rating that it's displayed on each card.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is a React application that fetches data from a server and displays it on a map. It uses various libraries such as axios for making API requests, mapbox-gl for rendering the map, and mapbox-gl-controls for adding zoom and geolocation controls.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Home component is the main component of the application. It sets up the map and its controls, fetches data from the server, and renders the Header, Main, and Aside components. It also has state variables to keep track of the selected business, search term, and list of businesses fetched from the server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Header component contains a search bar where the user can input a search term. The Main component displays the map, and the Aside component displays a list of businesses fetched from the server that match the search term. The map markers are clickable, and when clicked, the corresponding business is highlighted in the list of businesses in the Aside component where you can get information about either thier drink menu or food menu.
 
-### `npm run eject`
+## Next Step
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The next step will involve implementing additional features or improving existing ones. This could include adding more search options or filters, integrating with external APIs to provide additional data, improving the user interface, adding authentication or user management functionality, or optimizing the performance of the app. And keeo=p feeding my data with more businesses.

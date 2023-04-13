@@ -45,7 +45,7 @@ function Header({ handleSearchInput }) {
 				<div className='header-container__search'>
 					<input
 						type='text'
-						placeholder='Type bar name or keyword...'
+						placeholder='Type business name...'
 						className='header-container__search-input'
 						onChange={handleSearchInput}
 					/>

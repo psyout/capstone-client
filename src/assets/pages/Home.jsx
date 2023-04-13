@@ -56,7 +56,7 @@ function Home() {
 			container: mapContainer.current,
 			style: 'mapbox://styles/mapbox/light-v10',
 			// change this coordinates to center map according with current location
-			center: [-123.151, 49.269],
+			center: [-123.114578, 49.285074],
 			zoom: 15,
 		});
 
@@ -96,15 +96,6 @@ function Home() {
 			marker.addTo(mapRef.current);
 		});
 
-		// 		Promise.all(requests)
-		//   .then((responses) => {
-		//     const businesses = responses.map((response) => response.data.businesses).flat();
-		//     setBusinesses(businesses);
-		//     console.log('businesses: ', businesses);
-		//   })
-		//   .catch((error) => {
-		//     console.log(error);
-		//   });
 		// fetch restaurants data from the server
 		let endpoints = [
 			`${apiUrl}/api/seafood`,
@@ -115,29 +106,49 @@ function Home() {
 			`${apiUrl}/api/delis`,
 			`${apiUrl}/api/cideries`,
 			`${apiUrl}/api/mexican`,
-			// `${apiUrl}/api/lounges`,
+			`${apiUrl}/api/lounges`,
 			`${apiUrl}/api/spanish`,
 			`${apiUrl}/api/australian`,
 			`${apiUrl}/api/pubs`,
 			`${apiUrl}/api/dive-bars`,
-			// `${apiUrl}/api/gastropubs`,
-			// `${apiUrl}/api/persian`,
-			// `${apiUrl}/api/breakfast-brunch`,
+			`${apiUrl}/api/gastropubs`,
+			`${apiUrl}/api/persian`,
+			`${apiUrl}/api/breakfast-brunch`,
 			`${apiUrl}/api/burgers`,
 		];
 
-		axios
-			.all(endpoints.map((endpoint) => axios.get(endpoint)))
-			.then(
-				axios.spread((...responses) => {
-					const businesses = responses.map((response) => response.data.businesses).flat();
-					setBusinesses(businesses);
-					console.log('businessess: ', businesses);
-				})
-			)
-			.catch((error) => {
-				console.log(error);
-			});
+		endpoints.forEach((endpoint, i) => {
+			setTimeout(() => {
+				axios.get(endpoint).then((response) => {
+					console.log(response);
+					setBusinesses((prevBusinesses) => {
+						console.log(prevBusinesses);
+						return [...prevBusinesses, response.data.businesses].flat();
+					});
+				});
+			}, 200 * i);
+		});
+
+		// axios
+		// 	.all(
+		// 		endpoints.map((endpoint, i) => {
+		// 			return axios.get(endpoint);
+		// 		})
+		// 	)
+		// 	.then(
+		// 		axios.spread((...responses) => {
+		// 			const businesses = responses.map((response) => response.data.businesses).flat();
+		// 			setBusinesses(businesses);
+		// 			// console.log('businessess: ', businesses);
+		// 		}),
+		// 		(error) => {
+		// 			console.log('error', error);
+		// 		}
+		// 	)
+		// 	.catch((error) => {
+		// 		// console.log(error);
+		// 		// console.log(error.response.data);
+		// 	});
 	}, [accessToken, setSelectedBusiness]);
 
 	return (

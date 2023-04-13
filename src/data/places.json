@@ -16,7 +16,7 @@
 				"full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
 				"neighborhoods": "Kitsilano",
 				"price": "2",
-				"categories": {
+				"category": {
 					"title": "Seafood"
 				},
 
@@ -31,10 +31,10 @@
 					"Tanquenry 2oz": "$9.00",
 					"Strange Fellows Talisman Pale Ale": "$7.00",
 					"Parallel 49 Trash Panda Hazy Ipa": "$7.00",
-					"Parkside Graffiti Ipa": "$7.00",
-					"Red Truck Rotating Tap": "$7.00",
-					"Boardwalk Brewing Seasonal Sour": "$7.00",
-					"Lone Tree Dry Cider": "$7.00",
+					"Parkside Graffiti Ipa": "$8.00",
+					"Red Truck Rotating Tap": "$8.00",
+					"Boardwalk Brewing Seasonal Sour": "$8.00",
+					"Lone Tree Dry Cider": "$8.00",
 					"Mt. Boucherie Marlot": "$8.00",
 					"Road 13 Honest Johns": "$8.00",
 					"Dirty Laundry Sparkling White": "$8.00"
@@ -66,6 +66,9 @@
 				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
+				},
+				"category": {
+					"title": "Mexican"
 				},
 
 				"drinks": {
@@ -102,6 +105,9 @@
 					"Sunday to Thursday": "21:00 - CLOSE",
 					"Friday to Saturday": "22:00 - CLOSE"
 				},
+				"category": {
+					"title": "Burger"
+				},
 				"drinks": {
 					"Local House Lager or Ale 0.35l": "$4.00",
 					"Always-on Taps 0.35l": "$5.00",
@@ -137,6 +143,9 @@
 					"Friday": "17:00 - 19:00",
 					"Saturday - Sunday": "16:00 - 18:00"
 				},
+				"category": {
+					"title": "Cocktail Bar"
+				},
 				"drinks": {
 					"Tanqueray 1oz": "$5.00"
 				},
@@ -161,6 +170,9 @@
 				"neighborhoods": "Kitsilano",
 				"hours": {
 					"Everyday": "15:00 - 18:00"
+				},
+				"category": {
+					"title": "Bar"
 				},
 				"drinks": {
 					"Shots including highballs": "$5.00/9.00",
@@ -202,6 +214,9 @@
 				"hours": {
 					"Monday - Friday": "15:00 - 18:00"
 				},
+				"category": {
+					"title": "Deli"
+				},
 				"drinks": {
 					"Main Street Lager - 16 oz": "$5.00",
 					"Narrative Merlot Cab Franc - 6oz glass (Okanagan Falls)": "$9.00",
@@ -234,6 +249,9 @@
 				"website": "https://ciderhouserules.ca/happy-hour/",
 				"full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Cideries"
+				},
 				"hours": {
 					"Monday - Friday": "16:00 - 17:00"
 				},
@@ -273,6 +291,9 @@
 				"website": "https://www.luckytaco.ca/menu/happy-hour",
 				"full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Mexican"
+				},
 				"hours": {
 					"Monday - Thursday": "17:00 - 19:00",
 					"Friday - Sunday": "16:00 - 18:00"
@@ -303,6 +324,9 @@
 				"website": "https://www.fablekitchen.ca/#menu",
 				"full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Canadian"
+				},
 				"hours": {
 					"Everyday": "21:00 - CLOSE"
 				},
@@ -328,6 +352,9 @@
 				"contact_number": "(604) 620-8729",
 				"full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Mexican"
+				},
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -362,6 +389,9 @@
 				"contact_number": "(604) 684-9977",
 				"full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
 				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Longe"
+				},
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -395,6 +425,9 @@
 				"contact_number": "(604)683 3300",
 				"full_address": "830 W Pender St, Vancouver, BC V6C 1J8",
 				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Australian"
+				},
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -428,6 +461,9 @@
 				"contact_number": "(604) 688 9158",
 				"full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
 				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Dive Bars"
+				},
 				"hours": {
 					"Daily": "15:00 - 18:00"
 				},
@@ -461,6 +497,9 @@
 				"contact_number": "(604) 730-4325",
 				"full_address": "2272 W 4th Ave, Vancouver, BC V6K 1N8",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Persian"
+				},
 				"hours": {
 					"Daily": "15:00 - 17:00"
 				},
@@ -495,6 +534,9 @@
 				"contact_number": "(604) 733-3323",
 				"full_address": "1955 Cornwall Ave, Vancouver, BC V6J 1C9",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Karaoke"
+				},
 				"hours": {
 					"Daily": "15:00 - 17:00"
 				},
@@ -530,6 +572,9 @@
 				"rating": "rating",
 				"full_address": "2518 West Broadway, Vancouver, BC V6K 2G1",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Canadian"
+				},
 				"hours": {
 					"Sunday to Thursday": "14:00 - 17:00 | 20:00 - 22:00",
 					"Friday to Saturday": "14:00 - 17:00 | 20:00 - 23:00"
@@ -571,6 +616,9 @@
 				"contact_number": "(604) 731-2434",
 				"full_address": "3357 W Broadway, Vancouver, BC V6R 2B1",
 				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Bar"
+				},
 				"hours": {
 					"Everyday": "15:00 - 16:00 | 16:00 - 17:00 | 17:00 - 18:00"
 				},
@@ -607,6 +655,9 @@
 				"contact_number": "(604) 565-8815",
 				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
 				"neighborhoods": "Strathcona",
+				"category": {
+					"title": "Spanish"
+				},
 				"hours": {
 					"Monday": "15:30 - 18:00",
 					"Tuesday - Sunday": "15:30 - 18:00",
@@ -645,6 +696,9 @@
 				"contact_number": "(604) 428-8226",
 				"full_address": "521 Seymour Street, Vancouver BC, V6B 3H6",
 				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Gastropub"
+				},
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -671,8 +725,11 @@
 			"properties": {
 				"id": "020",
 				"name": "The Stock Room",
-				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"website": "https://www.freehouse.co/locations/stock-room",
 				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Longes"
+				},
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -699,7 +756,10 @@
 			"properties": {
 				"id": "021",
 				"name": "Bartholomew Bar",
-				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"category": {
+					"title": "Bars"
+				},
+				"website": "https://www.bartholomewbar.com/happy-hour",
 				"neighborhoods": "Downtown",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
@@ -727,7 +787,10 @@
 			"properties": {
 				"id": "022",
 				"name": "The Roxy",
-				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"website": "https://www.roxyburger.com/menu/",
+				"category": {
+					"title": "Bars"
+				},
 				"neighborhoods": "Downtown",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
@@ -755,7 +818,10 @@
 			"properties": {
 				"id": "023",
 				"name": "JOEY Burrard",
-				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
+				"website": "https://joeyrestaurants.com/location/joey-burrard/menu#food",
+				"category": {
+					"title": "Longes"
+				},
 				"neighborhoods": "Downtown",
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
@@ -796,6 +862,140 @@
 					"Crispy Tofu Bowl": "$22.50",
 					"Tuna Poke Bowl": "$22.50",
 					"Steak Frites": "$25.75"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1131003, 49.2796102]
+			},
+			"properties": {
+				"id": "024",
+				"name": "The Ventura Room",
+				"category": {
+					"title": "Longes"
+				},
+				"website": "https://static1.squarespace.com/static/5ca3daed9d41495c5d099b93/t/6425e69a043bba5fd25a652c/1680205476268/VENTURA+CORE+-+March+30+23+no+mb.pdf",
+				"neighborhoods": "Downtown",
+				"hours": {
+					"All Items": "OPEN - 18:00 ",
+					"Food Only": "21:00 - CLOSE"
+				},
+				"drinks": {
+					"Cheekies": "$7.00",
+					"Cheeky Boiler Makers": "$12.25",
+					"Local's Only": "$13.75",
+					"San Fransisco Bae": "$13.75",
+					"Cucumber Mint G&t": "$12.50",
+					"Bittersweet Symphony": "$16.00",
+					"Grapefruit & Thyme Spritz": "$13.75",
+					"Ventura Lager": "$5.75",
+					"Happy Hour Wines": "$2 Off",
+					"Vodka Soda": "$5.50",
+					"White Claw": "$8.00"
+				},
+				"food": {
+					"Roasted Almonds (Smoked Paprika)": "$6.00",
+					"Olives Castelvetrano Olives": "$6.00",
+					"Dill Pickle Spiced Chips Sour Cream Dip": "$8.00",
+					"Spicy Tuna Crispy Rice Serrano Chili, Miso Aioli": "$9.00",
+					"Bkh Jerky Locally Made & Organic, Beef Or Spicy Pork": "$10.00",
+					"Social Sliders": "$11.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.12045, 49.27946]
+			},
+			"properties": {
+				"id": "025",
+				"name": "Uva Wine & Cocktail Bar",
+				"website": "https://vancouver.foodgressing.com/uva-wine-cocktail-bar-breakfast-happy-hour/",
+				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Restaurant"
+				},
+				"hours": {
+					"Daily": "14:00 - 17:00 ",
+					"Sunday - Thuersday": "21:00 - CLOSE"
+				},
+				"drinks": {
+					"Nude Can": "$5.00",
+					"House White/red/rosé Wine 5oz": "$5.00",
+					"Highball 1oz": "$5.00",
+					"Zonin Prosecco Bottle 6oz": "$5.00",
+					"Bottle Sol": "$5.50",
+					"Moretti": "$7.00",
+					"Peroni": "$7.00"
+				},
+				"food": {
+					"Personal Size Pizzas (Hot Italian, Americano, Funghi)": "$7.00",
+					"Meat Balls": "$9.00",
+					"Fries": "$4.00",
+					"Wings": "$11.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.100852, 49.2793704]
+			},
+			"properties": {
+				"id": "026",
+				"name": "The Chickadee Room",
+				"website": "https://thechickadeeroom.com/",
+				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Longes"
+				},
+				"hours": {
+					"Daily": "14:00 - 17:00 ",
+					"Sunday - Thuersday": "21:00 - CLOSE"
+				},
+				"drinks": {
+					"Americano Cocktail (2oz)": "$9.00",
+					"Sherry & Tonic (2oz)": "$9.00",
+					"Moscow Mule (2oz)": "$10.00",
+					"Daiquiri (2oz)": "$10.00,"
+				},
+				"food": {
+					"No Food available": "null"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.10398, 49.28369]
+			},
+			"properties": {
+				"id": "027",
+				"name": "Guilt & Company",
+				"website": "https://www.guiltandcompany.com/menu.html",
+				"neighborhoods": "Downtown",
+				"category": {
+					"title": "Bars"
+				},
+				"hours": {
+					"Daily": "14:00 - 17:00 ",
+					"Sunday - Thuersday": "21:00 - CLOSE"
+				},
+				"drinks": {
+					"Americano Cocktail (2oz)": "$9.00",
+					"Sherry & Tonic (2oz)": "$9.00",
+					"Moscow Mule (2oz)": "$10.00",
+					"Daiquiri (2oz)": "$10.00,"
+				},
+				"food": {
+					"No Food available": "null"
 				}
 			}
 		}

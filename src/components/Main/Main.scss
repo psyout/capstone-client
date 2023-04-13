@@ -8,7 +8,7 @@
 	grid-area: main;
 
 	@include tablet {
-		height: calc(100vh - 70px);
+		height: calc(100vh - 75px);
 	}
 }
 

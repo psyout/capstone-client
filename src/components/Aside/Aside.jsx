@@ -85,7 +85,10 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	});
 
 	const filteredFeaturesByCategory = filterBy
-		? sortedFeatures.filter((feature) => feature.properties.category === filterBy)
+		? sortedFeatures.filter((feature) => {
+				console.log('feature: ', feature);
+				return feature.properties.category.title === filterBy;
+		  })
 		: sortedFeatures;
 
 	const cards = filteredFeaturesByCategory.map((feature) => {

@@ -10,7 +10,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
 import geoJson from '../../data/places.json';
 
-export const apiUrl = 'http://localhost:3006';
+export const apiUrl = 'http://localhost:3002';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);
@@ -120,9 +120,9 @@ function Home() {
 		endpoints.forEach((endpoint, i) => {
 			setTimeout(() => {
 				axios.get(endpoint).then((response) => {
-					console.log(response);
+					// console.log(response);
 					setBusinesses((prevBusinesses) => {
-						console.log(prevBusinesses);
+						// console.log(prevBusinesses);
 						return [...prevBusinesses, response.data.businesses].flat();
 					});
 				});

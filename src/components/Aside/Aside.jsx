@@ -5,13 +5,12 @@ import { useState } from 'react';
 
 const options = [
 	{ value: 'name', label: 'Name' },
-	{ value: 'distance', label: 'Distance' },
+	{ value: 'distance', label: 'Time' },
 ];
 
 const filters = [
 	{ value: '', label: 'All Categories' },
 	{ value: 'Seafood', label: 'Seafood' },
-	{ value: 'Restaurants', label: 'Restaurants' },
 	{ value: 'Bars', label: 'Bars' },
 	{ value: 'Canadian', label: 'Canadian' },
 	{ value: 'Karaoke', label: 'Karaoke' },
@@ -85,7 +84,10 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	});
 
 	const filteredFeaturesByCategory = filterBy
-		? sortedFeatures.filter((feature) => feature.properties.category === filterBy)
+		? sortedFeatures.filter((feature) => {
+				console.log('feature: ', feature);
+				return feature.properties.category.title === filterBy;
+		  })
 		: sortedFeatures;
 
 	const cards = filteredFeaturesByCategory.map((feature) => {

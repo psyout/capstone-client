@@ -10,7 +10,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
 import geoJson from '../../data/places.json';
 
-export const apiUrl = 'http://localhost:3002';
+export const apiUrl = 'https://wulen-server.herokuapp.com' || 'http://localhost:3002';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);

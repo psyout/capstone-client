@@ -128,27 +128,6 @@ function Home() {
 				});
 			}, 200 * i);
 		});
-
-		// axios
-		// 	.all(
-		// 		endpoints.map((endpoint, i) => {
-		// 			return axios.get(endpoint);
-		// 		})
-		// 	)
-		// 	.then(
-		// 		axios.spread((...responses) => {
-		// 			const businesses = responses.map((response) => response.data.businesses).flat();
-		// 			setBusinesses(businesses);
-		// 			// console.log('businessess: ', businesses);
-		// 		}),
-		// 		(error) => {
-		// 			console.log('error', error);
-		// 		}
-		// 	)
-		// 	.catch((error) => {
-		// 		// console.log(error);
-		// 		// console.log(error.response.data);
-		// 	});
 	}, [accessToken, setSelectedBusiness]);
 
 	return (

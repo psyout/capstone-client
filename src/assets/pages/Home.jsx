@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header';
 import Main from '../../components/Main/Main';
 import Aside from '../../components/Aside/Aside';
 import axios from 'axios';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 import { useEffect, useRef, useState } from 'react';
 import { ZoomControl } from 'mapbox-gl-controls';
 import { GeolocateControl } from 'mapbox-gl';

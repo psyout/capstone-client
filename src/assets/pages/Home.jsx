@@ -25,7 +25,7 @@ function Home() {
 	};
 
 	const mapContainer = useRef(null);
-	const accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+	const accessToken = 'pk.eyJ1IjoicHN5b3V0IiwiYSI6ImNsZzBheDJocDAwaDAzZnJxb3BveDJydmwifQ.e17QPg8enmHSIqe_yZuS6A';
 
 	const mapRef = useRef({});
 

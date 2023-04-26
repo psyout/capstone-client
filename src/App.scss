@@ -60,8 +60,8 @@ a:visited {
 	min-height: 100vh;
 	grid-template-areas:
 		'header'
-		'aside'
-		'main';
+		'main'
+		'aside';
 
 	@include tablet {
 		grid-auto-flow: row;

@@ -3,7 +3,7 @@
 @use '../../styles/partials/fonts' as *;
 
 .header-container {
-	height: 120px;
+	height: 110px;
 	// background: linear-gradient(0.25turn, #e1eedc, #e1eedc);
 	background-color: $color-header;
 	grid-area: header;
@@ -23,7 +23,7 @@
 	&__logo {
 		display: flex;
 		align-items: center;
-		margin-top: 0.5rem;
+		margin-top: 0.8rem;
 		gap: 0.5rem;
 
 		@include tablet {
@@ -33,16 +33,16 @@
 		}
 
 		&--img {
-			width: 43px;
+			width: 40px;
 			filter: $color-filter;
 
 			@include tablet {
-				width: 50px;
+				width: 45px;
 			}
 		}
 
 		&--title {
-			font-size: 1.1rem;
+			font-size: 0.95rem;
 			width: 100%;
 			// letter-spacing: 0.05rem;
 			color: $color-logo;
@@ -55,6 +55,7 @@
 			@include tablet {
 				text-align: left;
 				margin-left: 0.5rem;
+				font-size: 1.1rem;
 			}
 		}
 	}
@@ -63,7 +64,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		width: 90%;
+		width: 93%;
 		margin-top: 0.5rem;
 
 		@include tablet {
@@ -76,10 +77,14 @@
 	&__search {
 		display: flex;
 		align-items: center;
-		height: 40px;
+		height: 33px;
 		border-radius: 20px;
 		background-color: #fff;
 		flex: 1;
+
+		@include tablet {
+			height: 40px;
+		}
 	}
 
 	&__search-input {
@@ -122,11 +127,16 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 40px;
-		width: 40px;
+		height: 35px;
+		width: 35px;
 		border-radius: 50%;
 		background-color: #fff;
 		margin-left: 20px;
 		cursor: pointer;
+
+		@include tablet {
+			height: 40px;
+			width: 40px;
+		}
 	}
 }

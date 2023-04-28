@@ -27,25 +27,25 @@
 				},
 
 				"drinks": {
-					"Tanqueray 1oz": "$5.00",
-					"Tanquenry 2oz": "$9.00",
-					"Strange Fellows Talisman Pale Ale": "$7.00",
-					"Parallel 49 Trash Panda Hazy Ipa": "$7.00",
+					"Tanqueray 1oz": "$7.00",
+					"Tanquenry 2oz": "$10.00",
+					"Strange Fellows Talisman Pale Ale": "$8.00",
+					"Parallel 49 Trash Panda Hazy Ipa": "$8.00",
 					"Parkside Graffiti Ipa": "$8.00",
 					"Red Truck Rotating Tap": "$8.00",
 					"Boardwalk Brewing Seasonal Sour": "$8.00",
 					"Lone Tree Dry Cider": "$8.00",
-					"Mt. Boucherie Marlot": "$8.00",
-					"Road 13 Honest Johns": "$8.00",
-					"Dirty Laundry Sparkling White": "$8.00"
+					"Mt. Boucherie Marlot": "$9.00",
+					"Road 13 Honest Johns": "$9.00",
+					"Dirty Laundry Sparkling White": "$9.00"
 				},
 				"food": {
-					"Beach Oyster": "$1.75",
-					"Premium Oyster": "$2.50",
-					"Spicy Fried Broccoli": "$11.00",
-					"Andouille Poutine": "$14.00",
-					"Crispy Calamari": "$15.00",
-					"Chewies Hotwings": "$15.00"
+					"Beach Oyster": "$2.00",
+					"Premium Oyster": "$3.00",
+					"Spicy Fried Broccoli": "$12.00",
+					"Andouille Poutine": "$15.00",
+					"Crispy Calamari": "$16.00",
+					"Chewies Hotwings": "$16.00"
 				}
 			}
 		},
@@ -348,7 +348,7 @@
 				"id": "010",
 				"name": "Tacofino",
 				"address": "1909 W 4th Ave, Vancouver",
-				"website": "https://www.chewies.ca/kitsmenu",
+				"website": "https://www.tacofino.com/location/kits",
 				"contact_number": "(604) 620-8729",
 				"full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
 				"neighborhoods": "Kitsilano",

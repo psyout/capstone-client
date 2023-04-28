@@ -12,7 +12,7 @@
 				"name": "Chewies Steam & Oyster Bar - Kits",
 				"address": "2201 W 1st Ave, Vancouver",
 				"contact_number": "(604) 558-4448",
-				"website": "https://www.chewies.ca/kitsmenu",
+				"website": "https://www.chewies.ca/happy",
 				"full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
 				"neighborhoods": "Kitsilano",
 				"price": "2",
@@ -106,7 +106,7 @@
 					"Friday to Saturday": "22:00 - CLOSE"
 				},
 				"category": {
-					"title": "Burger"
+					"title": "Canadian"
 				},
 				"drinks": {
 					"Local House Lager or Ale 0.35l": "$4.00",
@@ -144,7 +144,7 @@
 					"Saturday - Sunday": "16:00 - 18:00"
 				},
 				"category": {
-					"title": "Cocktail Bar"
+					"title": "Cocktail"
 				},
 				"drinks": {
 					"Tanqueray 1oz": "$5.00"
@@ -158,11 +158,11 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.154838, 49.2713176]
+				"coordinates": [-123.154860184811, 49.2713620292637]
 			},
 			"properties": {
 				"id": "005",
-				"name": "King's Head Public House",
+				"name": "King’s Head Public House",
 				"address": "1618 Yew St, Vancouver",
 				"contact_number": "(604) 738-6966",
 				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
@@ -172,7 +172,7 @@
 					"Everyday": "15:00 - 18:00"
 				},
 				"category": {
-					"title": "Bar"
+					"title": "Pub"
 				},
 				"drinks": {
 					"Shots including highballs": "$5.00/9.00",
@@ -390,7 +390,7 @@
 				"full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
 				"neighborhoods": "Downtown",
 				"category": {
-					"title": "Longe"
+					"title": "Lounges"
 				},
 				"hours": {
 					"Daily": "15:00 - 18:00"
@@ -462,7 +462,7 @@
 				"full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
 				"neighborhoods": "Downtown",
 				"category": {
-					"title": "Dive Bars"
+					"title": "Bars"
 				},
 				"hours": {
 					"Daily": "15:00 - 18:00"
@@ -530,7 +530,7 @@
 				"id": "015",
 				"name": "Charqui",
 				"address": "1955 Cornwall Ave, Vancouver",
-				"website": "https://delararestaurant.ca/menu",
+				"website": "https://charqui.ca",
 				"contact_number": "(604) 733-3323",
 				"full_address": "1955 Cornwall Ave, Vancouver, BC V6J 1C9",
 				"neighborhoods": "Kitsilano",
@@ -567,7 +567,7 @@
 				"id": "016",
 				"name": "WhiteSpot Kitsilano",
 				"address": "2518 W Broadway, Vancouver",
-				"website": "https://delararestaurant.ca/menu",
+				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
 				"contact_number": "(604) 731-2434",
 				"rating": "rating",
 				"full_address": "2518 West Broadway, Vancouver, BC V6K 2G1",
@@ -617,7 +617,7 @@
 				"full_address": "3357 W Broadway, Vancouver, BC V6R 2B1",
 				"neighborhoods": "Kitsilano",
 				"category": {
-					"title": "Bar"
+					"title": "Bars"
 				},
 				"hours": {
 					"Everyday": "15:00 - 16:00 | 16:00 - 17:00 | 17:00 - 18:00"
@@ -728,7 +728,7 @@
 				"website": "https://www.freehouse.co/locations/stock-room",
 				"neighborhoods": "Downtown",
 				"category": {
-					"title": "Longes"
+					"title": "Lounges"
 				},
 				"hours": {
 					"Everyday": "16:00 - 18:00"
@@ -789,7 +789,7 @@
 				"name": "The Roxy",
 				"website": "https://www.roxyburger.com/menu/",
 				"category": {
-					"title": "Bars"
+					"title": "Canadian"
 				},
 				"neighborhoods": "Downtown",
 				"hours": {
@@ -820,7 +820,7 @@
 				"name": "JOEY Burrard",
 				"website": "https://joeyrestaurants.com/location/joey-burrard/menu#food",
 				"category": {
-					"title": "Longes"
+					"title": "Lounges"
 				},
 				"neighborhoods": "Downtown",
 				"hours": {
@@ -875,7 +875,7 @@
 				"id": "024",
 				"name": "The Ventura Room",
 				"category": {
-					"title": "Longes"
+					"title": "Lounges"
 				},
 				"website": "https://static1.squarespace.com/static/5ca3daed9d41495c5d099b93/t/6425e69a043bba5fd25a652c/1680205476268/VENTURA+CORE+-+March+30+23+no+mb.pdf",
 				"neighborhoods": "Downtown",
@@ -953,7 +953,7 @@
 				"website": "https://thechickadeeroom.com/",
 				"neighborhoods": "Downtown",
 				"category": {
-					"title": "Longes"
+					"title": "Lounges"
 				},
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
@@ -966,7 +966,7 @@
 					"Daiquiri (2oz)": "$10.00,"
 				},
 				"food": {
-					"No Food available": "null"
+					"No Food available": "Sorry"
 				}
 			}
 		},
@@ -982,7 +982,7 @@
 				"website": "https://www.guiltandcompany.com/menu.html",
 				"neighborhoods": "Downtown",
 				"category": {
-					"title": "Bars"
+					"title": "Cocktail"
 				},
 				"hours": {
 					"Daily": "14:00 - 17:00 ",

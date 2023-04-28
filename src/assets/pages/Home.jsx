@@ -10,7 +10,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
 import geoJson from '../../data/places.json';
 
-export const apiUrl = 'https://wulen-server.herokuapp.com' || 'http://localhost:3002';
+export const apiUrl = 'https://wulen-server.herokuapp.com' || 'http://localhost:3008';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);
@@ -55,15 +55,16 @@ function Home() {
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainer.current,
 			style: 'mapbox://styles/mapbox/light-v10',
-			// change this coordinates to center map according with current location
-			center: [-123.114578, 49.285074],
-			zoom: 15,
+			center: [-123.114578, 49.285074], // default location
+			zoom: 16,
 		});
 
 		// get my current location
 		const getLocation = () => {
-			navigator.geolocation.getCurrentPosition((response) => {
-				console.log(response);
+			navigator.geolocation.getCurrentPosition((position) => {
+				const { latitude, longitude } = position.coords;
+				console.log(latitude, longitude);
+				mapRef.current.setCenter([longitude, latitude]);
 			});
 		};
 		getLocation();

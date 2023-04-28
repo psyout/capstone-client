@@ -4,8 +4,9 @@ import SortByDropDown from '../SortByDropDown/SortByDropDown';
 import { useState } from 'react';
 
 const options = [
+	{ value: '', label: 'All Results' },
 	{ value: 'name', label: 'Name' },
-	{ value: 'distance', label: 'Time' },
+	{ value: 'hours', label: 'Time' },
 ];
 
 const filters = [
@@ -14,8 +15,10 @@ const filters = [
 	{ value: 'Bars', label: 'Bars' },
 	{ value: 'Canadian', label: 'Canadian' },
 	{ value: 'Karaoke', label: 'Karaoke' },
-	{ value: 'Delis', label: 'Delis' },
+	{ value: 'Deli', label: 'Deli' },
 	{ value: 'Cideries', label: 'Cideries' },
+	{ value: 'Restaurant', label: 'Restaurant' },
+	{ value: 'Cocktail', label: 'Cocktail' },
 	{ value: 'Mexican', label: 'Mexican' },
 	{ value: 'Lounges', label: 'Lounges' },
 	{ value: 'Spanish', label: 'Spanish' },
@@ -23,8 +26,6 @@ const filters = [
 	{ value: 'Pub', label: 'Pub' },
 	{ value: 'Gastropub', label: 'Gastropub' },
 	{ value: 'Persian', label: 'Persian' },
-	{ value: 'Burger', label: 'Burger' },
-	{ value: 'Breakfast/Brunch', label: 'Breakfast/Brunch' },
 	{ value: 'Dive Bars', label: 'Dive Bars' },
 ];
 
@@ -76,9 +77,24 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	});
 
 	//sorting by
+	// const sortedFeatures = [...filteredFeatures].sort((a, b) => {
+	// 	if (sortBy === 'name') {
+	// 		return a.properties.name.localeCompare(b.properties.name);
+	// 	}
+	// 	return 0;
+	// });
+
 	const sortedFeatures = [...filteredFeatures].sort((a, b) => {
 		if (sortBy === 'name') {
 			return a.properties.name.localeCompare(b.properties.name);
+		} else if (sortBy === 'hours') {
+			const aHours = a.properties.hours;
+			const bHours = b.properties.hours;
+			const aHoursArray = Object.entries(aHours);
+			const bHoursArray = Object.entries(bHours);
+			const aHoursString = aHoursArray.reduce((acc, [day, hours]) => `${acc}${day}:${hours},`, '');
+			const bHoursString = bHoursArray.reduce((acc, [day, hours]) => `${acc}${day}:${hours},`, '');
+			return aHoursString.localeCompare(bHoursString);
 		}
 		return 0;
 	});

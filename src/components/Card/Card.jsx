@@ -171,7 +171,7 @@ function Card({ title, address, image, caption, number, drinks, food, website, r
 								<span>
 									<ImPhone />
 								</span>
-								{number}
+								{number ? number : 'Not available'}
 							</li>
 							<li className='restaurant-card__contact--item'>
 								<div className='restaurant-card__contact--social'>

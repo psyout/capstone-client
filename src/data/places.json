@@ -21,9 +21,9 @@
 				},
 
 				"hours": {
-					"Monday - Thursday": "3 PM - 6 PM",
-					"Friday": "5 PM - 7 PM",
-					"Saturday - Sunday": "4 PM - 6 PM"
+					"Monday - Thursday": "5 PM - 7 PM",
+					"Friday": "5 PM - 6 PM",
+					"Saturday - Sunday": "3 PM - 6 PM"
 				},
 
 				"drinks": {
@@ -281,7 +281,7 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.1552032, 49.2710421]
+				"coordinates": [-123.155103591134, 49.2710692786403]
 			},
 			"properties": {
 				"id": "008",

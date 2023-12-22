@@ -11,7 +11,8 @@ import 'mapbox-gl-controls/lib/controls.css';
 import geoJson from '../../data/places.json';
 
 // export const apiUrl = 'http://localhost:3008';
-export const apiUrl = 'https://wulen-server.onrender.com' || 'http://localhost:3008';
+// export const apiUrl = 'https://wulen-server.onrender.com' || 'http://localhost:3008';
+export const apiUrl = 'https://wulen-server.onrender.com';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);

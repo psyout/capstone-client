@@ -1006,6 +1006,46 @@
 					"No Food available": "null"
 				}
 			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.155147313374, 49.2722128608937]
+			},
+			"properties": {
+				"id": "028",
+				"name": "Nook",
+				"contact_number": "+1 (604) 734-0099",
+				"website": "https://nookrestaurants.com/kitsilano-menus/",
+				"neighborhoods": "Kitsilano",
+				"category": {
+					"title": "Italian"
+				},
+				"hours": {
+					"Wednesday - Sunday": "14:00 - 17:00"
+				},
+				"drinks": {
+					"Pesca Fresca (1.5oz)": "$8.00",
+					"La Passione (1.5oz)": "$8.00",
+					"Negroni (3oz)": "$11.00",
+					"Campe Dhei Prosecco (5oz)": "$8.00",
+					"Altopiano Pinot Grigio (5oz)": "$8.00",
+					"Firriato Nero D'Avola/Petit Verdot 'Nari' (5oz)": "$8.00",
+					"Select Draught": "$6.00"
+				},
+				"food": {
+					"Focaccia": "$7.00",
+					"Greens": "$14.00",
+					"Caesar Salad": "$14.00",
+					"Margherita Pizza": "$17.00",
+					"Rigatoni Arrabbiata": "$17.00",
+					"Tonnarelli Cacio Pepe": "$17.00",
+					"Oven Roasted Meatballs": "$17.00",
+					"Rigatoni Boscaiola": "$19.00",
+					"Pepperoni Pizza": "$19.00"
+				}
+			}
 		}
 	]
 }

@@ -2,7 +2,7 @@ import './Card.scss';
 import { Link } from 'react-router-dom';
 import { ImPhone, ImLocation } from 'react-icons/im';
 import { FaBeer, FaHamburger } from 'react-icons/fa';
-import { BsStarFill, BsFillClockFill } from 'react-icons/bs';
+import { BsStarFill, BsStarHalf, BsFillClockFill } from 'react-icons/bs';
 import { FiArrowDownCircle, FiChevronsRight, FiShare, FiHeart, FiXCircle } from 'react-icons/fi';
 import { useState } from 'react';
 
@@ -14,14 +14,14 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 		setIsLiked(!isLiked);
 	};
 
-	const maxRating = 2;
+	const maxRating = 3;
 	const ratingIcons = [];
 
 	for (let i = 0; i < maxRating; i++) {
 		if (i < rating) {
 			ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
 		} else {
-			ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
+			ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
 		}
 	}
 
@@ -172,6 +172,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 									<div className="restaurant-card__contact--social-reviews">
 										<p className="restaurant-card__contact--text">Rating:</p>
 										{rating}
+										&nbsp;
 										{ratingIcons}
 									</div>
 									<div className="restaurant-card__contact--social-reactions">

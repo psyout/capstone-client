@@ -396,12 +396,8 @@
 		}
 
 		&--text {
-			font-size: 0.85rem;
+			font-size: 0.9rem;
 			line-height: 1.5;
-
-			@include tablet {
-				font-size: 0.9rem;
-			}
 		}
 	}
 }

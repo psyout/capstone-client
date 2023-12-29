@@ -60,7 +60,7 @@
 				"id": "002",
 				"name": "Las Margaritas Restaurant",
 				"address": "1999 W 4th Ave, Vancouver",
-				"contact_number": "(604) 734-7117",
+				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
 				"neighborhoods": "Kitsilano",
@@ -97,7 +97,7 @@
 				"id": "003",
 				"name": "Local Public Eatery",
 				"address": "2210 Cornwall Ave, Vancouver",
-				"contact_number": "(604) 558-4448",
+				"contact_number": "+1 (604) 558-4448",
 				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
 				"full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
 				"neighborhoods": "Kitsilano",
@@ -134,7 +134,7 @@
 				"id": "004",
 				"name": "The Ellis",
 				"address": "2204 York Ave, Vancouver",
-				"contact_number": "(604) 428-2456",
+				"contact_number": "+1 (604) 428-2456",
 				"website": "https://www.theellis.ca/menu",
 				"full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
 				"neighborhoods": "Kitsilano",
@@ -164,7 +164,7 @@
 				"id": "005",
 				"name": "King’s Head Public House",
 				"address": "1618 Yew St, Vancouver",
-				"contact_number": "(604) 738-6966",
+				"contact_number": "+1 (604) 738-6966",
 				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
 				"full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
 				"neighborhoods": "Kitsilano",
@@ -207,7 +207,7 @@
 				"id": "006",
 				"name": "Jackson's Meat & Deli",
 				"address": "2214 W 4th Ave, Vancouver",
-				"contact_number": "(778) 379-2929",
+				"contact_number": "+1 (778) 379-2929",
 				"website": "https://www.jacksonsrestobutcher.com/happy-hour",
 				"full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
 				"neighborhoods": "Kitsilano",
@@ -245,7 +245,7 @@
 				"id": "007",
 				"name": "The Cider House",
 				"address": "1602 Yew St, Vancouver",
-				"contact_number": "(604) 558-1975",
+				"contact_number": "+1 (604) 558-1975",
 				"website": "https://ciderhouserules.ca/happy-hour/",
 				"full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
 				"neighborhoods": "Kitsilano",
@@ -287,7 +287,7 @@
 				"id": "008",
 				"name": "Lucky Taco",
 				"address": "1685 Yew St, Vancouver",
-				"contact_number": "(604) 739-4677",
+				"contact_number": "+1 (604) 739-4677",
 				"website": "https://www.luckytaco.ca/menu/happy-hour",
 				"full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
 				"neighborhoods": "Kitsilano",
@@ -320,7 +320,7 @@
 				"id": "009",
 				"name": "Fable Kitchen",
 				"address": "1944 W 4th Ave, Vancouver",
-				"contact_number": "(604) 732 1322",
+				"contact_number": "+1 (604) 732 1322",
 				"website": "https://www.fablekitchen.ca/#menu",
 				"full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
 				"neighborhoods": "Kitsilano",
@@ -349,7 +349,7 @@
 				"name": "Tacofino",
 				"address": "1909 W 4th Ave, Vancouver",
 				"website": "https://www.tacofino.com/location/kits",
-				"contact_number": "(604) 620-8729",
+				"contact_number": "+1 (604) 620-8729",
 				"full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
 				"neighborhoods": "Kitsilano",
 				"category": {
@@ -386,7 +386,7 @@
 				"name": "Malone's Taphouse",
 				"address": "608 W Pender Street, Vancouver",
 				"website": "http://malones.bc.ca",
-				"contact_number": "(604) 684-9977",
+				"contact_number": "+1 (604) 684-9977",
 				"full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
 				"neighborhoods": "Downtown",
 				"category": {
@@ -422,7 +422,7 @@
 				"name": "Moose's Down Under",
 				"address": "830 W Pender St, Vancouver",
 				"website": "https://moosesdownunder.com/specials/",
-				"contact_number": "(604)683 3300",
+				"contact_number": "+1 (604) 683 3300",
 				"full_address": "830 W Pender St, Vancouver, BC V6C 1J8",
 				"neighborhoods": "Downtown",
 				"category": {
@@ -458,7 +458,7 @@
 				"name": "Cambie Bar & Grill",
 				"address": "300 Cambie St, Vancouver",
 				"website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
-				"contact_number": "(604) 688 9158",
+				"contact_number": "+1 (604) 688 9158",
 				"full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
 				"neighborhoods": "Downtown",
 				"category": {
@@ -494,7 +494,7 @@
 				"name": "Delara",
 				"address": "2272 W 4th Ave, Vancouver",
 				"website": "https://delararestaurant.ca/menu",
-				"contact_number": "(604) 730-4325",
+				"contact_number": "+1 (604) 730-4325",
 				"full_address": "2272 W 4th Ave, Vancouver, BC V6K 1N8",
 				"neighborhoods": "Kitsilano",
 				"category": {
@@ -531,7 +531,7 @@
 				"name": "Charqui",
 				"address": "1955 Cornwall Ave, Vancouver",
 				"website": "https://charqui.ca",
-				"contact_number": "(604) 733-3323",
+				"contact_number": "+1 (604) 733-3323",
 				"full_address": "1955 Cornwall Ave, Vancouver, BC V6J 1C9",
 				"neighborhoods": "Kitsilano",
 				"category": {
@@ -568,7 +568,7 @@
 				"name": "WhiteSpot Kitsilano",
 				"address": "2518 W Broadway, Vancouver",
 				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
-				"contact_number": "(604) 731-2434",
+				"contact_number": "+1 (604) 731-2434",
 				"rating": "rating",
 				"full_address": "2518 West Broadway, Vancouver, BC V6K 2G1",
 				"neighborhoods": "Kitsilano",
@@ -613,7 +613,7 @@
 				"name": "Elwoods",
 				"address": "3357 W Broadway, Vancouver",
 				"website": "https://elwoods.ca/",
-				"contact_number": "(604) 731-2434",
+				"contact_number": "+1 (604) 731-2434",
 				"full_address": "3357 W Broadway, Vancouver, BC V6R 2B1",
 				"neighborhoods": "Kitsilano",
 				"category": {
@@ -652,7 +652,7 @@
 				"name": "Bodega On Main",
 				"address": "1014 Main St Vancouver",
 				"website": "https://www.bodegaonmain.ca/menu/#happyhour",
-				"contact_number": "(604) 565-8815",
+				"contact_number": "+1 (604) 565-8815",
 				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
 				"neighborhoods": "Strathcona",
 				"category": {
@@ -693,7 +693,7 @@
 				"name": "The 515 bar",
 				"address": "521 Seymour Street, Vancouver",
 				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
-				"contact_number": "(604) 428-8226",
+				"contact_number": "+1 (604) 428-8226",
 				"full_address": "521 Seymour Street, Vancouver BC, V6B 3H6",
 				"neighborhoods": "Downtown",
 				"category": {
@@ -725,6 +725,7 @@
 			"properties": {
 				"id": "020",
 				"name": "The Stock Room",
+				"contact_number": "+1 (604) 609-0901",
 				"website": "https://www.freehouse.co/locations/stock-room",
 				"neighborhoods": "Downtown",
 				"category": {
@@ -761,6 +762,7 @@
 				},
 				"website": "https://www.bartholomewbar.com/happy-hour",
 				"neighborhoods": "Downtown",
+				"contact_number": "+1 (604) 423-4131",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -792,6 +794,7 @@
 					"title": "Canadian"
 				},
 				"neighborhoods": "Downtown",
+				"contact_number": "+1 (604) 646-4000",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -818,6 +821,7 @@
 			"properties": {
 				"id": "023",
 				"name": "JOEY Burrard",
+				"contact_number": "+1 (604) 683-5639",
 				"website": "https://joeyrestaurants.com/location/joey-burrard/menu#food",
 				"category": {
 					"title": "Lounges"
@@ -874,6 +878,7 @@
 			"properties": {
 				"id": "024",
 				"name": "The Ventura Room",
+				"contact_number": "+1 (604) 620-5547",
 				"category": {
 					"title": "Lounges"
 				},
@@ -917,6 +922,7 @@
 				"name": "Uva Wine & Cocktail Bar",
 				"website": "https://vancouver.foodgressing.com/uva-wine-cocktail-bar-breakfast-happy-hour/",
 				"neighborhoods": "Downtown",
+				"contact_number": "+1 (604) 632-9560",
 				"category": {
 					"title": "Restaurant"
 				},
@@ -950,7 +956,7 @@
 			"properties": {
 				"id": "026",
 				"name": "The Chickadee Room",
-				"contact_number": "(604) 336-5853",
+				"contact_number": "+1 (604) 336-5853",
 				"website": "https://thechickadeeroom.com/",
 				"neighborhoods": "Downtown",
 				"category": {
@@ -980,7 +986,7 @@
 			"properties": {
 				"id": "027",
 				"name": "Guilt & Company",
-				"contact_number": "(604)288-1704",
+				"contact_number": "+1 (604) 288-1704",
 				"website": "https://www.guiltandcompany.com/menu.html",
 				"neighborhoods": "Downtown",
 				"category": {

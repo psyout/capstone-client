@@ -74,7 +74,7 @@
 		&--img {
 			width: 100%;
 			min-width: 200px;
-			aspect-ratio: 16/9;
+			aspect-ratio: 22/9;
 			object-fit: cover;
 
 			@include tablet {
@@ -95,12 +95,22 @@
 
 		&--text {
 			font-weight: $fw-500;
-			margin-top: 0.6rem;
+			margin: 1rem 0 0.3rem;
 			font-size: 0.9rem;
 			display: flex;
 			align-items: center;
 			gap: 0.2rem;
 			transition: all 0.2s;
+			
+			@include tablet{
+				font-weight: 500;
+				margin-top: 0.6rem;
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
+				gap: 0.2rem;
+				transition: all 0.2s;
+			}
 
 			&-close {
 				font-size: 1rem;

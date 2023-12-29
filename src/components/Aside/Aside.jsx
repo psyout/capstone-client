@@ -118,7 +118,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		// eslint-disable-next-line
 		if (!matchingBusinessFromYelp) return;
 
-		return <Card key={id} title={name.slice(0, 25)} address={matchingBusinessFromYelp.location.address1} contact_number={contact_number} image={matchingBusinessFromYelp.image_url} caption={hours} drinks={drinks} food={food} rating={matchingBusinessFromYelp.rating} onClick={handleClick} website={website} name={name} />;
+		return <Card key={id} title={name} address={matchingBusinessFromYelp.location.address1} contact_number={contact_number} image={matchingBusinessFromYelp.image_url} caption={hours} drinks={drinks} food={food} rating={matchingBusinessFromYelp.rating} onClick={handleClick} website={website} name={name} />;
 	});
 
 	// Move selectedBusiness card to the front of the list

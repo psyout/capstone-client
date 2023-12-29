@@ -54,35 +54,32 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 
 	const [filterBy, setFilterBy] = useState(filters[0].value);
 
-	const handleSortByChange = (event) => {
+	const handleSortByChange = event => {
 		setSortBy(event.target.value);
 	};
 
-	const handleFilterByChange = (event) => {
+	const handleFilterByChange = event => {
 		setFilterBy(event.target.value);
 	};
 
 	// search function
 	const excludeColumns = ['id'];
 
-	const filteredFeatures = geoJson.features.filter((feature) => {
+	const filteredFeatures = geoJson.features.filter(feature => {
 		const lowerCasedSearch = search.toLowerCase();
 		if (search === '') {
 			return true;
 		} else {
-			return Object.keys(feature.properties).some((key) => {
-				return excludeColumns.includes(key) ? false : feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch);
+			return Object.keys(feature.properties).some(key => {
+				return excludeColumns.includes(key)
+					? false
+					: feature.properties[key]
+							.toString()
+							.toLowerCase()
+							.includes(lowerCasedSearch);
 			});
 		}
 	});
-
-	//sorting by
-	// const sortedFeatures = [...filteredFeatures].sort((a, b) => {
-	// 	if (sortBy === 'name') {
-	// 		return a.properties.name.localeCompare(b.properties.name);
-	// 	}
-	// 	return 0;
-	// });
 
 	const sortedFeatures = [...filteredFeatures].sort((a, b) => {
 		if (sortBy === 'name') {
@@ -100,13 +97,13 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	});
 
 	const filteredFeaturesByCategory = filterBy
-		? sortedFeatures.filter((feature) => {
+		? sortedFeatures.filter(feature => {
 				console.log('feature: ', feature);
 				return feature.properties.category.title === filterBy;
 		  })
 		: sortedFeatures;
 
-	const cards = filteredFeaturesByCategory.map((feature) => {
+	const cards = filteredFeaturesByCategory.map(feature => {
 		const { id, name, website } = feature.properties;
 		const hours = formatHours(feature.properties.hours);
 		const drinks = formatDrinks(feature.properties.drinks);
@@ -117,47 +114,25 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		};
 
 		// match image from yelp with name from json
-		const matchingBusinessFromYelp = businesses.find((business) => business.name === name);
+		const matchingBusinessFromYelp = businesses.find(business => business.name === name);
 		// eslint-disable-next-line
 		if (!matchingBusinessFromYelp) return;
 
-		return (
-			<Card
-				key={id}
-				title={name.slice(0, 25)}
-				address={matchingBusinessFromYelp.location.address1}
-				number={matchingBusinessFromYelp.display_phone}
-				image={matchingBusinessFromYelp.image_url}
-				caption={hours}
-				drinks={drinks}
-				food={food}
-				rating={matchingBusinessFromYelp.rating}
-				onClick={handleClick}
-				website={website}
-				name={name}
-			/>
-		);
+		return <Card key={id} title={name.slice(0, 25)} address={matchingBusinessFromYelp.location.address1} number={matchingBusinessFromYelp.display_phone} image={matchingBusinessFromYelp.image_url} caption={hours} drinks={drinks} food={food} rating={matchingBusinessFromYelp.rating} onClick={handleClick} website={website} name={name} />;
 	});
 
 	// Move selectedBusiness card to the front of the list
 	if (selectedBusiness) {
 		console.log('selected business: ', selectedBusiness);
-		const selectedIndex = sortedFeatures.findIndex((feature) => feature.properties.name === selectedBusiness);
+		const selectedIndex = sortedFeatures.findIndex(feature => feature.properties.name === selectedBusiness);
 		const selectedCard = cards.splice(selectedIndex, 1)[0];
 		cards.unshift(selectedCard);
 	}
 
 	return (
-		<div className='aside'>
-			<SortByDropDown
-				options={options}
-				value={sortBy}
-				onChange={handleSortByChange}
-				filterByValue={filterBy}
-				onFilterByChange={handleFilterByChange}
-				filters={filters}
-			/>
-			<ul className='aside__list'>{cards}</ul>
+		<div className="aside">
+			<SortByDropDown options={options} value={sortBy} onChange={handleSortByChange} filterByValue={filterBy} onFilterByChange={handleFilterByChange} filters={filters} />
+			<ul className="aside__list">{cards}</ul>
 		</div>
 	);
 }

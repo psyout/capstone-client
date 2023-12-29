@@ -104,7 +104,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		: sortedFeatures;
 
 	const cards = filteredFeaturesByCategory.map(feature => {
-		const { id, name, website } = feature.properties;
+		const { id, name, website, contact_number } = feature.properties;
 		const hours = formatHours(feature.properties.hours);
 		const drinks = formatDrinks(feature.properties.drinks);
 		const food = formatFood(feature.properties.food);
@@ -118,7 +118,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		// eslint-disable-next-line
 		if (!matchingBusinessFromYelp) return;
 
-		return <Card key={id} title={name.slice(0, 25)} address={matchingBusinessFromYelp.location.address1} number={matchingBusinessFromYelp.display_phone} image={matchingBusinessFromYelp.image_url} caption={hours} drinks={drinks} food={food} rating={matchingBusinessFromYelp.rating} onClick={handleClick} website={website} name={name} />;
+		return <Card key={id} title={name.slice(0, 25)} address={matchingBusinessFromYelp.location.address1} contact_number={contact_number} image={matchingBusinessFromYelp.image_url} caption={hours} drinks={drinks} food={food} rating={matchingBusinessFromYelp.rating} onClick={handleClick} website={website} name={name} />;
 	});
 
 	// Move selectedBusiness card to the front of the list

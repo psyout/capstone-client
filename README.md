@@ -40,7 +40,7 @@ A single Page application built with JavaScript (React) that allows users to sea
 
 ## ✍🏼 Authors
 
-- [@psyout](https://www.github.com/octokatherine) - Idea & Initial Work
+- [@psyout](https://github.com/psyout) - Idea & Initial Work
 
 
 ## 🎉 Acknowledgements

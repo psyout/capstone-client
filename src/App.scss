@@ -55,8 +55,6 @@ a:visited {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
-	// gap: 1rem;
-	// padding: 1rem;
 	min-height: 100vh;
 	grid-template-areas:
 		'header'
@@ -65,7 +63,7 @@ a:visited {
 
 	@include tablet {
 		grid-auto-flow: row;
-		grid-template-columns: 35rem 2fr;
+		grid-template-columns: 30rem 2fr;
 		grid-template-areas:
 			'header header'
 			'aside main';

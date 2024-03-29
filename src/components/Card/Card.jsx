@@ -136,7 +136,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 									disabled={selectedMenu !== 'menu' && selectedMenu !== 'drinks'}>
 									Drinks
 									<span>
-										<FaBeer />
+										<FaBeer style={{ marginLeft: '0.1rem' }} />
 									</span>
 								</Link>
 							</li>

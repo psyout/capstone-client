@@ -42,7 +42,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 						</h2>
 					)}
 					{selectedMenu === 'drinks' && (
-						<div>
+						<>
 							<div className='restaurant-card__info--text-close'>
 								<h2 className='restaurant-card__info--text'>
 									Drinks Menu
@@ -80,7 +80,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 									</span>
 								</Link>
 							</div>
-						</div>
+						</>
 					)}
 					{selectedMenu === 'food' && (
 						<div>

@@ -26,7 +26,7 @@
 To start the application, and it will be available at http://localhost:3000.
 
 ## 🧐 About
-A single Page application built with JavaScript (React) that allows users to search and filter nearby deals based on geolocation. Users can click on markers to view details, ratings, and menus for each place. The application lets ueers search for Happy Hours and discover the city findinng new places in the city.
+A single Page application built with JavaScript (React) that allows users to search and filter nearby deals based on geolocation. Users can click on markers to view details, ratings, and menus for each place. The application lets users search for Happy Hours and discover the city finding new places in the city.
 
 
 
@@ -40,7 +40,7 @@ A single Page application built with JavaScript (React) that allows users to sea
 
 ## ✍🏼 Authors
 
-- [@psyout](https://www.github.com/octokatherine) - Idea & Initial Work
+- [@psyout](https://github.com/psyout) - Idea & Initial Work
 
 
 ## 🎉 Acknowledgements

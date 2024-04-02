@@ -83,7 +83,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 						</>
 					)}
 					{selectedMenu === 'food' && (
-						<div>
+						<>
 							<div className='restaurant-card__info--text-close'>
 								<h2 className='restaurant-card__info--text'>
 									Food Menu
@@ -122,7 +122,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 									</span>
 								</Link>
 							</div>
-						</div>
+						</>
 					)}
 					<div className='restaurant-card__menu'>
 						<ul className='restaurant-card__menu--list'>
@@ -159,24 +159,27 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 					</div>
 					<div className='restaurant-card__contact'>
 						<ul className='restaurant-card__contact--list'>
-							<li className='restaurant-card__contact--item'>
-								<span>
-									<ImLocation />
-								</span>
-								{address}
-							</li>
-							<li className='restaurant-card__contact--item'>
-								<span>
-									<ImPhone />
-								</span>
-								{contact_number ? (
-									<a style={{ color: '#2c3359' }} href={`tel:${contact_number}`}>
-										{contact_number}
-									</a>
-								) : (
-									'Not available'
-								)}
-							</li>
+							<div className='restaurant-card__contact--container'>
+								<li className='restaurant-card__contact--item'>
+									<span>
+										<ImLocation />
+									</span>
+									{address}
+								</li>
+								<li className='restaurant-card__contact--item'>
+									<span>
+										<ImPhone />
+									</span>
+									{contact_number ? (
+										<a style={{ color: '#2c3359' }} href={`tel:${contact_number}`}>
+											{contact_number}
+										</a>
+									) : (
+										'Not available'
+									)}
+								</li>
+							</div>
+
 							<li className='restaurant-card__contact--item'>
 								<div className='restaurant-card__contact--social'>
 									<div className='restaurant-card__contact--social-reviews'>

@@ -315,6 +315,13 @@
 			flex: 0.5rem;
 		}
 
+		&--container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			justify-content: space-between;
+		}
+
 		&--text {
 			font-size: 0.8rem;
 			margin-right: 0.2rem;

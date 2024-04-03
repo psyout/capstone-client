@@ -9,17 +9,10 @@
 	justify-content: space-between;
 	background-color: $color-sorting;
 	border-radius: 0.4rem;
-	padding: 1rem;
+	padding: 0.5rem 0.6rem;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 0.8rem;
-
-	@include mobile {
-		align-items: center;
-		flex-direction: row;
-		justify-content: space-between;
-		height: 45px;
-		padding: 0 1rem;
-	}
 
 	@include tablet {
 		margin: 0 0 -0.5rem;

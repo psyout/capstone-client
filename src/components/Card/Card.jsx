@@ -3,15 +3,48 @@ import { Link } from 'react-router-dom';
 import { ImPhone, ImLocation } from 'react-icons/im';
 import { FaBeer, FaHamburger } from 'react-icons/fa';
 import { BsStarFill, BsStarHalf, BsFillClockFill } from 'react-icons/bs';
-import { FiArrowDownCircle, FiChevronsRight, FiShare, FiHeart, FiXCircle } from 'react-icons/fi';
+import { FiArrowDownCircle, FiChevronsRight, FiShare, FiHeart, FiXCircle, FiFacebook, FiMail, FiTwitter } from 'react-icons/fi';
+
 import { useState } from 'react';
 
-function Card({ title, address, image, caption, contact_number, drinks, food, website, rating }) {
+function Card({ title, address, image, caption, contact_number, drinks, food, website, rating, url }) {
 	const [selectedMenu, setSelectedMenu] = useState('menu');
 	const [isLiked, setIsLiked] = useState(false);
+	const [lightboxOpen, setLightboxOpen] = useState(false);
+	const [copied, setCopied] = useState(false);
+
+	const shareOnFacebook = () => {
+		const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+		window.open(facebookUrl, '_blank');
+	};
+
+	const shareOnGmail = () => {
+		const gmailUrl = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`;
+		window.location.href = gmailUrl;
+	};
+
+	const shareOnTwitter = () => {
+		const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+		window.open(twitterUrl, '_blank');
+	};
 
 	const handleLikeClick = () => {
 		setIsLiked(!isLiked);
+	};
+
+	const toggleLightbox = () => {
+		setLightboxOpen(!lightboxOpen);
+	};
+
+	const copyLinkOnClick = () => {
+		navigator.clipboard
+			.writeText(url)
+			.then(() => {
+				setCopied(true);
+			})
+			.catch((error) => {
+				console.error('Failed to copy URL: ', error);
+			});
 	};
 
 	const maxRating = 1;
@@ -28,7 +61,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 	return (
 		<li className='restaurant-card'>
 			<div className='restaurant-card__header'>
-				<h2 className='restaurant-card__title'>{title}</h2>
+				<h2 className='restaurant-card__title'>{title.slice(0, 26)}</h2>
 			</div>
 			<div className={`restaurant-card__content ${selectedMenu !== 'menu' ? 'restaurant-card__content--full-width' : ''}`}>
 				<div className={`restaurant-card__image ${selectedMenu === 'menu' ? '' : 'restaurant-card__image--hidden'}`}>
@@ -44,20 +77,8 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 					{selectedMenu === 'drinks' && (
 						<>
 							<div className='restaurant-card__info--text-close'>
-								<h2 className='restaurant-card__info--text'>
-									Drinks Menu
-									<FiArrowDownCircle />
-								</h2>
 								<div style={{ cursor: 'pointer' }} onClick={() => setSelectedMenu('menu')}>
-									<span
-										style={{
-											backgroundColor: 'white',
-											display: 'block',
-											boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.15)',
-											borderRadius: '0.3rem',
-											paddingLeft: '0.2rem',
-											paddingRight: '0.2rem',
-										}}>
+									<span>
 										<h2 className='restaurant-card__info--text'>
 											Close
 											<FiXCircle />
@@ -85,20 +106,8 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 					{selectedMenu === 'food' && (
 						<>
 							<div className='restaurant-card__info--text-close'>
-								<h2 className='restaurant-card__info--text'>
-									Food Menu
-									<FiArrowDownCircle />
-								</h2>
 								<div style={{ cursor: 'pointer' }} onClick={() => setSelectedMenu('menu')}>
-									<span
-										style={{
-											backgroundColor: 'white',
-											display: 'block',
-											boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.15)',
-											borderRadius: '0.3rem',
-											paddingLeft: '0.2rem',
-											paddingRight: '0.2rem',
-										}}>
+									<span>
 										<h2 className='restaurant-card__info--text'>
 											Close
 											<FiXCircle />
@@ -193,7 +202,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 											{isLiked ? 'Liked' : 'Like'}
 											<FiHeart className={isLiked ? 'restaurant-card__contact--social-fill' : 'restaurant-card__contact--social-red'} />
 										</div>
-										<div className='restaurant-card__contact--social-share'>
+										<div className='restaurant-card__contact--social-share' onClick={toggleLightbox}>
 											Share
 											<FiShare className='restaurant-card__contact--social-red' />
 										</div>
@@ -218,6 +227,33 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 					</p>
 				))}
 			</div>
+
+			{lightboxOpen && (
+				<div className='lightbox'>
+					<div className='lightbox__content'>
+						<span className='close-btn' onClick={toggleLightbox}>
+							<FiXCircle />
+						</span>
+						<h2 className='lightbox__content--title'>Share</h2>
+						<h3 className='lightbox__content--name'>{title}</h3>
+						<p className='lightbox__content--address'>{address}</p>
+						<div className='lightbox__content--copy'>
+							<p>Link to share</p>
+							<div className='lightbox__content--container'>
+								<Link className='lightbox__content--container-url' to={url} target='blank'>
+									{url.length > 30 ? url.slice(0, 30) + '...' : url}
+								</Link>
+								<button onClick={copyLinkOnClick}>{!copied ? 'Copy link' : 'Copied!'}</button>
+							</div>
+						</div>
+						<div className='lightbox__content--social'>
+							<FiFacebook onClick={shareOnFacebook} />
+							<FiTwitter onClick={shareOnTwitter} />
+							<FiMail onClick={shareOnGmail} />
+						</div>
+					</div>
+				</div>
+			)}
 		</li>
 	);
 }

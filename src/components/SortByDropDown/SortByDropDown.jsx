@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './SortByDropDown.scss';
 
 function SortByDropDown({ options, value, onChange, onFilterByChange, filters, selectedFilterValue }) {
@@ -42,25 +41,5 @@ function SortByDropDown({ options, value, onChange, onFilterByChange, filters, s
 		</div>
 	);
 }
-
-SortByDropDown.propTypes = {
-	options: PropTypes.arrayOf(
-		PropTypes.shape({
-			value: PropTypes.string.isRequired,
-			label: PropTypes.string.isRequired,
-			category: PropTypes.string.isRequired,
-		})
-	).isRequired,
-	value: PropTypes.string.isRequired,
-	onChange: PropTypes.func.isRequired,
-	onFilterByChange: PropTypes.func.isRequired,
-	filters: PropTypes.arrayOf(
-		PropTypes.shape({
-			value: PropTypes.string.isRequired,
-			label: PropTypes.string.isRequired,
-		})
-	).isRequired,
-	selectedFilterValue: PropTypes.string.isRequired,
-};
 
 export default SortByDropDown;

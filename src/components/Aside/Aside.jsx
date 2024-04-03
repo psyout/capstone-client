@@ -120,7 +120,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				address={matchingBusinessFromYelp.location.address1}
 				contact_number={contact_number}
 				image={matchingBusinessFromYelp.image_url}
-				caption={hours}
+				time={hours}
 				drinks={drinks}
 				food={food}
 				rating={matchingBusinessFromYelp.rating}

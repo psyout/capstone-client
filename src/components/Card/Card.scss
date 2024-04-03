@@ -413,11 +413,11 @@
 
 	&__content {
 		background-color: #fff;
-		padding: 20px;
+		padding: 1.2rem;
 		border-radius: 5px;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		max-width: 80%;
-		max-height: 80%;
+		max-width: 90%;
+		max-height: 90%;
 		overflow: auto;
 		position: relative;
 		color: $color-text;
@@ -449,6 +449,7 @@
 
 		&--container {
 			display: flex;
+			justify-content: space-between;
 			gap: 1rem;
 
 			button {

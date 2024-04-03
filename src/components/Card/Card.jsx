@@ -235,7 +235,7 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 							<FiXCircle />
 						</span>
 						<h2 className='lightbox__content--title'>Share</h2>
-						<h3 className='lightbox__content--name'>{title}</h3>
+						<h3 className='lightbox__content--name'>{title.slice(0, 26)}</h3>
 						<p className='lightbox__content--address'>{address}</p>
 						<div className='lightbox__content--copy'>
 							<p>Link to share</p>
@@ -247,9 +247,9 @@ function Card({ title, address, image, caption, contact_number, drinks, food, we
 							</div>
 						</div>
 						<div className='lightbox__content--social'>
-							<FiFacebook onClick={shareOnFacebook} />
-							<FiTwitter onClick={shareOnTwitter} />
-							<FiMail onClick={shareOnGmail} />
+							<FiFacebook className='lightbox__content--social-icon' onClick={shareOnFacebook} />
+							<FiTwitter className='lightbox__content--social-icon' onClick={shareOnTwitter} />
+							<FiMail className='lightbox__content--social-icon' onClick={shareOnGmail} />
 						</div>
 					</div>
 				</div>

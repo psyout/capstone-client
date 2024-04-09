@@ -6,8 +6,8 @@
 	align-items: flex-start;
 	display: flex;
 	margin: 0rem 0 1rem;
-	justify-content: space-between;
-	background-color: $color-sorting;
+	justify-content: flex-start;
+	// background-color: $color-sorting;
 	border-radius: 0.4rem;
 	padding: 0.5rem 0.6rem;
 	flex-direction: row;
@@ -21,9 +21,9 @@
 	&__label {
 		margin-right: 0.5rem;
 		font-family: Rubik;
-		font-weight: 500;
+		font-weight: 300;
 		font-size: 0.85rem;
-		color: $color-logo;
+		color: #202020;
 
 		&--label {
 			color: $color-logo;

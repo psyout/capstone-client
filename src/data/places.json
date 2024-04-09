@@ -19,7 +19,7 @@
 				"category": {
 					"title": "Seafood"
 				},
-
+				"images": "images/chewies-logo.jpg",
 				"hours": {
 					"Monday - Thursday": "17:00 - 19:00",
 					"Friday": "16:00 - 18:00",
@@ -65,13 +65,13 @@
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
 				"neighborhoods": "Kitsilano",
+				"images": "images/las-margaritas.jpg",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
 				},
 				"category": {
 					"title": "Mexican"
 				},
-
 				"drinks": {
 					"Slushy Margarita": "$7.00",
 					"Classic Margarita (2.5 Oz)": "$11.00",
@@ -97,7 +97,7 @@
 			},
 			"properties": {
 				"id": "003",
-				"name": "Local Public Eatery",
+				"name": "LOCAL Public Eatery",
 				"address": "2210 Cornwall Ave, Vancouver",
 				"contact_number": "+1 (604) 558-4448",
 				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
@@ -152,6 +152,7 @@
 				"website": "https://www.theellis.ca/menu",
 				"full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
 				"neighborhoods": "Kitsilano",
+				"images": "images/the-ellis.jpg",
 				"hours": {
 					"Everyday": "15:00 - 17:00"
 				},

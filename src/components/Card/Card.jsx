@@ -11,7 +11,7 @@ import FoodMenu from './FoodMenu';
 
 import { useState } from 'react';
 
-function Card({ title, address, image, time, contact_number, drinks, food, website, rating, url }) {
+function Card({ title, address, images, time, contact_number, drinks, food, website, rating, url }) {
 	const [selectedMenu, setSelectedMenu] = useState('menu');
 	const [isLiked, setIsLiked] = useState(false);
 	const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -64,20 +64,18 @@ function Card({ title, address, image, time, contact_number, drinks, food, websi
 
 	return (
 		<li className='restaurant-card'>
-			<div className='restaurant-card__header'>
-				<h2 className='restaurant-card__title'>{title.slice(0, 26)}</h2>
-			</div>
+			{/* Title */}
+			{/* <div className='restaurant-card__header'>
+				
+			</div> */}
 			<div className={`restaurant-card__content ${selectedMenu !== 'menu' ? 'restaurant-card__content--full-width' : ''}`}>
 				<div className={`restaurant-card__image ${selectedMenu === 'menu' ? '' : 'restaurant-card__image--hidden'}`}>
-					<img className='restaurant-card__image--img restaurant-card__image--blend' src={image} alt={title} />
+					<img className='restaurant-card__image--img' src={images} alt={title} />
+					<div className='restaurant-card__image--overlay restaurant-card__image--title'>
+						<h2 className='restaurant-card__title'>{title.slice(0, 26)}</h2>
+					</div>
 				</div>
 				<div className='restaurant-card__info'>
-					{selectedMenu === 'menu' && (
-						<h2 className='restaurant-card__info--text'>
-							See the Menu
-							<FiArrowDownCircle />
-						</h2>
-					)}
 					<DrinksMenu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} drinks={drinks} website={website} />
 
 					<FoodMenu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} food={food} website={website} />

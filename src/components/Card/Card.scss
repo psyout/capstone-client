@@ -89,24 +89,24 @@
 
 		&--img {
 			width: 100%;
-			min-width: 200px;
 			aspect-ratio: 22/9;
 			object-fit: cover;
 			display: block;
+			min-height: 150px;
 		}
 	}
 
 	&__info {
 		display: flex;
-		flex: 2.5;
+		flex: 1;
 		flex-direction: column;
-		padding: 0.5rem 1.5rem 0;
-		justify-content: space-evenly;
+		padding: 0.5rem 1rem 0;
+		justify-content: flex-start;
 		align-items: stretch;
 
 		&--text {
 			font-weight: $fw-500;
-			margin: 1rem 0 0rem;
+			margin: 0.5rem 0 0rem;
 			font-size: 0.85rem;
 			display: flex;
 			align-items: center;

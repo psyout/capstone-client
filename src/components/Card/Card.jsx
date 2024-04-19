@@ -1,6 +1,5 @@
 import './Card.scss';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
-import { FiArrowDownCircle } from 'react-icons/fi';
 
 import Lightbox from './Lightbox';
 import Menu from './Menu';
@@ -64,15 +63,11 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 
 	return (
 		<li className='restaurant-card'>
-			{/* Title */}
-			{/* <div className='restaurant-card__header'>
-				
-			</div> */}
 			<div className={`restaurant-card__content ${selectedMenu !== 'menu' ? 'restaurant-card__content--full-width' : ''}`}>
 				<div className={`restaurant-card__image ${selectedMenu === 'menu' ? '' : 'restaurant-card__image--hidden'}`}>
 					<img className='restaurant-card__image--img' src={images} alt={title} />
 					<div className='restaurant-card__image--overlay restaurant-card__image--title'>
-						<h2 className='restaurant-card__title'>{title.slice(0, 26)}</h2>
+						<h2 className='restaurant-card__title'>{title.slice(0, 29)}</h2>
 					</div>
 				</div>
 				<div className='restaurant-card__info'>
@@ -82,11 +77,11 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 
 					<Menu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
 
-					{<Contact contact_number={contact_number} address={address} rating={rating} ratingIcons={ratingIcons} handleLikeClick={handleLikeClick} isLiked={isLiked} toggleLightbox={toggleLightbox} />}
+					<Contact contact_number={contact_number} address={address} rating={rating} ratingIcons={ratingIcons} handleLikeClick={handleLikeClick} isLiked={isLiked} toggleLightbox={toggleLightbox} />
 				</div>
 			</div>
 
-			{<OpenTime time={time} />}
+			<OpenTime time={time} />
 
 			<Lightbox
 				lightboxOpen={lightboxOpen}

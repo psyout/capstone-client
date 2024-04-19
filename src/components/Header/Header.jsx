@@ -43,7 +43,7 @@ function Header({ handleSearchInput }) {
 			</div>
 			<div className='header-container__row'>
 				<div className='header-container__search'>
-					<input type='text' placeholder='Type business name...' className='header-container__search-input' onChange={handleSearchInput} />
+					<input type='text' placeholder='Look for your next deal...' className='header-container__search-input' onChange={handleSearchInput} />
 					<button className='header-container__search-button'>
 						<FaSearch style={{ color: '#278C8C' }} />
 					</button>

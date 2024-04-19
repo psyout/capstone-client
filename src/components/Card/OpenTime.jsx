@@ -11,9 +11,9 @@ function OpenTime({ time }) {
 				<h4 className='restaurant-card__caption--title'>Happy Hour Time</h4>
 			</div>
 			{time.map((hours, index) => (
-				<p key={index} className='restaurant-card__caption--text'>
-					{hours}
-				</p>
+				<React.Fragment key={index}>
+					<span className='restaurant-card__caption--text'>{hours}</span>
+				</React.Fragment>
 			))}
 		</div>
 	);

@@ -10,7 +10,7 @@
 	flex: 1 1 100%;
 	justify-content: flex-start;
 	marker: none;
-	border-radius: 0.4rem;
+	border-radius: 0.3rem;
 	overflow: hidden;
 
 	@include mobile {
@@ -32,17 +32,13 @@
 		}
 	}
 
-	&__header {
-		background-color: $color-card-header;
-		color: #fff;
-		padding: 0.5rem 1rem;
-	}
-
 	&__title {
-		font-weight: 300;
+		font-weight: 400;
 		font-size: 1.1rem;
 		color: white;
 		text-align: center;
+		line-height: 1.2;
+		margin-top: 0.5rem;
 	}
 
 	&__content {
@@ -98,11 +94,14 @@
 
 	&__info {
 		display: flex;
-		flex: 1;
 		flex-direction: column;
-		padding: 0.5rem 1rem 0;
-		justify-content: flex-start;
-		align-items: stretch;
+		font-size: 0.7rem;
+		padding: 0.5rem 1rem;
+
+		@include tablet {
+			justify-content: space-evenly;
+			flex: 2.5;
+		}
 
 		&--text {
 			font-weight: $fw-500;
@@ -145,7 +144,7 @@
 			display: flex;
 			list-style-type: none;
 			gap: 1rem;
-			margin: 0.5rem 0 0.7rem;
+			margin: 0.7rem 0;
 
 			&-drinks {
 				font-size: 0.85rem;
@@ -279,13 +278,8 @@
 			align-items: flex-start;
 			gap: 1rem;
 			align-items: center;
-
 			flex: 1;
 			justify-content: space-between;
-
-			@include tablet {
-				gap: 0;
-			}
 
 			&-reviews {
 				display: flex;
@@ -405,7 +399,7 @@
 		}
 
 		&--text {
-			font-size: 0.8rem;
+			font-size: 0.85rem;
 			line-height: 1.5;
 		}
 	}

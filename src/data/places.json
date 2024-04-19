@@ -10,10 +10,10 @@
 			"properties": {
 				"id": "001",
 				"name": "Chewies Steam & Oyster Bar - Kits",
-				"address": "2201 W 1st Ave, Vancouver",
+				"address": "2201 W 1st Ave ",
 				"contact_number": "+1 (604) 558-4448",
 				"website": "https://www.chewies.ca/happy",
-				"full_address": "2201 W 1st Ave, Vancouver, BC, V6K-3E6",
+				"full_address": "2201 W 1st Ave, BC, V6K-3E6",
 				"neighborhoods": "Kitsilano",
 				"price": "2",
 				"category": {
@@ -60,10 +60,10 @@
 			"properties": {
 				"id": "002",
 				"name": "Las Margaritas Restaurant",
-				"address": "1999 W 4th Ave, Vancouver",
+				"address": "1999 W 4th Ave",
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
-				"full_address": "1999 W 4th Ave, Vancouver, BC, V6J 1M7",
+				"full_address": "1999 W 4th Ave, BC, V6J 1M7",
 				"neighborhoods": "Kitsilano",
 				"images": "images/las-margaritas.jpg",
 				"hours": {
@@ -97,16 +97,17 @@
 			},
 			"properties": {
 				"id": "003",
-				"name": "LOCAL Public Eatery",
-				"address": "2210 Cornwall Ave, Vancouver",
+				"name": "LOCAL Public Eatery Kitsilano",
+				"address": "2210 Cornwall Ave",
 				"contact_number": "+1 (604) 558-4448",
 				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
-				"full_address": "2210 Cornwall Ave, Vancouver, BC V6K 1B5",
+				"full_address": "2210 Cornwall Ave, BC V6K 1B5",
 				"neighborhoods": "Kitsilano",
+				"images": "images/local.jpg",
 				"hours": {
 					"Monday - Friday": "14:00 - 16:00",
-					"Sunday to Thursday": "21:00 - CLOSE",
-					"Friday to Saturday": "22:00 - CLOSE"
+					"Sunday to Thursday": "21:00 - Close",
+					"Friday to Saturday": "22:00 - Close"
 				},
 				"category": {
 					"title": "Canadian"
@@ -147,10 +148,10 @@
 			"properties": {
 				"id": "004",
 				"name": "The Ellis",
-				"address": "2204 York Ave, Vancouver",
+				"address": "2204 York Ave",
 				"contact_number": "+1 (604) 428-2456",
 				"website": "https://www.theellis.ca/menu",
-				"full_address": "2204 York Ave, Vancouver, BC V6K 1C6",
+				"full_address": "2204 York Ave, BC V6K 1C6",
 				"neighborhoods": "Kitsilano",
 				"images": "images/the-ellis.jpg",
 				"hours": {
@@ -185,11 +186,12 @@
 			"properties": {
 				"id": "005",
 				"name": "King’s Head Public House",
-				"address": "1618 Yew St, Vancouver",
+				"address": "1618 Yew St",
 				"contact_number": "+1 (604) 738-6966",
 				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
-				"full_address": "1618 Yew St, Vancouver, BC V6K 3E7",
+				"full_address": "1618 Yew St, BC V6K 3E7",
 				"neighborhoods": "Kitsilano",
+				"images": "images/kings-head.jpg",
 				"hours": {
 					"Everyday": "15:00 - 18:00 | 21:00 - Close"
 				},
@@ -228,11 +230,12 @@
 			"properties": {
 				"id": "006",
 				"name": "Jackson's Meat & Deli",
-				"address": "2214 W 4th Ave, Vancouver",
+				"address": "2214 W 4th Ave",
 				"contact_number": "+1 (778) 379-2929",
 				"website": "https://www.jacksonsrestobutcher.com/happy-hour",
-				"full_address": "2214 W 4th Ave, Vancouver, BC V6K 4S2",
+				"full_address": "2214 W 4th Ave, BC V6K 4S2",
 				"neighborhoods": "Kitsilano",
+				"images": "images/jacksons.jpg",
 				"hours": {
 					"Monday - Friday": "15:00 - 18:00"
 				},
@@ -267,11 +270,12 @@
 			"properties": {
 				"id": "007",
 				"name": "The Cider House",
-				"address": "1602 Yew St, Vancouver",
+				"address": "1602 Yew St",
 				"contact_number": "+1 (604) 558-1975",
 				"website": "https://ciderhouserules.ca/happy-hour/",
-				"full_address": "1602 Yew St, Vancouver, BC V6K 3E7",
+				"full_address": "1602 Yew St, BC V6K 3E7",
 				"neighborhoods": "Kitsilano",
+				"images": "images/cider-house.jpg",
 				"category": {
 					"title": "Cideries"
 				},
@@ -309,11 +313,12 @@
 			"properties": {
 				"id": "008",
 				"name": "Lucky Taco",
-				"address": "1685 Yew St, Vancouver",
+				"address": "1685 Yew St",
 				"contact_number": "+1 (604) 739-4677",
 				"website": "https://www.luckytaco.ca/menu/happy-hour",
-				"full_address": "1685 Yew St, Vancouver, BC V6K 3E6",
+				"full_address": "1685 Yew St, BC V6K 3E6",
 				"neighborhoods": "Kitsilano",
+				"images": "images/lucky-taco.jpg",
 				"category": {
 					"title": "Mexican"
 				},
@@ -349,11 +354,12 @@
 			"properties": {
 				"id": "009",
 				"name": "Fable Kitchen",
-				"address": "1944 W 4th Ave, Vancouver",
+				"address": "1944 W 4th Ave",
 				"contact_number": "+1 (604) 732 1322",
 				"website": "https://www.fablekitchen.ca/#menu",
-				"full_address": "1944 W 4th Ave, Vancouver, BC V6J 1M5",
+				"full_address": "1944 W 4th Ave, BC V6J 1M5",
 				"neighborhoods": "Kitsilano",
+				"images": "images/fable.jpg",
 				"category": {
 					"title": "Canadian"
 				},
@@ -384,11 +390,12 @@
 			"properties": {
 				"id": "010",
 				"name": "Tacofino",
-				"address": "1909 W 4th Ave, Vancouver",
+				"address": "1909 W 4th Ave",
 				"website": "https://www.tacofino.com/location/kits",
 				"contact_number": "+1 (604) 620-8729",
-				"full_address": "1909 W 4th Ave, Vancouver, BC V6J 3L9",
+				"full_address": "1909 W 4th Ave, BC V6J 3L9",
 				"neighborhoods": "Kitsilano",
+				"images": "images/tacofino.jpg",
 				"category": {
 					"title": "Mexican"
 				},
@@ -421,11 +428,12 @@
 			"properties": {
 				"id": "011",
 				"name": "Malone's Taphouse",
-				"address": "608 W Pender Street, Vancouver",
+				"address": "608 W Pender Street",
 				"website": "http://malones.bc.ca",
 				"contact_number": "+1 (604) 684-9977",
-				"full_address": "608 W Pender Street, Vancouver, BC V6B 1V8",
+				"full_address": "608 W Pender Street, BC V6B 1V8",
 				"neighborhoods": "Downtown",
+				"images": "images/malones.jpg",
 				"category": {
 					"title": "Lounges"
 				},
@@ -470,11 +478,12 @@
 			"properties": {
 				"id": "012",
 				"name": "Moose's Down Under",
-				"address": "830 W Pender St, Vancouver",
+				"address": "830 W Pender St",
 				"website": "https://moosesdownunder.com/specials/",
 				"contact_number": "+1 (604) 683 3300",
-				"full_address": "830 W Pender St, Vancouver, BC V6C 1J8",
+				"full_address": "830 W Pender St, BC V6C 1J8",
 				"neighborhoods": "Downtown",
+				"images": "images/moose.jpg",
 				"category": {
 					"title": "Australian"
 				},
@@ -506,11 +515,12 @@
 			"properties": {
 				"id": "013",
 				"name": "Cambie Bar & Grill",
-				"address": "300 Cambie St, Vancouver",
+				"address": "300 Cambie St",
 				"website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
 				"contact_number": "+1 (604) 688 9158",
-				"full_address": "300 Cambie St, Vancouver, BC V6B 2N3",
+				"full_address": "300 Cambie St, BC V6B 2N3",
 				"neighborhoods": "Downtown",
+				"images": "images/cambie.jpg",
 				"category": {
 					"title": "Bars"
 				},
@@ -542,11 +552,12 @@
 			"properties": {
 				"id": "014",
 				"name": "Delara",
-				"address": "2272 W 4th Ave, Vancouver",
+				"address": "2272 W 4th Ave",
 				"website": "https://delararestaurant.ca/menu",
 				"contact_number": "+1 (604) 730-4325",
-				"full_address": "2272 W 4th Ave, Vancouver, BC V6K 1N8",
+				"full_address": "2272 W 4th Ave, BC V6K 1N8",
 				"neighborhoods": "Kitsilano",
+				"images": "images/delara.jpg",
 				"category": {
 					"title": "Persian"
 				},
@@ -579,11 +590,12 @@
 			"properties": {
 				"id": "015",
 				"name": "Charqui",
-				"address": "1955 Cornwall Ave, Vancouver",
+				"address": "1955 Cornwall Ave",
 				"website": "https://charqui.ca",
 				"contact_number": "+1 (604) 733-3323",
-				"full_address": "1955 Cornwall Ave, Vancouver, BC V6J 1C9",
+				"full_address": "1955 Cornwall Ave, BC V6J 1C9",
 				"neighborhoods": "Kitsilano",
+				"images": "images/charqui.jpg",
 				"category": {
 					"title": "Karaoke"
 				},
@@ -616,12 +628,13 @@
 			"properties": {
 				"id": "016",
 				"name": "WhiteSpot Kitsilano",
-				"address": "2518 W Broadway, Vancouver",
+				"address": "2518 W Broadway",
 				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
 				"contact_number": "+1 (604) 731-2434",
 				"rating": "rating",
-				"full_address": "2518 West Broadway, Vancouver, BC V6K 2G1",
+				"full_address": "2518 West Broadway, BC V6K 2G1",
 				"neighborhoods": "Kitsilano",
+				"images": "images/white-spot.jpg",
 				"category": {
 					"title": "Canadian"
 				},
@@ -661,11 +674,12 @@
 			"properties": {
 				"id": "017",
 				"name": "Elwoods",
-				"address": "3357 W Broadway, Vancouver",
+				"address": "3357 W Broadway",
 				"website": "https://elwoods.ca/",
 				"contact_number": "+1 (604) 731-2434",
-				"full_address": "3357 W Broadway, Vancouver, BC V6R 2B1",
+				"full_address": "3357 W Broadway, BC V6R 2B1",
 				"neighborhoods": "Kitsilano",
+				"images": "images/elwoods.jpg",
 				"category": {
 					"title": "Bars"
 				},
@@ -705,6 +719,7 @@
 				"contact_number": "+1 (604) 565-8815",
 				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
 				"neighborhoods": "Strathcona",
+				"images": "images/bodega.jpg",
 				"category": {
 					"title": "Spanish"
 				},
@@ -741,11 +756,12 @@
 			"properties": {
 				"id": "019",
 				"name": "The 515 bar",
-				"address": "521 Seymour Street, Vancouver",
+				"address": "521 Seymour Street",
 				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
 				"contact_number": "+1 (604) 428-8226",
-				"full_address": "521 Seymour Street, Vancouver BC, V6B 3H6",
+				"full_address": "521 Seymour Street BC, V6B 3H6",
 				"neighborhoods": "Downtown",
+				"images": "images/515.jpg",
 				"category": {
 					"title": "Gastropub"
 				},
@@ -776,8 +792,10 @@
 				"id": "020",
 				"name": "The Stock Room",
 				"contact_number": "+1 (604) 609-0901",
+				"address": "1144 Homer St",
 				"website": "https://www.freehouse.co/locations/stock-room",
 				"neighborhoods": "Downtown",
+				"images": "images/stock-room.jpg",
 				"category": {
 					"title": "Lounges"
 				},
@@ -812,7 +830,9 @@
 				},
 				"website": "https://www.bartholomewbar.com/happy-hour",
 				"neighborhoods": "Downtown",
+				"images": "images/bartholomew.jpg",
 				"contact_number": "+1 (604) 423-4131",
+				"address": "1026 Mainland St",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -838,13 +858,15 @@
 			},
 			"properties": {
 				"id": "022",
-				"name": "The Roxy",
+				"name": "Roxy Burger",
 				"website": "https://www.roxyburger.com/menu/",
 				"category": {
 					"title": "Canadian"
 				},
 				"neighborhoods": "Downtown",
+				"images": "images/roxy.jpg",
 				"contact_number": "+1 (604) 646-4000",
+				"address": "910 Granville St",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -872,14 +894,16 @@
 				"id": "023",
 				"name": "JOEY Burrard",
 				"contact_number": "+1 (604) 683-5639",
+				"address": "820 Burrard St",
 				"website": "https://joeyrestaurants.com/location/joey-burrard/menu#food",
 				"category": {
 					"title": "Lounges"
 				},
 				"neighborhoods": "Downtown",
+				"images": "images/joey.jpg",
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
-					"Sunday - Thuersday": "21:00 - CLOSE"
+					"Sunday - Thuersday": "21:00 - Close"
 				},
 				"drinks": {
 					"Red Truck Road Trip Lager": "$5.00",
@@ -929,14 +953,16 @@
 				"id": "024",
 				"name": "The Ventura Room",
 				"contact_number": "+1 (604) 620-5547",
+				"address": "695 Cambie St",
 				"category": {
 					"title": "Lounges"
 				},
 				"website": "https://static1.squarespace.com/static/5ca3daed9d41495c5d099b93/t/6425e69a043bba5fd25a652c/1680205476268/VENTURA+CORE+-+March+30+23+no+mb.pdf",
 				"neighborhoods": "Downtown",
+				"images": "images/ventura.jpg",
 				"hours": {
 					"All Items": "OPEN - 18:00 ",
-					"Food Only": "21:00 - CLOSE"
+					"Food Only": "21:00 - Close"
 				},
 				"drinks": {
 					"Cheekies": "$7.00",
@@ -972,13 +998,15 @@
 				"name": "Uva Wine & Cocktail Bar",
 				"website": "https://vancouver.foodgressing.com/uva-wine-cocktail-bar-breakfast-happy-hour/",
 				"neighborhoods": "Downtown",
+				"images": "images/uva-wine.jpg",
 				"contact_number": "+1 (604) 632-9560",
+				"address": "900 Seymour St",
 				"category": {
 					"title": "Restaurant"
 				},
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
-					"Sunday - Thuersday": "21:00 - CLOSE"
+					"Sunday - Thuersday": "21:00 - Close"
 				},
 				"drinks": {
 					"Nude Can": "$5.00",
@@ -1007,14 +1035,16 @@
 				"id": "026",
 				"name": "The Chickadee Room",
 				"contact_number": "+1 (604) 336-5853",
+				"address": "182 Keefer St",
 				"website": "https://thechickadeeroom.com/",
 				"neighborhoods": "Downtown",
+				"images": "images/chickadee.jpg",
 				"category": {
 					"title": "Lounges"
 				},
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
-					"Sunday - Thuersday": "21:00 - CLOSE"
+					"Sunday - Thuersday": "21:00 - Close"
 				},
 				"drinks": {
 					"Americano Cocktail (2oz)": "$9.00",
@@ -1037,14 +1067,16 @@
 				"id": "027",
 				"name": "Guilt & Company",
 				"contact_number": "+1 (604) 288-1704",
+				"address": "1 Alexander Street",
 				"website": "https://www.guiltandcompany.com/menu.html",
 				"neighborhoods": "Downtown",
+				"images": "images/guilt.jpg",
 				"category": {
 					"title": "Cocktail"
 				},
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
-					"Sunday - Thuersday": "21:00 - CLOSE"
+					"Sunday - Thuersday": "21:00 - Close"
 				},
 				"drinks": {
 					"Americano Cocktail (2oz)": "$9.00",
@@ -1067,10 +1099,54 @@
 				"id": "028",
 				"name": "Nook",
 				"contact_number": "+1 (604) 734-0099",
+				"address": "1525 Yew St",
 				"website": "https://nookrestaurants.com/kitsilano-menus/",
 				"neighborhoods": "Kitsilano",
+				"images": "images/nook.jpg",
 				"category": {
 					"title": "Italian"
+				},
+				"hours": {
+					"Wednesday - Sunday": "14:00 - 17:00"
+				},
+				"drinks": {
+					"Pesca Fresca (1.5oz)": "$8.00",
+					"La Passione (1.5oz)": "$8.00",
+					"Negroni (3oz)": "$11.00",
+					"Campe Dhei Prosecco (5oz)": "$8.00",
+					"Altopiano Pinot Grigio (5oz)": "$8.00",
+					"Firriato Nero D'Avola/Petit Verdot 'Nari' (5oz)": "$8.00",
+					"Select Draught": "$6.00"
+				},
+				"food": {
+					"Focaccia": "$7.00",
+					"Greens": "$14.00",
+					"Caesar Salad": "$14.00",
+					"Margherita Pizza": "$17.00",
+					"Rigatoni Arrabbiata": "$17.00",
+					"Tonnarelli Cacio Pepe": "$17.00",
+					"Oven Roasted Meatballs": "$17.00",
+					"Rigatoni Boscaiola": "$19.00",
+					"Pepperoni Pizza": "$19.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.15324, 49.26212]
+			},
+			"properties": {
+				"id": "029",
+				"name": "Coquette",
+				"contact_number": "+1 (604) 259-1248",
+				"address": "2685 Arbutus St",
+				"website": "https://brasseriecoquette.ca/menus/",
+				"neighborhoods": "Kitsilano",
+				"images": "images/coquette.jpg",
+				"category": {
+					"title": "Restaurant"
 				},
 				"hours": {
 					"Wednesday - Sunday": "14:00 - 17:00"

@@ -63,7 +63,7 @@ a:visited {
 
 	@include tablet {
 		grid-auto-flow: row;
-		grid-template-columns: 30rem 1fr;
+		grid-template-columns: 48rem 1fr;
 		grid-template-areas:
 			'header header'
 			'aside main';

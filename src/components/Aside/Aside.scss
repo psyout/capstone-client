@@ -12,7 +12,7 @@
 
 	@include tablet {
 		// padding: 1rem 1.5rem 1.5rem;
-		padding: 1rem;
+		padding: 1rem 1.5rem;
 	}
 
 	&__title {
@@ -23,15 +23,16 @@
 
 	&__list {
 		display: flex;
-		flex-wrap: wrap;
 		width: 100%;
 		list-style-type: none;
 		gap: 2rem;
+		flex-direction: row;
+		flex-wrap: wrap;
 
 		@include tablet {
-			flex-direction: column;
-			flex-wrap: nowrap;
-			gap: 0;
+			flex-direction: row;
+			gap: 1.5rem;
+			margin-top: 1.5rem;
 		}
 	}
 }

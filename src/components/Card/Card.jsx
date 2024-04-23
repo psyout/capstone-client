@@ -50,14 +50,20 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 			});
 	};
 
-	const maxRating = 1;
+	const maxRating = 5;
 	const ratingIcons = [];
 
+	// Calculate integer and decimal
+	const integerPart = Math.floor(rating);
+	const decimalPart = rating - integerPart;
+
 	for (let i = 0; i < maxRating; i++) {
-		if (i < rating) {
+		if (i < integerPart) {
 			ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
-		} else {
+		} else if (i === integerPart && decimalPart > 0) {
 			ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
+		} else {
+			break; // Stop the loop
 		}
 	}
 
@@ -67,7 +73,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 				<div className={`restaurant-card__image ${selectedMenu === 'menu' ? '' : 'restaurant-card__image--hidden'}`}>
 					<img className='restaurant-card__image--img' src={images} alt={title} />
 					<div className='restaurant-card__image--overlay restaurant-card__image--title'>
-						<h2 className='restaurant-card__title'>{title.slice(0, 29)}</h2>
+						<h2 className='restaurant-card__title'>{title}</h2>
 					</div>
 				</div>
 				<div className='restaurant-card__info'>

@@ -428,7 +428,7 @@
 			"properties": {
 				"id": "011",
 				"name": "Malone's Taphouse",
-				"address": "608 W Pender Street",
+				"address": "608 W Pender St",
 				"website": "http://malones.bc.ca",
 				"contact_number": "+1 (604) 684-9977",
 				"full_address": "608 W Pender Street, BC V6B 1V8",
@@ -438,7 +438,7 @@
 					"title": "Lounges"
 				},
 				"hours": {
-					"Monday, Wednesday, Thursday": "15:00 - 18:00 | 21:00 - Close",
+					"M, W, Th": "15:00 - 18:00 | 21:00 - Close",
 					"Tuesday": "All day",
 					"Friday": "15:00 - 18:00",
 					"Saturday - Sunday": "11:00 - 18:00"
@@ -628,7 +628,7 @@
 			"properties": {
 				"id": "016",
 				"name": "WhiteSpot Kitsilano",
-				"address": "2518 W Broadway",
+				"address": "2518 W Broadway Ave",
 				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
 				"contact_number": "+1 (604) 731-2434",
 				"rating": "rating",
@@ -674,7 +674,7 @@
 			"properties": {
 				"id": "017",
 				"name": "Elwoods",
-				"address": "3357 W Broadway",
+				"address": "3357 W Broadway Ave",
 				"website": "https://elwoods.ca/",
 				"contact_number": "+1 (604) 731-2434",
 				"full_address": "3357 W Broadway, BC V6R 2B1",
@@ -684,7 +684,7 @@
 					"title": "Bars"
 				},
 				"hours": {
-					"Everyday": "15:00 - 16:00 | 16:00 - 17:00 | 17:00 - 18:00"
+					"Everyday": "15:00 - 18:00"
 				},
 				"drinks": {
 					"Rotating Craft Tap (All Day, Every Day)": "$5.50",
@@ -714,7 +714,7 @@
 			"properties": {
 				"id": "018",
 				"name": "Bodega On Main",
-				"address": "1014 Main St Vancouver",
+				"address": "1014 Main St",
 				"website": "https://www.bodegaonmain.ca/menu/#happyhour",
 				"contact_number": "+1 (604) 565-8815",
 				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
@@ -756,7 +756,7 @@
 			"properties": {
 				"id": "019",
 				"name": "The 515 bar",
-				"address": "521 Seymour Street",
+				"address": "521 Seymour St",
 				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
 				"contact_number": "+1 (604) 428-8226",
 				"full_address": "521 Seymour Street BC, V6B 3H6",
@@ -1067,7 +1067,7 @@
 				"id": "027",
 				"name": "Guilt & Company",
 				"contact_number": "+1 (604) 288-1704",
-				"address": "1 Alexander Street",
+				"address": "1 Alexander St",
 				"website": "https://www.guiltandcompany.com/menu.html",
 				"neighborhoods": "Downtown",
 				"images": "images/guilt.jpg",

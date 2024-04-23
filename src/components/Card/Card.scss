@@ -56,7 +56,6 @@
 		width: 100%;
 		overflow: hidden;
 		display: flex;
-		flex: 2;
 		position: relative;
 
 		&--hidden {
@@ -266,7 +265,7 @@
 		&--social {
 			display: flex;
 			align-items: center;
-			flex-wrap: nowrap;
+			flex-wrap: wrap;
 			flex-direction: row;
 			align-items: flex-start;
 			gap: 1rem;

@@ -2,6 +2,7 @@ import './Aside.scss';
 import Card from '../Card/Card';
 import SortByDropDown from '../SortByDropDown/SortByDropDown';
 import { useState } from 'react';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 const options = [
 	{ value: '', label: 'All Results' },
@@ -147,7 +148,12 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	return (
 		<div className='aside'>
 			<SortByDropDown options={options} value={sortBy} onChange={handleSortByChange} filterByValue={filterBy} onFilterByChange={handleFilterByChange} filters={filters} />
-			<ul className='aside__list'>{cards}</ul>
+
+			<ul className='aside__list'>
+				<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 550: 2, 950: 2 }}>
+					<Masonry gutter='30px'>{cards}</Masonry>
+				</ResponsiveMasonry>
+			</ul>
 		</div>
 	);
 }

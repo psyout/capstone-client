@@ -56,9 +56,9 @@ function Home() {
 		// set map style and original location
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainer.current,
-			style: 'mapbox://styles/mapbox/light-v11',
+			style: 'mapbox://styles/mapbox/streets-v12',
 			center: [-123.114578, 49.285074], // default location
-			zoom: 16,
+			zoom: 14,
 		});
 
 		// get my current location

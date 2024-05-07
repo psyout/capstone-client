@@ -33,7 +33,7 @@ const filters = [
 function formatHours(hours) {
 	return Object.entries(hours).map(([key, value]) => (
 		<div key={key}>
-			<strong style={{ fontWeight: '300' }}> {key}:</strong> <strong style={{ fontWeight: '500' }}> {value} </strong>
+			<strong style={{ fontWeight: '500' }}> {key}:</strong> <strong style={{ fontWeight: '300' }}> {value} </strong>
 		</div>
 	));
 }

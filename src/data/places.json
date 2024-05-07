@@ -29,13 +29,13 @@
 				"drinks": {
 					"Tanqueray 1oz": "$7.00",
 					"Tanquenry 2oz": "$10.00",
-					"Strange Fellows Talisman Pale Ale": "$8.00",
-					"Parallel 49 Trash Panda Hazy Ipa": "$8.00",
-					"Parkside Humans Ipa": "$8.00",
-					"Red Truck Rotating Tap": "$8.00",
-					"Original 16 Chewies Lager": "$8.00",
-					"Rewind Beer Co. Seasonal": "$8.00",
-					"Lone Tree Dry Cider": "$8.00",
+					"Strange Fellows Talisman Pale Ale": "$9.00",
+					"Parallel 49 Trash Panda Hazy Ipa": "$9.00",
+					"Parkside Humans Ipa": "$9.00",
+					"Red Truck Rotating Tap": "$9.00",
+					"Original 16 Chewies Lager": "$9.00",
+					"Rewind Beer Co. Seaso9al": "$9.00",
+					"Lone Tree Dry Cider": "$9.00",
 					"Mt. Boucherie Merlot": "$9.00",
 					"Road 13 Honest Johns": "$9.00",
 					"Dirty Laundry Sparkling White": "$9.00"
@@ -623,20 +623,19 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.16398, 49.263744]
+				"coordinates": [-123.16399, 49.263744]
 			},
 			"properties": {
 				"id": "016",
-				"name": "WhiteSpot Kitsilano",
+				"name": "White Spot Kits",
 				"address": "2518 W Broadway Ave",
 				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
 				"contact_number": "+1 (604) 731-2434",
-				"rating": "rating",
 				"full_address": "2518 West Broadway, BC V6K 2G1",
 				"neighborhoods": "Kitsilano",
 				"images": "images/white-spot.jpg",
 				"category": {
-					"title": "Canadian"
+					"title": "Burger"
 				},
 				"hours": {
 					"Sunday to Thursday": "14:00 - 17:00 | 20:00 - 22:00",
@@ -1173,7 +1172,6 @@
 				}
 			}
 		},
-
 		{
 			"type": "Feature",
 			"geometry": {
@@ -1183,6 +1181,43 @@
 			"properties": {
 				"id": "030",
 				"name": "Karma Lounge",
+				"address": "1161 W Georgia St",
+				"contact_number": "+1 (604) 734-7117",
+				"website": "https://lasmargaritas.com/happy-hour/",
+				"full_address": "1161 W Georgia Street, Vancouver, BC V6E 0C6",
+				"neighborhoods": "Downtown",
+				"images": "images/las-margaritas.jpg",
+				"hours": {
+					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
+				},
+				"category": {
+					"title": "Mexican"
+				},
+				"drinks": {
+					"Slushy Margarita": "$7.00",
+					"Classic Margarita (2.5 Oz)": "$11.00",
+					"North Point Ipa": "$6.00",
+					"House Red Or White Wine": "$1 An Oz",
+					"1516 Lager Or Pale Ale (14 Oz)": "$6.00"
+				},
+				"food": {
+					"Tortilla Soup Cup": "$5.00",
+					"Mini Chimis (Served with sour cream)": "$6.00",
+					"Tijuana Style Caesar Salad": "$7.00",
+					"Taquitos (Served with sour cream)": "$7.00",
+					"Chicharron Street Tacos (2)": "$6.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.13131, 49.27807]
+			},
+			"properties": {
+				"id": "031",
+				"name": "Maxine's Cafe & Bar",
 				"address": "1161 W Georgia St",
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",

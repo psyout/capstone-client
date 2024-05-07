@@ -36,10 +36,12 @@ function Home() {
 		const markers = geojson.features.map((feature) => {
 			const { coordinates } = feature.geometry;
 			const { name } = feature.properties;
+			const { address } = feature.properties;
 			const color = '#8a8ba6';
 			const popup = new mapboxgl.Popup().setHTML(`
 			<div>
 			  <p>${name}</p>
+			  <p>${address}</p>
 			</div>
 		  `);
 			const marker = new mapboxgl.Marker({ color }).setLngLat(coordinates).setPopup(popup);

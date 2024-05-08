@@ -149,11 +149,15 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		<div className='aside'>
 			<SortByDropDown options={options} value={sortBy} onChange={handleSortByChange} filterByValue={filterBy} onFilterByChange={handleFilterByChange} filters={filters} />
 
-			<ul className='aside__list'>
-				<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 550: 2, 950: 2 }}>
-					<Masonry gutter='30px'>{cards}</Masonry>
-				</ResponsiveMasonry>
-			</ul>
+			{
+				<ul className='aside__list'>
+					<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 550: 2, 950: 2 }}>
+						<Masonry containerWidth={800} gutter='30px'>
+							{cards}
+						</Masonry>
+					</ResponsiveMasonry>
+				</ul>
+			}
 		</div>
 	);
 }

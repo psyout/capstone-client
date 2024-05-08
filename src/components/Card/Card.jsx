@@ -71,10 +71,9 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 		<li className='restaurant-card'>
 			<div className={`restaurant-card__content ${selectedMenu !== 'menu' ? 'restaurant-card__content--full-width' : ''}`}>
 				<div className={`restaurant-card__image ${selectedMenu === 'menu' ? '' : 'restaurant-card__image--hidden'}`}>
+					<h2 className='restaurant-card__image--title'>{title}</h2>
+
 					<img className='restaurant-card__image--img' src={images} alt={title} />
-					<div className='restaurant-card__image--overlay restaurant-card__image--title'>
-						<h2 className='restaurant-card__title'>{title}</h2>
-					</div>
 				</div>
 				<div className='restaurant-card__info'>
 					<DrinksMenu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} drinks={drinks} website={website} />

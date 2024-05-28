@@ -1245,6 +1245,43 @@
 					"Chicharron Street Tacos (2)": "$6.00"
 				}
 			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.13131, 49.27807]
+			},
+			"properties": {
+				"id": "031",
+				"name": "Maxine's Cafe & Bar",
+				"address": "1161 W Georgia St",
+				"contact_number": "+1 (604) 734-7117",
+				"website": "https://lasmargaritas.com/happy-hour/",
+				"full_address": "1161 W Georgia Street, Vancouver, BC V6E 0C6",
+				"neighborhoods": "Downtown",
+				"images": "images/las-margaritas.jpg",
+				"hours": {
+					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
+				},
+				"category": {
+					"title": "Mexican"
+				},
+				"drinks": {
+					"Slushy Margarita": "$7.00",
+					"Classic Margarita (2.5 Oz)": "$11.00",
+					"North Point Ipa": "$6.00",
+					"House Red Or White Wine": "$1 An Oz",
+					"1516 Lager Or Pale Ale (14 Oz)": "$6.00"
+				},
+				"food": {
+					"Tortilla Soup Cup": "$5.00",
+					"Mini Chimis (Served with sour cream)": "$6.00",
+					"Tijuana Style Caesar Salad": "$7.00",
+					"Taquitos (Served with sour cream)": "$7.00",
+					"Chicharron Street Tacos (2)": "$6.00"
+				}
+			}
 		}
 	]
 }

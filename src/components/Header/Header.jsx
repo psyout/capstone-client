@@ -38,7 +38,7 @@ function Header({ handleSearchInput }) {
 			<div className='header-container__logo'>
 				<img src={logo} alt='Logo' className='header-container__logo--img' />
 				<h1 className='header-container__logo--title'>
-					Wülen <span>| Happy Hour Finder</span>
+					<span>| Happy Hour Finder</span>
 				</h1>
 			</div>
 			<div className='header-container__row'>

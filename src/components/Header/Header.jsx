@@ -1,6 +1,5 @@
 // import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { LuRadar } from 'react-icons/lu';
 // import { FaUserAlt } from 'react-icons/fa';
 // import logo from '../../assets/images/logo.svg';
 import './Header.scss';
@@ -38,7 +37,6 @@ function Header({ handleSearchInput }) {
 		<header className='header-container'>
 			<div className='header-container__logo'>
 				{/* <img src={logo} alt='Logo' className='header-container__logo--img' /> */}
-				<LuRadar style={{ fontSize: '2rem', color: '#ffffff' }} />
 				<h1 className='header-container__logo--title'>
 					VanSippy
 					<span> | Happy Hour Finder</span>

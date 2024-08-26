@@ -15,7 +15,7 @@
 
 	@include tablet {
 		flex-direction: row;
-		padding: 0 1.5rem;
+		padding: 1rem 1.5rem;
 		justify-content: space-between;
 	}
 
@@ -39,19 +39,24 @@
 		}
 
 		&--title {
-			font-size: 0.95rem;
+			font-family: 'Merriweather', serif;
+			font-weight: 900;
+			font-style: normal;
+			font-size: 1.5rem;
 			width: 100%;
 			color: $color-logo;
 			text-align: center;
 
 			span {
-				font-weight: 300;
+				font-weight: 400;
+				font-size: 1rem;
+				font-family: 'Rubik', sans-serif;
 			}
 
 			@include tablet {
 				text-align: left;
 				margin-left: 0.5rem;
-				font-size: 1.1rem;
+				font-size: 1.5rem;
 			}
 		}
 	}

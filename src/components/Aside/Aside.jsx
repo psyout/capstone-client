@@ -152,9 +152,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 			{
 				<ul className='aside__list'>
 					<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 550: 2, 950: 2 }}>
-						<Masonry containerWidth={800} gutter='30px'>
-							{cards}
-						</Masonry>
+						<Masonry gutter='30px'>{cards}</Masonry>
 					</ResponsiveMasonry>
 				</ul>
 			}

@@ -46,7 +46,7 @@ function Header({ handleSearchInput }) {
 				<div className='header-container__search'>
 					<input type='text' placeholder='Look for your next deal...' className='header-container__search-input' onChange={handleSearchInput} />
 					<button className='header-container__search-button'>
-						<FaSearch style={{ color: '#278C8C' }} />
+						<FaSearch style={{ color: '#676f9d' }} />
 					</button>
 				</div>
 				{/* <div onClick={handleClickOpen} className='header-container__avatar'>

@@ -121,7 +121,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		return (
 			<Card
 				key={id}
-				title={matchingBusinessFromYelp.name}
+				title={name}
 				address={address}
 				contact_number={contact_number}
 				images={images}
@@ -131,7 +131,6 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				rating={matchingBusinessFromYelp.rating}
 				onClick={handleClick}
 				website={website}
-				name={name}
 				url={matchingBusinessFromYelp.url}
 			/>
 		);
@@ -152,7 +151,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 			{
 				<ul className='aside__list'>
 					<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 550: 2, 950: 2 }}>
-						<Masonry gutter='30px'>{cards}</Masonry>
+						<Masonry containerWidth={800} gutter='30px'>
+							{cards}
+						</Masonry>
 					</ResponsiveMasonry>
 				</ul>
 			}

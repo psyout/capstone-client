@@ -1,5 +1,6 @@
 // import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaCocktail } from 'react-icons/fa';
+
 // import { FaUserAlt } from 'react-icons/fa';
 // import logo from '../../assets/images/logo.svg';
 import './Header.scss';
@@ -39,6 +40,7 @@ function Header({ handleSearchInput }) {
 				{/* <img src={logo} alt='Logo' className='header-container__logo--img' /> */}
 				<h1 className='header-container__logo--title'>
 					VanSippy
+					<FaCocktail style={{ paddingTop: '0.4rem' }} />
 					<span> | Happy Hour Finder</span>
 				</h1>
 			</div>

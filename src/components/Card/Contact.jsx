@@ -2,11 +2,21 @@ import { ImPhone, ImLocation } from 'react-icons/im';
 import { FiShare, FiHeart } from 'react-icons/fi';
 
 function Contact({ address, contact_number, rating, ratingIcons, handleLikeClick, isLiked, toggleLightbox }) {
+	const openMaps = () => {
+		if (address) {
+			const encodedAddress = encodeURIComponent(address); // Encode the address for URL
+			const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+			window.open(mapUrl, '_blank');
+		} else {
+			console.error('Address is not available');
+		}
+	};
+
 	return (
 		<div className='restaurant-card__contact'>
 			<ul className='restaurant-card__contact--list'>
 				<div className='restaurant-card__contact--container'>
-					<li className='restaurant-card__contact--item'>
+					<li className='restaurant-card__contact--item' onClick={openMaps} style={{ cursor: 'pointer' }}>
 						<span>
 							<ImLocation />
 						</span>

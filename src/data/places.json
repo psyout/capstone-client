@@ -1393,6 +1393,43 @@
 					"Chicharron Street Tacos (2)": "$6.00"
 				}
 			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1748476, 49.264203]
+			},
+			"properties": {
+				"id": "035",
+				"name": "The Fringe Café",
+				"address": "3124 W Broadway",
+				"contact_number": "+1 (604) 731-0617",
+				"website": "https://lasmargaritas.com/happy-hour/",
+				"full_address": "3124 W Broadway, Vancouver, BC V6K 2H3",
+				"neighborhoods": "Kitsilano",
+				"images": "images/las-margaritas.jpg",
+				"hours": {
+					"7 days a week": "12:00 - 17:00"
+				},
+				"category": {
+					"title": "Mexican"
+				},
+				"drinks": {
+					"Slushy Margarita": "$7.00",
+					"Classic Margarita (2.5 Oz)": "$11.00",
+					"North Point Ipa": "$6.00",
+					"House Red Or White Wine": "$1 An Oz",
+					"1516 Lager Or Pale Ale (14 Oz)": "$6.00"
+				},
+				"food": {
+					"Tortilla Soup Cup": "$5.00",
+					"Mini Chimis (Served with sour cream)": "$6.00",
+					"Tijuana Style Caesar Salad": "$7.00",
+					"Taquitos (Served with sour cream)": "$7.00",
+					"Chicharron Street Tacos (2)": "$6.00"
+				}
+			}
 		}
 	]
 }

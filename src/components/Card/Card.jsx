@@ -1,59 +1,47 @@
 import './Card.scss';
-import { BsStarFill, BsStarHalf } from 'react-icons/bs';
-
-import Lightbox from './Lightbox';
-import Menu from './Menu';
+import { useState } from 'react';
+import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar } from '@mui/material';
+import { blueGrey, red, grey } from '@mui/material/colors';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import SportsBarIcon from '@mui/icons-material/SportsBar';
+import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
 import OpenTime from './OpenTime';
-import Contact from './Contact';
 import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
-
-import { useState } from 'react';
+import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 function Card({ title, address, images, time, contact_number, drinks, food, website, rating, url }) {
-	const [selectedMenu, setSelectedMenu] = useState('menu');
 	const [isLiked, setIsLiked] = useState(false);
-	const [lightboxOpen, setLightboxOpen] = useState(false);
-	const [copied, setCopied] = useState(false);
+	const [expandedDrinks, setExpandedDrinks] = useState(false); // for drinks expansion
+	const [expandedFood, setExpandedFood] = useState(false); // for food expansion
 
 	const shareOnFacebook = () => {
 		const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 		window.open(facebookUrl, '_blank');
 	};
 
-	const shareOnGmail = () => {
-		const gmailUrl = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`;
-		window.location.href = gmailUrl;
-	};
-
-	const shareOnTwitter = () => {
-		const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
-		window.open(twitterUrl, '_blank');
-	};
-
 	const handleLikeClick = () => {
 		setIsLiked(!isLiked);
 	};
 
-	const toggleLightbox = () => {
-		setLightboxOpen(!lightboxOpen);
+	const handleExpandDrinksClick = () => {
+		setExpandedDrinks(!expandedDrinks);
+		if (expandedFood) {
+			setExpandedFood(false);
+		}
 	};
 
-	const copyLinkOnClick = () => {
-		navigator.clipboard
-			.writeText(url)
-			.then(() => {
-				setCopied(true);
-			})
-			.catch((error) => {
-				console.error('Failed to copy URL: ', error);
-			});
+	const handleExpandFoodClick = () => {
+		setExpandedFood(!expandedFood);
+		if (expandedDrinks) {
+			setExpandedDrinks(false); // Close drinks if food is opened
+		}
 	};
 
 	const maxRating = 5;
 	const ratingIcons = [];
-
-	// Calculate integer and decimal
 	const integerPart = Math.floor(rating);
 	const decimalPart = rating - integerPart;
 
@@ -63,44 +51,74 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 		} else if (i === integerPart && decimalPart > 0) {
 			ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
 		} else {
-			break; // Stop the loop
+			break;
 		}
 	}
 
 	return (
-		<li className='restaurant-card'>
-			<div className={`restaurant-card__content ${selectedMenu !== 'menu' ? 'restaurant-card__content--full-width' : ''}`}>
-				<div className={`restaurant-card__image ${selectedMenu === 'menu' ? '' : 'restaurant-card__image--hidden'}`}>
-					<h2 className='restaurant-card__image--title'>{title}</h2>
-
-					<img className='restaurant-card__image--img' src={images} alt={title} />
-				</div>
-				<div className='restaurant-card__info'>
-					<DrinksMenu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} drinks={drinks} website={website} />
-
-					<FoodMenu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} food={food} website={website} />
-
-					<Menu selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
-
-					<Contact contact_number={contact_number} address={address} rating={rating} ratingIcons={ratingIcons} handleLikeClick={handleLikeClick} isLiked={isLiked} toggleLightbox={toggleLightbox} />
-				</div>
-			</div>
-
-			<OpenTime time={time} />
-
-			<Lightbox
-				lightboxOpen={lightboxOpen}
-				toggleLightbox={toggleLightbox}
-				title={title}
-				address={address}
-				url={url}
-				copied={copied}
-				copyLinkOnClick={copyLinkOnClick}
-				shareOnFacebook={shareOnFacebook}
-				shareOnTwitter={shareOnTwitter}
-				shareOnGmail={shareOnGmail}
+		<MUICard>
+			<CardHeader
+				avatar={<Avatar sx={{ bgcolor: blueGrey[800], fontWeight: '700', fontFamily: 'Rubik' }}>{title.charAt(0)}</Avatar>}
+				action={
+					<IconButton aria-label='settings'>
+						<MoreVertIcon />
+					</IconButton>
+				}
+				title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>{title}</Typography>}
+				subheader={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.75rem', fontWeight: '300' }}>{address}</Typography>}
 			/>
-		</li>
+			<CardMedia component='img' image={images} alt={title} sx={{ aspectRatio: '16/9' }} />
+			<CardContent>
+				<Typography variant='body2' color='text.secondary' sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
+					{time ? <OpenTime time={time} /> : 'No opening time available'}
+				</Typography>
+				{/* <div style={{ display: 'flex' }}>
+					<Typography variant='h6'>Rating:</Typography>
+					{rating}
+					{ratingIcons}
+				</div> */}
+			</CardContent>
+			<CardActions disableSpacing sx={{ justifyContent: 'space-between' }}>
+				<div>
+					<IconButton aria-label='add to favorites' onClick={handleLikeClick}>
+						<FavoriteIcon color={isLiked ? 'error' : 'inherit'} />
+					</IconButton>
+					<IconButton aria-label='share' onClick={shareOnFacebook}>
+						<ShareIcon />
+					</IconButton>
+				</div>
+				<div>
+					<IconButton
+						onClick={handleExpandDrinksClick}
+						aria-expanded={expandedDrinks}
+						aria-label='show drinks'
+						sx={{ color: expandedDrinks ? red[400] : grey[600] }} // Active color for drinks
+					>
+						<SportsBarIcon />
+					</IconButton>
+					<IconButton
+						onClick={handleExpandFoodClick}
+						aria-expanded={expandedFood}
+						aria-label='show food'
+						sx={{ color: expandedFood ? red[400] : grey[600] }} // Active color for food
+					>
+						<RestaurantMenuOutlinedIcon />
+					</IconButton>
+				</div>
+			</CardActions>
+			{/* Drinks Section */}
+			<Collapse in={expandedDrinks} timeout='auto' unmountOnExit>
+				<CardContent>
+					<DrinksMenu drinks={drinks} website={website} />
+				</CardContent>
+			</Collapse>
+			{/* Food Section */}
+			<Collapse in={expandedFood} timeout='auto' unmountOnExit>
+				<CardContent>
+					<FoodMenu food={food} website={website} />
+				</CardContent>
+			</Collapse>
+		</MUICard>
 	);
 }
 

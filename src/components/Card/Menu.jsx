@@ -1,18 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBeer, FaHamburger } from 'react-icons/fa';
-import { IoIosArrowDropdownCircle } from 'react-icons/io';
 
 function Menu({ selectedMenu, setSelectedMenu }) {
 	return (
 		<div className='restaurant-card__menu'>
-			<div className='restaurant-card__menu--title'>
-				<h4 className='restaurant-card__menu--text'>Menu</h4>
-				<span>
-					<IoIosArrowDropdownCircle />
-				</span>
-			</div>
-
 			<ul className='restaurant-card__menu--list'>
 				<li
 					className={`restaurant-card__menu--item ${selectedMenu === 'drinks' ? 'restaurant-card__menu--item-active' : ''} ${

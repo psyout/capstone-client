@@ -1,30 +1,40 @@
 import './Card.scss';
 import { useState } from 'react';
-import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar } from '@mui/material';
-import { blueGrey, red, grey } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+import {
+	Card as MUICard,
+	CardHeader,
+	CardMedia,
+	CardContent,
+	CardActions,
+	IconButton,
+	Collapse,
+	Typography,
+	Avatar,
+} from '@mui/material';
+import { red, grey } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
+import Divider from '@mui/material/Divider';
 import OpenTime from './OpenTime';
 import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
-function Card({ title, address, images, time, contact_number, drinks, food, website, rating, url }) {
-	const [isLiked, setIsLiked] = useState(false);
+function Card({
+	title,
+	address,
+	images,
+	time,
+	contact_number,
+	drinks,
+	food,
+	website,
+	rating,
+	url,
+}) {
 	const [expandedDrinks, setExpandedDrinks] = useState(false); // for drinks expansion
 	const [expandedFood, setExpandedFood] = useState(false); // for food expansion
-
-	const shareOnFacebook = () => {
-		const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-		window.open(facebookUrl, '_blank');
-	};
-
-	const handleLikeClick = () => {
-		setIsLiked(!isLiked);
-	};
 
 	const handleExpandDrinksClick = () => {
 		setExpandedDrinks(!expandedDrinks);
@@ -47,51 +57,97 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 
 	for (let i = 0; i < maxRating; i++) {
 		if (i < integerPart) {
-			ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
+			ratingIcons.push(
+				<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />
+			);
 		} else if (i === integerPart && decimalPart > 0) {
-			ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
+			ratingIcons.push(
+				<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />
+			);
 		} else {
 			break;
 		}
 	}
 
 	return (
-		<MUICard>
+		<MUICard variant="outlined">
 			<CardHeader
-				avatar={<Avatar sx={{ bgcolor: blueGrey[800], fontWeight: '700', fontFamily: 'Rubik' }}>{title.charAt(0)}</Avatar>}
+				avatar={
+					<Avatar
+						sx={{
+							bgcolor: red[400],
+							fontWeight: '700',
+							fontFamily: 'Rubik',
+						}}>
+						{title.charAt(0)}
+					</Avatar>
+				}
 				action={
-					<IconButton aria-label='settings'>
+					<IconButton aria-label="settings">
 						<MoreVertIcon />
 					</IconButton>
 				}
-				title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>{title}</Typography>}
-				subheader={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.75rem', fontWeight: '300' }}>{address}</Typography>}
+				title={
+					<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>
+						{title}
+					</Typography>
+				}
+				subheader={
+					<Typography
+						sx={{
+							fontFamily: 'Rubik',
+							fontSize: '0.75rem',
+							fontWeight: '300',
+						}}>
+						{address}
+					</Typography>
+				}
 			/>
-			<CardMedia component='img' image={images} alt={title} sx={{ aspectRatio: '16/9' }} />
+			<CardMedia component="img" image={images} alt={title} sx={{ aspectRatio: '16/9' }} />
 			<CardContent>
-				<Typography variant='body2' color='text.secondary' sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
+				<Typography
+					variant="body2"
+					color="text.secondary"
+					sx={{
+						fontFamily: 'Rubik',
+						fontSize: '0.75rem',
+					}}>
 					{time ? <OpenTime time={time} /> : 'No opening time available'}
 				</Typography>
-				{/* <div style={{ display: 'flex' }}>
-					<Typography variant='h6'>Rating:</Typography>
-					{rating}
-					{ratingIcons}
-				</div> */}
 			</CardContent>
-			<CardActions disableSpacing sx={{ justifyContent: 'space-between' }}>
-				<div>
-					<IconButton aria-label='add to favorites' onClick={handleLikeClick}>
-						<FavoriteIcon color={isLiked ? 'error' : 'inherit'} />
-					</IconButton>
-					<IconButton aria-label='share' onClick={shareOnFacebook}>
-						<ShareIcon />
-					</IconButton>
+			<Divider />
+			<CardActions
+				disableSpacing
+				sx={{
+					justifyContent: 'space-between',
+					padding: '0.3rem 1rem',
+				}}>
+				<div
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						fontSize: '0.8rem',
+					}}>
+					<Typography sx={{ fontWeight: '400' }} variant="subheading">
+						Rating:
+					</Typography>
+					<div
+						style={{
+							marginLeft: '0.3rem',
+							display: 'flex',
+							alignItems: 'center',
+							gap: '0.2rem',
+							fontWeight: '200',
+						}}>
+						{rating}
+						<>{ratingIcons}</>
+					</div>
 				</div>
 				<div>
 					<IconButton
 						onClick={handleExpandDrinksClick}
 						aria-expanded={expandedDrinks}
-						aria-label='show drinks'
+						aria-label="show drinks"
 						sx={{ color: expandedDrinks ? red[400] : grey[600] }} // Active color for drinks
 					>
 						<SportsBarIcon />
@@ -99,7 +155,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 					<IconButton
 						onClick={handleExpandFoodClick}
 						aria-expanded={expandedFood}
-						aria-label='show food'
+						aria-label="show food"
 						sx={{ color: expandedFood ? red[400] : grey[600] }} // Active color for food
 					>
 						<RestaurantMenuOutlinedIcon />
@@ -107,13 +163,15 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 				</div>
 			</CardActions>
 			{/* Drinks Section */}
-			<Collapse in={expandedDrinks} timeout='auto' unmountOnExit>
+			<Collapse in={expandedDrinks} timeout="auto" unmountOnExit>
+				<Divider />
 				<CardContent>
 					<DrinksMenu drinks={drinks} website={website} />
 				</CardContent>
 			</Collapse>
 			{/* Food Section */}
-			<Collapse in={expandedFood} timeout='auto' unmountOnExit>
+			<Collapse in={expandedFood} timeout="auto" unmountOnExit>
+				<Divider />
 				<CardContent>
 					<FoodMenu food={food} website={website} />
 				</CardContent>

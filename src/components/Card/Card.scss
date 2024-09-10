@@ -118,8 +118,6 @@
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
-		border-top: solid 0.08rem rgba(127, 127, 127, 0.663);
-		padding-top: 1rem;
 
 		&--title {
 			display: flex;
@@ -208,7 +206,7 @@
 				width: 100%;
 
 				@include tablet {
-					margin: 0.5rem 0;
+					margin: 0.5rem 0 0;
 				}
 
 				span {
@@ -393,11 +391,13 @@
 
 		&--title {
 			font-size: 0.9rem;
+			font-weight: 400;
+			letter-spacing: -0.03rem;
 		}
 
 		&--text {
 			font-size: 0.8rem;
-			line-height: 1.5;
+			line-height: 1.4;
 		}
 	}
 }

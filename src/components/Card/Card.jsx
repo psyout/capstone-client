@@ -77,7 +77,10 @@ function Card({
 						sx={{
 							bgcolor: red[400],
 							fontWeight: '700',
+							fontSize: '1rem',
 							fontFamily: 'Rubik',
+							width: '35px',
+							height: '35px',
 						}}>
 						{title.charAt(0)}
 					</Avatar>

@@ -12,7 +12,7 @@ import {
 	Avatar,
 } from '@mui/material';
 import { red, grey } from '@mui/material/colors';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
 import Divider from '@mui/material/Divider';
@@ -85,11 +85,11 @@ function Card({
 						{title.charAt(0)}
 					</Avatar>
 				}
-				action={
-					<IconButton aria-label="settings">
-						<MoreVertIcon />
-					</IconButton>
-				}
+				// action={
+				// 	<IconButton aria-label="settings">
+				// 		<MoreVertIcon />
+				// 	</IconButton>
+				// }
 				title={
 					<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>
 						{title}

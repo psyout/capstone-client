@@ -3,17 +3,17 @@ import { BsFillClockFill } from 'react-icons/bs';
 
 function OpenTime({ time }) {
 	return (
-		<div className='restaurant-card__caption'>
-			<div className='restaurant-card__caption--container'>
+		<div className="restaurant-card__caption">
+			<div className="restaurant-card__caption--container">
 				<span>
 					<BsFillClockFill />
 				</span>
-				<h4 className='restaurant-card__caption--title'>Happy Hour Time</h4>
+				<span className="restaurant-card__caption--title">Happy Hour Time</span>
 			</div>
 			{time.map((hours, index) => (
-				<React.Fragment key={index}>
-					<span className='restaurant-card__caption--text'>{hours}</span>
-				</React.Fragment>
+				<div key={index}>
+					<span className="restaurant-card__caption--text">{hours}</span>
+				</div>
 			))}
 		</div>
 	);

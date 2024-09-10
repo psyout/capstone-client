@@ -56,12 +56,17 @@ function Home() {
 		mapboxgl.accessToken = accessToken;
 
 		// set map style and original location
-		mapRef.current = new mapboxgl.Map({
-			container: mapContainer.current,
-			style: 'mapbox://styles/mapbox/streets-v12',
-			center: [-123.114578, 49.285074], // default location
-			zoom: 14,
-		});
+		if (!mapboxgl.supported()) {
+			alert('Your browser does not support WebGL');
+		} else {
+			mapboxgl.accessToken = accessToken;
+			mapRef.current = new mapboxgl.Map({
+				container: mapContainer.current,
+				style: 'mapbox://styles/mapbox/streets-v12',
+				center: [-123.114578, 49.285074],
+				zoom: 14,
+			});
+		}
 
 		// get my current location
 		const getLocation = () => {
@@ -96,7 +101,9 @@ function Home() {
 				console.log('marker', marker.id);
 				// set the selected marker as part of the array
 				setSelectedBusiness(marker.id);
-				setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
+				setSelectedCard(
+					geoJson.features.filter((feature) => feature.properties.name === marker.id)
+				);
 			});
 			marker.addTo(mapRef.current);
 		});
@@ -136,9 +143,15 @@ function Home() {
 	}, [accessToken, setSelectedBusiness]);
 
 	return (
-		<div className='container'>
+		<div className="container">
 			<Header handleSearchInput={handleSearchInput} />
-			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
+			<Aside
+				selectedCard={selectedCard}
+				selectedBusiness={selectedBusiness}
+				geoJson={geoJson}
+				search={search}
+				businesses={businesses}
+			/>
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

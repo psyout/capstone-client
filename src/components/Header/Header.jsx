@@ -35,19 +35,24 @@ function Header({ handleSearchInput }) {
 	// 	};
 
 	return (
-		<header className='header-container'>
-			<div className='header-container__logo'>
+		<header className="header-container">
+			<div className="header-container__logo">
 				{/* <img src={logo} alt='Logo' className='header-container__logo--img' /> */}
-				<h1 className='header-container__logo--title'>
+				<h1 className="header-container__logo--title">
 					VanSippy
 					<FaCocktail style={{ paddingTop: '0.4rem' }} />
 					<span> | Happy Hour Finder</span>
 				</h1>
 			</div>
-			<div className='header-container__row'>
-				<div className='header-container__search'>
-					<input type='text' placeholder='Look for your next deal...' className='header-container__search-input' onChange={handleSearchInput} />
-					<button className='header-container__search-button'>
+			<div className="header-container__row">
+				<div className="header-container__search">
+					<input
+						type="text"
+						placeholder="Look for your next deal..."
+						className="header-container__search-input"
+						onChange={handleSearchInput}
+					/>
+					<button className="header-container__search-button">
 						<FaSearch style={{ color: '#676f9d' }} />
 					</button>
 				</div>

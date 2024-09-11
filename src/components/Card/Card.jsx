@@ -15,24 +15,14 @@ import { red, grey } from '@mui/material/colors';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
 import SportsBarTwoToneIcon from '@mui/icons-material/SportsBarTwoTone';
+import PhoneInTalkTwoToneIcon from '@mui/icons-material/PhoneInTalkTwoTone';
 import Divider from '@mui/material/Divider';
 import OpenTime from './OpenTime';
 import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
-function Card({
-	title,
-	address,
-	images,
-	time,
-	contact_number,
-	drinks,
-	food,
-	website,
-	rating,
-	url,
-}) {
+function Card({ title, address, images, time, phone, drinks, food, website, rating }) {
 	const [expandedDrinks, setExpandedDrinks] = useState(false); // for drinks expansion
 	const [expandedFood, setExpandedFood] = useState(false); // for food expansion
 
@@ -152,6 +142,14 @@ function Card({
 					</div>
 				</div>
 				<div>
+					<IconButton
+						onClick={() => {
+							window.location.href = `tel:${phone}`;
+						}}
+						sx={{ color: grey[600] }}
+						aria-label="call business">
+						<PhoneInTalkTwoToneIcon />
+					</IconButton>
 					<IconButton
 						onClick={handleExpandDrinksClick}
 						aria-expanded={expandedDrinks}

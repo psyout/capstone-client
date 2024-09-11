@@ -113,7 +113,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		: sortedFeatures;
 
 	const cards = filteredFeaturesByCategory.map((feature) => {
-		const { id, name, website, contact_number, images } = feature.properties;
+		const { id, name, website, images } = feature.properties;
 		const hours = formatHours(feature.properties.hours);
 		const drinks = formatDrinks(feature.properties.drinks);
 		const food = formatFood(feature.properties.food);
@@ -129,10 +129,10 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 
 		return (
 			<Card
-				key={matchingBusinessFromYelp.name}
+				key={id}
 				title={name}
 				address={matchingBusinessFromYelp.location.address1}
-				contact_number={contact_number}
+				phone={matchingBusinessFromYelp.phone} // Get the phone from Yelp
 				images={images}
 				time={hours}
 				drinks={drinks}

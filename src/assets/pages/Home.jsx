@@ -90,9 +90,6 @@ function Home() {
 			console.log(event.coords.latitude, event.coords.longitude);
 		});
 
-		// zoom control
-		mapRef.current.addControl(new ZoomControl(), 'bottom-right');
-
 		// Markers on the map
 		const markers = getMarkersFromGeoJson(geoJson);
 

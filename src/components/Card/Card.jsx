@@ -13,8 +13,8 @@ import {
 } from '@mui/material';
 import { red, grey } from '@mui/material/colors';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
-import SportsBarIcon from '@mui/icons-material/SportsBar';
-import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
+import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
+import SportsBarTwoToneIcon from '@mui/icons-material/SportsBarTwoTone';
 import Divider from '@mui/material/Divider';
 import OpenTime from './OpenTime';
 import DrinksMenu from './DrinksMenu';
@@ -106,7 +106,12 @@ function Card({
 					</Typography>
 				}
 			/>
-			<CardMedia component="img" image={images} alt={title} sx={{ aspectRatio: '16/9' }} />
+			<CardMedia
+				component="img"
+				image={images}
+				alt={title}
+				sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
+			/>
 			<CardContent>
 				<Typography
 					variant="body2"
@@ -153,7 +158,7 @@ function Card({
 						aria-label="show drinks"
 						sx={{ color: expandedDrinks ? red[400] : grey[600] }} // Active color for drinks
 					>
-						<SportsBarIcon />
+						<SportsBarTwoToneIcon />
 					</IconButton>
 					<IconButton
 						onClick={handleExpandFoodClick}
@@ -161,7 +166,7 @@ function Card({
 						aria-label="show food"
 						sx={{ color: expandedFood ? red[400] : grey[600] }} // Active color for food
 					>
-						<RestaurantMenuOutlinedIcon />
+						<LunchDiningTwoToneIcon />
 					</IconButton>
 				</div>
 			</CardActions>

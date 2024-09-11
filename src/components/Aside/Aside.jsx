@@ -129,8 +129,8 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 
 		return (
 			<Card
-				key={id}
-				title={matchingBusinessFromYelp.name}
+				key={matchingBusinessFromYelp.name}
+				title={name}
 				address={matchingBusinessFromYelp.location.address1}
 				contact_number={contact_number}
 				images={images}

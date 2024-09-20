@@ -4,7 +4,7 @@
 
 .header-container {
 	height: auto;
-	background-color: $color-header;
+	background-color: #f0f0f0;
 	grid-area: header;
 	display: flex;
 	flex-direction: column;
@@ -45,7 +45,7 @@
 			font-style: normal;
 			font-size: 1.5rem;
 			width: 100%;
-			color: $color-logo;
+			color: $color-text;
 			text-align: center;
 
 			span {
@@ -81,7 +81,7 @@
 		align-items: center;
 		height: 33px;
 		border-radius: 0.3rem;
-		background-color: #fff;
+		border: 0.1rem solid rgba(0, 0, 0, 0.12);
 		flex: 1;
 
 		@include tablet {

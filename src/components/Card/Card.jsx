@@ -1,18 +1,7 @@
 import './Card.scss';
-import { useState } from 'react';
-import {
-	Card as MUICard,
-	CardHeader,
-	CardMedia,
-	CardContent,
-	CardActions,
-	IconButton,
-	Collapse,
-	Typography,
-	Avatar,
-} from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar, Skeleton } from '@mui/material';
 import { red, grey } from '@mui/material/colors';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
 import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
 import SportsBarTwoToneIcon from '@mui/icons-material/SportsBarTwoTone';
 import PhoneInTalkTwoToneIcon from '@mui/icons-material/PhoneInTalkTwoTone';
@@ -23,8 +12,17 @@ import FoodMenu from './FoodMenu';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 function Card({ title, address, images, time, phone, drinks, food, website, rating }) {
-	const [expandedDrinks, setExpandedDrinks] = useState(false); // for drinks expansion
-	const [expandedFood, setExpandedFood] = useState(false); // for food expansion
+	const [expandedDrinks, setExpandedDrinks] = useState(false);
+	const [expandedFood, setExpandedFood] = useState(false);
+	const [isLoading, setIsLoading] = useState(true); // Loading state
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+		}, 2500); // loading delay
+
+		return () => clearTimeout(timer);
+	}, []);
 
 	const handleExpandDrinksClick = () => {
 		setExpandedDrinks(!expandedDrinks);
@@ -47,141 +45,163 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 
 	for (let i = 0; i < maxRating; i++) {
 		if (i < integerPart) {
-			ratingIcons.push(
-				<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />
-			);
+			ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
 		} else if (i === integerPart && decimalPart > 0) {
-			ratingIcons.push(
-				<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />
-			);
+			ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.8rem' }} />);
 		} else {
 			break;
 		}
 	}
 
 	return (
-		<MUICard variant="outlined">
-			<CardHeader
-				avatar={
-					<Avatar
-						sx={{
-							bgcolor: red[400],
-							fontWeight: '700',
-							fontSize: '1rem',
-							fontFamily: 'Rubik',
-							width: '35px',
-							height: '35px',
-						}}>
-						{title.charAt(0)}
-					</Avatar>
-				}
-				// action={
-				// 	<IconButton aria-label="settings">
-				// 		<MoreVertIcon />
-				// 	</IconButton>
-				// }
-				title={
-					<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>
-						{title}
-					</Typography>
-				}
-				subheader={
+		<MUICard variant='outlined'>
+			{isLoading ? (
+				<div style={{ display: 'flex', alignItems: 'center', padding: '16px' }}>
+					<Skeleton animation='wave' variant='circular' width={35} height={35} sx={{ marginRight: '16px' }} />
+					<Skeleton animation='wave' variant='text' width='60%' height={28} />
+				</div>
+			) : (
+				<CardHeader
+					avatar={
+						<Avatar
+							sx={{
+								bgcolor: red[400],
+								fontWeight: '700',
+								fontSize: '1rem',
+								fontFamily: 'Rubik',
+								width: '35px',
+								height: '35px',
+							}}>
+							{title.charAt(0)}
+						</Avatar>
+					}
+					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>{title}</Typography>}
+					subheader={
+						<Typography
+							sx={{
+								fontFamily: 'Rubik',
+								fontSize: '0.75rem',
+								fontWeight: '300',
+							}}>
+							{address}
+						</Typography>
+					}
+				/>
+			)}
+
+			{isLoading ? (
+				<Skeleton animation='wave' variant='rectangular' width='100%' height={150} />
+			) : (
+				<CardMedia component='img' image={images} alt={title} sx={{ aspectRatio: '16/9', maxHeight: '150px' }} />
+			)}
+
+			{/* Card content: opening time */}
+			<CardContent>
+				{isLoading ? (
+					<Skeleton animation='wave' variant='text' />
+				) : (
 					<Typography
+						variant='body2'
+						color='text.secondary'
 						sx={{
 							fontFamily: 'Rubik',
 							fontSize: '0.75rem',
-							fontWeight: '300',
 						}}>
-						{address}
+						{time ? <OpenTime time={time} /> : 'No opening time available'}
 					</Typography>
-				}
-			/>
-			<CardMedia
-				component="img"
-				image={images}
-				alt={title}
-				sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
-			/>
-			<CardContent>
-				<Typography
-					variant="body2"
-					color="text.secondary"
-					sx={{
-						fontFamily: 'Rubik',
-						fontSize: '0.75rem',
-					}}>
-					{time ? <OpenTime time={time} /> : 'No opening time available'}
-				</Typography>
+				)}
 			</CardContent>
+
 			<Divider />
+
+			{/* Card actions: rating, phone, and menus */}
 			<CardActions
 				disableSpacing
 				sx={{
 					justifyContent: 'space-between',
 					padding: '0.3rem 1rem',
 				}}>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						fontSize: '0.8rem',
-					}}>
-					<Typography sx={{ fontWeight: '400' }} variant="subheading">
-						Rating:
-					</Typography>
+				{isLoading ? (
+					<Skeleton animation='wave' variant='text' width={100} />
+				) : (
 					<div
 						style={{
-							marginLeft: '0.3rem',
 							display: 'flex',
 							alignItems: 'center',
-							gap: '0.2rem',
-							fontWeight: '200',
+							fontSize: '0.8rem',
 						}}>
-						{rating}
-						<>{ratingIcons}</>
+						<Typography sx={{ fontWeight: '400' }} variant='subheading'>
+							Rating:
+						</Typography>
+						<div
+							style={{
+								marginLeft: '0.3rem',
+								display: 'flex',
+								alignItems: 'center',
+								gap: '0.2rem',
+								fontWeight: '200',
+							}}>
+							{rating}
+							<>{ratingIcons}</>
+						</div>
 					</div>
-				</div>
+				)}
+
 				<div>
-					<IconButton
-						onClick={() => {
-							window.location.href = `tel:${phone}`;
-						}}
-						sx={{ color: grey[600] }}
-						aria-label="call business">
-						<PhoneInTalkTwoToneIcon />
-					</IconButton>
-					<IconButton
-						onClick={handleExpandDrinksClick}
-						aria-expanded={expandedDrinks}
-						aria-label="show drinks"
-						sx={{ color: expandedDrinks ? red[400] : grey[600] }} // Active color for drinks
-					>
-						<SportsBarTwoToneIcon />
-					</IconButton>
-					<IconButton
-						onClick={handleExpandFoodClick}
-						aria-expanded={expandedFood}
-						aria-label="show food"
-						sx={{ color: expandedFood ? red[400] : grey[600] }} // Active color for food
-					>
-						<LunchDiningTwoToneIcon />
-					</IconButton>
+					{isLoading ? (
+						<Skeleton animation='wave' variant='circular' width={24} height={24} />
+					) : (
+						<>
+							<IconButton
+								onClick={() => {
+									window.location.href = `tel:${phone}`;
+								}}
+								sx={{ color: grey[600] }}
+								aria-label='call business'>
+								<PhoneInTalkTwoToneIcon />
+							</IconButton>
+							<IconButton
+								onClick={handleExpandDrinksClick}
+								aria-expanded={expandedDrinks}
+								aria-label='show drinks'
+								sx={{ color: expandedDrinks ? red[400] : grey[600] }}
+								// Active color for drinks
+							>
+								<SportsBarTwoToneIcon />
+							</IconButton>
+							<IconButton
+								onClick={handleExpandFoodClick}
+								aria-expanded={expandedFood}
+								aria-label='show food'
+								sx={{ color: expandedFood ? red[400] : grey[600] }}
+								// Active color for food
+							>
+								<LunchDiningTwoToneIcon />
+							</IconButton>
+						</>
+					)}
 				</div>
 			</CardActions>
+
 			{/* Drinks Section */}
-			<Collapse in={expandedDrinks} timeout="auto" unmountOnExit>
-				<Divider />
-				<CardContent>
-					<DrinksMenu drinks={drinks} website={website} />
-				</CardContent>
-			</Collapse>
+			{!isLoading && (
+				<Collapse in={expandedDrinks} timeout='auto' unmountOnExit>
+					<Divider />
+					<CardContent>
+						<DrinksMenu drinks={drinks} website={website} />
+					</CardContent>
+				</Collapse>
+			)}
+
 			{/* Food Section */}
-			<Collapse in={expandedFood} timeout="auto" unmountOnExit>
-				<Divider />
-				<CardContent>
-					<FoodMenu food={food} website={website} />
-				</CardContent>
-			</Collapse>
+			{!isLoading && (
+				<Collapse in={expandedFood} timeout='auto' unmountOnExit>
+					<Divider />
+					<CardContent>
+						<FoodMenu food={food} website={website} />
+					</CardContent>
+				</Collapse>
+			)}
 		</MUICard>
 	);
 }

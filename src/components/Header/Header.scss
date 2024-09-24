@@ -65,27 +65,13 @@
 	&__row {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
 		width: 93%;
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 
 		@include tablet {
-			width: 90%;
+			width: 100%;
 			margin-top: 0;
-			flex: 1;
-		}
-	}
-
-	&__search {
-		display: flex;
-		align-items: center;
-		height: 33px;
-		// border-radius: 0.3rem;
-		border-bottom: 0.09rem solid rgba(0, 0, 0, 0.15);
-		flex: 1;
-
-		@include tablet {
-			height: 40px;
+			flex: 2;
 		}
 	}
 
@@ -105,23 +91,6 @@
 
 		&:focus {
 			outline: none;
-		}
-	}
-
-	&__search-button {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-		border: none;
-		background-color: transparent;
-		cursor: pointer;
-		color: #aaa;
-		transition: color 0.2s ease;
-		padding-right: 0.5rem;
-
-		&:hover {
-			color: #000;
 		}
 	}
 

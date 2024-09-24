@@ -66,8 +66,8 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 	return (
 		<MUICard variant='outlined'>
 			{isLoading ? (
-				<div style={{ display: 'flex', alignItems: 'center', padding: '16px' }}>
-					<Skeleton animation='wave' variant='circular' width={35} height={35} sx={{ marginRight: '16px' }} />
+				<div style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
+					<Skeleton animation='wave' variant='circular' width={35} height={35} sx={{ marginRight: '1rem' }} />
 					<Skeleton animation='wave' variant='text' width='60%' height={28} />
 				</div>
 			) : (
@@ -85,7 +85,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 							{title.charAt(0)}
 						</Avatar>
 					}
-					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>{title}</Typography>}
+					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem', fontWeight: '400' }}>{title}</Typography>}
 					subheader={
 						<Typography
 							onClick={openMaps}

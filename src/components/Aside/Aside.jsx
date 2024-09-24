@@ -33,7 +33,8 @@ const filters = [
 function formatHours(hours) {
 	return Object.entries(hours).map(([key, value]) => (
 		<div key={key}>
-			<strong style={{ fontWeight: '200' }}> {key}:</strong> <strong style={{ fontWeight: '400' }}> {value} </strong>
+			<strong style={{ fontWeight: '200' }}> {key}:</strong>{' '}
+			<strong style={{ fontWeight: '400' }}> {value} </strong>
 		</div>
 	));
 }
@@ -76,7 +77,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 			return true;
 		} else {
 			return Object.keys(feature.properties).some((key) => {
-				return excludeColumns.includes(key) ? false : feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch);
+				return excludeColumns.includes(key)
+					? false
+					: feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch);
 			});
 		}
 	});
@@ -89,8 +92,14 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 			const bHours = b.properties.hours;
 			const aHoursArray = Object.entries(aHours);
 			const bHoursArray = Object.entries(bHours);
-			const aHoursString = aHoursArray.reduce((acc, [day, hours]) => `${acc}${day}:${hours},`, '');
-			const bHoursString = bHoursArray.reduce((acc, [day, hours]) => `${acc}${day}:${hours},`, '');
+			const aHoursString = aHoursArray.reduce(
+				(acc, [day, hours]) => `${acc}${day}:${hours},`,
+				''
+			);
+			const bHoursString = bHoursArray.reduce(
+				(acc, [day, hours]) => `${acc}${day}:${hours},`,
+				''
+			);
 			return aHoursString.localeCompare(bHoursString);
 		}
 		return 0;
@@ -139,18 +148,27 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	// Move selectedBusiness card to the front of the list
 	if (selectedBusiness) {
 		console.log('selected business: ', selectedBusiness);
-		const selectedIndex = sortedFeatures.findIndex((feature) => feature.properties.name === selectedBusiness);
+		const selectedIndex = sortedFeatures.findIndex(
+			(feature) => feature.properties.name === selectedBusiness
+		);
 		const selectedCard = cards.splice(selectedIndex, 1)[0];
 		cards.unshift(selectedCard);
 	}
 
 	return (
-		<div className='aside'>
-			<SortByDropDown options={options} value={sortBy} onChange={handleSortByChange} filterByValue={filterBy} onFilterByChange={handleFilterByChange} filters={filters} />
+		<div className="aside">
+			<SortByDropDown
+				options={options}
+				value={sortBy}
+				onChange={handleSortByChange}
+				filterByValue={filterBy}
+				onFilterByChange={handleFilterByChange}
+				filters={filters}
+			/>
 			<>
-				<ul className='aside__list'>
-					<ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 550: 2, 950: 2 }}>
-						<Masonry containerWidth={800} gutter='30px'>
+				<ul className="aside__list">
+					<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
+						<Masonry containerWidth={800} gutter="30px">
 							{cards}
 						</Masonry>
 					</ResponsiveMasonry>

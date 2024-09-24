@@ -4,7 +4,6 @@ import Aside from '../../components/Aside/Aside';
 import axios from 'axios';
 import mapboxgl from 'mapbox-gl';
 import { useEffect, useRef, useState } from 'react';
-import { ZoomControl } from 'mapbox-gl-controls';
 import { GeolocateControl } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';

@@ -1,59 +1,68 @@
-// import React, { useState } from 'react';
-import { FaSearch, FaCocktail } from 'react-icons/fa';
-
-// import { FaUserAlt } from 'react-icons/fa';
-// import logo from '../../assets/images/logo.svg';
+import { FaCocktail } from 'react-icons/fa';
+import WifiFindTwoToneIcon from '@mui/icons-material/WifiFindTwoTone';
 import './Header.scss';
-// import Dialog from '@mui/material/Dialog';
-// import DialogContent from '@mui/material/DialogContent';
-// import useMediaQuery from '@mui/material/useMediaQuery';
-// import { useTheme } from '@mui/material/styles';
-// import LoginForm from '../LoginForm/LoginForm';
-
-// const styleBg = {
-// 	bgcolor: 'rgba(43, 40, 64, 0.2)',
-// };
-
-// const styleBox = {
-// 	width: '500px',
-// 	height: '450px',
-// 	display: 'flex',
-// 	alignItems: 'center',
-// };
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 
 function Header({ handleSearchInput }) {
-	// const [open, setOpen] = useState(false);
-	// const theme = useTheme();
-	// const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
-	// const handleClickOpen = () => {
-	// 	setOpen(true);
-	// };
-	//
-	// 	const handleClose = () => {
-	// 		setOpen(false);
-	// 	};
-
 	return (
-		<header className='header-container'>
-			<div className='header-container__logo'>
-				{/* <img src={logo} alt='Logo' className='header-container__logo--img' /> */}
-				<h1 className='header-container__logo--title'>
+		<header className="header-container">
+			<div className="header-container__logo">
+				<h1 className="header-container__logo--title">
 					VanSippy
 					<FaCocktail style={{ paddingTop: '0.4rem' }} />
 					<span> | Happy Hour Finder</span>
 				</h1>
 			</div>
-			<div className='header-container__row'>
-				<div className='header-container__search'>
-					<input type='text' placeholder='Look for your neighborhood or favorite place' className='header-container__search-input' onChange={handleSearchInput} />
-					<button className='header-container__search-button'>
-						<FaSearch style={{ color: '#676f9d' }} />
-					</button>
-				</div>
-				{/* <div onClick={handleClickOpen} className='header-container__avatar'>
-					<FaUserAlt style={{ color: '#278C8C' }} />
-				</div> */}
+			<div className="header-container__row">
+				<Box
+					noValidate
+					autoComplete="off"
+					component={'form'}
+					sx={{
+						display: 'flex',
+						alignItems: 'center',
+						width: '100%',
+					}}>
+					<TextField
+						sx={{
+							'& .MuiOutlinedInput-root': {
+								padding: '1.5rem 0.75rem 1.5rem',
+								maxHeight: '1rem',
+							},
+						}}
+						label="Search for neighborhood or place"
+						variant="outlined"
+						color="primary"
+						onChange={handleSearchInput}
+						fullWidth
+						InputProps={{
+							endAdornment: (
+								<InputAdornment position="end">
+									<WifiFindTwoToneIcon
+										style={{
+											color: '#2b2840',
+											fontSize: '1.7rem',
+										}}
+									/>
+								</InputAdornment>
+							),
+							style: {
+								fontSize: '0.85rem', // font size
+								color: '#2b2840', // text color
+								fontFamily: 'Rubik, sans-serif',
+							},
+						}}
+						InputLabelProps={{
+							style: {
+								fontSize: '0.85rem', // label font size
+								color: '#2b2840', // label color
+								fontFamily: 'Rubik, sans-serif',
+							},
+						}}
+					/>
+				</Box>
 			</div>
 		</header>
 	);

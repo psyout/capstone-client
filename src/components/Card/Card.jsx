@@ -53,6 +53,16 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 		}
 	}
 
+	const openMaps = () => {
+		if (address) {
+			const encodedAddress = encodeURIComponent(address); // Encode the address for URL
+			const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+			window.open(mapUrl, '_blank');
+		} else {
+			console.error('Address is not available');
+		}
+	};
+
 	return (
 		<MUICard variant='outlined'>
 			{isLoading ? (
@@ -78,10 +88,26 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem' }}>{title}</Typography>}
 					subheader={
 						<Typography
+							onClick={openMaps}
 							sx={{
 								fontFamily: 'Rubik',
 								fontSize: '0.75rem',
 								fontWeight: '300',
+								cursor: 'pointer',
+								transition: 'color 0.3s ease',
+								'&:hover': {
+									color: '#ef5350',
+								},
+								'@media (max-width: 768px)': {
+									'&:hover': {
+										color: 'inherit',
+									},
+								},
+								'@media (hover: none)': {
+									'&:hover': {
+										color: 'inherit',
+									},
+								},
 							}}>
 							{address}
 						</Typography>
@@ -165,7 +191,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 								aria-expanded={expandedDrinks}
 								aria-label='show drinks'
 								sx={{ color: expandedDrinks ? red[400] : grey[600] }}
-								// Active color for drinks
+								// Active colour for drinks
 							>
 								<SportsBarTwoToneIcon />
 							</IconButton>
@@ -174,7 +200,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 								aria-expanded={expandedFood}
 								aria-label='show food'
 								sx={{ color: expandedFood ? red[400] : grey[600] }}
-								// Active color for food
+								// Active colour for food
 							>
 								<LunchDiningTwoToneIcon />
 							</IconButton>

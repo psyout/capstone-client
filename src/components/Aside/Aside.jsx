@@ -5,13 +5,13 @@ import { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 const options = [
-	{ value: '', label: 'All Results' },
+	{ value: '', label: 'Results' },
 	{ value: 'name', label: 'Name' },
 	{ value: 'hours', label: 'Time' },
 ];
 
 const filters = [
-	{ value: '', label: 'All Categories' },
+	{ value: '', label: 'Categories' },
 	{ value: 'Seafood', label: 'Seafood' },
 	{ value: 'Bars', label: 'Bars' },
 	{ value: 'Canadian', label: 'Canadian' },
@@ -30,18 +30,24 @@ const filters = [
 	{ value: 'Dive Bars', label: 'Dive Bars' },
 ];
 
+const hoodFilter = [
+	{ value: '', label: 'Neighbourhood' },
+	{ value: 'Kitsilano', label: 'Kitsilano' },
+	{ value: 'Downtown', label: 'Downtown' },
+	// add other neighbourhoods here...
+];
+
 function formatHours(hours) {
 	return Object.entries(hours).map(([key, value]) => (
 		<div key={key}>
-			<strong style={{ fontWeight: '200' }}> {key}:</strong>{' '}
-			<strong style={{ fontWeight: '400' }}> {value} </strong>
+			<strong style={{ fontWeight: '200' }}> {key}:</strong> <strong style={{ fontWeight: '400' }}> {value} </strong>
 		</div>
 	));
 }
 
 function formatDrinks(drinks) {
 	return Object.entries(drinks).map(([key, value]) => (
-		<div>
+		<div key={key}>
 			{key}: <strong>{value}</strong>
 		</div>
 	));
@@ -49,7 +55,7 @@ function formatDrinks(drinks) {
 
 function formatFood(food) {
 	return Object.entries(food).map(([key, value]) => (
-		<div>
+		<div key={key}>
 			{key}: <strong>{value}</strong>
 		</div>
 	));
@@ -57,8 +63,8 @@ function formatFood(food) {
 
 function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, businesses }) {
 	const [sortBy, setSortBy] = useState(options[0].value);
-
 	const [filterBy, setFilterBy] = useState(filters[0].value);
+	const [hoodBy, setHoodBy] = useState(hoodFilter[0].value);
 
 	const handleSortByChange = (event) => {
 		setSortBy(event.target.value);
@@ -68,51 +74,51 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		setFilterBy(event.target.value);
 	};
 
-	// search function
+	const handleHoodByChange = (event) => {
+		setHoodBy(event.target.value);
+	};
+
+	// Exclude certain columns from search
 	const excludeColumns = ['id'];
 
-	const filteredFeatures = geoJson.features.filter((feature) => {
-		const lowerCasedSearch = search.toLowerCase();
-		if (search === '') {
-			return true;
-		} else {
+	// Filter based on search query, category, and neighbourhood
+	const filteredFeatures = geoJson.features
+		.filter((feature) => {
+			const lowerCasedSearch = search.toLowerCase();
+			if (search === '') return true;
 			return Object.keys(feature.properties).some((key) => {
-				return excludeColumns.includes(key)
-					? false
-					: feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch);
+				return excludeColumns.includes(key) ? false : feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch);
 			});
-		}
-	});
+		})
+		.filter((feature) => {
+			if (filterBy && feature.properties.category) {
+				return feature.properties.category.title === filterBy;
+			}
+			return true;
+		})
+		.filter((feature) => {
+			if (hoodBy && feature.properties.neighbourhoods) {
+				return feature.properties.neighbourhoods === hoodBy;
+			}
+			return true;
+		});
 
 	const sortedFeatures = [...filteredFeatures].sort((a, b) => {
 		if (sortBy === 'name') {
 			return a.properties.name.localeCompare(b.properties.name);
 		} else if (sortBy === 'hours') {
-			const aHours = a.properties.hours;
-			const bHours = b.properties.hours;
-			const aHoursArray = Object.entries(aHours);
-			const bHoursArray = Object.entries(bHours);
-			const aHoursString = aHoursArray.reduce(
-				(acc, [day, hours]) => `${acc}${day}:${hours},`,
-				''
-			);
-			const bHoursString = bHoursArray.reduce(
-				(acc, [day, hours]) => `${acc}${day}:${hours},`,
-				''
-			);
+			const aHoursString = Object.entries(a.properties.hours)
+				.map(([day, hours]) => `${day}:${hours}`)
+				.join(', ');
+			const bHoursString = Object.entries(b.properties.hours)
+				.map(([day, hours]) => `${day}:${hours}`)
+				.join(', ');
 			return aHoursString.localeCompare(bHoursString);
 		}
 		return 0;
 	});
 
-	const filteredFeaturesByCategory = filterBy
-		? sortedFeatures.filter((feature) => {
-				console.log('feature: ', feature);
-				return feature.properties.category.title === filterBy;
-		  })
-		: sortedFeatures;
-
-	const cards = filteredFeaturesByCategory.map((feature) => {
+	const cards = sortedFeatures.map((feature) => {
 		const { id, name, website, images } = feature.properties;
 		const hours = formatHours(feature.properties.hours);
 		const drinks = formatDrinks(feature.properties.drinks);
@@ -122,17 +128,15 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 			setSelectedBusiness(name);
 		};
 
-		// match id from yelp with id from json
 		const matchingBusinessFromYelp = businesses.find((business) => business.name === name);
-		// eslint-disable-next-line
-		if (!matchingBusinessFromYelp) return;
+		if (!matchingBusinessFromYelp) return null;
 
 		return (
 			<Card
 				key={id}
 				title={name}
 				address={matchingBusinessFromYelp.location.address1}
-				phone={matchingBusinessFromYelp.phone} // Get the phone from Yelp
+				phone={matchingBusinessFromYelp.phone}
 				images={images}
 				time={hours}
 				drinks={drinks}
@@ -145,35 +149,32 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		);
 	});
 
-	// Move selectedBusiness card to the front of the list
 	if (selectedBusiness) {
-		console.log('selected business: ', selectedBusiness);
-		const selectedIndex = sortedFeatures.findIndex(
-			(feature) => feature.properties.name === selectedBusiness
-		);
+		const selectedIndex = sortedFeatures.findIndex((feature) => feature.properties.name === selectedBusiness);
 		const selectedCard = cards.splice(selectedIndex, 1)[0];
 		cards.unshift(selectedCard);
 	}
 
 	return (
-		<div className="aside">
+		<div className='aside'>
 			<SortByDropDown
 				options={options}
 				value={sortBy}
 				onChange={handleSortByChange}
+				filters={filters}
 				filterByValue={filterBy}
 				onFilterByChange={handleFilterByChange}
-				filters={filters}
+				hoodFilters={hoodFilter}
+				hoodByValue={hoodBy}
+				onHoodByChange={handleHoodByChange}
 			/>
-			<>
-				<ul className="aside__list">
-					<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
-						<Masonry containerWidth={800} gutter="30px">
-							{cards}
-						</Masonry>
-					</ResponsiveMasonry>
-				</ul>
-			</>
+			<ul className='aside__list'>
+				<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
+					<Masonry containerWidth={800} gutter='30px'>
+						{cards}
+					</Masonry>
+				</ResponsiveMasonry>
+			</ul>
 		</div>
 	);
 }

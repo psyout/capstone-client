@@ -14,7 +14,7 @@
 				"contact_number": "+1 (604) 558-4448",
 				"website": "https://www.chewies.ca/happy",
 				"full_address": "2201 W 1st Ave, BC, V6K-3E6",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"price": "2",
 				"category": {
 					"title": "Seafood"
@@ -64,7 +64,7 @@
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1999 W 4th Ave, BC, V6J 1M7",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/las-margaritas.jpg",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
@@ -102,7 +102,7 @@
 				"contact_number": "+1 (604) 558-4448",
 				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
 				"full_address": "2210 Cornwall Ave, BC V6K 1B5",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/local.jpg",
 				"hours": {
 					"Monday - Friday": "14:00 - 16:00",
@@ -152,7 +152,7 @@
 				"contact_number": "+1 (604) 428-2456",
 				"website": "https://www.theellis.ca/menu",
 				"full_address": "2204 York Ave, BC V6K 1C6",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/the-ellis.jpg",
 				"hours": {
 					"Everyday": "15:00 - 17:00"
@@ -190,7 +190,7 @@
 				"contact_number": "+1 (604) 738-6966",
 				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
 				"full_address": "1618 Yew St, BC V6K 3E7",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/kings-head.jpg",
 				"hours": {
 					"Everyday": "15:00 - 18:00 | 21:00 - Close"
@@ -234,7 +234,7 @@
 				"contact_number": "+1 (778) 379-2929",
 				"website": "https://www.jacksonsrestobutcher.com/happy-hour",
 				"full_address": "2214 W 4th Ave, BC V6K 4S2",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/jacksons.jpg",
 				"hours": {
 					"Monday - Friday": "15:00 - 18:00"
@@ -274,7 +274,7 @@
 				"contact_number": "+1 (604) 558-1975",
 				"website": "https://ciderhouserules.ca/happy-hour/",
 				"full_address": "1602 Yew St, BC V6K 3E7",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/cider-house.jpg",
 				"category": {
 					"title": "Cideries"
@@ -317,7 +317,7 @@
 				"contact_number": "+1 (604) 739-4677",
 				"website": "https://www.luckytaco.ca/menu/happy-hour",
 				"full_address": "1685 Yew St, BC V6K 3E6",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/lucky-taco.jpg",
 				"category": {
 					"title": "Mexican"
@@ -358,7 +358,7 @@
 				"contact_number": "+1 (604) 732 1322",
 				"website": "https://www.fablekitchen.ca/#menu",
 				"full_address": "1944 W 4th Ave, BC V6J 1M5",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/fable.jpg",
 				"category": {
 					"title": "Canadian"
@@ -394,7 +394,7 @@
 				"website": "https://www.tacofino.com/location/kits",
 				"contact_number": "+1 (604) 620-8729",
 				"full_address": "1909 W 4th Ave, BC V6J 3L9",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/tacofino.jpg",
 				"category": {
 					"title": "Mexican"
@@ -432,7 +432,7 @@
 				"website": "http://malones.bc.ca",
 				"contact_number": "+1 (604) 684-9977",
 				"full_address": "608 W Pender Street, BC V6B 1V8",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/malones.jpg",
 				"category": {
 					"title": "Lounges"
@@ -482,7 +482,7 @@
 				"website": "https://moosesdownunder.com/specials/",
 				"contact_number": "+1 (604) 683 3300",
 				"full_address": "830 W Pender St, BC V6C 1J8",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/moose.jpg",
 				"category": {
 					"title": "Australian"
@@ -519,7 +519,7 @@
 				"website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
 				"contact_number": "+1 (604) 688 9158",
 				"full_address": "300 Cambie St, BC V6B 2N3",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/cambie.jpg",
 				"category": {
 					"title": "Bars"
@@ -556,7 +556,7 @@
 				"website": "https://delararestaurant.ca/menu",
 				"contact_number": "+1 (604) 730-4325",
 				"full_address": "2272 W 4th Ave, BC V6K 1N8",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/delara.jpg",
 				"category": {
 					"title": "Persian"
@@ -594,7 +594,7 @@
 				"website": "https://charqui.ca",
 				"contact_number": "+1 (604) 733-3323",
 				"full_address": "1955 Cornwall Ave, BC V6J 1C9",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/charqui.jpg",
 				"category": {
 					"title": "Karaoke"
@@ -632,7 +632,7 @@
 				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
 				"contact_number": "+1 (604) 731-2434",
 				"full_address": "2518 West Broadway, BC V6K 2G1",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/white-spot.jpg",
 				"category": {
 					"title": "Bars"
@@ -677,7 +677,7 @@
 				"website": "https://elwoods.ca/",
 				"contact_number": "+1 (604) 731-2434",
 				"full_address": "3357 W Broadway, BC V6R 2B1",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/elwoods.jpg",
 				"category": {
 					"title": "Bars"
@@ -716,7 +716,7 @@
 				"website": "https://www.bodegaonmain.ca/menu/#happyhour",
 				"contact_number": "+1 (604) 565-8815",
 				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
-				"neighborhoods": "Strathcona",
+				"neighbourhoods": "Strathcona",
 				"images": "images/bodega.jpg",
 				"category": {
 					"title": "Spanish"
@@ -758,7 +758,7 @@
 				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
 				"contact_number": "+1 (604) 428-8226",
 				"full_address": "521 Seymour Street BC, V6B 3H6",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/515.jpg",
 				"category": {
 					"title": "Gastropub"
@@ -792,7 +792,7 @@
 				"contact_number": "+1 (604) 609-0901",
 				"address": "1144 Homer St",
 				"website": "https://www.freehouse.co/locations/stock-room",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/stock-room.jpg",
 				"category": {
 					"title": "Lounges"
@@ -827,7 +827,7 @@
 					"title": "Bars"
 				},
 				"website": "https://www.bartholomewbar.com/happy-hour",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/bartholomew.jpg",
 				"contact_number": "+1 (604) 423-4131",
 				"address": "1026 Mainland St",
@@ -861,7 +861,7 @@
 				"category": {
 					"title": "Canadian"
 				},
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/roxy.jpg",
 				"contact_number": "+1 (604) 646-4000",
 				"address": "910 Granville St",
@@ -897,7 +897,7 @@
 				"category": {
 					"title": "Lounges"
 				},
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/joey.jpg",
 				"hours": {
 					"Daily": "14:00 - 17:00 ",
@@ -956,7 +956,7 @@
 					"title": "Lounges"
 				},
 				"website": "https://static1.squarespace.com/static/5ca3daed9d41495c5d099b93/t/6425e69a043bba5fd25a652c/1680205476268/VENTURA+CORE+-+March+30+23+no+mb.pdf",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/ventura.jpg",
 				"hours": {
 					"All Items": "OPEN - 18:00 ",
@@ -995,7 +995,7 @@
 				"id": "025",
 				"name": "Uva Wine & Cocktail Bar",
 				"website": "https://vancouver.foodgressing.com/uva-wine-cocktail-bar-breakfast-happy-hour/",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/uva-wine.jpg",
 				"contact_number": "+1 (604) 632-9560",
 				"address": "900 Seymour St",
@@ -1035,7 +1035,7 @@
 				"contact_number": "+1 (604) 336-5853",
 				"address": "182 Keefer St",
 				"website": "https://thechickadeeroom.com/",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/chickadee.jpg",
 				"category": {
 					"title": "Lounges"
@@ -1067,7 +1067,7 @@
 				"contact_number": "+1 (604) 288-1704",
 				"address": "1 Alexander St",
 				"website": "https://www.guiltandcompany.com/menu.html",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/guilt.jpg",
 				"category": {
 					"title": "Cocktail"
@@ -1099,7 +1099,7 @@
 				"contact_number": "+1 (604) 734-0099",
 				"address": "1525 Yew St",
 				"website": "https://nookrestaurants.com/kitsilano-menus/",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/nook.jpg",
 				"category": {
 					"title": "Italian"
@@ -1141,7 +1141,7 @@
 				"contact_number": "+1 (604) 259-1248",
 				"address": "2685 Arbutus St",
 				"website": "https://brasseriecoquette.ca/menus/",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/coquette.jpg",
 				"category": {
 					"title": "Restaurant"
@@ -1184,7 +1184,7 @@
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1161 W Georgia Street, Vancouver, BC V6E 0C6",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/karma-lounge.jpg",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
@@ -1221,7 +1221,7 @@
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1161 W Georgia Street, Vancouver, BC V6E 0C6",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Downtown",
 				"images": "images/las-margaritas.jpg",
 				"hours": {
 					"Monday - Thursday": "15:00 - 18:00 | 20:30 - 21:30"
@@ -1258,7 +1258,7 @@
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "2001 MacDonald Street, Vancouver, BC V6K 3Y2",
-				"neighborhoods": "Downtown",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/darbys.jpg",
 				"hours": {
 					"7 days a week": "12:00 - 17:00"
@@ -1295,7 +1295,7 @@
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "2287 West Broadway, Vancouver, BC V6K 2E4",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/glitch.jpg",
 				"hours": {
 					"7 days a week": "12:00 - 17:00"
@@ -1332,7 +1332,7 @@
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "3124 W Broadway, Vancouver, BC V6K 2H3",
-				"neighborhoods": "Kitsilano",
+				"neighbourhoods": "Kitsilano",
 				"images": "images/the-fringe.jpg",
 				"hours": {
 					"7 days a week": "12:00 - 17:00"

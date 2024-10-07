@@ -4,7 +4,7 @@ import './SortByDropDown.scss';
 function SortByDropDown({ options, value, onChange, filters, filterByValue, onFilterByChange, hoodFilters, hoodByValue, onHoodByChange }) {
 	return (
 		<div className='options-dropdown'>
-			<div>
+			<div className='filter-dropdown'>
 				<label className='options-dropdown__label'>Sort by:</label>
 				<select className='options-dropdown__select' value={value} onChange={onChange}>
 					{options.map((option) => (
@@ -26,7 +26,7 @@ function SortByDropDown({ options, value, onChange, filters, filterByValue, onFi
 				</select>
 			</div>
 
-			<div className='hood-filter-dropdown'>
+			<div className='filter-dropdown'>
 				<label className='options-dropdown__label'>Look for:</label>
 				<select className='options-dropdown__select' value={hoodByValue} onChange={onHoodByChange}>
 					{hoodFilters.map((hood) => (

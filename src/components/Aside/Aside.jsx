@@ -145,6 +145,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				onClick={handleClick}
 				website={website}
 				url={matchingBusinessFromYelp.url}
+				reviews={matchingBusinessFromYelp.reviews}
 			/>
 		);
 	});

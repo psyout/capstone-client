@@ -9,9 +9,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
 import geoJson from '../../data/places.json';
 
-// export const apiUrl = 'http://localhost:3008';
 export const apiUrl = 'https://wulen-server.onrender.com' || 'http://localhost:3008';
-// export const apiUrl = 'https://wulen-server.onrender.com';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);
@@ -71,7 +69,6 @@ function Home() {
 		const getLocation = () => {
 			navigator.geolocation.getCurrentPosition((position) => {
 				const { latitude, longitude } = position.coords;
-				console.log(latitude, longitude);
 				mapRef.current.setCenter([longitude, latitude]);
 			});
 		};
@@ -94,12 +91,8 @@ function Home() {
 
 		markers.forEach((marker) => {
 			marker.getElement().addEventListener('click', function () {
-				console.log('marker', marker.id);
-				// set the selected marker as part of the array
 				setSelectedBusiness(marker.id);
-				setSelectedCard(
-					geoJson.features.filter((feature) => feature.properties.name === marker.id)
-				);
+				setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
 			});
 			marker.addTo(mapRef.current);
 		});
@@ -128,9 +121,8 @@ function Home() {
 		endpoints.forEach((endpoint, i) => {
 			setTimeout(() => {
 				axios.get(endpoint).then((response) => {
-					// console.log(response);
 					setBusinesses((prevBusinesses) => {
-						// console.log(prevBusinesses);
+						// Ensure reviews are part of each business object
 						return [...prevBusinesses, response.data.businesses].flat();
 					});
 				});
@@ -139,15 +131,9 @@ function Home() {
 	}, [accessToken, setSelectedBusiness]);
 
 	return (
-		<div className="container">
+		<div className='container'>
 			<Header handleSearchInput={handleSearchInput} />
-			<Aside
-				selectedCard={selectedCard}
-				selectedBusiness={selectedBusiness}
-				geoJson={geoJson}
-				search={search}
-				businesses={businesses}
-			/>
+			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

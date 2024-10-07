@@ -1,5 +1,5 @@
 import { FaCocktail } from 'react-icons/fa';
-import WifiFindTwoToneIcon from '@mui/icons-material/WifiFindTwoTone';
+import SearchIcon from '@mui/icons-material/Search';
 import './Header.scss';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -40,10 +40,10 @@ function Header({ handleSearchInput }) {
 						InputProps={{
 							endAdornment: (
 								<InputAdornment position="end">
-									<WifiFindTwoToneIcon
+									<SearchIcon
 										style={{
 											color: '#2b2840',
-											fontSize: '1.7rem',
+											fontSize: '1.4rem',
 										}}
 									/>
 								</InputAdornment>

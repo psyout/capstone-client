@@ -43,10 +43,14 @@
 				"food": {
 					"Beach Oyster": "$2.00",
 					"Premium Oyster": "$3.00",
-					"Spicy Fried Broccoli": "$12.00",
-					"Andouille Poutine": "$15.00",
-					"Crispy Calamari": "$16.00",
-					"Chewies Hotwings": "$16.00"
+					"Spicy Fried Broccoli": "$16.00",
+					"Andouille Poutine": "$17.00",
+					"Crispy Calamari": "$17.00",
+					"Chewies Crispy Wings": "$17.00",
+					"Fried Brussel Sprouts": "$17.00",
+					"Panko Fried Oysters": "$18.00",
+					"Sticky Mini BBQ Fries": "$16.00",
+					"Coconut Prawns": "$17.00"
 				}
 			}
 		},
@@ -105,7 +109,7 @@
 				"neighbourhoods": "Kitsilano",
 				"images": "images/local.jpg",
 				"hours": {
-					"Monday - Friday": "14:00 - 16:00",
+					"Monday - Friday": "14:00 - 17:00",
 					"Sunday to Thursday": "21:00 - Close",
 					"Friday to Saturday": "22:00 - Close"
 				},
@@ -115,27 +119,28 @@
 				"drinks": {
 					"Local House Lager/Ale": "$4.25",
 					"Always-on Taps 0.35l": "$5.00",
-					"Cold Tea Shot": "$3.00",
-					"Shot of Jameson": "$5.00",
+					"Cold Tea Shot": "$3.50",
+					"Shot of Jameson": "$6.00",
 					"Casamigos Blanco Shot": "$9.00",
 					"Sassy Sangria Crush": "$5.00",
 					"Spicy Guava Margarita": "$8.00",
 					"Start Me Up": "$8.00",
-					"Crush-a-Bowls": "$30.00"
+					"Crush-a-Bowls": "$30.00",
+					"Old Fashioned": "$10"
 				},
 
 				"food": {
 					"Spicy Garlic Edamame": "$5.00",
 					"Single Fish Taco": "$5.00",
 					"Double Fries": "$5.00",
-					"Fully Loaded Crispy Potatoes": "$8.00",
+					"Fully Loaded Crispy Potatoes": "$10.00",
 					"Pinche Beef Tacos": "$9.00",
 					"Cheese Perogies": "$9.00",
 					"Shrimp Dumplings": "$13.00",
 					"Nachos": "$16.00",
 					"The Local Burger": "$16.00",
 					"Chicken Sandwich": "$18.00",
-					"Tune Poke Rice Bowl": "$18.00"
+					"Tune Poke Rice Bowl": "$19.00"
 				}
 			}
 		},
@@ -161,19 +166,19 @@
 					"title": "Cocktail"
 				},
 				"drinks": {
-					"16oz Select Draught": "$6.00",
+					"16oz Select Draught": "$6.50",
 					"16oz Bricker Cider": "$7.50",
-					"House Wine Red or White": "$7.00",
+					"House Wine Red or White": "$8.00",
 					"House Wine Rose": "$8.00",
-					"Long Island Shot": "$5.00",
-					"Jalisco Heat": "$5.00",
-					"Cocktails (ask which)": "$10.00"
+					"Long Island Shot": "$6.00",
+					"Jalisco Heat": "$6.00",
+					"Cocktails (ask which)": "$11.00"
 				},
 				"food": {
 					"Potato Fritters": "$9.00",
 					"Charcuterie Board": "$11.00",
 					"Grilled Stuffed Olives": "$8.00",
-					"Currywurst": "$10.00"
+					"Currywurst": "$12.00"
 				}
 			}
 		},
@@ -1140,7 +1145,7 @@
 				"name": "Coquette",
 				"contact_number": "+1 (604) 259-1248",
 				"address": "2685 Arbutus St",
-				"website": "https://brasseriecoquette.ca/menus/",
+				"website": "https://brasseriecoquette.ca/wp-content/uploads/2024/04/Happy-Hour-Sep-24.pdf/",
 				"neighbourhoods": "Kitsilano",
 				"images": "images/coquette.jpg",
 				"category": {
@@ -1150,24 +1155,25 @@
 					"Wednesday - Sunday": "14:00 - 17:00"
 				},
 				"drinks": {
-					"Pesca Fresca (1.5oz)": "$8.00",
-					"La Passione (1.5oz)": "$8.00",
-					"Negroni (3oz)": "$11.00",
-					"Campe Dhei Prosecco (5oz)": "$8.00",
-					"Altopiano Pinot Grigio (5oz)": "$8.00",
-					"Firriato Nero D'Avola/Petit Verdot 'Nari' (5oz)": "$8.00",
-					"Select Draught": "$6.00"
+					"Beers (ask which": "$7",
+					"Cocktails (ask which)": "$10",
+					"Wine (5oz/Bottle)": "$9/$40"
 				},
 				"food": {
-					"Focaccia": "$7.00",
-					"Greens": "$14.00",
-					"Caesar Salad": "$14.00",
-					"Margherita Pizza": "$17.00",
-					"Rigatoni Arrabbiata": "$17.00",
-					"Tonnarelli Cacio Pepe": "$17.00",
-					"Oven Roasted Meatballs": "$17.00",
-					"Rigatoni Boscaiola": "$19.00",
-					"Pepperoni Pizza": "$19.00"
+					"Olives Fumées": "$7",
+					"Tartare de Bison": "$23",
+					"Frites": "$7",
+					"Salade Niçoise": "$22",
+					"La Tartine": "$12",
+					"Le Parfait Maison": "$18",
+					"Quiche du Jour": "$15",
+					"Les Moules": "$15",
+					"Soupe à Oignon": "$18",
+					"Le Burger": "$24",
+					"Mousse au Chocolat": "$8",
+					"Crème Brulée": "$9",
+					"Tarte Tatin": "$12",
+					"Glaces & Sorbets du Jour": "$4"
 				}
 			}
 		},
@@ -1293,10 +1299,43 @@
 				"name": "Glitch Bar & Games Room",
 				"address": "2287 West Broadway",
 				"contact_number": "+1 (604) 731-0617",
-				"website": "https://lasmargaritas.com/happy-hour/",
+				"website": "https://www.glitchvancouver.com/menu",
 				"full_address": "2287 West Broadway, Vancouver, BC V6K 2E4",
 				"neighbourhoods": "Kitsilano",
 				"images": "images/glitch.jpg",
+				"hours": {
+					"Tuesday - Friday": "14:00 - 16:00"
+				},
+				"category": {
+					"title": "Arcade Bar"
+				},
+				"drinks": {
+					"Jameson/Tequila/Jell-O shots": "$3.50",
+					"Boozy Slushies": "$5.99",
+					"House Wine 6oz": "$5.99"
+				},
+				"food": {
+					"Super Smash  Burger": "$10.99",
+					"Shaking Gems": "$7.99",
+					"Super Punch French Fries": "$6.99"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1748476, 49.264203]
+			},
+			"properties": {
+				"id": "035",
+				"name": "The Fringe Café",
+				"address": "3124 W Broadway",
+				"contact_number": "+1 (604) 731-0617",
+				"website": "https://lasmargaritas.com/happy-hour/",
+				"full_address": "3124 W Broadway, Vancouver, BC V6K 2H3",
+				"neighbourhoods": "Kitsilano",
+				"images": "images/the-fringe.jpg",
 				"hours": {
 					"7 days a week": "12:00 - 17:00"
 				},
@@ -1323,12 +1362,12 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.1748476, 49.264203]
+				"coordinates": [-123.1138689, 49.2787525]
 			},
 			"properties": {
-				"id": "035",
-				"name": "The Fringe Café",
-				"address": "3124 W Broadway",
+				"id": "036",
+				"name": "Fanny Bay Oyster Bar & Shellfish Marketé",
+				"address": "W Broadway",
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "3124 W Broadway, Vancouver, BC V6K 2H3",

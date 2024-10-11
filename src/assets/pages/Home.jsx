@@ -92,7 +92,9 @@ function Home() {
 		markers.forEach((marker) => {
 			marker.getElement().addEventListener('click', function () {
 				setSelectedBusiness(marker.id);
-				setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
+				setSelectedCard(
+					geoJson.features.filter((feature) => feature.properties.name === marker.id)
+				);
 			});
 			marker.addTo(mapRef.current);
 		});
@@ -131,9 +133,15 @@ function Home() {
 	}, [accessToken, setSelectedBusiness]);
 
 	return (
-		<div className='container'>
+		<div className="container">
 			<Header handleSearchInput={handleSearchInput} />
-			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
+			<Aside
+				selectedCard={selectedCard}
+				selectedBusiness={selectedBusiness}
+				geoJson={geoJson}
+				search={search}
+				businesses={businesses}
+			/>
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

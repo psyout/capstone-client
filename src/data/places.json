@@ -16,6 +16,7 @@
 				"full_address": "2201 W 1st Ave, BC, V6K-3E6",
 				"neighbourhoods": "Kitsilano",
 				"price": "2",
+				"rating": "4.5",
 				"category": {
 					"title": "Seafood"
 				},
@@ -451,15 +452,15 @@
 				"drinks": {
 					"Jägermeister 1oz": "$5.00",
 					"Fireball 1oz": "$5.00",
-					"Steamworks Lions Gate Lager 14oz": "$5.00",
+					"Steamworks Lions Gate 14oz": "$5.00",
 					"Steamworks Pale Ale 14oz": "$5.00",
 					"Stella Artois 18oz": "$8.00",
-					"Parkside Motel Hazy Pale Ale 14oz": "$5.00",
-					"Phillips Dinosour Stonefruit 14oz": "$5.00",
+					"Parkside Motel 14oz": "$5.00",
+					"Phillips Dinosour 14oz": "$5.00",
 					"Sangria 2oz": "$8.00",
 					"Honey Badger Cocktail 2oz": "$9.00",
 					"Lime Margarita 2oz": "$9.00",
-					"Bellini / Frozen Lime Strawberry Margarita 2oz": "$10.00",
+					"Frozen Margarita 2oz": "$10.00",
 					"Happy Red 6oz/9oz": "$6.00 | $9.00",
 					"Happy White 6oz/9oz": "$6.00 | $9.00",
 					"Happy Rosé 6oz/9oz": "$6.00 | $9.00"
@@ -1362,36 +1363,38 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.1138689, 49.2787525]
+				"coordinates": [-123.1769389, 49.2642534]
 			},
 			"properties": {
 				"id": "036",
-				"name": "Fanny Bay Oyster Bar & Shellfish Marketé",
-				"address": "W Broadway",
-				"contact_number": "+1 (604) 731-0617",
+				"name": "Good Co. Bar",
+				"address": "3255 W Broadway",
+				"contact_number": "+1(604)55960707",
 				"website": "https://lasmargaritas.com/happy-hour/",
-				"full_address": "3124 W Broadway, Vancouver, BC V6K 2H3",
+				"full_address": "3255 W Broadway Street, Vancouver, BC V6K 4N7",
 				"neighbourhoods": "Kitsilano",
-				"images": "images/the-fringe.jpg",
+				"images": "images/good-co.jpg",
 				"hours": {
-					"7 days a week": "12:00 - 17:00"
+					"Everyday from": "15:00 - 18:00"
 				},
 				"category": {
-					"title": "Mexican"
+					"title": "Bar"
 				},
 				"drinks": {
-					"Slushy Margarita": "$7.00",
-					"Classic Margarita (2.5 Oz)": "$11.00",
-					"North Point Ipa": "$6.00",
-					"House Red Or White Wine": "$1 An Oz",
-					"1516 Lager Or Pale Ale (14 Oz)": "$6.00"
+					"Select Beer": "$5.25",
+					"Select Wine": "$6.00",
+					"Highballs": "$4.50"
 				},
 				"food": {
-					"Tortilla Soup Cup": "$5.00",
-					"Mini Chimis (Served with sour cream)": "$6.00",
-					"Tijuana Style Caesar Salad": "$7.00",
-					"Taquitos (Served with sour cream)": "$7.00",
-					"Chicharron Street Tacos (2)": "$6.00"
+					"Select Tacos": "$7.00",
+					"Beer Battered Fries": "$9.00",
+					"Mexican Street Corn Dogs": "$9.00",
+					"Crispy Cauliflower": "$11.00",
+					"A Guac To Remember": "$11.00",
+					"Poutine U & Me": "$13.00",
+					"Totally Loaded Tater Tots": "$13.00",
+					"Select Burgers": "$17.00",
+					"Chicken Wings": "$17.00"
 				}
 			}
 		}

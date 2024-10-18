@@ -37,36 +37,6 @@ const hoodFilter = [
 	{ value: '', label: 'Neighbourhood' },
 	{ value: 'Kitsilano', label: 'Kitsilano' },
 	{ value: 'Downtown', label: 'Downtown' },
-	// { value: 'Mount Pleasant', label: 'Mount Pleasant' },
-	// { value: 'Gastown', label: 'Gastown' },
-	// { value: 'Yaletown', label: 'Yaletown' },
-	// { value: 'Commercial Drive', label: 'Commercial Drive' },
-	// { value: 'Chinatown', label: 'Chinatown' },
-	// { value: 'West End', label: 'West End' },
-	// { value: 'Granville Island', label: 'Granville Island' },
-	// { value: 'Coal Harbour', label: 'Coal Harbour' },
-	// { value: 'False Creek', label: 'False Creek' },
-	// { value: 'Robson Street', label: 'Robson Street' },
-	// { value: 'Olympic Village', label: 'Olympic Village' },
-	// { value: 'South Granville', label: 'South Granville' },
-	// { value: 'Davie Village', label: 'Davie Village' },
-	// { value: 'Railtown', label: 'Railtown' },
-	// { value: 'Strathcona', label: 'Strathcona' },
-	// { value: 'Arbutus Ridge', label: 'Arbutus Ridge' },
-	// { value: 'Hastings-Sunrise', label: 'Hastings-Sunrise' },
-	// { value: 'Champlain Heights', label: 'Champlain Heights' },
-	// { value: 'Dunbar-Southlands', label: 'Dunbar-Southlands' },
-	// { value: 'Kerrisdale', label: 'Kerrisdale' },
-	// { value: 'Killarney', label: 'Killarney' },
-	// { value: 'Marpole', label: 'Marpole' },
-	// { value: 'Oakridge', label: 'Oakridge' },
-	// { value: 'Renfrew-Collingwood', label: 'Renfrew-Collingwood' },
-	// { value: 'Riley Park', label: 'Riley Park' },
-	// { value: 'Shaughnessy', label: 'Shaughnessy' },
-	// { value: 'South Cambie', label: 'South Cambie' },
-	// { value: 'Sunset', label: 'Sunset' },
-	// { value: 'Victoria-Fraserview', label: 'Victoria-Fraserview' },
-	// { value: 'West Point Grey', label: 'West Point Grey' },
 ];
 
 const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumns) => {
@@ -74,16 +44,7 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 
 	return features
 		.filter((feature) =>
-			search
-				? Object.keys(feature.properties).some((key) =>
-						excludeColumns.includes(key)
-							? false
-							: feature.properties[key]
-									.toString()
-									.toLowerCase()
-									.includes(lowerCasedSearch)
-				  )
-				: true
+			search ? Object.keys(feature.properties).some((key) => (excludeColumns.includes(key) ? false : feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch))) : true
 		)
 		.filter((feature) => (filterBy ? feature.properties.category?.title === filterBy : true))
 		.filter((feature) => (hoodBy ? feature.properties.neighbourhoods === hoodBy : true))
@@ -94,9 +55,7 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 					Object.entries(hours)
 						.map(([day, hours]) => `${day}:${hours}`)
 						.join(', ');
-				return formatHoursString(a.properties.hours).localeCompare(
-					formatHoursString(b.properties.hours)
-				);
+				return formatHoursString(a.properties.hours).localeCompare(formatHoursString(b.properties.hours));
 			}
 			return 0;
 		});
@@ -108,53 +67,46 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	const [hoodBy, setHoodBy] = useState('');
 	const excludeColumns = ['id'];
 
-	const sortedFeatures = filterAndSort(
-		geoJson.features,
-		search,
-		filterBy,
-		hoodBy,
-		sortBy,
-		excludeColumns
-	);
+	const sortedFeatures = filterAndSort(geoJson.features, search, filterBy, hoodBy, sortBy, excludeColumns);
 
 	const cards = sortedFeatures.map((feature) => {
-		const { id, name, website, images } = feature.properties;
-		const hours = formatHours(feature.properties.hours);
-		const drinks = formatDrinks(feature.properties.drinks);
-		const food = formatFood(feature.properties.food);
+		const { properties } = feature;
+		if (!properties || !properties.name) return null; // Check if properties and name exist
 
-		const matchingBusinessFromYelp = businesses.find((business) => business.name === name);
-		if (!matchingBusinessFromYelp) return null;
+		const { id, name, website, images, address, phone, url, rating } = properties;
+		const hours = formatHours(properties.hours);
+		const drinks = formatDrinks(properties.drinks);
+		const food = formatFood(properties.food);
+
+		const matchingBusinessFromYelp = businesses.find((business) => business && business.name === name);
+		if (!matchingBusinessFromYelp) return null; // Return null if no matching business is found
 
 		return (
 			<Card
 				key={id}
 				title={name}
-				address={matchingBusinessFromYelp.location.address1}
-				phone={matchingBusinessFromYelp.phone}
+				address={address}
+				phone={phone}
 				images={images}
 				time={hours}
 				drinks={drinks}
 				food={food}
-				rating={matchingBusinessFromYelp.rating}
 				onClick={() => setSelectedBusiness(name)}
 				website={website}
-				url={matchingBusinessFromYelp.url}
-				reviews={matchingBusinessFromYelp.reviews}
+				url={url}
+				rating={rating}
 			/>
 		);
 	});
 
 	if (selectedBusiness) {
-		const selectedIndex = sortedFeatures.findIndex(
-			(feature) => feature.properties.name === selectedBusiness
-		);
+		const selectedIndex = sortedFeatures.findIndex((feature) => feature.properties.name === selectedBusiness);
 		const selectedCard = cards.splice(selectedIndex, 1)[0];
 		cards.unshift(selectedCard);
 	}
 
 	return (
-		<div className="aside">
+		<div className='aside'>
 			<SortByDropDown
 				options={options}
 				value={sortBy}
@@ -166,9 +118,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				hoodByValue={hoodBy}
 				onHoodByChange={(e) => setHoodBy(e.target.value)}
 			/>
-			<ul className="aside__list">
+			<ul className='aside__list'>
 				<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
-					<Masonry containerWidth={800} gutter="30px">
+					<Masonry containerWidth={800} gutter='30px'>
 						{cards}
 					</Masonry>
 				</ResponsiveMasonry>

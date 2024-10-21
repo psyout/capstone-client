@@ -1,6 +1,17 @@
 import './Card.scss';
 import { useState, useEffect } from 'react';
-import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar, Skeleton } from '@mui/material';
+import {
+	Card as MUICard,
+	CardHeader,
+	CardMedia,
+	CardContent,
+	CardActions,
+	IconButton,
+	Collapse,
+	Typography,
+	Avatar,
+	Skeleton,
+} from '@mui/material';
 import { red, grey } from '@mui/material/colors';
 import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
 import SportsBarTwoToneIcon from '@mui/icons-material/SportsBarTwoTone';
@@ -11,7 +22,7 @@ import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
-function Card({ title, address, images, time, phone, drinks, food, website, rating }) {
+function Card({ title, address, images, time, contact_number, drinks, food, website, rating }) {
 	const [expandedDrinks, setExpandedDrinks] = useState(false);
 	const [expandedFood, setExpandedFood] = useState(false);
 	const [isLoading, setIsLoading] = useState(true); // Loading state
@@ -19,7 +30,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setIsLoading(false);
-		}, 2500); // loading delay
+		}, 3000); // loading delay
 
 		return () => clearTimeout(timer);
 	}, []);
@@ -45,9 +56,13 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 
 	for (let i = 0; i < maxRating; i++) {
 		if (i < integerPart) {
-			ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />);
+			ratingIcons.push(
+				<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
+			);
 		} else if (i === integerPart && decimalPart > 0) {
-			ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />);
+			ratingIcons.push(
+				<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
+			);
 		} else {
 			break;
 		}
@@ -64,11 +79,17 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 	};
 
 	return (
-		<MUICard variant='outlined'>
+		<MUICard variant="outlined">
 			{isLoading ? (
 				<div style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
-					<Skeleton animation='wave' variant='circular' width={35} height={35} sx={{ marginRight: '1rem' }} />
-					<Skeleton animation='wave' variant='text' width='60%' height={28} />
+					<Skeleton
+						animation="wave"
+						variant="circular"
+						width={35}
+						height={35}
+						sx={{ marginRight: '1rem' }}
+					/>
+					<Skeleton animation="wave" variant="text" width="60%" height={28} />
 				</div>
 			) : (
 				<CardHeader
@@ -85,7 +106,12 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 							{title.charAt(0)}
 						</Avatar>
 					}
-					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem', fontWeight: '400' }}>{title}</Typography>}
+					title={
+						<Typography
+							sx={{ fontFamily: 'Rubik', fontSize: '0.85rem', fontWeight: '400' }}>
+							{title}
+						</Typography>
+					}
 					subheader={
 						<Typography
 							onClick={openMaps}
@@ -116,18 +142,23 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 			)}
 
 			{isLoading ? (
-				<Skeleton animation='wave' variant='rectangular' width='100%' height={150} />
+				<Skeleton animation="wave" variant="rectangular" width="100%" height={150} />
 			) : (
-				<CardMedia component='img' image={images} alt={title} sx={{ aspectRatio: '16/9', maxHeight: '150px' }} />
+				<CardMedia
+					component="img"
+					image={images}
+					alt={title}
+					sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
+				/>
 			)}
 
 			<CardContent>
 				{isLoading ? (
-					<Skeleton animation='wave' variant='text' />
+					<Skeleton animation="wave" variant="text" />
 				) : (
 					<Typography
-						variant='body2'
-						color='text.secondary'
+						variant="body2"
+						color="text.secondary"
 						sx={{
 							fontFamily: 'Rubik',
 							fontSize: '0.75rem',
@@ -146,7 +177,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 					padding: '0.3rem 1rem',
 				}}>
 				{isLoading ? (
-					<Skeleton animation='wave' variant='text' width={100} />
+					<Skeleton animation="wave" variant="text" width={100} />
 				) : (
 					<div
 						style={{
@@ -154,7 +185,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 							alignItems: 'center',
 							fontSize: '0.8rem',
 						}}>
-						<Typography sx={{ fontWeight: '400' }} variant='subheading'>
+						<Typography sx={{ fontWeight: '400' }} variant="subheading">
 							Rating:
 						</Typography>
 						<div
@@ -173,22 +204,30 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 
 				<div>
 					{isLoading ? (
-						<Skeleton animation='wave' variant='circular' width={24} height={24} />
+						<Skeleton animation="wave" variant="circular" width={24} height={24} />
 					) : (
 						<>
 							<IconButton
 								onClick={() => {
-									window.location.href = `tel:${phone}`;
+									window.location.href = `tel:${contact_number}`;
 								}}
 								sx={{ color: grey[600] }}
-								aria-label='call business'>
+								aria-label="call business">
 								<PhoneInTalkTwoToneIcon />
 							</IconButton>
 
-							<IconButton onClick={handleExpandDrinksClick} aria-expanded={expandedDrinks} aria-label='show drinks' sx={{ color: expandedDrinks ? red[400] : grey[600] }}>
+							<IconButton
+								onClick={handleExpandDrinksClick}
+								aria-expanded={expandedDrinks}
+								aria-label="show drinks"
+								sx={{ color: expandedDrinks ? red[400] : grey[600] }}>
 								<SportsBarTwoToneIcon />
 							</IconButton>
-							<IconButton onClick={handleExpandFoodClick} aria-expanded={expandedFood} aria-label='show food' sx={{ color: expandedFood ? red[400] : grey[600] }}>
+							<IconButton
+								onClick={handleExpandFoodClick}
+								aria-expanded={expandedFood}
+								aria-label="show food"
+								sx={{ color: expandedFood ? red[400] : grey[600] }}>
 								<LunchDiningTwoToneIcon />
 							</IconButton>
 						</>
@@ -197,7 +236,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 			</CardActions>
 
 			{!isLoading && (
-				<Collapse in={expandedDrinks} timeout='auto' unmountOnExit>
+				<Collapse in={expandedDrinks} timeout="auto" unmountOnExit>
 					<Divider />
 					<CardContent>
 						<DrinksMenu drinks={drinks} website={website} />
@@ -206,7 +245,7 @@ function Card({ title, address, images, time, phone, drinks, food, website, rati
 			)}
 
 			{!isLoading && (
-				<Collapse in={expandedFood} timeout='auto' unmountOnExit>
+				<Collapse in={expandedFood} timeout="auto" unmountOnExit>
 					<Divider />
 					<CardContent>
 						<FoodMenu food={food} website={website} />

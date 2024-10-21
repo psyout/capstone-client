@@ -8,7 +8,6 @@ import formatDrinks from './FormatDrinks';
 import formatFood from './FormatFood';
 
 const options = [
-	{ value: '', label: 'Results' },
 	{ value: 'name', label: 'Name' },
 	{ value: 'hours', label: 'Time' },
 ];
@@ -44,7 +43,16 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 
 	return features
 		.filter((feature) =>
-			search ? Object.keys(feature.properties).some((key) => (excludeColumns.includes(key) ? false : feature.properties[key].toString().toLowerCase().includes(lowerCasedSearch))) : true
+			search
+				? Object.keys(feature.properties).some((key) =>
+						excludeColumns.includes(key)
+							? false
+							: feature.properties[key]
+									.toString()
+									.toLowerCase()
+									.includes(lowerCasedSearch)
+				  )
+				: true
 		)
 		.filter((feature) => (filterBy ? feature.properties.category?.title === filterBy : true))
 		.filter((feature) => (hoodBy ? feature.properties.neighbourhoods === hoodBy : true))
@@ -55,7 +63,9 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 					Object.entries(hours)
 						.map(([day, hours]) => `${day}:${hours}`)
 						.join(', ');
-				return formatHoursString(a.properties.hours).localeCompare(formatHoursString(b.properties.hours));
+				return formatHoursString(a.properties.hours).localeCompare(
+					formatHoursString(b.properties.hours)
+				);
 			}
 			return 0;
 		});
@@ -67,7 +77,14 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	const [hoodBy, setHoodBy] = useState('');
 	const excludeColumns = ['id'];
 
-	const sortedFeatures = filterAndSort(geoJson.features, search, filterBy, hoodBy, sortBy, excludeColumns);
+	const sortedFeatures = filterAndSort(
+		geoJson.features,
+		search,
+		filterBy,
+		hoodBy,
+		sortBy,
+		excludeColumns
+	);
 
 	const cards = sortedFeatures.map((feature) => {
 		const { properties } = feature;
@@ -78,7 +95,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		const drinks = formatDrinks(properties.drinks);
 		const food = formatFood(properties.food);
 
-		const matchingBusinessFromYelp = businesses.find((business) => business && business.name === name);
+		const matchingBusinessFromYelp = businesses.find(
+			(business) => business && business.name === name
+		);
 		if (!matchingBusinessFromYelp) return null; // Return null if no matching business is found
 
 		return (
@@ -100,13 +119,15 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	});
 
 	if (selectedBusiness) {
-		const selectedIndex = sortedFeatures.findIndex((feature) => feature.properties.name === selectedBusiness);
+		const selectedIndex = sortedFeatures.findIndex(
+			(feature) => feature.properties.name === selectedBusiness
+		);
 		const selectedCard = cards.splice(selectedIndex, 1)[0];
 		cards.unshift(selectedCard);
 	}
 
 	return (
-		<div className='aside'>
+		<div className="aside">
 			<SortByDropDown
 				options={options}
 				value={sortBy}
@@ -118,9 +139,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				hoodByValue={hoodBy}
 				onHoodByChange={(e) => setHoodBy(e.target.value)}
 			/>
-			<ul className='aside__list'>
+			<ul className="aside__list">
 				<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
-					<Masonry containerWidth={800} gutter='30px'>
+					<Masonry containerWidth={800} gutter="30px">
 						{cards}
 					</Masonry>
 				</ResponsiveMasonry>

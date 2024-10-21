@@ -1,10 +1,20 @@
 import React from 'react';
 import './SortByDropDown.scss';
 
-function SortByDropDown({ options, value, onChange, filters, filterByValue, onFilterByChange, hoodFilters, hoodByValue, onHoodByChange }) {
+function SortByDropDown({
+	options,
+	value,
+	onChange,
+	filters,
+	filterByValue,
+	onFilterByChange,
+	hoodFilters,
+	hoodByValue,
+	onHoodByChange,
+}) {
 	return (
-		<div className='options-dropdown'>
-			<div className='filter-dropdown'>
+		<div className="options-dropdown">
+			{/* <div className='filter-dropdown'>
 				<label className='options-dropdown__label'>Sort by:</label>
 				<select className='options-dropdown__select' value={value} onChange={onChange}>
 					{options.map((option) => (
@@ -13,11 +23,14 @@ function SortByDropDown({ options, value, onChange, filters, filterByValue, onFi
 						</option>
 					))}
 				</select>
-			</div>
+			</div> */}
 
-			<div className='filter-dropdown'>
-				<label className='options-dropdown__label'>Filter by:</label>
-				<select className='options-dropdown__select' value={filterByValue} onChange={onFilterByChange}>
+			<div className="filter-dropdown">
+				<label className="options-dropdown__label">Filter by:</label>
+				<select
+					className="options-dropdown__select"
+					value={filterByValue}
+					onChange={onFilterByChange}>
 					{filters.map((filter) => (
 						<option key={filter.value} value={filter.value}>
 							{filter.label}
@@ -26,9 +39,12 @@ function SortByDropDown({ options, value, onChange, filters, filterByValue, onFi
 				</select>
 			</div>
 
-			<div className='filter-dropdown'>
-				<label className='options-dropdown__label'>Look for:</label>
-				<select className='options-dropdown__select' value={hoodByValue} onChange={onHoodByChange}>
+			<div className="filter-dropdown">
+				<label className="options-dropdown__label">Look for:</label>
+				<select
+					className="options-dropdown__select"
+					value={hoodByValue}
+					onChange={onHoodByChange}>
 					{hoodFilters.map((hood) => (
 						<option key={hood.value} value={hood.value}>
 							{hood.label}

@@ -24,7 +24,7 @@ function SortByDropDown({
 					))}
 				</select>
 			</div> */}
-
+			<h3 className="options-dropdown__title">Sort by:</h3>
 			<div className="filter-dropdown">
 				<label className="options-dropdown__label">Filter by:</label>
 				<select

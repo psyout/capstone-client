@@ -17,6 +17,18 @@
 		margin: 0 0 -0.5rem;
 	}
 
+	&__title {
+		font-family: Rubik;
+		font-weight: 300;
+		font-size: 0.85rem;
+		color: #202020;
+		display: block;
+
+		@include tablet {
+			display: none;
+		}
+	}
+
 	&__label {
 		font-family: Rubik;
 		font-weight: 300;

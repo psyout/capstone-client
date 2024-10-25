@@ -90,7 +90,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		const { properties } = feature;
 		if (!properties || !properties.name) return null; // Check if properties and name exist
 
-		const { id, name, website, images, address, phone, url, rating } = properties;
+		const { id, name, website, images, address, contact_number, url, rating } = properties;
 		const hours = formatHours(properties.hours);
 		const drinks = formatDrinks(properties.drinks);
 		const food = formatFood(properties.food);
@@ -105,7 +105,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				key={id}
 				title={name}
 				address={address}
-				phone={phone}
+				contact_number={contact_number}
 				images={images}
 				time={hours}
 				drinks={drinks}

@@ -11,7 +11,7 @@
 				"id": "001",
 				"name": "Chewies Steam & Oyster Bar - Kits",
 				"address": "2201 W 1st Ave ",
-				"contact_number": "+1 (604) 558-4448",
+				"contact_number": "+16045584448",
 				"website": "https://www.chewies.ca/happy",
 				"full_address": "2201 W 1st Ave, BC, V6K-3E6",
 				"neighbourhoods": "Kitsilano",
@@ -1376,6 +1376,45 @@
 				"images": "images/good-co.jpg",
 				"hours": {
 					"Everyday from": "15:00 - 18:00"
+				},
+				"category": {
+					"title": "Bar"
+				},
+				"drinks": {
+					"Select Beer": "$5.25",
+					"Select Wine": "$6.00",
+					"Highballs": "$4.50"
+				},
+				"food": {
+					"Select Tacos": "$7.00",
+					"Beer Battered Fries": "$9.00",
+					"Mexican Street Corn Dogs": "$9.00",
+					"Crispy Cauliflower": "$11.00",
+					"A Guac To Remember": "$11.00",
+					"Poutine U & Me": "$13.00",
+					"Totally Loaded Tater Tots": "$13.00",
+					"Select Burgers": "$17.00",
+					"Chicken Wings": "$17.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.1769389, 49.2642534]
+			},
+			"properties": {
+				"id": "037",
+				"name": "Carlos O'Bryan's Neighborhood Pub",
+				"address": "1774 W 7th Ave, Vancouve",
+				"contact_number": "+1(604)732-0010",
+				"website": "https://www.kobcob.com/happy-hour/",
+				"full_address": "1774 W 7th Ave, Vancouver, BC V6J 4Z9",
+				"neighbourhoods": "Kitsilano",
+				"images": "images/carlos-obryan.jpg",
+				"hours": {
+					"Everyday from": "14:00 - 17:00"
 				},
 				"category": {
 					"title": "Bar"

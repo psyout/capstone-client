@@ -1402,12 +1402,12 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.1769389, 49.2642534]
+				"coordinates": [-123.145488, 49.265218]
 			},
 			"properties": {
 				"id": "037",
 				"name": "Carlos O'Bryan's Neighborhood Pub",
-				"address": "1774 W 7th Ave, Vancouve",
+				"address": "1774 W 7th Ave",
 				"contact_number": "+1(604)732-0010",
 				"website": "https://www.kobcob.com/happy-hour/",
 				"full_address": "1774 W 7th Ave, Vancouver, BC V6J 4Z9",
@@ -1420,20 +1420,28 @@
 					"title": "Bar"
 				},
 				"drinks": {
-					"Select Beer": "$5.25",
-					"Select Wine": "$6.00",
-					"Highballs": "$4.50"
+					"Single Highballs (1oz)": "$6.00",
+					"Double Highballs (2oz)": "$9.00",
+					"Domestic draft beer (16oz)": "$6.00",
+					"Premium Irish Pints (20oz)": "$8.00",
+					"House Wine (9oz)": "$7.50"
 				},
 				"food": {
-					"Select Tacos": "$7.00",
-					"Beer Battered Fries": "$9.00",
-					"Mexican Street Corn Dogs": "$9.00",
-					"Crispy Cauliflower": "$11.00",
-					"A Guac To Remember": "$11.00",
-					"Poutine U & Me": "$13.00",
-					"Totally Loaded Tater Tots": "$13.00",
-					"Select Burgers": "$17.00",
-					"Chicken Wings": "$17.00"
+					"Pachos": "$12.00",
+					"Deep-Fried Pickles": "$12.00",
+					"Stuffed Mushrooms": "$12.00",
+					"Potato Skins": "$12.00",
+					"Dry Ribs": "$12.00",
+					"Chicken Lips": "$14.00",
+					"Classic Poutine": "$14.00",
+					"Chicken Quesadillas": "$14.00",
+					"McCracken Rolls": "$14.00",
+					"Irish Yorkies": "$14.00",
+					"Chicken Wings": "$16.00",
+					"Togarashi Tuna": "$16.00",
+					"Chicken Taco Salad": "$16.00",
+					"Dunkin's Beef Dip": "$16.00",
+					"Butter Chicken": "$16.00"
 				}
 			}
 		}

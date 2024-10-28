@@ -629,7 +629,7 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [-123.16399, 49.263744]
+				"coordinates": [-123.16375, 49.264007]
 			},
 			"properties": {
 				"id": "016",
@@ -1442,6 +1442,118 @@
 					"Chicken Taco Salad": "$16.00",
 					"Dunkin's Beef Dip": "$16.00",
 					"Butter Chicken": "$16.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.148895, 49.272551]
+			},
+			"properties": {
+				"id": "038",
+				"name": "Corduroy",
+				"address": "1943 Cornwall Ave",
+				"contact_number": "+1(604)733-0162",
+				"website": "https://www.corduroyrestaurant.com/menu",
+				"full_address": "1943 Cornwall Ave, Vancouver, BC V6J 1C8",
+				"neighbourhoods": "Kitsilano",
+				"images": "images/corduroy.jpeg",
+				"hours": {
+					"Everyday from": "17:00 - 18:30"
+				},
+				"category": {
+					"title": "Bar"
+				},
+				"drinks": {
+					"Corduroy Lager": "$5.00",
+					"House Red/Wine": "$7.00/10.00",
+					"Hi-Balls": "$6.00/8.00"
+				},
+				"food": {
+					"Pizza and Appetizers": "$3.00 off"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.147245, 49.268252]
+			},
+			"properties": {
+				"id": "039",
+				"name": "Romer's Burger Bar",
+				"address": "1873 W 4th Ave",
+				"contact_number": "+1(604)732-9545",
+				"website": "https://romersburgerbar.com/menus/drink-deals-happy-hour/",
+				"full_address": "1873 W 4th Ave, Vancouver, BC V6J 1M4",
+				"neighbourhoods": "Kitsilano",
+				"images": "images/romers.jpg",
+				"hours": {
+					"Daily": "3-6pm & 9pm-Close"
+				},
+				"category": {
+					"title": "Bar"
+				},
+				"drinks": {
+					"Romers Lager (14oz)": "$4.95",
+					"Romers Pale Ale (14oz)": "$4.95",
+					"Craft Beer of the Day (18oz)": "$6.95",
+					"White or Red (9oz)": "$8.95",
+					"Pinot Gris or Cabernet (9oz)": "$9.95",
+					"Crafty Sampler": "$8.95"
+				},
+				"food": {
+					"Valentina Tater Tots": "$6.95",
+					"Cauliflower Wings": "$9.95",
+					"Bruschetta": "$7.95",
+					"Man's Man Slider": "$4.95 each",
+					"Nachos Valentina for Two": "$16.95",
+					"Salt and Pepper Wings": "$15.95",
+					"Standard Burger (9pm till close)": "$9.00"
+				}
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-123.141636, 49.263814]
+			},
+			"properties": {
+				"id": "040",
+				"name": "Leopold's Tavern",
+				"address": "1619 W Broadway",
+				"contact_number": "+1(604)732-0010",
+				"website": "https://cdn.shopify.com/s/files/1/0435/6898/8310/files/Leos_menu_fall_2024_BC.pdf?v=1728517223",
+				"full_address": "1619 W Broadway, Vancouver, BC V5N 1V9",
+				"neighbourhoods": "Kitsilano",
+				"images": "images/leopolds.jpg",
+				"hours": {
+					"Everyday from": "14:00 - 17:00"
+				},
+				"category": {
+					"title": "Bar"
+				},
+				"drinks": {
+					"Leo’s Caesar (1oz)": "$8.00",
+					"Make it a Buffalo Dill Caesar (add)": "$2.50",
+					"Leo’s Fizz (12oz)": "$7.50",
+					"Leo’s Lager (20oz)": "$7.00",
+					"House Wine (6oz)": "$7.00",
+					"Highballs (1oz)": "$6.00",
+					"Jameson (1oz)": "$6.00"
+				},
+				"food": {
+					"Pickled Egg": "$0.99",
+					"Perogies": "$6.00",
+					"Garlic Parm Fries": "$5.00",
+					"Dill Pickle Fries": "$5.00",
+					"Lemon Pepper Ranch Fries": "$5.00",
+					"Thai Chili Popcorn Chicken": "$10.00",
+					"Fried Pickles": "$10.00"
 				}
 			}
 		}

@@ -6,6 +6,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import formatHours from './FormatHours';
 import formatDrinks from './FormatDrinks';
 import formatFood from './FormatFood';
+import Footer from '../Footer/Footer';
 
 const options = [
 	{ value: 'name', label: 'Name' },
@@ -146,6 +147,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 					</Masonry>
 				</ResponsiveMasonry>
 			</ul>
+			<Footer />
 		</div>
 	);
 }

@@ -6,7 +6,7 @@ function Main({ mapContainer }) {
 			<div
 				className="map"
 				ref={mapContainer}
-				style={{ width: '100%', height: '100vh' }}></div>
+				style={{ width: '100%', height: '100svh' }}></div>
 		</div>
 	);
 }

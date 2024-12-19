@@ -176,32 +176,6 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 					justifyContent: 'space-between',
 					padding: '0.3rem 1rem',
 				}}>
-				{isLoading ? (
-					<Skeleton animation="wave" variant="text" width={100} />
-				) : (
-					<div
-						style={{
-							display: 'flex',
-							alignItems: 'center',
-							fontSize: '0.8rem',
-						}}>
-						<Typography sx={{ fontWeight: '400' }} variant="subheading">
-							Rating:
-						</Typography>
-						<div
-							style={{
-								marginLeft: '0.3rem',
-								display: 'flex',
-								alignItems: 'center',
-								gap: '0.2rem',
-								fontWeight: '200',
-							}}>
-							{rating}
-							<>{ratingIcons}</>
-						</div>
-					</div>
-				)}
-
 				<div>
 					{isLoading ? (
 						<Skeleton animation="wave" variant="circular" width={24} height={24} />

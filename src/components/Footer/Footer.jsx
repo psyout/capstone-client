@@ -8,7 +8,7 @@ function Footer() {
 			style={{
 				textAlign: 'center',
 				padding: '1rem',
-				color: grey[60],
+				color: grey[10],
 				marginTop: '2rem',
 			}}>
 			<Typography variant="body2">
@@ -17,8 +17,16 @@ function Footer() {
 					href="https://felipegonzalez.io"
 					target="_blank"
 					rel="noopener noreferrer"
-					color="primary"
-					style={{ textDecoration: 'none' }}>
+					sx={{
+						textDecoration: 'none',
+						fontWeight: 'bold',
+						cursor: 'pointer',
+						display: 'inline',
+						color: 'grey.900',
+						'&:hover': {
+							textDecoration: 'underline',
+						},
+					}}>
 					Felipe
 				</Link>
 				{'  in Vancouver, BC '}

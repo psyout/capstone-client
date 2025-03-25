@@ -1,12 +1,12 @@
 import './Aside.scss';
-import Card from '../Card/Card';
-import SortByDropDown from '../SortByDropDown/SortByDropDown';
 import { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import SortByDropDown from '../SortByDropDown/SortByDropDown';
+import Footer from '../Footer/Footer';
+import Card from '../Card/Card';
 import formatHours from './FormatHours';
 import formatDrinks from './FormatDrinks';
 import formatFood from './FormatFood';
-import Footer from '../Footer/Footer';
 import { options, filters, hoodFilter } from './SearchBy';
 
 const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumns) => {
@@ -17,17 +17,17 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 			.join(', ');
 
 	return features
-		.filter(({ properties }) =>
-			search
-				? Object.keys(properties).some(
-						(key) =>
-							!excludeColumns.includes(key) &&
-							properties[key]?.toString().toLowerCase().includes(lowerCasedSearch)
-				  )
-				: true
+		.filter(
+			({ properties }) =>
+				!search ||
+				Object.keys(properties).some(
+					(key) =>
+						!excludeColumns.includes(key) &&
+						properties[key]?.toString().toLowerCase().includes(lowerCasedSearch)
+				)
 		)
-		.filter(({ properties }) => (filterBy ? properties.category?.title === filterBy : true))
-		.filter(({ properties }) => (hoodBy ? properties.neighbourhoods === hoodBy : true))
+		.filter(({ properties }) => !filterBy || properties.category?.title === filterBy)
+		.filter(({ properties }) => !hoodBy || properties.neighbourhoods === hoodBy)
 		.sort((a, b) =>
 			sortBy === 'name'
 				? a.properties.name.localeCompare(b.properties.name)
@@ -54,30 +54,23 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		excludeColumns
 	);
 
-	const cards = sortedFeatures.map(({ properties }) => {
-		if (!properties?.name) return null;
-
-		const { id, name, website, images, address, contact_number, url, rating } = properties;
-		const hours = formatHours(properties.hours);
-		const drinks = formatDrinks(properties.drinks);
-		const food = formatFood(properties.food);
-
-		if (!businesses.some((b) => b?.name === name)) return null;
+	const renderCards = sortedFeatures.map(({ properties }) => {
+		if (!properties?.name || !businesses.some((b) => b?.name === properties.name)) return null;
 
 		return (
 			<Card
-				key={id}
-				title={name}
-				address={address}
-				contact_number={contact_number}
-				images={images}
-				time={hours}
-				drinks={drinks}
-				food={food}
-				onClick={() => setSelectedBusiness(name)}
-				website={website}
-				url={url}
-				rating={rating}
+				key={properties.id}
+				title={properties.name}
+				address={properties.address}
+				contact_number={properties.contact_number}
+				images={properties.images}
+				time={formatHours(properties.hours)}
+				drinks={formatDrinks(properties.drinks)}
+				food={formatFood(properties.food)}
+				onClick={() => setSelectedBusiness(properties.name)}
+				website={properties.website}
+				url={properties.url}
+				rating={properties.rating}
 			/>
 		);
 	});
@@ -86,7 +79,10 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		const selectedIndex = sortedFeatures.findIndex(
 			({ properties }) => properties.name === selectedBusiness
 		);
-		if (selectedIndex > -1) cards.unshift(cards.splice(selectedIndex, 1)[0]);
+		if (selectedIndex > -1) {
+			const selectedCard = renderCards.splice(selectedIndex, 1)[0];
+			renderCards.unshift(selectedCard);
+		}
 	}
 
 	return (
@@ -105,7 +101,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 			<ul className="aside__list">
 				<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
 					<Masonry containerWidth={800} gutter="30px">
-						{cards}
+						{renderCards}
 					</Masonry>
 				</ResponsiveMasonry>
 			</ul>

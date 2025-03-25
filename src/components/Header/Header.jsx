@@ -6,6 +6,12 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 
 function Header({ handleSearchInput }) {
+	const inputStyles = {
+		fontSize: '0.85rem',
+		color: '#2b2840',
+		fontFamily: 'Rubik, sans-serif',
+	};
+
 	return (
 		<header className="header-container">
 			<div className="header-container__logo">
@@ -19,7 +25,7 @@ function Header({ handleSearchInput }) {
 				<Box
 					noValidate
 					autoComplete="off"
-					component={'form'}
+					component="form"
 					sx={{
 						display: 'flex',
 						alignItems: 'center',
@@ -42,24 +48,16 @@ function Header({ handleSearchInput }) {
 								<InputAdornment position="end">
 									<SearchIcon
 										style={{
-											color: '#2b2840',
+											color: inputStyles.color,
 											fontSize: '1.4rem',
 										}}
 									/>
 								</InputAdornment>
 							),
-							style: {
-								fontSize: '0.85rem', // font size
-								color: '#2b2840', // text color
-								fontFamily: 'Rubik, sans-serif',
-							},
+							style: inputStyles,
 						}}
 						InputLabelProps={{
-							style: {
-								fontSize: '0.85rem', // label font size
-								color: '#2b2840', // label color
-								fontFamily: 'Rubik, sans-serif',
-							},
+							style: inputStyles,
 						}}
 					/>
 				</Box>

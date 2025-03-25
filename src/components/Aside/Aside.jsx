@@ -11,35 +11,32 @@ import { options, filters, hoodFilter } from './SearchBy';
 
 const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumns) => {
 	const lowerCasedSearch = search.toLowerCase();
+	const formatHoursString = (hours) =>
+		Object.entries(hours || {})
+			.map(([day, hrs]) => `${day}:${hrs}`)
+			.join(', ');
 
 	return features
-		.filter((feature) =>
+		.filter(({ properties }) =>
 			search
-				? Object.keys(feature.properties).some((key) =>
-						excludeColumns.includes(key)
-							? false
-							: feature.properties[key]
-									.toString()
-									.toLowerCase()
-									.includes(lowerCasedSearch)
+				? Object.keys(properties).some(
+						(key) =>
+							!excludeColumns.includes(key) &&
+							properties[key]?.toString().toLowerCase().includes(lowerCasedSearch)
 				  )
 				: true
 		)
-		.filter((feature) => (filterBy ? feature.properties.category?.title === filterBy : true))
-		.filter((feature) => (hoodBy ? feature.properties.neighbourhoods === hoodBy : true))
-		.sort((a, b) => {
-			if (sortBy === 'name') return a.properties.name.localeCompare(b.properties.name);
-			if (sortBy === 'hours') {
-				const formatHoursString = (hours) =>
-					Object.entries(hours)
-						.map(([day, hours]) => `${day}:${hours}`)
-						.join(', ');
-				return formatHoursString(a.properties.hours).localeCompare(
-					formatHoursString(b.properties.hours)
-				);
-			}
-			return 0;
-		});
+		.filter(({ properties }) => (filterBy ? properties.category?.title === filterBy : true))
+		.filter(({ properties }) => (hoodBy ? properties.neighbourhoods === hoodBy : true))
+		.sort((a, b) =>
+			sortBy === 'name'
+				? a.properties.name.localeCompare(b.properties.name)
+				: sortBy === 'hours'
+				? formatHoursString(a.properties.hours).localeCompare(
+						formatHoursString(b.properties.hours)
+				  )
+				: 0
+		);
 };
 
 function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, businesses }) {
@@ -57,19 +54,15 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		excludeColumns
 	);
 
-	const cards = sortedFeatures.map((feature) => {
-		const { properties } = feature;
-		if (!properties || !properties.name) return null; // Check if properties and name exist
+	const cards = sortedFeatures.map(({ properties }) => {
+		if (!properties?.name) return null;
 
 		const { id, name, website, images, address, contact_number, url, rating } = properties;
 		const hours = formatHours(properties.hours);
 		const drinks = formatDrinks(properties.drinks);
 		const food = formatFood(properties.food);
 
-		const matchingBusinessFromYelp = businesses.find(
-			(business) => business && business.name === name
-		);
-		if (!matchingBusinessFromYelp) return null; // Return null if no matching business is found
+		if (!businesses.some((b) => b?.name === name)) return null;
 
 		return (
 			<Card
@@ -91,10 +84,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 
 	if (selectedBusiness) {
 		const selectedIndex = sortedFeatures.findIndex(
-			(feature) => feature.properties.name === selectedBusiness
+			({ properties }) => properties.name === selectedBusiness
 		);
-		const selectedCard = cards.splice(selectedIndex, 1)[0];
-		cards.unshift(selectedCard);
+		if (selectedIndex > -1) cards.unshift(cards.splice(selectedIndex, 1)[0]);
 	}
 
 	return (

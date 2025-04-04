@@ -28,7 +28,7 @@ function Home() {
 	// get markers from the json
 	const getMarkersFromGeoJson = (geojson) => {
 		const markers = geojson.features.map((feature) => {
-			const { coordinates } = feature.geometry;
+			const { coordinates } = feature.properties;
 			const { name, address } = feature.properties;
 			const color = '#8a8ba6';
 			const popup = new mapboxgl.Popup().setHTML(`
@@ -81,7 +81,9 @@ function Home() {
 		markers.forEach((marker) => {
 			marker.getElement().addEventListener('click', function () {
 				setSelectedBusiness(marker.id);
-				setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
+				setSelectedCard(
+					geoJson.features.filter((feature) => feature.properties.name === marker.id)
+				);
 			});
 			marker.addTo(mapRef.current);
 		});
@@ -91,9 +93,15 @@ function Home() {
 	}, [accessToken, setSelectedBusiness]);
 
 	return (
-		<div className='container'>
+		<div className="container">
 			<Header handleSearchInput={handleSearchInput} />
-			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
+			<Aside
+				selectedCard={selectedCard}
+				selectedBusiness={selectedBusiness}
+				geoJson={geoJson}
+				search={search}
+				businesses={businesses}
+			/>
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

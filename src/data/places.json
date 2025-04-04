@@ -1,16 +1,11 @@
 {
-	"type": "FeatureCollection",
 	"features": [
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1552829, 49.2709727]
-			},
 			"properties": {
 				"id": "001",
 				"name": "Chewies Steam & Oyster Bar - Kits",
 				"address": "2201 W 1st Ave ",
+				"coordinates": [-123.1552829, 49.2709727],
 				"contact_number": "+16045584448",
 				"website": "https://www.chewies.ca/happy",
 				"full_address": "2201 W 1st Ave, BC, V6K-3E6",
@@ -57,15 +52,11 @@
 		},
 
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.15007987746175, 49.2683195]
-			},
 			"properties": {
 				"id": "002",
 				"name": "Las Margaritas Restaurant",
 				"address": "1999 W 4th Ave",
+				"coordinates": [-123.15007987746175, 49.2683195],
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1999 W 4th Ave, BC, V6J 1M7",
@@ -95,15 +86,11 @@
 		},
 
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.155348375446, 49.272342824435]
-			},
 			"properties": {
 				"id": "003",
 				"name": "LOCAL Public Eatery Kitsilano",
 				"address": "2210 Cornwall Ave",
+				"coordinates": [-123.155348375446, 49.272342824435],
 				"contact_number": "+1 (604) 558-4448",
 				"website": "https://localpubliceatery.com/neighbourhoods/kitsilano/menu/",
 				"full_address": "2210 Cornwall Ave, BC V6K 1B5",
@@ -146,15 +133,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1553864, 49.2715713]
-			},
 			"properties": {
 				"id": "004",
 				"name": "The Ellis",
 				"address": "2204 York Ave",
+				"coordinates": [-123.1553864, 49.2715713],
 				"contact_number": "+1 (604) 428-2456",
 				"website": "https://www.theellis.ca/menu",
 				"full_address": "2204 York Ave, BC V6K 1C6",
@@ -184,15 +167,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.154860184811, 49.2713620292637]
-			},
 			"properties": {
 				"id": "005",
 				"name": "King’s Head Public House",
 				"address": "1618 Yew St",
+				"coordinates": [-123.154860184811, 49.2713620292637],
 				"contact_number": "+1 (604) 738-6966",
 				"website": "https://thekingsheadkits.com/wp-content/uploads/2022/03/Kings-Head-Drink-Menu-Mar-22_21.pdf",
 				"full_address": "1618 Yew St, BC V6K 3E7",
@@ -228,15 +207,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1557779, 49.2680231]
-			},
 			"properties": {
 				"id": "006",
 				"name": "Jackson's Meat & Deli",
 				"address": "2214 W 4th Ave",
+				"coordinates": [-123.1557779, 49.2680231],
 				"contact_number": "+1 (778) 379-2929",
 				"website": "https://www.jacksonsrestobutcher.com/happy-hour",
 				"full_address": "2214 W 4th Ave, BC V6K 4S2",
@@ -268,15 +243,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1548187, 49.271514]
-			},
 			"properties": {
 				"id": "007",
 				"name": "The Cider House",
 				"address": "1602 Yew St",
+				"coordinates": [-123.1548187, 49.271514],
 				"contact_number": "+1 (604) 558-1975",
 				"website": "https://ciderhouserules.ca/happy-hour/",
 				"full_address": "1602 Yew St, BC V6K 3E7",
@@ -311,15 +282,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.155103591134, 49.2710692786403]
-			},
 			"properties": {
 				"id": "008",
 				"name": "Lucky Taco",
 				"address": "1685 Yew St",
+				"coordinates": [-123.155103591134, 49.2710692786403],
 				"contact_number": "+1 (604) 739-4677",
 				"website": "https://www.luckytaco.ca/menu/happy-hour",
 				"full_address": "1685 Yew St, BC V6K 3E6",
@@ -352,15 +319,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.149019, 49.2679331]
-			},
 			"properties": {
 				"id": "009",
 				"name": "Fable Kitchen",
 				"address": "1944 W 4th Ave",
+				"coordinates": [-123.149019, 49.2679331],
 				"contact_number": "+1 (604) 732 1322",
 				"website": "https://www.fablekitchen.ca/#menu",
 				"full_address": "1944 W 4th Ave, BC V6J 1M5",
@@ -388,15 +351,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.148459, 49.2682664]
-			},
 			"properties": {
 				"id": "010",
 				"name": "Tacofino",
 				"address": "1909 W 4th Ave",
+				"coordinates": [-123.148459, 49.2682664],
 				"website": "https://www.tacofino.com/location/kits",
 				"contact_number": "+1 (604) 620-8729",
 				"full_address": "1909 W 4th Ave, BC V6J 3L9",
@@ -426,15 +385,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.114422, 49.284049]
-			},
 			"properties": {
 				"id": "011",
 				"name": "Malone's Taphouse",
 				"address": "608 W Pender St",
+				"coordinates": [-123.114422, 49.284049],
 				"website": "http://malones.bc.ca",
 				"contact_number": "+1 (604) 684-9977",
 				"full_address": "608 W Pender Street, BC V6B 1V8",
@@ -476,15 +431,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.11679, 49.285598]
-			},
 			"properties": {
 				"id": "012",
 				"name": "Moose's Down Under",
 				"address": "830 W Pender St",
+				"coordinates": [-123.11679, 49.285598],
 				"website": "https://moosesdownunder.com/specials/",
 				"contact_number": "+1 (604) 683 3300",
 				"full_address": "830 W Pender St, BC V6C 1J8",
@@ -513,15 +464,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.109198, 49.282961]
-			},
 			"properties": {
 				"id": "013",
 				"name": "Cambie Bar & Grill",
 				"address": "300 Cambie St",
+				"coordinates": [-123.109198, 49.282961],
 				"website": "https://www.cambiepubs.com/menu/daily-specials-happy-hour",
 				"contact_number": "+1 (604) 688 9158",
 				"full_address": "300 Cambie St, BC V6B 2N3",
@@ -550,15 +497,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.156452, 49.268102]
-			},
 			"properties": {
 				"id": "014",
 				"name": "Delara",
 				"address": "2272 W 4th Ave",
+				"coordinates": [-123.156452, 49.268102],
 				"website": "https://delararestaurant.ca/menu",
 				"contact_number": "+1 (604) 730-4325",
 				"full_address": "2272 W 4th Ave, BC V6K 1N8",
@@ -588,15 +531,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.148199, 49.272657]
-			},
 			"properties": {
 				"id": "015",
 				"name": "Charqui",
 				"address": "1955 Cornwall Ave",
+				"coordinates": [-123.148199, 49.272657],
 				"website": "https://charqui.ca",
 				"contact_number": "+1 (604) 733-3323",
 				"full_address": "1955 Cornwall Ave, BC V6J 1C9",
@@ -626,15 +565,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.16375, 49.264007]
-			},
 			"properties": {
 				"id": "016",
 				"name": "White Spot Kits",
 				"address": "2518 W Broadway Ave",
+				"coordinates": [-123.16375, 49.264007],
 				"website": "https://www.whitespot.ca/menus/bc/dinner/#happy-hour",
 				"contact_number": "+1 (604) 731-2434",
 				"full_address": "2518 West Broadway, BC V6K 2G1",
@@ -671,15 +606,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.178684, 49.264411]
-			},
 			"properties": {
 				"id": "017",
 				"name": "Elwoods",
 				"address": "3357 W Broadway Ave",
+				"coordinates": [-123.178684, 49.264411],
 				"website": "https://elwoods.ca/",
 				"contact_number": "+1 (604) 731-2434",
 				"full_address": "3357 W Broadway, BC V6R 2B1",
@@ -710,15 +641,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.0997112, 49.2752787]
-			},
 			"properties": {
 				"id": "018",
 				"name": "Bodega On Main",
 				"address": "1014 Main St",
+				"coordinates": [-123.0997112, 49.2752787],
 				"website": "https://www.bodegaonmain.ca/menu/#happyhour",
 				"contact_number": "+1 (604) 565-8815",
 				"full_address": "1014 Main St Vancouver, BC V6A 2W1",
@@ -752,15 +679,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1144244, 49.283842]
-			},
 			"properties": {
 				"id": "019",
 				"name": "The 515 bar",
 				"address": "521 Seymour St",
+				"coordinates": [-123.1144244, 49.283842],
 				"website": "https://www.the515bar.ca/menu/happy-hour-and-daily-features",
 				"contact_number": "+1 (604) 428-8226",
 				"full_address": "521 Seymour Street BC, V6B 3H6",
@@ -787,16 +710,12 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.12213376164436, 49.27561357311521]
-			},
 			"properties": {
 				"id": "020",
 				"name": "The Stock Room",
 				"contact_number": "+1 (604) 609-0901",
 				"address": "1144 Homer St",
+				"coordinates": [-123.12213376164436, 49.27561357311521],
 				"website": "https://www.freehouse.co/locations/stock-room",
 				"neighbourhoods": "Downtown",
 				"images": "images/stock-room.jpg",
@@ -821,11 +740,6 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1193528, 49.2761722]
-			},
 			"properties": {
 				"id": "021",
 				"name": "Bartholomew Bar",
@@ -837,6 +751,8 @@
 				"images": "images/bartholomew.jpg",
 				"contact_number": "+1 (604) 423-4131",
 				"address": "1026 Mainland St",
+				"coordinates": [-123.1193528, 49.2761722],
+				"full_address": "1026 Mainland St, BC V6B 2T4",
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -855,11 +771,6 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1219457, 49.279954]
-			},
 			"properties": {
 				"id": "022",
 				"name": "Roxy Burger",
@@ -871,6 +782,7 @@
 				"images": "images/roxy.jpg",
 				"contact_number": "+1 (604) 646-4000",
 				"address": "910 Granville St",
+				"coordinates": [-123.1219457, 49.279954],
 				"hours": {
 					"Everyday": "16:00 - 18:00"
 				},
@@ -889,16 +801,12 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.12316775322, 49.2827851242953]
-			},
 			"properties": {
 				"id": "023",
 				"name": "JOEY Burrard",
 				"contact_number": "+1 (604) 683-5639",
 				"address": "820 Burrard St",
+				"coordinates": [-123.12316775322, 49.2827851242953],
 				"website": "https://joeyrestaurants.com/location/joey-burrard/menu#food",
 				"category": {
 					"title": "Lounges"
@@ -948,16 +856,13 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1131003, 49.2796102]
-			},
 			"properties": {
 				"id": "024",
 				"name": "The Ventura Room",
 				"contact_number": "+1 (604) 620-5547",
 				"address": "695 Cambie St",
+				"coordinates": [-123.1131003, 49.2796102],
+				"full_address": "695 Cambie St, BC V6B 2P6",
 				"category": {
 					"title": "Lounges"
 				},
@@ -992,11 +897,6 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.12045, 49.27946]
-			},
 			"properties": {
 				"id": "025",
 				"name": "Uva Wine & Cocktail Bar",
@@ -1005,6 +905,7 @@
 				"images": "images/uva-wine.jpg",
 				"contact_number": "+1 (604) 632-9560",
 				"address": "900 Seymour St",
+				"coordinates": [-123.12045, 49.27946],
 				"category": {
 					"title": "Restaurant"
 				},
@@ -1030,16 +931,12 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.100852, 49.2793704]
-			},
 			"properties": {
 				"id": "026",
 				"name": "The Chickadee Room",
 				"contact_number": "+1 (604) 336-5853",
 				"address": "182 Keefer St",
+				"coordinates": [-123.100852, 49.2793704],
 				"website": "https://thechickadeeroom.com/",
 				"neighbourhoods": "Downtown",
 				"images": "images/chickadee.jpg",
@@ -1062,16 +959,12 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.10398, 49.28369]
-			},
 			"properties": {
 				"id": "027",
 				"name": "Guilt & Company",
 				"contact_number": "+1 (604) 288-1704",
 				"address": "1 Alexander St",
+				"coordinates": [-123.10398, 49.28369],
 				"website": "https://www.guiltandcompany.com/menu.html",
 				"neighbourhoods": "Downtown",
 				"images": "images/guilt.jpg",
@@ -1094,16 +987,12 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.155147313374, 49.2722128608937]
-			},
 			"properties": {
 				"id": "028",
 				"name": "Nook",
 				"contact_number": "+1 (604) 734-0099",
 				"address": "1525 Yew St",
+				"coordinates": [-123.155147313374, 49.2722128608937],
 				"website": "https://nookrestaurants.com/kitsilano-menus/",
 				"neighbourhoods": "Kitsilano",
 				"images": "images/nook.jpg",
@@ -1136,16 +1025,12 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.15324, 49.26212]
-			},
 			"properties": {
 				"id": "029",
 				"name": "Coquette",
 				"contact_number": "+1 (604) 259-1248",
 				"address": "2685 Arbutus St",
+				"coordinates": [-123.15324, 49.26212],
 				"website": "https://brasseriecoquette.ca/wp-content/uploads/2024/04/Happy-Hour-Sep-24.pdf/",
 				"neighbourhoods": "Kitsilano",
 				"images": "images/coquette.jpg",
@@ -1179,15 +1064,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.12426874299165, 49.286854758942575]
-			},
 			"properties": {
 				"id": "030",
 				"name": "Karma Lounge",
 				"address": "1161 W Georgia St",
+				"coordinates": [-123.12426874299165, 49.286854758942575],
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1161 W Georgia Street, Vancouver, BC V6E 0C6",
@@ -1216,15 +1097,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.13131, 49.27807]
-			},
 			"properties": {
 				"id": "031",
 				"name": "Maxine's Cafe & Bar",
 				"address": "1161 W Georgia St",
+				"coordinates": [-123.13131, 49.27807],
 				"contact_number": "+1 (604) 734-7117",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "1161 W Georgia Street, Vancouver, BC V6E 0C6",
@@ -1253,11 +1130,6 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.16862, 49.26809]
-			},
 			"properties": {
 				"id": "033",
 				"name": "Darby's Pub",
@@ -1265,6 +1137,7 @@
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://darbyspub.ca/menu/",
 				"full_address": "2001 MacDonald Street, Vancouver, BC V6K 3Y2",
+				"coordinates": [-123.16862, 49.26809],
 				"neighbourhoods": "Kitsilano",
 				"images": "images/darbys.jpg",
 				"hours": {
@@ -1285,15 +1158,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.15694910926894, 49.26413994186569]
-			},
 			"properties": {
 				"id": "034",
 				"name": "Glitch Bar & Games Room",
 				"address": "2287 West Broadway",
+				"coordinates": [-123.15694910926894, 49.26413994186569],
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://www.glitchvancouver.com/menu",
 				"full_address": "2287 West Broadway, Vancouver, BC V6K 2E4",
@@ -1318,15 +1187,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1748476, 49.264203]
-			},
 			"properties": {
 				"id": "035",
 				"name": "The Fringe Café",
 				"address": "3124 W Broadway",
+				"coordinates": [-123.1748476, 49.264203],
 				"contact_number": "+1 (604) 731-0617",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "3124 W Broadway, Vancouver, BC V6K 2H3",
@@ -1355,15 +1220,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.1769389, 49.2642534]
-			},
 			"properties": {
 				"id": "036",
 				"name": "Good Co. Bar",
 				"address": "3255 W Broadway",
+				"coordinates": [-123.1769389, 49.2642534],
 				"contact_number": "+1(604)55960707",
 				"website": "https://lasmargaritas.com/happy-hour/",
 				"full_address": "3255 W Broadway Street, Vancouver, BC V6K 4N7",
@@ -1394,15 +1255,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.145488, 49.265218]
-			},
 			"properties": {
 				"id": "037",
 				"name": "Carlos O'Bryan's Neighborhood Pub",
 				"address": "1774 W 7th Ave",
+				"coordinates": [-123.145488, 49.265218],
 				"contact_number": "+1(604)732-0010",
 				"website": "https://www.kobcob.com/happy-hour/",
 				"full_address": "1774 W 7th Ave, Vancouver, BC V6J 4Z9",
@@ -1441,15 +1298,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.148895, 49.272551]
-			},
 			"properties": {
 				"id": "038",
 				"name": "Corduroy",
 				"address": "1943 Cornwall Ave",
+				"coordinates": [-123.148895, 49.272551],
 				"contact_number": "+1(604)733-0162",
 				"website": "https://www.corduroyrestaurant.com/menu",
 				"full_address": "1943 Cornwall Ave, Vancouver, BC V6J 1C8",
@@ -1473,15 +1326,11 @@
 		},
 
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.141636, 49.263814]
-			},
 			"properties": {
 				"id": "040",
 				"name": "Leopold's Tavern",
 				"address": "1619 W Broadway",
+				"coordinates": [-123.141636, 49.263814],
 				"contact_number": "+1(604)732-0010",
 				"website": "https://cdn.shopify.com/s/files/1/0435/6898/8310/files/Leos_menu_fall_2024_BC.pdf?v=1728517223",
 				"full_address": "1619 W Broadway, Vancouver, BC V5N 1V9",
@@ -1514,15 +1363,11 @@
 			}
 		},
 		{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-123.141636, 49.263814]
-			},
 			"properties": {
 				"id": "041",
 				"name": "Leopold's Tavern",
 				"address": "1619 W Broadway",
+				"coordinates": [-123.141636, 49.263814],
 				"contact_number": "+1(604)732-0010",
 				"website": "https://cdn.shopify.com/s/files/1/0435/6898/8310/files/Leos_menu_fall_2024_BC.pdf?v=1728517223",
 				"full_address": "1619 W Broadway, Vancouver, BC V5N 1V9",

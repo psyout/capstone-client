@@ -3,15 +3,15 @@ import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 
 function OpenTime({ time }) {
 	return (
-		<div className='restaurant-card__caption'>
-			<div className='restaurant-card__caption--container'>
+		<div className="restaurant-card__caption">
+			<span className="restaurant-card__caption--container">
 				<AccessTimeTwoToneIcon sx={{ fontSize: '1rem' }} />
-				<span className='restaurant-card__caption--title'>Happy Hour Time</span>
-			</div>
+				<span className="restaurant-card__caption--title">Happy Hour Time</span>
+			</span>
 			{time.map((hours, index) => (
-				<div key={index}>
-					<span className='restaurant-card__caption--text'>{hours}</span>
-				</div>
+				<span key={index} className="restaurant-card__caption--text">
+					{hours}
+				</span>
 			))}
 		</div>
 	);

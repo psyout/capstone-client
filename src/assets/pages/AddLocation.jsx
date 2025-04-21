@@ -53,9 +53,6 @@ function AddLocation() {
 
 		const formData = new FormData();
 		formData.append('data', JSON.stringify(newLocation));
-		if (image) {
-			formData.append('image', image);
-		}
 
 		try {
 			const response = await axios.post('http://localhost:5000/api/locations', formData, {
@@ -163,24 +160,30 @@ function AddLocation() {
 					</select>
 				</div>
 				<div className="form-group">
-					<label>Longitude:</label>
+					<label>Coordinates:</label>
 					<input
 						type="number"
-						className="form-input"
-						value={coordinates.lng}
-						onChange={(e) => setCoordinates({ ...coordinates, lng: e.target.value })}
-						required
-					/>
-				</div>
-				<div className="form-group">
-					<label>Latitude:</label>
-					<input
-						type="number"
+						placeholder="Latitude"
 						className="form-input"
 						value={coordinates.lat}
 						onChange={(e) => setCoordinates({ ...coordinates, lat: e.target.value })}
 						required
 					/>
+					<input
+						type="number"
+						placeholder="Longitude"
+						className="form-input"
+						value={coordinates.lng}
+						onChange={(e) => setCoordinates({ ...coordinates, lng: e.target.value })}
+						required
+					/>
+					<a
+						style={{ color: 'black', fontSize: '0.8rem', textDecoration: 'underline' }}
+						href="https://www.latlong.net/"
+						target="_blank"
+						rel="noopener noreferrer">
+						Need help finding coordinates?
+					</a>
 				</div>
 				<div className="form-group">
 					<label>Contact Number:</label>

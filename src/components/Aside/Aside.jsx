@@ -13,7 +13,7 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 	const lowerCasedSearch = search.toLowerCase();
 	const formatHoursString = (hours) =>
 		Object.entries(hours || {})
-			.map(([day, hrs]) => `${day}:${hrs}`)
+			.map(([day, hrs]) => `${day}: ${hrs}`)
 			.join(', ');
 
 	return features
@@ -26,7 +26,7 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 						properties[key]?.toString().toLowerCase().includes(lowerCasedSearch)
 				)
 		)
-		.filter(({ properties }) => !filterBy || properties.category?.title === filterBy)
+		.filter(({ properties }) => !filterBy || properties.category === filterBy)
 		.filter(({ properties }) => !hoodBy || properties.neighbourhoods === hoodBy)
 		.sort((a, b) =>
 			sortBy === 'name'
@@ -45,25 +45,21 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	const [hoodBy, setHoodBy] = useState('');
 	const excludeColumns = ['id'];
 
-	const sortedFeatures = filterAndSort(
-		geoJson.features,
-		search,
-		filterBy,
-		hoodBy,
-		sortBy,
-		excludeColumns
-	);
+	// Ensure geoJson is available before processing
+	const sortedFeatures = geoJson?.features
+		? filterAndSort(geoJson.features, search, filterBy, hoodBy, sortBy, excludeColumns)
+		: [];
 
 	const renderCards = sortedFeatures.map(({ properties }) => {
+		// Ensure the business exists in the businesses array
 		if (!properties?.name || !businesses.some((b) => b?.name === properties.name)) return null;
 
 		return (
 			<Card
-				key={properties.id}
+				key={properties._id || properties.name}
 				title={properties.name}
 				address={properties.address}
 				contact_number={properties.contact_number}
-				images={properties.images}
 				time={formatHours(properties.hours)}
 				drinks={formatDrinks(properties.drinks)}
 				food={formatFood(properties.food)}
@@ -75,6 +71,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		);
 	});
 
+	// Highlight the selected business card
 	if (selectedBusiness) {
 		const selectedIndex = sortedFeatures.findIndex(
 			({ properties }) => properties.name === selectedBusiness

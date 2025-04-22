@@ -1,12 +1,11 @@
-import React from 'react';
+// src/utils/formatHours.js
+export default function formatHours(hours) {
+	const entries =
+		hours instanceof Map ? Array.from(hours.entries()) : Object.entries(hours || {});
 
-function formatHours(hours) {
-	return Object.entries(hours).map(([key, value]) => (
-		<div key={key}>
-			<strong style={{ fontWeight: '200' }}> {key}:</strong>{' '}
-			<strong style={{ fontWeight: '400' }}> {value} </strong>
+	return entries.map(([days, hrs]) => (
+		<div key={days}>
+			<span style={{ fontWeight: '300' }}>{days}</span>: {hrs}
 		</div>
 	));
 }
-
-export default formatHours;

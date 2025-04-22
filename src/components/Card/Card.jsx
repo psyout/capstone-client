@@ -159,6 +159,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 					<Typography
 						variant="body2"
 						color="text.secondary"
+						component="div" // Ensures Typography renders a <div> instead of <p>
 						sx={{
 							fontFamily: 'Rubik',
 							fontSize: '0.75rem',

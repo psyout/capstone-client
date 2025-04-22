@@ -11,12 +11,28 @@ function AddLocation() {
 	const [coordinates, setCoordinates] = useState({ lng: '', lat: '' });
 	const [contactNumber, setContactNumber] = useState('');
 	const [website, setWebsite] = useState('');
-	const [neighborhood, setNeighborhood] = useState('');
-	const [image, setImage] = useState(null);
-	const [hours, setHours] = useState({ from: '', to: '' });
+	const [category, setCategory] = useState('');
+	const [neighbourhood, setNeighbourhood] = useState('');
+	const [hours, setHours] = useState([{ days: '', from: '', to: '' }]); // Multiple hours
 	const [menuDrinks, setMenuDrinks] = useState([{ name: '', price: '' }]);
 	const [menuFood, setMenuFood] = useState([{ name: '', price: '' }]);
 
+	// Handle changes for hours
+	const handleHoursChange = (index, field, value) => {
+		const updatedHours = [...hours];
+		updatedHours[index][field] = value;
+		setHours(updatedHours);
+	};
+
+	const addHours = () => {
+		setHours([...hours, { days: '', from: '', to: '' }]);
+	};
+
+	const removeHours = (index) => {
+		setHours(hours.filter((_, i) => i !== index));
+	};
+
+	// Handle changes for menu items
 	const handleMenuChange = (menu, setMenu, index, field, value) => {
 		const updatedMenu = [...menu];
 		updatedMenu[index][field] = value;
@@ -28,8 +44,7 @@ function AddLocation() {
 	};
 
 	const removeMenuItem = (menu, setMenu, index) => {
-		const updatedMenu = menu.filter((_, i) => i !== index);
-		setMenu(updatedMenu);
+		setMenu(menu.filter((_, i) => i !== index));
 	};
 
 	const handleSubmit = async (e) => {
@@ -39,27 +54,25 @@ function AddLocation() {
 			address,
 			city,
 			province,
-			postalCode,
+			postal_code: postalCode,
 			coordinates: [parseFloat(coordinates.lng), parseFloat(coordinates.lat)],
-			contactNumber,
+			contact_number: contactNumber,
 			website,
-			neighborhood,
+			neighbourhood,
+			category,
 			hours,
-			menu: {
-				drinks: menuDrinks,
-				food: menuFood,
-			},
+			drinks: menuDrinks,
+			food: menuFood,
 		};
 
-		const formData = new FormData();
-		formData.append('data', JSON.stringify(newLocation));
-
 		try {
-			const response = await axios.post('http://localhost:5000/api/locations', formData, {
-				headers: { 'Content-Type': 'multipart/form-data' },
+			const response = await axios.post('http://localhost:8080/api/locations', newLocation, {
+				headers: { 'Content-Type': 'application/json' },
 			});
 			console.log('Location added:', response.data);
-			// Reset the form
+			alert('Location added successfully!');
+
+			// Reset form
 			setName('');
 			setAddress('');
 			setCity('');
@@ -68,9 +81,9 @@ function AddLocation() {
 			setCoordinates({ lng: '', lat: '' });
 			setContactNumber('');
 			setWebsite('');
-			setNeighborhood('');
-			setImage(null);
-			setHours({ from: '', to: '' });
+			setNeighbourhood('');
+			setCategory('');
+			setHours([{ days: '', from: '', to: '' }]);
 			setMenuDrinks([{ name: '', price: '' }]);
 			setMenuFood([{ name: '', price: '' }]);
 		} catch (error) {
@@ -92,6 +105,7 @@ function AddLocation() {
 						required
 					/>
 				</div>
+
 				<div className="form-group address-group">
 					<label>Address:</label>
 					<input
@@ -141,12 +155,13 @@ function AddLocation() {
 						required
 					/>
 				</div>
+
 				<div className="form-group">
 					<label>Neighborhood:</label>
 					<select
 						className="form-select"
-						value={neighborhood}
-						onChange={(e) => setNeighborhood(e.target.value)}
+						value={neighbourhood}
+						onChange={(e) => setNeighbourhood(e.target.value)}
 						required>
 						<option value="" disabled>
 							Select Neighborhood
@@ -155,26 +170,43 @@ function AddLocation() {
 						<option value="Kitsilano">Kitsilano</option>
 						<option value="Mount Pleasant">Mount Pleasant</option>
 						<option value="West End">West End</option>
-						<option value="Yaletown">Yaletown</option>\{' '}
-						<option value="North Vancouver">North Vancouver</option>\{' '}
+						<option value="Yaletown">Yaletown</option>
+						<option value="North Vancouver">North Vancouver</option>
 					</select>
 				</div>
+
+				<div className="form-group">
+					<label>Category:</label>
+					<select
+						className="form-select"
+						value={category}
+						onChange={(e) => setCategory(e.target.value)}
+						required>
+						<option value="" disabled>
+							Select Category
+						</option>
+						<option value="Restaurant">Restaurant</option>
+						<option value="Bar">Bar</option>
+						<option value="Cafe">Cafe</option>
+					</select>
+				</div>
+
 				<div className="form-group">
 					<label>Coordinates:</label>
 					<input
 						type="number"
-						placeholder="Latitude"
+						placeholder="Longitude"
 						className="form-input"
-						value={coordinates.lat}
-						onChange={(e) => setCoordinates({ ...coordinates, lat: e.target.value })}
+						value={coordinates.lng || ''}
+						onChange={(e) => setCoordinates({ ...coordinates, lng: e.target.value })}
 						required
 					/>
 					<input
 						type="number"
-						placeholder="Longitude"
+						placeholder="Latitude"
 						className="form-input"
-						value={coordinates.lng}
-						onChange={(e) => setCoordinates({ ...coordinates, lng: e.target.value })}
+						value={coordinates.lat || ''}
+						onChange={(e) => setCoordinates({ ...coordinates, lat: e.target.value })}
 						required
 					/>
 					<a
@@ -185,27 +217,18 @@ function AddLocation() {
 						Need help finding coordinates?
 					</a>
 				</div>
+
 				<div className="form-group">
 					<label>Contact Number:</label>
 					<input
-						type="text"
+						type="tel"
+						inputMode="numeric"
 						className="form-input"
 						value={contactNumber}
 						onChange={(e) => setContactNumber(e.target.value)}
-						pattern="[0-9]*"
-						onKeyDown={(e) => {
-							if (
-								!/[0-9]/.test(e.key) &&
-								e.key !== 'Backspace' &&
-								e.key !== 'Delete' &&
-								e.key !== 'ArrowLeft' &&
-								e.key !== 'ArrowRight'
-							) {
-								e.preventDefault();
-							}
-						}}
 					/>
 				</div>
+
 				<div className="form-group">
 					<label>Website:</label>
 					<input
@@ -217,41 +240,53 @@ function AddLocation() {
 				</div>
 
 				<div className="form-group">
-					<label>Image:</label>
-					<input
-						type="file"
-						className="form-input"
-						onChange={(e) => setImage(e.target.files[0])}
-					/>
-				</div>
-				<div className="form-group">
 					<label>Hours of Operation:</label>
-					<div className="hours-row">
-						<input
-							type="time"
-							className="form-input"
-							value={hours.from}
-							onChange={(e) => setHours({ ...hours, from: e.target.value })}
-							required
-						/>
-						<span>to</span>
-						<input
-							type="time"
-							className="form-input"
-							value={hours.to}
-							onChange={(e) => setHours({ ...hours, to: e.target.value })}
-							required
-						/>
-					</div>
+					{hours.map((hour, index) => (
+						<div key={index} className="hours-row">
+							<input
+								type="text"
+								placeholder="Days (e.g., Monday - Thursday)"
+								className="form-input"
+								value={hour.days}
+								onChange={(e) => handleHoursChange(index, 'days', e.target.value)}
+								required
+							/>
+							<input
+								type="time"
+								className="form-input"
+								value={hour.from}
+								onChange={(e) => handleHoursChange(index, 'from', e.target.value)}
+								required
+							/>
+							<span>to</span>
+							<input
+								type="time"
+								className="form-input"
+								value={hour.to}
+								onChange={(e) => handleHoursChange(index, 'to', e.target.value)}
+								required
+							/>
+							<button
+								type="button"
+								onClick={() => removeHours(index)}
+								className="remove-button">
+								Remove
+							</button>
+						</div>
+					))}
+					<button type="button" onClick={addHours} className="add-button">
+						Add Hours
+					</button>
 				</div>
+
 				<div className="form-group">
 					<label>Menu (Drinks):</label>
 					{menuDrinks.map((item, index) => (
 						<div key={index} className="menu-item">
 							<input
 								type="text"
-								className="form-input"
 								placeholder="Drink Name"
+								className="form-input"
 								value={item.name}
 								onChange={(e) =>
 									handleMenuChange(
@@ -265,8 +300,8 @@ function AddLocation() {
 							/>
 							<input
 								type="number"
-								className="form-input"
 								placeholder="Price"
+								className="form-input"
 								value={item.price}
 								onChange={(e) =>
 									handleMenuChange(
@@ -280,27 +315,24 @@ function AddLocation() {
 							/>
 							<button
 								type="button"
-								className="remove-button"
 								onClick={() => removeMenuItem(menuDrinks, setMenuDrinks, index)}>
 								Remove
 							</button>
 						</div>
 					))}
-					<button
-						type="button"
-						className="add-button"
-						onClick={() => addMenuItem(menuDrinks, setMenuDrinks)}>
+					<button type="button" onClick={() => addMenuItem(menuDrinks, setMenuDrinks)}>
 						Add Drink
 					</button>
 				</div>
+
 				<div className="form-group">
 					<label>Menu (Food):</label>
 					{menuFood.map((item, index) => (
 						<div key={index} className="menu-item">
 							<input
 								type="text"
-								className="form-input"
 								placeholder="Food Name"
+								className="form-input"
 								value={item.name}
 								onChange={(e) =>
 									handleMenuChange(
@@ -314,8 +346,8 @@ function AddLocation() {
 							/>
 							<input
 								type="number"
-								className="form-input"
 								placeholder="Price"
+								className="form-input"
 								value={item.price}
 								onChange={(e) =>
 									handleMenuChange(
@@ -329,19 +361,16 @@ function AddLocation() {
 							/>
 							<button
 								type="button"
-								className="remove-button"
 								onClick={() => removeMenuItem(menuFood, setMenuFood, index)}>
 								Remove
 							</button>
 						</div>
 					))}
-					<button
-						type="button"
-						className="add-button"
-						onClick={() => addMenuItem(menuFood, setMenuFood)}>
+					<button type="button" onClick={() => addMenuItem(menuFood, setMenuFood)}>
 						Add Food
 					</button>
 				</div>
+
 				<button type="submit" className="submit-button">
 					Add Location
 				</button>

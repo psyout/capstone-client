@@ -9,9 +9,9 @@ import Divider from '@mui/material/Divider';
 import OpenTime from './OpenTime';
 import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
-// import { BsStarFill, BsStarHalf } from 'react-icons/bs';
+import PlaceHolder from '../../assets/images/placeholder.jpg';
 
-function Card({ title, address, images, time, contact_number, drinks, food, website, rating }) {
+function Card({ title, address, images, time, contact_number, drinks, food, website, image }) {
 	const [expandedDrinks, setExpandedDrinks] = useState(false);
 	const [expandedFood, setExpandedFood] = useState(false);
 	const [isLoading, setIsLoading] = useState(true); // Loading state
@@ -45,9 +45,13 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 
 	// for (let i = 0; i < maxRating; i++) {
 	// 	if (i < integerPart) {
-	// 		ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />);
+	// 		ratingIcons.push(
+	// 			<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
+	// 		);
 	// 	} else if (i === integerPart && decimalPart > 0) {
-	// 		ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />);
+	// 		ratingIcons.push(
+	// 			<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
+	// 		);
 	// 	} else {
 	// 		break;
 	// 	}
@@ -120,7 +124,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 			) : (
 				<CardMedia
 					component="img"
-					image={images || 'https://via.placeholder.com/400x150?text=No+Image+Available'} // Use placeholder image if no image is provided
+					image={image || PlaceHolder} // Use the relative URL or a placeholder
 					alt={title}
 					sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
 				/>

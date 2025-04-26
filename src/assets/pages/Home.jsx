@@ -47,6 +47,9 @@ function Home() {
 						drinks: location.drinks,
 						food: location.food,
 						neighbourhoods: location.neighbourhoods,
+						url: location.url,
+						category: location.category,
+						image: location.image,
 					},
 					geometry: {
 						type: 'Point',

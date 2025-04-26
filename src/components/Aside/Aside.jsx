@@ -50,10 +50,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				onClick={() => setSelectedBusiness(properties.name)}
 				website={properties.website}
 				url={properties.url}
-				images={properties.images}
-				coordinates={properties.coordinates}
-				neighbourhoods={properties.neighbourhoods}
-				category={properties.category}
+				image={properties.image}
 			/>
 		);
 	});

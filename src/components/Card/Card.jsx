@@ -15,6 +15,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 	const [expandedDrinks, setExpandedDrinks] = useState(false);
 	const [expandedFood, setExpandedFood] = useState(false);
 	const [isLoading, setIsLoading] = useState(true); // Loading state
+	const [imageLoaded, setImageLoaded] = useState(true); // Image loading state
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -23,6 +24,10 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 
 		return () => clearTimeout(timer);
 	}, []);
+
+	const handleImageLoad = () => {
+		setImageLoaded(true); // Set imageLoaded to true when the image is fully loaded
+	};
 
 	const handleExpandDrinksClick = () => {
 		setExpandedDrinks(!expandedDrinks);
@@ -37,25 +42,6 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 			setExpandedDrinks(false); // Close drinks if food is opened
 		}
 	};
-
-	// const maxRating = 5;
-	// const ratingIcons = [];
-	// const integerPart = Math.floor(rating);
-	// const decimalPart = rating - integerPart;
-
-	// for (let i = 0; i < maxRating; i++) {
-	// 	if (i < integerPart) {
-	// 		ratingIcons.push(
-	// 			<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
-	// 		);
-	// 	} else if (i === integerPart && decimalPart > 0) {
-	// 		ratingIcons.push(
-	// 			<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
-	// 		);
-	// 	} else {
-	// 		break;
-	// 	}
-	// }
 
 	const openMaps = () => {
 		if (address) {
@@ -119,13 +105,14 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 				/>
 			)}
 
-			{isLoading ? (
+			{isLoading || !imageLoaded ? (
 				<Skeleton animation="wave" variant="rectangular" width="100%" height={150} />
 			) : (
 				<CardMedia
 					component="img"
 					image={image || PlaceHolder} // Use the relative URL or a placeholder
 					alt={title}
+					onLoad={handleImageLoad} // Trigger when the image is fully loaded
 					sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
 				/>
 			)}
@@ -159,7 +146,8 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 					{isLoading ? (
 						<Skeleton animation="wave" variant="circular" width={24} height={24} />
 					) : (
-						<>
+						<div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+							{/* Call Business Icon */}
 							<IconButton
 								onClick={() => {
 									window.location.href = `tel:${contact_number}`;
@@ -169,13 +157,54 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 								<PhoneInTalkTwoToneIcon />
 							</IconButton>
 
-							<IconButton onClick={handleExpandDrinksClick} aria-expanded={expandedDrinks} aria-label="show drinks" sx={{ color: expandedDrinks ? red[400] : grey[600] }}>
+							{/* Drinks Menu */}
+							<div
+								onClick={handleExpandDrinksClick}
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									cursor: 'pointer',
+									gap: '0.5rem',
+									transition: 'color 0.3s ease',
+									color: expandedDrinks ? red[400] : grey[600],
+								}}
+								aria-expanded={expandedDrinks}
+								aria-label="show drinks">
 								<SportsBarTwoToneIcon />
-							</IconButton>
-							<IconButton onClick={handleExpandFoodClick} aria-expanded={expandedFood} aria-label="show food" sx={{ color: expandedFood ? red[400] : grey[600] }}>
+								<Typography
+									variant="body2"
+									sx={{
+										fontFamily: 'Rubik',
+										fontSize: '0.75rem',
+									}}>
+									Drinks Menu
+								</Typography>
+							</div>
+
+							{/* Food Menu */}
+							<div
+								onClick={handleExpandFoodClick}
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									cursor: 'pointer',
+									gap: '0.5rem',
+									transition: 'color 0.3s ease',
+									color: expandedFood ? red[400] : grey[600],
+								}}
+								aria-expanded={expandedFood}
+								aria-label="show food">
 								<LunchDiningTwoToneIcon />
-							</IconButton>
-						</>
+								<Typography
+									variant="body2"
+									sx={{
+										fontFamily: 'Rubik',
+										fontSize: '0.75rem',
+									}}>
+									Food Menu
+								</Typography>
+							</div>
+						</div>
 					)}
 				</div>
 			</CardActions>

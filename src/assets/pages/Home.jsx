@@ -107,29 +107,21 @@ function Home() {
 			});
 		}
 
-		// Get current location
-		const getLocation = () => {
-			navigator.geolocation.getCurrentPosition(
-				(position) => {
-					const { latitude, longitude } = position.coords;
-					mapRef.current.setCenter([longitude, latitude]);
-				},
-				(error) => {
-					console.error('Error getting location:', error.message);
-					alert('Geolocation is blocked or unavailable. Using default location.');
-					// Fallback to a default location
-					mapRef.current.setCenter([-123.114578, 49.285074]);
-				}
-			);
-		};
-		getLocation();
-
+		// Add GeolocateControl to the map
 		const geolocate = new GeolocateControl({
 			positionOptions: { enableHighAccuracy: true },
 			trackUserLocation: true,
+			showUserLocation: true,
 		});
 
 		mapRef.current.addControl(geolocate);
+
+		// Automatically center the map on the user's location once permission is granted
+		geolocate.on('geolocate', (e) => {
+			const { latitude, longitude } = e.coords;
+			mapRef.current.setCenter([longitude, latitude]);
+			mapRef.current.setZoom(14); // Optional: Adjust zoom level
+		});
 	}, [accessToken]);
 
 	useEffect(() => {
@@ -139,6 +131,10 @@ function Home() {
 			markers.forEach((marker) => {
 				marker.getElement().addEventListener('click', function () {
 					setSelectedBusiness(marker.id);
+					console.log(
+						'Selected card:',
+						geoJson.features.filter((feature) => feature.properties.name === marker.id)
+					);
 					setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
 				});
 				marker.addTo(mapRef.current);

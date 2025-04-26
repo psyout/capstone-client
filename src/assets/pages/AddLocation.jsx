@@ -66,7 +66,7 @@ function AddLocation() {
 		};
 
 		try {
-			const response = await axios.post('http://localhost:8080/api/locations', newLocation, {
+			const response = await axios.post('https://vansippy-locations.onrender.com/api/locations', newLocation, {
 				headers: { 'Content-Type': 'application/json' },
 			});
 			console.log('Location added:', response.data);
@@ -93,42 +93,18 @@ function AddLocation() {
 
 	return (
 		<div className="add-location-form">
-			<h2 className="form-title">Add New Location</h2>
+			<h2 className="form-title">Add New Business</h2>
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label>Name:</label>
-					<input
-						type="text"
-						className="form-input"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-						required
-					/>
+					<input type="text" className="form-input" value={name} onChange={(e) => setName(e.target.value)} required />
 				</div>
 
 				<div className="form-group address-group">
 					<label>Address:</label>
-					<input
-						type="text"
-						className="form-input"
-						placeholder="Street Address"
-						value={address}
-						onChange={(e) => setAddress(e.target.value)}
-						required
-					/>
-					<input
-						type="text"
-						className="form-input"
-						placeholder="City"
-						value={city}
-						onChange={(e) => setCity(e.target.value)}
-						required
-					/>
-					<select
-						className="form-select"
-						value={province}
-						onChange={(e) => setProvince(e.target.value)}
-						required>
+					<input type="text" className="form-input" placeholder="Street Address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+					<input type="text" className="form-input" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} required />
+					<select className="form-select" value={province} onChange={(e) => setProvince(e.target.value)} required>
 						<option value="" disabled>
 							Select Province
 						</option>
@@ -146,23 +122,12 @@ function AddLocation() {
 						<option value="NU">Nunavut</option>
 						<option value="YT">Yukon</option>
 					</select>
-					<input
-						type="text"
-						className="form-input"
-						placeholder="Postal Code"
-						value={postalCode}
-						onChange={(e) => setPostalCode(e.target.value)}
-						required
-					/>
+					<input type="text" className="form-input" placeholder="Postal Code" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} required />
 				</div>
 
 				<div className="form-group">
 					<label>Neighborhood:</label>
-					<select
-						className="form-select"
-						value={neighbourhood}
-						onChange={(e) => setNeighbourhood(e.target.value)}
-						required>
+					<select className="form-select" value={neighbourhood} onChange={(e) => setNeighbourhood(e.target.value)} required>
 						<option value="" disabled>
 							Select Neighborhood
 						</option>
@@ -177,11 +142,7 @@ function AddLocation() {
 
 				<div className="form-group">
 					<label>Category:</label>
-					<select
-						className="form-select"
-						value={category}
-						onChange={(e) => setCategory(e.target.value)}
-						required>
+					<select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)} required>
 						<option value="" disabled>
 							Select Category
 						</option>
@@ -209,34 +170,19 @@ function AddLocation() {
 						onChange={(e) => setCoordinates({ ...coordinates, lat: e.target.value })}
 						required
 					/>
-					<a
-						style={{ color: 'black', fontSize: '0.8rem', textDecoration: 'underline' }}
-						href="https://www.latlong.net/"
-						target="_blank"
-						rel="noopener noreferrer">
+					<a style={{ color: 'black', fontSize: '0.8rem', textDecoration: 'underline' }} href="https://www.latlong.net/" target="_blank" rel="noopener noreferrer">
 						Need help finding coordinates?
 					</a>
 				</div>
 
 				<div className="form-group">
 					<label>Contact Number:</label>
-					<input
-						type="tel"
-						inputMode="numeric"
-						className="form-input"
-						value={contactNumber}
-						onChange={(e) => setContactNumber(e.target.value)}
-					/>
+					<input type="tel" inputMode="numeric" className="form-input" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
 				</div>
 
 				<div className="form-group">
 					<label>Website:</label>
-					<input
-						type="url"
-						className="form-input"
-						value={website}
-						onChange={(e) => setWebsite(e.target.value)}
-					/>
+					<input type="url" className="form-input" value={website} onChange={(e) => setWebsite(e.target.value)} />
 				</div>
 
 				<div className="form-group">
@@ -251,25 +197,10 @@ function AddLocation() {
 								onChange={(e) => handleHoursChange(index, 'days', e.target.value)}
 								required
 							/>
-							<input
-								type="time"
-								className="form-input"
-								value={hour.from}
-								onChange={(e) => handleHoursChange(index, 'from', e.target.value)}
-								required
-							/>
+							<input type="time" className="form-input" value={hour.from} onChange={(e) => handleHoursChange(index, 'from', e.target.value)} required />
 							<span>to</span>
-							<input
-								type="time"
-								className="form-input"
-								value={hour.to}
-								onChange={(e) => handleHoursChange(index, 'to', e.target.value)}
-								required
-							/>
-							<button
-								type="button"
-								onClick={() => removeHours(index)}
-								className="remove-button">
+							<input type="time" className="form-input" value={hour.to} onChange={(e) => handleHoursChange(index, 'to', e.target.value)} required />
+							<button type="button" onClick={() => removeHours(index)} className="remove-button">
 								Remove
 							</button>
 						</div>
@@ -288,34 +219,16 @@ function AddLocation() {
 								placeholder="Drink Name"
 								className="form-input"
 								value={item.name}
-								onChange={(e) =>
-									handleMenuChange(
-										menuDrinks,
-										setMenuDrinks,
-										index,
-										'name',
-										e.target.value
-									)
-								}
+								onChange={(e) => handleMenuChange(menuDrinks, setMenuDrinks, index, 'name', e.target.value)}
 							/>
 							<input
 								type="number"
 								placeholder="Price"
 								className="form-input"
 								value={item.price}
-								onChange={(e) =>
-									handleMenuChange(
-										menuDrinks,
-										setMenuDrinks,
-										index,
-										'price',
-										e.target.value
-									)
-								}
+								onChange={(e) => handleMenuChange(menuDrinks, setMenuDrinks, index, 'price', e.target.value)}
 							/>
-							<button
-								type="button"
-								onClick={() => removeMenuItem(menuDrinks, setMenuDrinks, index)}>
+							<button type="button" onClick={() => removeMenuItem(menuDrinks, setMenuDrinks, index)}>
 								Remove
 							</button>
 						</div>
@@ -334,34 +247,16 @@ function AddLocation() {
 								placeholder="Food Name"
 								className="form-input"
 								value={item.name}
-								onChange={(e) =>
-									handleMenuChange(
-										menuFood,
-										setMenuFood,
-										index,
-										'name',
-										e.target.value
-									)
-								}
+								onChange={(e) => handleMenuChange(menuFood, setMenuFood, index, 'name', e.target.value)}
 							/>
 							<input
 								type="number"
 								placeholder="Price"
 								className="form-input"
 								value={item.price}
-								onChange={(e) =>
-									handleMenuChange(
-										menuFood,
-										setMenuFood,
-										index,
-										'price',
-										e.target.value
-									)
-								}
+								onChange={(e) => handleMenuChange(menuFood, setMenuFood, index, 'price', e.target.value)}
 							/>
-							<button
-								type="button"
-								onClick={() => removeMenuItem(menuFood, setMenuFood, index)}>
+							<button type="button" onClick={() => removeMenuItem(menuFood, setMenuFood, index)}>
 								Remove
 							</button>
 						</div>
@@ -372,7 +267,7 @@ function AddLocation() {
 				</div>
 
 				<button type="submit" className="submit-button">
-					Add Location
+					Add Business
 				</button>
 			</form>
 		</div>

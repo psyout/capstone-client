@@ -1,17 +1,6 @@
 import './Card.scss';
 import { useState, useEffect } from 'react';
-import {
-	Card as MUICard,
-	CardHeader,
-	CardMedia,
-	CardContent,
-	CardActions,
-	IconButton,
-	Collapse,
-	Typography,
-	Avatar,
-	Skeleton,
-} from '@mui/material';
+import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar, Skeleton } from '@mui/material';
 import { red, grey } from '@mui/material/colors';
 import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
 import SportsBarTwoToneIcon from '@mui/icons-material/SportsBarTwoTone';
@@ -20,7 +9,7 @@ import Divider from '@mui/material/Divider';
 import OpenTime from './OpenTime';
 import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
-import { BsStarFill, BsStarHalf } from 'react-icons/bs';
+// import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 
 function Card({ title, address, images, time, contact_number, drinks, food, website, rating }) {
 	const [expandedDrinks, setExpandedDrinks] = useState(false);
@@ -49,24 +38,20 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 		}
 	};
 
-	const maxRating = 5;
-	const ratingIcons = [];
-	const integerPart = Math.floor(rating);
-	const decimalPart = rating - integerPart;
+	// const maxRating = 5;
+	// const ratingIcons = [];
+	// const integerPart = Math.floor(rating);
+	// const decimalPart = rating - integerPart;
 
-	for (let i = 0; i < maxRating; i++) {
-		if (i < integerPart) {
-			ratingIcons.push(
-				<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
-			);
-		} else if (i === integerPart && decimalPart > 0) {
-			ratingIcons.push(
-				<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />
-			);
-		} else {
-			break;
-		}
-	}
+	// for (let i = 0; i < maxRating; i++) {
+	// 	if (i < integerPart) {
+	// 		ratingIcons.push(<BsStarFill key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />);
+	// 	} else if (i === integerPart && decimalPart > 0) {
+	// 		ratingIcons.push(<BsStarHalf key={i} style={{ color: '#F2BE22', fontSize: '0.7rem' }} />);
+	// 	} else {
+	// 		break;
+	// 	}
+	// }
 
 	const openMaps = () => {
 		if (address) {
@@ -82,13 +67,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 		<MUICard variant="outlined">
 			{isLoading ? (
 				<div style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
-					<Skeleton
-						animation="wave"
-						variant="circular"
-						width={35}
-						height={35}
-						sx={{ marginRight: '1rem' }}
-					/>
+					<Skeleton animation="wave" variant="circular" width={35} height={35} sx={{ marginRight: '1rem' }} />
 					<Skeleton animation="wave" variant="text" width="60%" height={28} />
 				</div>
 			) : (
@@ -106,12 +85,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 							{title.charAt(0)}
 						</Avatar>
 					}
-					title={
-						<Typography
-							sx={{ fontFamily: 'Rubik', fontSize: '0.85rem', fontWeight: '400' }}>
-							{title}
-						</Typography>
-					}
+					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem', fontWeight: '400' }}>{title}</Typography>}
 					subheader={
 						<Typography
 							onClick={openMaps}
@@ -146,7 +120,7 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 			) : (
 				<CardMedia
 					component="img"
-					image={images}
+					image={images || 'https://via.placeholder.com/400x150?text=No+Image+Available'} // Use placeholder image if no image is provided
 					alt={title}
 					sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
 				/>
@@ -191,18 +165,10 @@ function Card({ title, address, images, time, contact_number, drinks, food, webs
 								<PhoneInTalkTwoToneIcon />
 							</IconButton>
 
-							<IconButton
-								onClick={handleExpandDrinksClick}
-								aria-expanded={expandedDrinks}
-								aria-label="show drinks"
-								sx={{ color: expandedDrinks ? red[400] : grey[600] }}>
+							<IconButton onClick={handleExpandDrinksClick} aria-expanded={expandedDrinks} aria-label="show drinks" sx={{ color: expandedDrinks ? red[400] : grey[600] }}>
 								<SportsBarTwoToneIcon />
 							</IconButton>
-							<IconButton
-								onClick={handleExpandFoodClick}
-								aria-expanded={expandedFood}
-								aria-label="show food"
-								sx={{ color: expandedFood ? red[400] : grey[600] }}>
+							<IconButton onClick={handleExpandFoodClick} aria-expanded={expandedFood} aria-label="show food" sx={{ color: expandedFood ? red[400] : grey[600] }}>
 								<LunchDiningTwoToneIcon />
 							</IconButton>
 						</>

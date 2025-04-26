@@ -136,3 +136,9 @@
 .add-location-form .address-row select {
 	width: auto;
 }
+
+.add-location-form .time-inputs {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}

@@ -28,7 +28,7 @@ function Home() {
 	// Fetch GeoJSON data from the server
 	const fetchGeoJson = async () => {
 		try {
-			const response = await fetch('http://localhost:8080/api/locations'); // Replace with your API endpoint
+			const response = await fetch('https://vansippy-locations.onrender.com/api/locations'); // Replace with your API endpoint
 			const result = await response.json(); // The full response object
 			const locations = result.data; // Access the 'data' property that contains the array
 
@@ -96,21 +96,28 @@ function Home() {
 		if (!mapboxgl.supported()) {
 			alert('Your browser does not support WebGL');
 		} else {
-			mapboxgl.accessToken = accessToken;
 			mapRef.current = new mapboxgl.Map({
 				container: mapContainer.current,
 				style: 'mapbox://styles/mapbox/streets-v12',
-				center: [-123.114578, 49.285074],
+				center: [-123.114578, 49.285074], // Default location
 				zoom: 14,
 			});
 		}
 
 		// Get current location
 		const getLocation = () => {
-			navigator.geolocation.getCurrentPosition((position) => {
-				const { latitude, longitude } = position.coords;
-				mapRef.current.setCenter([longitude, latitude]);
-			});
+			navigator.geolocation.getCurrentPosition(
+				(position) => {
+					const { latitude, longitude } = position.coords;
+					mapRef.current.setCenter([longitude, latitude]);
+				},
+				(error) => {
+					console.error('Error getting location:', error.message);
+					alert('Geolocation is blocked or unavailable. Using default location.');
+					// Fallback to a default location
+					mapRef.current.setCenter([-123.114578, 49.285074]);
+				}
+			);
 		};
 		getLocation();
 
@@ -129,9 +136,7 @@ function Home() {
 			markers.forEach((marker) => {
 				marker.getElement().addEventListener('click', function () {
 					setSelectedBusiness(marker.id);
-					setSelectedCard(
-						geoJson.features.filter((feature) => feature.properties.name === marker.id)
-					);
+					setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
 				});
 				marker.addTo(mapRef.current);
 			});
@@ -141,13 +146,7 @@ function Home() {
 	return (
 		<div className="container">
 			<Header handleSearchInput={handleSearchInput} />
-			<Aside
-				selectedCard={selectedCard}
-				selectedBusiness={selectedBusiness}
-				geoJson={geoJson}
-				search={search}
-				businesses={businesses}
-			/>
+			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

@@ -17,25 +17,11 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 			.join(', ');
 
 	return features
-		.filter(
-			({ properties }) =>
-				!search ||
-				Object.keys(properties).some(
-					(key) =>
-						!excludeColumns.includes(key) &&
-						properties[key]?.toString().toLowerCase().includes(lowerCasedSearch)
-				)
-		)
+		.filter(({ properties }) => !search || Object.keys(properties).some((key) => !excludeColumns.includes(key) && properties[key]?.toString().toLowerCase().includes(lowerCasedSearch)))
 		.filter(({ properties }) => !filterBy || properties.category === filterBy)
 		.filter(({ properties }) => !hoodBy || properties.neighbourhoods === hoodBy)
 		.sort((a, b) =>
-			sortBy === 'name'
-				? a.properties.name.localeCompare(b.properties.name)
-				: sortBy === 'hours'
-				? formatHoursString(a.properties.hours).localeCompare(
-						formatHoursString(b.properties.hours)
-				  )
-				: 0
+			sortBy === 'name' ? a.properties.name.localeCompare(b.properties.name) : sortBy === 'hours' ? formatHoursString(a.properties.hours).localeCompare(formatHoursString(b.properties.hours)) : 0
 		);
 };
 
@@ -46,9 +32,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	const excludeColumns = ['id'];
 
 	// Ensure geoJson is available before processing
-	const sortedFeatures = geoJson?.features
-		? filterAndSort(geoJson.features, search, filterBy, hoodBy, sortBy, excludeColumns)
-		: [];
+	const sortedFeatures = geoJson?.features ? filterAndSort(geoJson.features, search, filterBy, hoodBy, sortBy, excludeColumns) : [];
 
 	const renderCards = sortedFeatures.map(({ properties }) => {
 		// Ensure the business exists in the businesses array
@@ -66,16 +50,17 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				onClick={() => setSelectedBusiness(properties.name)}
 				website={properties.website}
 				url={properties.url}
-				rating={properties.rating}
+				images={properties.images}
+				coordinates={properties.coordinates}
+				neighbourhoods={properties.neighbourhoods}
+				category={properties.category}
 			/>
 		);
 	});
 
 	// Highlight the selected business card
 	if (selectedBusiness) {
-		const selectedIndex = sortedFeatures.findIndex(
-			({ properties }) => properties.name === selectedBusiness
-		);
+		const selectedIndex = sortedFeatures.findIndex(({ properties }) => properties.name === selectedBusiness);
 		if (selectedIndex > -1) {
 			const selectedCard = renderCards.splice(selectedIndex, 1)[0];
 			renderCards.unshift(selectedCard);

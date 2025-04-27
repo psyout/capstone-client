@@ -54,10 +54,11 @@
 	cursor: pointer;
 	border: none;
 	transition: background-color 0.3s ease;
-	padding: 10px 20px;
+	padding: 0.5rem 1rem;
 	width: auto;
 	align-self: flex-start;
 	margin-top: 0.8rem;
+	border-radius: 4px;
 }
 
 .add-location-form button:hover {
@@ -72,9 +73,9 @@
 
 .add-location-form .menu-item button {
 	padding: 5px 10px;
-	background-color: #dc3545;
+	// background-color: #dc3545;
 	color: white;
-	border: none;
+	// border: solid 1px #dc3545;
 	border-radius: 4px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;

@@ -28,7 +28,7 @@ function Home() {
 	// Fetch GeoJSON data from the server
 	const fetchGeoJson = async () => {
 		try {
-			const response = await fetch('https://vansippy-locations.onrender.com/api/locations'); // Replace with your API endpoint
+			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`); // Use environment variable
 			const result = await response.json(); // The full response object
 			const locations = result.data; // Access the 'data' property that contains the array
 
@@ -120,7 +120,7 @@ function Home() {
 		geolocate.on('geolocate', (e) => {
 			const { latitude, longitude } = e.coords;
 			mapRef.current.setCenter([longitude, latitude]);
-			mapRef.current.setZoom(14); // Optional: Adjust zoom level
+			mapRef.current.setZoom(13); // Optional: Adjust zoom level
 		});
 	}, [accessToken]);
 

@@ -384,17 +384,17 @@
 			margin-bottom: 0.5rem;
 
 			span {
-				font-size: 0.85rem;
+				font-size: 0.8rem;
 				display: flex;
-				letter-spacing: 0.02rem;
+				letter-spacing: 0.015rem;
 			}
 		}
 
 		&--title {
 			font-size: 0.9rem;
 			font-weight: 400;
-			letter-spacing: -0.03rem;
-			text-transform: uppercase;
+			letter-spacing: -0.02rem;
+			// text-transform: uppercase;
 		}
 
 		&--text {

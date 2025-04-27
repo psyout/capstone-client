@@ -35,7 +35,12 @@ function AddLocation() {
 	// Handle changes for menu items
 	const handleMenuChange = (menu, setMenu, index, field, value) => {
 		const updatedMenu = [...menu];
-		updatedMenu[index][field] = value;
+		if (field === 'price') {
+			// Ensure the price always starts with a '$'
+			updatedMenu[index][field] = value.startsWith('$') ? value : `$${value}`;
+		} else {
+			updatedMenu[index][field] = value;
+		}
 		setMenu(updatedMenu);
 	};
 
@@ -66,7 +71,7 @@ function AddLocation() {
 		};
 
 		try {
-			const response = await axios.post('https://vansippy-locations.onrender.com/api/locations', newLocation, {
+			const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/locations`, newLocation, {
 				headers: { 'Content-Type': 'application/json' },
 			});
 			console.log('Location added:', response.data);
@@ -99,7 +104,6 @@ function AddLocation() {
 					<label>Name:</label>
 					<input type="text" className="form-input" value={name} onChange={(e) => setName(e.target.value)} required />
 				</div>
-
 				<div className="form-group address-group">
 					<label>Address:</label>
 					<input type="text" className="form-input" placeholder="Street Address" value={address} onChange={(e) => setAddress(e.target.value)} required />
@@ -124,7 +128,6 @@ function AddLocation() {
 					</select>
 					<input type="text" className="form-input" placeholder="Postal Code" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} required />
 				</div>
-
 				<div className="form-group">
 					<label>Neighborhood:</label>
 					<select className="form-select" value={neighbourhood} onChange={(e) => setNeighbourhood(e.target.value)} required>
@@ -136,10 +139,17 @@ function AddLocation() {
 						<option value="Mount Pleasant">Mount Pleasant</option>
 						<option value="West End">West End</option>
 						<option value="Yaletown">Yaletown</option>
-						<option value="North Vancouver">North Vancouver</option>
+						<option value="Strathcona">Strathcona</option>
+						<option value="Gastown">Gastown</option>
+						<option value="Chinatown">Chinatown</option>
+						<option value="Commercial Drive">Commercial Drive</option>
+						<option value="East Vancouver">East Vancouver</option>
+						<option value="South Granville">South Granville</option>
+						<option value="Point Grey">Point Grey</option>
+						<option value="Fair View">Fair View</option>
+						<option value="Dunbar">Dunbar</option>
 					</select>
 				</div>
-
 				<div className="form-group">
 					<label>Category:</label>
 					<select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)} required>
@@ -148,10 +158,9 @@ function AddLocation() {
 						</option>
 						<option value="Restaurant">Restaurant</option>
 						<option value="Bar">Bar</option>
-						<option value="Cafe">Cafe</option>
+						<option value="Pub">Pub</option>
 					</select>
 				</div>
-
 				<div className="form-group">
 					<label>Coordinates:</label>
 					<input
@@ -162,6 +171,7 @@ function AddLocation() {
 						onChange={(e) => setCoordinates({ ...coordinates, lng: e.target.value })}
 						required
 					/>
+					<span style={{ display: 'block', margin: '0.5rem 0' }}></span>
 					<input
 						type="number"
 						placeholder="Latitude"
@@ -170,43 +180,44 @@ function AddLocation() {
 						onChange={(e) => setCoordinates({ ...coordinates, lat: e.target.value })}
 						required
 					/>
-					<a style={{ color: 'black', fontSize: '0.8rem', textDecoration: 'underline' }} href="https://www.latlong.net/" target="_blank" rel="noopener noreferrer">
+					<a style={{ color: 'black', fontSize: '0.8rem', textDecoration: 'underline', fontStyle: 'italic' }} href="https://www.latlong.net/" target="_blank" rel="noopener noreferrer">
 						Need help finding coordinates?
 					</a>
 				</div>
-
 				<div className="form-group">
 					<label>Contact Number:</label>
 					<input type="tel" inputMode="numeric" className="form-input" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
 				</div>
-
 				<div className="form-group">
 					<label>Website:</label>
 					<input type="url" className="form-input" value={website} onChange={(e) => setWebsite(e.target.value)} />
 				</div>
-
 				<div className="form-group">
 					<label>Hours of Operation:</label>
 					{hours.map((hour, index) => (
 						<div key={index} className="hours-row">
 							<input
 								type="text"
-								placeholder="Days (e.g., Monday - Thursday)"
+								placeholder="Days (Monday - Sunday)"
 								className="form-input"
 								value={hour.days}
 								onChange={(e) => handleHoursChange(index, 'days', e.target.value)}
 								required
 							/>
-							<input type="time" className="form-input" value={hour.from} onChange={(e) => handleHoursChange(index, 'from', e.target.value)} required />
-							<span>to</span>
-							<input type="time" className="form-input" value={hour.to} onChange={(e) => handleHoursChange(index, 'to', e.target.value)} required />
+							<span style={{ margin: '0.5rem 0', display: 'block' }}></span>
+
+							<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
+								<input type="time" style={{ flexBasis: '2rem' }} className="form-input" value={hour.from} onChange={(e) => handleHoursChange(index, 'from', e.target.value)} required />
+								<span style={{ color: 'black', fontSize: '0.8rem', fontStyle: 'italic', padding: '0 1rem' }}>to</span>
+								<input type="time" style={{ flexBasis: '2rem' }} className="form-input" value={hour.to} onChange={(e) => handleHoursChange(index, 'to', e.target.value)} required />
+							</div>
 							<button type="button" onClick={() => removeHours(index)} className="remove-button">
 								Remove
 							</button>
 						</div>
 					))}
 					<button type="button" onClick={addHours} className="add-button">
-						Add Hours
+						➕ Add Hours
 					</button>
 				</div>
 
@@ -222,7 +233,7 @@ function AddLocation() {
 								onChange={(e) => handleMenuChange(menuDrinks, setMenuDrinks, index, 'name', e.target.value)}
 							/>
 							<input
-								type="number"
+								type="text" // Change to text to allow the '$' symbol
 								placeholder="Price"
 								className="form-input"
 								value={item.price}
@@ -234,7 +245,7 @@ function AddLocation() {
 						</div>
 					))}
 					<button type="button" onClick={() => addMenuItem(menuDrinks, setMenuDrinks)}>
-						Add Drink
+						➕ Add Drink
 					</button>
 				</div>
 
@@ -250,7 +261,7 @@ function AddLocation() {
 								onChange={(e) => handleMenuChange(menuFood, setMenuFood, index, 'name', e.target.value)}
 							/>
 							<input
-								type="number"
+								type="text" // Change to text to allow the '$' symbol
 								placeholder="Price"
 								className="form-input"
 								value={item.price}
@@ -262,10 +273,9 @@ function AddLocation() {
 						</div>
 					))}
 					<button type="button" onClick={() => addMenuItem(menuFood, setMenuFood)}>
-						Add Food
+						➕ Add Food
 					</button>
 				</div>
-
 				<button type="submit" className="submit-button">
 					Add Business
 				</button>

@@ -94,7 +94,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 					subheader={
 						<Typography
 							onClick={openMaps}
-							sx={{ stylesMap }}>
+							sx={{ ...stylesMap }}>
 							{address}
 						</Typography>
 					}
@@ -169,28 +169,45 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 				)}
 
 				{/* Menu Buttons */}
-				<div style={{ display: 'flex', alignItems: 'center' }}>
-					<Typography
-						variant='body2'
-						sx={{ stylesMenuText }}>
-						Menu
-					</Typography>
-					<NavigateNextIcon sx={{ color: grey[600], fontSize: '1rem' }} />
-					<IconButton
-						onClick={() => toggleExpand('drinks')}
-						aria-expanded={expanded.drinks}
-						aria-label='show drinks'
-						sx={{ color: getIconColor(expanded.drinks) }}>
-						<SportsBarTwoToneIcon />
-					</IconButton>
-					<IconButton
-						onClick={() => toggleExpand('food')}
-						aria-expanded={expanded.food}
-						aria-label='show food'
-						sx={{ color: getIconColor(expanded.food) }}>
-						<LunchDiningTwoToneIcon />
-					</IconButton>
-				</div>
+				{isLoading ? (
+					<div style={{ display: 'flex', gap: '0.5rem' }}>
+						<Skeleton
+							animation='wave'
+							variant='circular'
+							width={24}
+							height={24}
+						/>
+						<Skeleton
+							animation='wave'
+							variant='circular'
+							width={24}
+							height={24}
+						/>
+					</div>
+				) : (
+					<div style={{ display: 'flex', alignItems: 'center' }}>
+						<Typography
+							variant='body2'
+							sx={{ ...stylesMenuText }}>
+							Menu
+						</Typography>
+						<NavigateNextIcon sx={{ color: grey[600], fontSize: '1rem' }} />
+						<IconButton
+							onClick={() => toggleExpand('drinks')}
+							aria-expanded={expanded.drinks}
+							aria-label='show drinks'
+							sx={{ color: getIconColor(expanded.drinks) }}>
+							<SportsBarTwoToneIcon />
+						</IconButton>
+						<IconButton
+							onClick={() => toggleExpand('food')}
+							aria-expanded={expanded.food}
+							aria-label='show food'
+							sx={{ color: getIconColor(expanded.food) }}>
+							<LunchDiningTwoToneIcon />
+						</IconButton>
+					</div>
+				)}
 			</CardActions>
 
 			{/* Collapsible Menus */}

@@ -143,9 +143,15 @@ function Home() {
 	}, [geoJson]);
 
 	return (
-		<div className="container">
+		<div className='container'>
 			<Header handleSearchInput={handleSearchInput} />
-			<Aside selectedCard={selectedCard} selectedBusiness={selectedBusiness} geoJson={geoJson} search={search} businesses={businesses} />
+			<Aside
+				selectedCard={selectedCard}
+				selectedBusiness={selectedBusiness}
+				geoJson={geoJson}
+				search={search}
+				businesses={businesses}
+			/>
 			<Main mapContainer={mapContainer} />
 		</div>
 	);

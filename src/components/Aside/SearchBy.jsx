@@ -27,4 +27,8 @@ export const hoodFilter = [
 	{ value: '', label: 'Neighbourhood' },
 	{ value: 'Kitsilano', label: 'Kitsilano' },
 	{ value: 'Downtown', label: 'Downtown' },
+	{ value: 'West End', label: 'West End' },
+	{ value: 'Mount Pleasant', label: 'Mount Pleasant' },
+	{ value: 'East Vancouver', label: 'East Vancouver' },
+	{ value: 'South Vancouver', label: 'South Vancouver' },
 ];

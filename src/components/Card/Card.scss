@@ -150,12 +150,13 @@
 			margin: 0.5rem 0 0.7rem;
 
 			&-drinks {
-				font-size: 0.8rem;
+				font-size: 0.85rem;
 				padding: 0 1rem;
 				line-height: 1.8;
 
 				@include tablet {
 					list-style-type: disc;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -187,10 +188,11 @@
 
 			&-food {
 				line-height: 1.8;
-				font-size: 0.8rem;
+				font-size: 0.85rem;
 
 				@include tablet {
 					list-style-type: disc;
+					font-size: 0.8rem;
 				}
 			}
 
@@ -204,10 +206,7 @@
 				font-weight: 500;
 				font-size: 0.8rem;
 				width: 100%;
-
-				@include tablet {
-					margin: 0.5rem 0 0;
-				}
+				margin: 0.5rem 0 0;
 
 				span {
 					display: flex;

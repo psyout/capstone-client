@@ -39,7 +39,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 				sx={{
 					bgcolor: red[400],
 					fontWeight: '700',
-					fontSize: '1rem',
+					fontSize: '1.2rem',
 					fontFamily: 'Rubik',
 					width: '35px',
 					height: '35px',
@@ -74,6 +74,10 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 		fontSize: '0.8rem',
 		fontWeight: '500',
 		color: grey[600],
+	};
+
+	const iconSize = {
+		fontSize: '1.8rem',
 	};
 
 	return (
@@ -164,7 +168,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 						}}
 						sx={{ color: grey[600] }}
 						aria-label='call business'>
-						<PhoneInTalkTwoToneIcon />
+						<PhoneInTalkTwoToneIcon style={iconSize} />
 					</IconButton>
 				)}
 
@@ -191,20 +195,20 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 							sx={{ ...stylesMenuText }}>
 							Menu
 						</Typography>
-						<NavigateNextIcon sx={{ color: grey[600], fontSize: '1rem' }} />
+						<NavigateNextIcon sx={{ color: grey[600], fontSize: 'rem' }} />
 						<IconButton
 							onClick={() => toggleExpand('drinks')}
 							aria-expanded={expanded.drinks}
 							aria-label='show drinks'
 							sx={{ color: getIconColor(expanded.drinks) }}>
-							<SportsBarTwoToneIcon />
+							<SportsBarTwoToneIcon style={iconSize} />
 						</IconButton>
 						<IconButton
 							onClick={() => toggleExpand('food')}
 							aria-expanded={expanded.food}
 							aria-label='show food'
 							sx={{ color: getIconColor(expanded.food) }}>
-							<LunchDiningTwoToneIcon />
+							<LunchDiningTwoToneIcon style={iconSize} />
 						</IconButton>
 					</div>
 				)}

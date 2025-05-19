@@ -9,14 +9,14 @@ function Footer() {
 				textAlign: 'center',
 				padding: '1rem',
 				color: grey[10],
-				marginTop: '2rem',
+				marginTop: 'auto',
 			}}>
-			<Typography variant="body2">
+			<Typography variant='body2'>
 				{'© Made by '}
 				<Link
-					href="https://felipegonzalez.io"
-					target="_blank"
-					rel="noopener noreferrer"
+					href='https://felipegonzalez.io'
+					target='_blank'
+					rel='noopener noreferrer'
 					sx={{
 						textDecoration: 'none',
 						fontWeight: 'bold',

@@ -14,6 +14,11 @@ import PlaceHolder from '../../assets/images/placeholder.jpg';
 function Card({ title, address, time, contact_number, drinks, food, website, image }) {
 	const [expanded, setExpanded] = useState({ drinks: false, food: false });
 	const [isLoading, setIsLoading] = useState(true);
+	const [cardImage, setCardImage] = useState(image || PlaceHolder);
+
+	useEffect(() => {
+		setCardImage(image || PlaceHolder);
+	}, [image]);
 
 	// Simulate loading state
 	useEffect(() => {
@@ -116,7 +121,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 			) : (
 				<CardMedia
 					component='img'
-					image={image || PlaceHolder}
+					image={cardImage}
 					alt={title}
 					sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
 				/>

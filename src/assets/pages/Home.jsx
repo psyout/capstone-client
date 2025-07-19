@@ -6,14 +6,15 @@ import { useEffect, useRef, useState } from 'react';
 import { GeolocateControl } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'mapbox-gl-controls/lib/controls.css';
+import PlaceHolder from '../../assets/images/placeholder.jpg';
 
 function Home() {
 	const [selectedBusiness, setSelectedBusiness] = useState(null);
 	const [selectedCard, setSelectedCard] = useState([]);
 	const [businesses, setBusinesses] = useState([]);
-	const [geoJson, setGeoJson] = useState(null); // State to store fetched GeoJSON data
+	const [geoJson, setGeoJson] = useState(null);
+	const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
-	// search
 	const [search, setSearch] = useState('');
 	const handleSearchInput = (event) => {
 		const { value } = event.target;
@@ -22,21 +23,18 @@ function Home() {
 
 	const mapContainer = useRef(null);
 	const accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-
 	const mapRef = useRef({});
 
 	// Fetch GeoJSON data from the server
 	const fetchGeoJson = async () => {
 		try {
-			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`); // Use environment variable
-			const result = await response.json(); // The full response object
-			const locations = result.data; // Access the 'data' property that contains the array
+			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`);
+			const result = await response.json();
+			const locations = result.data;
 
-			// Transform the data into GeoJSON format
 			const geoJsonData = {
 				type: 'FeatureCollection',
 				features: locations.map((location) => ({
-					// Use the location ID as the feature ID
 					properties: {
 						name: location.name,
 						address: location.address,
@@ -49,7 +47,7 @@ function Home() {
 						neighbourhoods: location.neighbourhoods,
 						url: location.url,
 						category: location.category,
-						image: location.image,
+						image: location.image || PlaceHolder,
 					},
 					geometry: {
 						type: 'Point',
@@ -59,7 +57,14 @@ function Home() {
 			};
 
 			setGeoJson(geoJsonData);
-			setBusinesses(locations); // Set businesses directly from the server response
+
+			// Ensure each business has an image
+			const businessesWithImage = locations.map((location) => ({
+				...location,
+				image: location.image || PlaceHolder,
+			}));
+			setBusinesses(businessesWithImage);
+			setAllImagesLoaded(false); // Reset image loading state on new fetch
 		} catch (error) {
 			console.error('Error fetching GeoJSON data:', error);
 		}
@@ -68,32 +73,27 @@ function Home() {
 	// Get markers from the GeoJSON data
 	const getMarkersFromGeoJson = (geojson) => {
 		const markers = geojson.features.map((feature) => {
-			const { coordinates } = feature.geometry; // Use geometry.coordinates for marker placement
-			const { name, address } = feature.properties; // Extract additional properties
-			const color = '#8a8ba6'; // Marker color
+			const { coordinates } = feature.geometry;
+			const { name, address } = feature.properties;
+			const color = '#8a8ba6';
 
-			// Create a popup with relevant information
 			const popup = new mapboxgl.Popup().setHTML(`
-				<div>
-					<h3>${name}</h3>
-					<p><strong>Address:</strong> ${address}</p>
-				</div>
-			`);
+                <div>
+                    <h3>${name}</h3>
+                    <p><strong>Address:</strong> ${address}</p>
+                </div>
+            `);
 
-			// Create a marker and attach the popup
 			const marker = new mapboxgl.Marker({ color }).setLngLat(coordinates).setPopup(popup);
-
-			marker.id = name; // Use the name as the marker ID
+			marker.id = name;
 			return marker;
 		});
 		return markers;
 	};
 
 	useEffect(() => {
-		// Fetch data from the server
 		fetchGeoJson();
 
-		// Initialize the map
 		mapboxgl.accessToken = accessToken;
 
 		if (!mapboxgl.supported()) {
@@ -102,12 +102,11 @@ function Home() {
 			mapRef.current = new mapboxgl.Map({
 				container: mapContainer.current,
 				style: 'mapbox://styles/mapbox/streets-v12',
-				center: [-123.114578, 49.285074], // Default location
+				center: [-123.114578, 49.285074],
 				zoom: 14,
 			});
 		}
 
-		// Add GeolocateControl to the map
 		const geolocate = new GeolocateControl({
 			positionOptions: { enableHighAccuracy: true },
 			trackUserLocation: true,
@@ -116,31 +115,28 @@ function Home() {
 
 		mapRef.current.addControl(geolocate);
 
-		// Automatically center the map on the user's location once permission is granted
 		geolocate.on('geolocate', (e) => {
 			const { latitude, longitude } = e.coords;
 			mapRef.current.setCenter([longitude, latitude]);
-			mapRef.current.setZoom(13); // Optional: Adjust zoom level
+			mapRef.current.setZoom(13);
 		});
 	}, [accessToken]);
 
 	useEffect(() => {
 		if (geoJson) {
-			// Add markers to the map when GeoJSON data is available
 			const markers = getMarkersFromGeoJson(geoJson);
 			markers.forEach((marker) => {
 				marker.getElement().addEventListener('click', function () {
 					setSelectedBusiness(marker.id);
-					console.log(
-						'Selected card:',
-						geoJson.features.filter((feature) => feature.properties.name === marker.id)
-					);
 					setSelectedCard(geoJson.features.filter((feature) => feature.properties.name === marker.id));
 				});
 				marker.addTo(mapRef.current);
 			});
 		}
 	}, [geoJson]);
+
+	// Handler for when all images are loaded in the card list
+	const handleAllImagesLoaded = () => setAllImagesLoaded(true);
 
 	return (
 		<div className='container'>
@@ -151,6 +147,8 @@ function Home() {
 				geoJson={geoJson}
 				search={search}
 				businesses={businesses}
+				allImagesLoaded={allImagesLoaded}
+				onAllImagesLoaded={handleAllImagesLoaded}
 			/>
 			<Main mapContainer={mapContainer} />
 		</div>

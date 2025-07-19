@@ -11,20 +11,20 @@ import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
 import PlaceHolder from '../../assets/images/placeholder.jpg';
 
-function Card({ title, address, time, contact_number, drinks, food, website, image }) {
+function Card({ title, address, time, contact_number, drinks, food, website, image, showSkeleton, onImageLoad }) {
 	const [expanded, setExpanded] = useState({ drinks: false, food: false });
-	const [isLoading, setIsLoading] = useState(true);
 	const [cardImage, setCardImage] = useState(image || PlaceHolder);
+	const [imgLoaded, setImgLoaded] = useState(false);
 
 	useEffect(() => {
 		setCardImage(image || PlaceHolder);
+		setImgLoaded(false);
 	}, [image]);
 
-	// Simulate loading state
-	useEffect(() => {
-		const timer = setTimeout(() => setIsLoading(false), 3000);
-		return () => clearTimeout(timer);
-	}, []);
+	const handleImageLoad = () => {
+		setImgLoaded(true);
+		if (onImageLoad) onImageLoad();
+	};
 
 	// Toggle expand state
 	const toggleExpand = (type) => {
@@ -88,7 +88,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 	return (
 		<MUICard variant='outlined'>
 			{/* Header */}
-			{isLoading ? (
+			{showSkeleton ? (
 				<Skeleton
 					animation='wave'
 					variant='rectangular'
@@ -111,25 +111,30 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 			)}
 
 			{/* Media */}
-			{isLoading ? (
-				<Skeleton
-					animation='wave'
-					variant='rectangular'
-					width='100%'
-					height={150}
-				/>
-			) : (
+			<div style={{ position: 'relative', width: '100%', height: 150 }}>
 				<CardMedia
 					component='img'
 					image={cardImage}
 					alt={title}
-					sx={{ aspectRatio: '16/9', maxHeight: '150px' }}
+					sx={{ aspectRatio: '16/9', maxHeight: '150px', width: '100%', height: 150, objectFit: 'cover' }}
+					onLoad={handleImageLoad}
+					onError={handleImageLoad}
+					style={{ display: showSkeleton || !imgLoaded ? 'none' : 'block' }}
 				/>
-			)}
+				{(showSkeleton || !imgLoaded) && (
+					<Skeleton
+						animation='wave'
+						variant='rectangular'
+						width='100%'
+						height={150}
+						sx={{ position: 'absolute', top: 0, left: 0 }}
+					/>
+				)}
+			</div>
 
 			{/* Content */}
 			<CardContent>
-				{isLoading ? (
+				{showSkeleton ? (
 					<Skeleton
 						animation='wave'
 						variant='text'
@@ -155,7 +160,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 					padding: '0.5rem 1rem',
 				}}>
 				{/* Call Button */}
-				{isLoading ? (
+				{showSkeleton ? (
 					<Skeleton
 						animation='wave'
 						variant='circular'
@@ -178,7 +183,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 				)}
 
 				{/* Menu Buttons */}
-				{isLoading ? (
+				{showSkeleton ? (
 					<div style={{ display: 'flex', gap: '0.5rem' }}>
 						<Skeleton
 							animation='wave'

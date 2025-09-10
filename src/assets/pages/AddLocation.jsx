@@ -304,7 +304,7 @@ function AddLocation() {
 				</div>
 
 				<div className='form-group'>
-					<label>Menu (Drinks):</label>
+					<label>Happy Hour Menu (Drinks):</label>
 					{menuDrinks.map((item, index) => (
 						<div
 							key={index}
@@ -338,7 +338,7 @@ function AddLocation() {
 				</div>
 
 				<div className='form-group'>
-					<label>Menu (Food):</label>
+					<label>Happy Hour Menu (Food):</label>
 					{menuFood.map((item, index) => (
 						<div
 							key={index}

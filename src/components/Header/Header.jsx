@@ -1,5 +1,6 @@
 import { FaCocktail } from 'react-icons/fa';
 import SearchIcon from '@mui/icons-material/Search';
+import ProfileIcon from '@mui/icons-material/AccountCircle';
 import './Header.scss';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -13,19 +14,19 @@ function Header({ handleSearchInput }) {
 	};
 
 	return (
-		<header className="header-container">
-			<div className="header-container__logo">
-				<h1 className="header-container__logo--title">
+		<header className='header-container'>
+			<div className='header-container__logo'>
+				<h1 className='header-container__logo--title'>
 					VanSippy
 					<FaCocktail style={{ paddingTop: '0.4rem' }} />
 					<span> | Happy Hour Finder</span>
 				</h1>
 			</div>
-			<div className="header-container__row">
+			<div className='header-container__row'>
 				<Box
 					noValidate
-					autoComplete="off"
-					component="form"
+					autoComplete='off'
+					component='form'
 					sx={{
 						display: 'flex',
 						alignItems: 'center',
@@ -38,14 +39,14 @@ function Header({ handleSearchInput }) {
 								maxHeight: '1rem',
 							},
 						}}
-						label="Search for neighborhood or place"
-						variant="outlined"
-						color="primary"
+						label='Search for neighborhood or place'
+						variant='outlined'
+						color='primary'
 						onChange={handleSearchInput}
 						fullWidth
 						InputProps={{
 							endAdornment: (
-								<InputAdornment position="end">
+								<InputAdornment position='end'>
 									<SearchIcon
 										style={{
 											color: inputStyles.color,
@@ -61,6 +62,14 @@ function Header({ handleSearchInput }) {
 						}}
 					/>
 				</Box>
+				<ProfileIcon
+					style={{
+						color: '#2b2840',
+						fontSize: '2.6rem',
+						cursor: 'pointer',
+						marginLeft: '1rem',
+					}}
+					titleAccess='User Profile'></ProfileIcon>
 			</div>
 		</header>
 	);

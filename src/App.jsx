@@ -2,7 +2,6 @@ import './App.scss';
 import Home from './assets/pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AddLocation from './assets/pages/AddLocation';
-import CoverLetter from './assets/pages/CoverLetter';
 
 function App() {
 	return (
@@ -16,10 +15,6 @@ function App() {
 					<Route
 						path='/add-location'
 						element={<AddLocation />}
-					/>
-					<Route
-						path='/cover-letter'
-						element={<CoverLetter />}
 					/>
 				</Routes>
 			</div>

@@ -21,7 +21,11 @@ const filterAndSort = (features, search, filterBy, hoodBy, sortBy, excludeColumn
 		.filter(({ properties }) => !filterBy || properties.category === filterBy)
 		.filter(({ properties }) => !hoodBy || properties.neighbourhoods === hoodBy)
 		.sort((a, b) =>
-			sortBy === 'name' ? a.properties.name.localeCompare(b.properties.name) : sortBy === 'hours' ? formatHoursString(a.properties.hours).localeCompare(formatHoursString(b.properties.hours)) : 0
+			sortBy === 'name'
+				? a.properties.name.localeCompare(b.properties.name)
+				: sortBy === 'hours'
+				? formatHoursString(a.properties.hours).localeCompare(formatHoursString(b.properties.hours))
+				: 0
 		);
 };
 
@@ -65,7 +69,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	}
 
 	return (
-		<div className="aside">
+		<div className='aside'>
 			<SortByDropDown
 				options={options}
 				value={sortBy}
@@ -77,9 +81,11 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				hoodByValue={hoodBy}
 				onHoodByChange={(e) => setHoodBy(e.target.value)}
 			/>
-			<ul className="aside__list">
+			<ul className='aside__list'>
 				<ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 690: 2, 950: 2 }}>
-					<Masonry containerWidth={800} gutter="30px">
+					<Masonry
+						containerWidth={800}
+						gutter='30px'>
 						{renderCards}
 					</Masonry>
 				</ResponsiveMasonry>

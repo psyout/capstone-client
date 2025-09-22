@@ -11,6 +11,7 @@ function Home() {
 	const [businesses, setBusinesses] = useState([]);
 	const [geoJson, setGeoJson] = useState(null);
 	const [search, setSearch] = useState('');
+	const [userCenter, setUserCenter] = useState(null);
 	const mapContainer = useRef(null);
 	const mapRef = useRef({});
 	const markersRef = useRef([]);
@@ -101,6 +102,7 @@ function Home() {
 
 		(async () => {
 			const center = await getInitialCenter();
+			setUserCenter(center);
 			if (!isMounted) return;
 
 			mapRef.current = new mapboxgl.Map({
@@ -121,6 +123,7 @@ function Home() {
 				const { latitude, longitude } = e.coords;
 				mapRef.current.setCenter([longitude, latitude]);
 				mapRef.current.setZoom(15);
+				setUserCenter([longitude, latitude]);
 			});
 		})();
 
@@ -171,6 +174,7 @@ function Home() {
 				geoJson={geoJson}
 				search={search}
 				businesses={businesses}
+				userCenter={userCenter}
 			/>
 			<Main mapContainer={mapContainer} />
 		</div>

@@ -140,12 +140,14 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 						variant='text'
 					/>
 				) : (
-					<Typography
-						variant='body2'
-						color='text.secondary'
-						sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
-						{time ? <OpenTime time={time} /> : 'No opening time available'}
-					</Typography>
+					<span>
+						<Typography
+							variant='body2'
+							color='text.secondary'
+							sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
+							{time ? <OpenTime time={time} /> : 'No opening time available'}
+						</Typography>
+					</span>
 				)}
 			</CardContent>
 

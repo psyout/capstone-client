@@ -85,33 +85,47 @@ function Home() {
 
 		if (!mapboxgl.supported()) {
 			alert('Your browser does not support WebGL');
-			return;
+			return () => controller.abort();
 		}
 
-		mapRef.current = new mapboxgl.Map({
-			container: mapContainer.current,
-			style: 'mapbox://styles/mapbox/streets-v12',
-			center: [-123.114578, 49.285074],
-			zoom: 14,
-		});
+		let isMounted = true;
 
-		const geolocate = new mapboxgl.GeolocateControl({
-			positionOptions: { enableHighAccuracy: true },
-			trackUserLocation: true,
-			showUserLocation: true,
-		});
-		mapRef.current.addControl(geolocate);
+		const getInitialCenter = () =>
+			new Promise((resolve) => {
+				navigator.geolocation.getCurrentPosition(
+					({ coords: { latitude, longitude } }) => resolve([longitude, latitude]),
+					() => resolve([-123.114578, 49.285074]), // fallback if denied/unavailable
+					{ enableHighAccuracy: true, timeout: 3000, maximumAge: 60000 }
+				);
+			});
 
-		// Center to user's location immediately on load
-		geolocate.trigger();
+		(async () => {
+			const center = await getInitialCenter();
+			if (!isMounted) return;
 
-		geolocate.on('geolocate', (e) => {
-			const { latitude, longitude } = e.coords;
-			mapRef.current.setCenter([longitude, latitude]);
-			mapRef.current.setZoom(13);
-		});
+			mapRef.current = new mapboxgl.Map({
+				container: mapContainer.current,
+				style: 'mapbox://styles/mapbox/streets-v12',
+				center,
+				zoom: 15,
+			});
+
+			const geolocate = new mapboxgl.GeolocateControl({
+				positionOptions: { enableHighAccuracy: true },
+				trackUserLocation: true,
+				showUserLocation: true,
+			});
+			mapRef.current.addControl(geolocate);
+
+			geolocate.on('geolocate', (e) => {
+				const { latitude, longitude } = e.coords;
+				mapRef.current.setCenter([longitude, latitude]);
+				mapRef.current.setZoom(15);
+			});
+		})();
 
 		return () => {
+			isMounted = false;
 			controller.abort();
 			if (mapRef.current && mapRef.current.remove) {
 				mapRef.current.remove();

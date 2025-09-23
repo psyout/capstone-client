@@ -4,9 +4,8 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import SortByDropDown from '../SortByDropDown/SortByDropDown';
 import Footer from '../Footer/Footer';
 import Card from '../Card/Card';
-import formatDrinks from './FormatDrinks';
-import formatFood from './FormatFood';
 import { options, filters, hoodFilter } from './SearchBy';
+import formatHours from './FormatHours';
 
 const haversineKm = ([lng1, lat1], [lng2, lat2]) => {
 	const toRad = (deg) => (deg * Math.PI) / 180;
@@ -54,10 +53,11 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				key={properties._id || properties.name}
 				title={properties.name}
 				address={properties.address}
+				neighbourhoods={properties.neighbourhoods}
 				contact_number={properties.contact_number}
-				time={properties.hours}
-				drinks={formatDrinks(properties.drinks)}
-				food={formatFood(properties.food)}
+				time={formatHours(properties.hours)}
+				drinks={properties.drinks}
+				food={properties.food}
 				onClick={() => setSelectedBusiness(properties.name)}
 				website={properties.website}
 				url={properties.url}

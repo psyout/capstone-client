@@ -1,90 +1,82 @@
 import React, { useState } from 'react';
-import { TextField, Button } from '@material-ui/core';
 import './LoginForm.scss';
-import { makeStyles } from '@material-ui/core/styles';
-import { FiUser, FiLock } from 'react-icons/fi';
-import { RiInstagramFill, RiFacebookFill, RiTwitterFill } from 'react-icons/ri';
 
-const useStyles = makeStyles({
-   inputLabel: {
-      color: '#2c3359',
-      fontFamily: 'Rubik',
-      borderBottomColor: 'white',
-      fontSize: '0.95rem',
-   },
-});
+function LoginForm({ onSuccess }) {
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState('');
 
-function LoginForm() {
-   const [username, setUsername] = useState('');
-   const [password, setPassword] = useState('');
-   const classes = useStyles();
+	// Hardcoded admin credentials
+	const ADMIN_EMAIL = 'contraviento@gmail.com';
+	const ADMIN_PASSWORD = 'Maxima@123';
 
-   const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(`Username: ${username} Password: ${password}`);
-   };
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setIsLoading(true);
+		setError('');
 
-   return (
-      <form onSubmit={handleSubmit} className='login-form'>
-         <h1>Sign in</h1>
-         <div className='login-form__name'>
-            <FiUser className='login-form__name--icon' />
-            <TextField
-               className='login-form__name--field'
-               InputLabelProps={{
-                  classes: {
-                     root: classes.inputLabel,
-                  },
-               }}
-               label='Username'
-               value={username}
-               onChange={(e) => setUsername(e.target.value)}
-            />
-         </div>
-         <div className='login-form__password'>
-            <FiLock className='login-form__password--icon' />
-            <TextField
-               className='login-form__password--field'
-               InputProps={{
-                  classes: {
-                     notchedOutline: classes.notchedOutline,
-                  },
-               }}
-               InputLabelProps={{
-                  classes: {
-                     root: classes.inputLabel,
-                  },
-               }}
-               label='Password'
-               type='password'
-               value={password}
-               onChange={(e) => setPassword(e.target.value)}
-            />
-         </div>
-         <div className='login-form__button'>
-            <div className='login-form__button--login'>
-               <Button
-                  className='login-form__button--btn'
-                  type='submit'
-                  variant='contained'
-                  style={{ backgroundColor: '#2b2840', color: '#fff' }}>
-                  Login
-               </Button>
-               <p className='login-form__button--text'>Forgot your password?</p>
-               <div className='login-form__social'>
-                  <RiInstagramFill className='login-form__social--icon' />
-                  <RiFacebookFill className='login-form__social--icon' />
-                  <RiTwitterFill className='login-form__social--icon' />
-               </div>
-               <div className='login-form__button--signUp'>
-                  <p>
-                     Not a memeber yet? <span>Sign up!</span>
-                  </p>
-               </div>
-            </div>
-         </div>
-      </form>
-   );
+		// Simulate API call with validation
+		setTimeout(() => {
+			if (username === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+				console.log('Admin login successful');
+				setIsLoading(false);
+				if (typeof onSuccess === 'function') onSuccess();
+			} else {
+				console.log('Invalid credentials');
+				setError('Invalid email or password. Access denied.');
+				setIsLoading(false);
+			}
+		}, 1000);
+	};
+
+	return (
+		<div className='admin-login-form'>
+			<header className='login-header'>
+				<h1>Admin Login</h1>
+				<p>Access the business management dashboard</p>
+			</header>
+
+			<form onSubmit={handleSubmit}>
+				{error && <div className='error-message'>{error}</div>}
+
+				<div className='form-group'>
+					<label htmlFor='username'>Email</label>
+					<input
+						id='username'
+						type='email'
+						value={username}
+						onChange={(e) => setUsername(e.target.value)}
+						placeholder='Enter your email'
+						required
+					/>
+				</div>
+
+				<div className='form-group'>
+					<label htmlFor='password'>Password</label>
+					<input
+						id='password'
+						type='password'
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						placeholder='Enter your password'
+						required
+					/>
+				</div>
+
+				<button
+					type='submit'
+					disabled={isLoading || !username || !password}
+					className='submit-button'>
+					{isLoading ? 'Signing in...' : 'Sign In'}
+				</button>
+			</form>
+
+			<div className='login-footer'>
+				<p>Admin Access Only</p>
+			</div>
+		</div>
+	);
 }
 
 export default LoginForm;

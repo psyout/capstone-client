@@ -1,5 +1,5 @@
 import './Card.scss';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar, Skeleton, Divider } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { red, grey } from '@mui/material/colors';
@@ -35,7 +35,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 	};
 
 	// Helper function for dynamic icon color
-	const getIconColor = (isExpanded) => (isExpanded ? red[400] : grey[600]);
+	const getIconColor = useCallback((isExpanded) => (isExpanded ? red[400] : grey[600]), []);
 
 	// Memoized avatar
 	const avatar = useMemo(
@@ -140,14 +140,12 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 						variant='text'
 					/>
 				) : (
-					<span>
-						<Typography
-							variant='body2'
-							color='text.secondary'
-							sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
-							{time ? <OpenTime time={time} /> : 'No opening time available'}
-						</Typography>
-					</span>
+					<Typography
+						variant='body2'
+						color='text.secondary'
+						sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
+						{time ? <OpenTime time={time} /> : 'No opening time available'}
+					</Typography>
 				)}
 			</CardContent>
 

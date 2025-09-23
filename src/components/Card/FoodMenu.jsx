@@ -2,15 +2,25 @@ import { Link } from 'react-router-dom';
 import { FiChevronsRight } from 'react-icons/fi';
 
 function FoodMenu({ food, website }) {
+	// Convert food object to array format
+	const foodArray = food
+		? Object.entries(food).map(([name, price]) => (
+				<span>
+					<strong style={{ fontWeight: 500 }}>{name}</strong>
+					<span style={{ fontWeight: 300 }}>: {price}</span>
+				</span>
+		  ))
+		: [];
+
 	return (
 		<>
 			<div className='restaurant-card__menu'>
 				<ul className='restaurant-card__menu--list-food'>
-					{food.map((food, index) => (
+					{foodArray.map((foodItem, index) => (
 						<li
 							className={'restaurant-card__menu--item-food'}
 							key={index}>
-							{food}
+							{foodItem}
 						</li>
 					))}
 				</ul>

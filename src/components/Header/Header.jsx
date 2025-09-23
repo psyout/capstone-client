@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 
-function Header({ handleSearchInput }) {
+function Header({ handleSearchInput, onProfileClick }) {
 	const inputStyles = {
 		fontSize: '0.85rem',
 		color: '#2b2840',
@@ -69,6 +69,7 @@ function Header({ handleSearchInput }) {
 						cursor: 'pointer',
 						marginLeft: '1rem',
 					}}
+					onClick={onProfileClick}
 					titleAccess='User Profile'></ProfileIcon>
 			</div>
 		</header>

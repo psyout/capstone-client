@@ -4,7 +4,7 @@ export default function formatHours(hours) {
 
 	return entries.map(([days, hrs]) => (
 		<div key={days}>
-			<span style={{ fontWeight: '400' }}>{days}</span>:<span style={{ fontWeight: '300' }}> {hrs}</span>
+			<span style={{ fontWeight: '500' }}>{days}</span>:<span style={{ fontWeight: '300' }}> {hrs}</span>
 		</div>
 	));
 }

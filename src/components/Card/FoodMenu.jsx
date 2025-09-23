@@ -6,8 +6,8 @@ function FoodMenu({ food, website }) {
 	const foodArray = food
 		? Object.entries(food).map(([name, price]) => (
 				<span>
-					<strong style={{ fontWeight: 500 }}>{name}</strong>
-					<span style={{ fontWeight: 300 }}>: {price}</span>
+					<strong style={{ fontWeight: 600 }}>{name}</strong>
+					<span style={{ fontWeight: 400 }}>: {price}</span>
 				</span>
 		  ))
 		: [];

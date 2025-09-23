@@ -266,11 +266,19 @@
 		flex-direction: column;
 		gap: 1rem;
 		align-items: stretch;
+
+		.header-actions {
+			align-self: flex-start;
+		}
 	}
 
 	.add-location-form form {
 		padding: 1.5rem;
 		gap: 1rem;
+
+		.submit-button {
+			align-self: flex-start;
+		}
 	}
 
 	.menu-item {
@@ -279,7 +287,7 @@
 		gap: 0.75rem;
 
 		button {
-			align-self: center;
+			align-self: flex-start;
 		}
 	}
 }

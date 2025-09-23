@@ -273,7 +273,7 @@
 		align-items: stretch;
 
 		.header-actions {
-			justify-content: center;
+			justify-content: flex-start;
 		}
 	}
 
@@ -284,5 +284,9 @@
 	.overview-card,
 	.action-card {
 		padding: 1rem;
+	}
+
+	.action-buttons {
+		align-items: flex-start;
 	}
 }

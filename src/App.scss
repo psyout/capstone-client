@@ -58,8 +58,8 @@ a:visited {
 	min-height: 100dvh;
 	grid-template-areas:
 		'header'
-		'aside'
-		'main';
+		'main'
+		'aside';
 
 	@include tablet {
 		grid-auto-flow: row;
@@ -67,6 +67,15 @@ a:visited {
 		grid-template-areas:
 			'header header'
 			'aside main';
+	}
+}
+
+// Desktop map visibility
+.desktop-map {
+	display: none;
+
+	@include tablet {
+		display: block;
 	}
 }
 

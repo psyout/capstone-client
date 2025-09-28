@@ -3,10 +3,10 @@
 @use '../../styles/partials/fonts' as *;
 
 .main {
-	height: calc(50vh - 10px);
+	height: 100%; // Full height within container
 	overflow: hidden;
 	grid-area: main;
-	display: none;
+	display: block;
 
 	@include tablet {
 		height: calc(100vh - 75px);

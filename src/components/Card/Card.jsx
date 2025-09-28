@@ -1,6 +1,6 @@
 import './Card.scss';
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar, Skeleton, Divider } from '@mui/material';
+import { Card as MUICard, CardHeader, CardMedia, CardContent, CardActions, IconButton, Collapse, Typography, Avatar, Skeleton, Divider, Chip } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { red, grey } from '@mui/material/colors';
 import LunchDiningTwoToneIcon from '@mui/icons-material/LunchDiningTwoTone';
@@ -15,6 +15,90 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 	const [expanded, setExpanded] = useState({ drinks: false, food: false });
 	const [cardImage, setCardImage] = useState(image || PlaceHolder);
 	const [imgLoaded, setImgLoaded] = useState(false);
+
+	// Function to check if happy hour is currently active
+	const isHappyHourActive = () => {
+		if (!time || typeof time !== 'object') return false;
+
+		const now = new Date();
+		const currentTime = now.getHours() * 60 + now.getMinutes(); // Convert to minutes
+		const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+
+		// Parse hours object like {"Mon-Fri": "4:00 PM - 6:00 PM", "Sat": "2:00 PM - 8:00 PM"}
+		for (const [dayRange, timeRange] of Object.entries(time)) {
+			try {
+				// Parse day range (e.g., "Mon-Fri" or "Mon")
+				let isCurrentDay = false;
+
+				if (dayRange.includes('-')) {
+					// Range like "Mon-Fri"
+					const [startDay, endDay] = dayRange.split('-');
+					const startDayNum = getDayNumber(startDay.trim());
+					const endDayNum = getDayNumber(endDay.trim());
+
+					if (startDayNum <= endDayNum) {
+						isCurrentDay = currentDay >= startDayNum && currentDay <= endDayNum;
+					} else {
+						// Crosses weekend (e.g., Fri-Mon)
+						isCurrentDay = currentDay >= startDayNum || currentDay <= endDayNum;
+					}
+				} else {
+					// Single day
+					const dayNum = getDayNumber(dayRange);
+					isCurrentDay = currentDay === dayNum;
+				}
+
+				if (!isCurrentDay) continue;
+
+				// Parse time range (e.g., "4:00 PM - 6:00 PM")
+				if (timeRange && timeRange.includes('-')) {
+					const [startTime, endTime] = timeRange.split(' - ');
+					const startMinutes = parseTimeToMinutes(startTime.trim());
+					const endMinutes = parseTimeToMinutes(endTime.trim());
+
+					if (startMinutes !== null && endMinutes !== null) {
+						if (startMinutes <= endMinutes) {
+							// Same day range
+							return currentTime >= startMinutes && currentTime <= endMinutes;
+						} else {
+							// Crosses midnight
+							return currentTime >= startMinutes || currentTime <= endMinutes;
+						}
+					}
+				}
+			} catch (error) {
+				console.warn('Error parsing time:', dayRange, timeRange, error);
+			}
+		}
+
+		return false;
+	};
+
+	// Helper function to convert day name to number
+	const getDayNumber = (dayName) => {
+		const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+		const day = dayName.toLowerCase().substring(0, 3);
+		return days.indexOf(day);
+	};
+
+	// Helper function to parse time string to minutes
+	const parseTimeToMinutes = (timeStr) => {
+		try {
+			const [time, period] = timeStr.split(' ');
+			const [hours, minutes] = time.split(':').map(Number);
+			let totalMinutes = hours * 60 + (minutes || 0);
+
+			if (period && period.toLowerCase() === 'pm' && hours !== 12) {
+				totalMinutes += 12 * 60;
+			} else if (period && period.toLowerCase() === 'am' && hours === 12) {
+				totalMinutes -= 12 * 60;
+			}
+
+			return totalMinutes;
+		} catch (error) {
+			return null;
+		}
+	};
 
 	useEffect(() => {
 		setCardImage(image || PlaceHolder);
@@ -67,7 +151,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 
 	const stylesMap = {
 		fontFamily: 'Rubik',
-		fontSize: '0.75rem',
+		fontSize: '0.8rem',
 		fontWeight: '300',
 		cursor: 'pointer',
 		transition: 'color 0.3s ease',
@@ -76,7 +160,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 
 	const stylesMenuText = {
 		fontFamily: 'Rubik',
-		fontSize: '0.8rem',
+		fontSize: '0.9rem',
 		fontWeight: '500',
 		color: grey[600],
 	};
@@ -99,7 +183,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 			) : (
 				<CardHeader
 					avatar={avatar}
-					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.85rem', fontWeight: '400' }}>{title}</Typography>}
+					title={<Typography sx={{ fontFamily: 'Rubik', fontSize: '0.9rem', fontWeight: '400' }}>{title}</Typography>}
 					subheader={
 						<Typography
 							onClick={openMaps}
@@ -130,6 +214,29 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 						sx={{ position: 'absolute', top: 0, left: 0 }}
 					/>
 				)}
+				{/* Happy Hour Status Chip */}
+				{time && !showSkeleton && imgLoaded && (
+					<Chip
+						label={isHappyHourActive() ? 'Happy Hour' : 'Closed'}
+						size='small'
+						sx={{
+							position: 'absolute',
+							top: 8,
+							right: 8,
+							backgroundColor: isHappyHourActive()
+								? 'rgba(76, 175, 80, 0.9)' // Green for active
+								: 'rgba(244, 67, 54, 0.9)', // Red for closed
+							color: 'white',
+							fontWeight: 600,
+							fontSize: '0.75rem',
+							backdropFilter: 'blur(4px)',
+							boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+							'& .MuiChip-label': {
+								padding: '0 8px',
+							},
+						}}
+					/>
+				)}
 			</div>
 
 			{/* Content */}
@@ -143,7 +250,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 					<Typography
 						variant='body2'
 						color='text.secondary'
-						sx={{ fontFamily: 'Rubik', fontSize: '0.75rem' }}>
+						sx={{ fontFamily: 'Rubik', fontSize: '0.8rem' }}>
 						{time ? <OpenTime time={time} /> : 'No opening time available'}
 					</Typography>
 				)}

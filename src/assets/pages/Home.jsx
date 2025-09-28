@@ -109,7 +109,7 @@ function Home() {
 	useEffect(() => {
 		const controller = new AbortController();
 		fetchGeoJson(controller.signal);
-		mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+		mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
 
 		if (!mapboxgl.supported()) {
 			alert('Your browser does not support WebGL');
@@ -121,7 +121,7 @@ function Home() {
 			container: mapContainer.current,
 			style: 'mapbox://styles/mapbox/streets-v12',
 			center: [-123.114578, 49.285074], // Vancouver fallback
-			zoom: 14,
+			zoom: 13,
 		});
 
 		const geolocate = new mapboxgl.GeolocateControl({
@@ -186,6 +186,7 @@ function Home() {
 				handleSearchInput={(e) => setSearch(e.target.value)}
 				onProfileClick={() => setShowLogin(true)}
 			/>
+
 			<Aside
 				selectedBusiness={selectedBusiness}
 				setSelectedBusiness={setSelectedBusiness}
@@ -194,7 +195,11 @@ function Home() {
 				businesses={businesses}
 				userCenter={userCenter}
 			/>
-			<Main mapContainer={mapContainer} />
+
+			{/* Desktop Map */}
+			<div className='desktop-map'>
+				<Main mapContainer={mapContainer} />
+			</div>
 
 			{showLogin && (
 				<div

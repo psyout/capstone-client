@@ -31,7 +31,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 				let isCurrentDay = false;
 
 				if (dayRange.includes('-')) {
-					// Range like "Mon-Fri"
+					// Range like "Monday - Friday" or "Mon-Fri"
 					const [startDay, endDay] = dayRange.split('-');
 					const startDayNum = getDayNumber(startDay.trim());
 					const endDayNum = getDayNumber(endDay.trim());
@@ -76,14 +76,21 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 
 	// Helper function to convert day name to number
 	const getDayNumber = (dayName) => {
-		const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-		const day = dayName.toLowerCase().substring(0, 3);
+		const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+		const day = dayName.toLowerCase().trim();
 		return days.indexOf(day);
 	};
 
 	// Helper function to parse time string to minutes
 	const parseTimeToMinutes = (timeStr) => {
 		try {
+			// Handle 24-hour format (e.g., "15:00")
+			if (timeStr.includes(':')) {
+				const [hours, minutes] = timeStr.split(':').map(Number);
+				return hours * 60 + (minutes || 0);
+			}
+
+			// Handle 12-hour format with AM/PM (e.g., "3:00 PM")
 			const [time, period] = timeStr.split(' ');
 			const [hours, minutes] = time.split(':').map(Number);
 			let totalMinutes = hours * 60 + (minutes || 0);
@@ -166,7 +173,7 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 	};
 
 	const iconSize = {
-		fontSize: '1.8rem',
+		fontSize: '1.9rem',
 	};
 
 	return (

@@ -21,6 +21,7 @@ export const filters = [
 	{ value: 'Gastropub', label: 'Gastropub' },
 	{ value: 'Persian', label: 'Persian' },
 	{ value: 'Dive Bars', label: 'Dive Bars' },
+	{ value: 'Italian', label: 'Italian' },
 ];
 
 export const hoodFilter = [

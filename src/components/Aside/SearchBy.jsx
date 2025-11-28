@@ -32,4 +32,12 @@ export const hoodFilter = [
 	{ value: 'Mount Pleasant', label: 'Mount Pleasant' },
 	{ value: 'East Vancouver', label: 'East Vancouver' },
 	{ value: 'South Vancouver', label: 'South Vancouver' },
+	{ value: 'North Vancouver', label: 'North Vancouver' },
+	{ value: 'West Vancouver', label: 'West Vancouver' },
+	{ value: 'South Granville', label: 'South Granville' },
+	{ value: 'Point Grey', label: 'Point Grey' },
+	{ value: 'Fair View', label: 'Fair View' },
+	{ value: 'Dunbar', label: 'Dunbar' },
+	{ value: 'Kerrisdale', label: 'Kerrisdale' },
+	{ value: 'West Point Grey', label: 'West Point Grey' },
 ];

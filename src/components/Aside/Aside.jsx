@@ -48,7 +48,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 
 	const renderCards = sortedFeatures
 		.filter(({ properties }) => properties?.name && businesses.some((b) => b?.name === properties.name))
-		.map(({ properties }) => (
+		.map(({ properties }, index) => (
 			<Card
 				key={properties._id || properties.name}
 				title={properties.name}
@@ -62,6 +62,7 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 				website={properties.website}
 				url={properties.url}
 				image={properties.image}
+				defaultExpandedDrinks={index === 0 && properties.drinks ? true : false}
 			/>
 		));
 

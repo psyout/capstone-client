@@ -1,5 +1,5 @@
 import './Aside.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import SortByDropDown from '../SortByDropDown/SortByDropDown';
 import Footer from '../Footer/Footer';
@@ -41,30 +41,53 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 	const [sortBy, setSortBy] = useState('');
 	const [filterBy, setFilterBy] = useState('');
 	const [hoodBy, setHoodBy] = useState('');
+	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const excludeColumns = ['id'];
 
 	// Ensure geoJson is available before processing
 	const sortedFeatures = geoJson?.features ? filterAndSort(geoJson.features, search, filterBy, hoodBy, sortBy, excludeColumns, userCenter) : [];
 
+	// Track if user has made a selection (not first load anymore)
+	// Reset first load state when user selects a business (from map or card click)
+	useEffect(() => {
+		if (selectedBusiness) {
+			setIsFirstLoad(false);
+		}
+	}, [selectedBusiness]);
+
 	const renderCards = sortedFeatures
 		.filter(({ properties }) => properties?.name && businesses.some((b) => b?.name === properties.name))
-		.map(({ properties }, index) => (
-			<Card
-				key={properties._id || properties.name}
-				title={properties.name}
-				address={properties.address}
-				neighbourhoods={properties.neighbourhoods}
-				contact_number={properties.contact_number}
-				time={formatHours(properties.hours)}
-				drinks={properties.drinks}
-				food={properties.food}
-				onClick={() => setSelectedBusiness(properties.name)}
-				website={properties.website}
-				url={properties.url}
-				image={properties.image}
-				defaultExpandedDrinks={index === 0 && properties.drinks ? true : false}
-			/>
-		));
+		.map(({ properties }, index) => {
+			const isSelected = selectedBusiness === properties.name;
+			// Only expand first card on initial load (when no selection has been made)
+			const shouldExpandFirst = isFirstLoad && index === 0 && !selectedBusiness && properties.drinks;
+			// Expand selected card when user clicks a pin (after first load)
+			const shouldExpandSelected = !isFirstLoad && isSelected && properties.drinks;
+
+			return (
+				<Card
+					key={properties._id || properties.name}
+					title={properties.name}
+					address={properties.address}
+					neighbourhoods={properties.neighbourhoods}
+					contact_number={properties.contact_number}
+					time={formatHours(properties.hours)}
+					drinks={properties.drinks}
+					food={properties.food}
+					onClick={() => {
+						setIsFirstLoad(false);
+						setSelectedBusiness(properties.name);
+					}}
+					website={properties.website}
+					url={properties.url}
+					image={properties.image}
+					defaultExpandedDrinks={shouldExpandFirst}
+					isSelected={isSelected}
+					autoExpandDrinks={shouldExpandSelected}
+					hasUserSelected={!isFirstLoad}
+				/>
+			);
+		});
 
 	// Highlight the selected business card
 	if (selectedBusiness) {

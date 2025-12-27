@@ -11,7 +11,22 @@ import DrinksMenu from './DrinksMenu';
 import FoodMenu from './FoodMenu';
 import PlaceHolder from '../../assets/images/placeholder.jpg';
 
-function Card({ title, address, time, contact_number, drinks, food, website, image, showSkeleton, onImageLoad, defaultExpandedDrinks = false }) {
+function Card({
+	title,
+	address,
+	time,
+	contact_number,
+	drinks,
+	food,
+	website,
+	image,
+	showSkeleton,
+	onImageLoad,
+	defaultExpandedDrinks = false,
+	isSelected = false,
+	autoExpandDrinks = false,
+	hasUserSelected = false,
+}) {
 	const [expanded, setExpanded] = useState({ drinks: defaultExpandedDrinks, food: false });
 	const [cardImage, setCardImage] = useState(image || PlaceHolder);
 	const [imgLoaded, setImgLoaded] = useState(false);
@@ -20,6 +35,17 @@ function Card({ title, address, time, contact_number, drinks, food, website, ima
 		setCardImage(image || PlaceHolder);
 		setImgLoaded(false);
 	}, [image]);
+
+	// Auto-expand drinks menu when card is selected (from map pin click)
+	useEffect(() => {
+		if (isSelected && autoExpandDrinks && drinks) {
+			// Open drinks menu for selected card
+			setExpanded({ drinks: true, food: false });
+		} else if (!isSelected && hasUserSelected) {
+			// Close menu if this card is not selected and user has made a selection
+			setExpanded({ drinks: false, food: false });
+		}
+	}, [isSelected, autoExpandDrinks, drinks, hasUserSelected]);
 
 	const handleImageLoad = () => {
 		setImgLoaded(true);

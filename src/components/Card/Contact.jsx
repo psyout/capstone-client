@@ -16,7 +16,9 @@ function Contact({ address, contact_number, rating, ratingIcons, handleLikeClick
 		<div className='restaurant-card__contact'>
 			<ul className='restaurant-card__contact--list'>
 				<div className='restaurant-card__contact--container'>
-					<li className='restaurant-card__contact--item' onClick={openMaps} style={{ cursor: 'pointer' }}>
+					<li
+						className='restaurant-card__contact--item restaurant-card__contact--clickable'
+						onClick={openMaps}>
 						<span>
 							<ImLocation />
 						</span>
@@ -27,7 +29,9 @@ function Contact({ address, contact_number, rating, ratingIcons, handleLikeClick
 							<ImPhone />
 						</span>
 						{contact_number ? (
-							<a style={{ color: '#2c3359' }} href={`tel:${contact_number}`}>
+							<a
+								className='restaurant-card__contact--phone-link'
+								href={`tel:${contact_number}`}>
 								{contact_number}
 							</a>
 						) : (
@@ -45,11 +49,15 @@ function Contact({ address, contact_number, rating, ratingIcons, handleLikeClick
 							{ratingIcons}
 						</div>
 						<div className='restaurant-card__contact--social-reactions'>
-							<div className='restaurant-card__contact--social-like' onClick={handleLikeClick}>
+							<div
+								className='restaurant-card__contact--social-like'
+								onClick={handleLikeClick}>
 								{isLiked ? 'Liked' : 'Like'}
 								<FiHeart className={isLiked ? 'restaurant-card__contact--social-fill' : 'restaurant-card__contact--social-red'} />
 							</div>
-							<div className='restaurant-card__contact--social-share' onClick={toggleLightbox}>
+							<div
+								className='restaurant-card__contact--social-share'
+								onClick={toggleLightbox}>
 								Share
 								<FiShare className='restaurant-card__contact--social-red' />
 							</div>

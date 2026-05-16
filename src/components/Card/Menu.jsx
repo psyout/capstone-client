@@ -16,7 +16,7 @@ function Menu({ selectedMenu, setSelectedMenu }) {
 						disabled={selectedMenu !== 'menu' && selectedMenu !== 'drinks'}>
 						Drinks
 						<span>
-							<FaBeer style={{ marginLeft: '0.1rem' }} />
+							<FaBeer className='restaurant-card__menu--icon' />
 						</span>
 					</Link>
 				</li>

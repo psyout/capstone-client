@@ -7,6 +7,7 @@ import EditBusiness from './assets/pages/EditBusiness';
 import BusinessDashboard from './assets/pages/BusinessDashboard';
 import BusinessEdit from './assets/pages/BusinessEdit';
 import BusinessLogin from './components/BusinessLogin/BusinessLogin';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
 	return (
@@ -19,15 +20,27 @@ function App() {
 					/>
 					<Route
 						path='/admin'
-						element={<Admin />}
+						element={
+							<ProtectedRoute>
+								<Admin />
+							</ProtectedRoute>
+						}
 					/>
 					<Route
 						path='/add-location'
-						element={<AddLocation />}
+						element={
+							<ProtectedRoute>
+								<AddLocation />
+							</ProtectedRoute>
+						}
 					/>
 					<Route
 						path='/edit-business/:id'
-						element={<EditBusiness />}
+						element={
+							<ProtectedRoute>
+								<EditBusiness />
+							</ProtectedRoute>
+						}
 					/>
 					<Route
 						path='/business/:businessId'

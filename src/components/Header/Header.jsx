@@ -7,18 +7,12 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 
 function Header({ handleSearchInput, onProfileClick }) {
-	const inputStyles = {
-		fontSize: '0.85rem',
-		color: '#2b2840',
-		fontFamily: 'Rubik, sans-serif',
-	};
-
 	return (
 		<header className='header-container'>
 			<div className='header-container__logo'>
 				<h1 className='header-container__logo--title'>
 					VanSippy
-					<FaCocktail style={{ paddingTop: '0.4rem' }} />
+					<FaCocktail className='header-cocktail-icon' />
 					<span> | Happy Hour Finder</span>
 				</h1>
 			</div>
@@ -47,28 +41,14 @@ function Header({ handleSearchInput, onProfileClick }) {
 						InputProps={{
 							endAdornment: (
 								<InputAdornment position='end'>
-									<SearchIcon
-										style={{
-											color: inputStyles.color,
-											fontSize: '1.4rem',
-										}}
-									/>
+									<SearchIcon className='header-search-icon' />
 								</InputAdornment>
 							),
-							style: inputStyles,
-						}}
-						InputLabelProps={{
-							style: inputStyles,
 						}}
 					/>
 				</Box>
 				<ProfileIcon
-					style={{
-						color: '#2b2840',
-						fontSize: '2.6rem',
-						cursor: 'pointer',
-						marginLeft: '1rem',
-					}}
+					className='header-profile-icon'
 					onClick={onProfileClick}
 					titleAccess='User Profile'></ProfileIcon>
 			</div>

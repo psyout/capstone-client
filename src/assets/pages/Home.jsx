@@ -2,6 +2,7 @@ import Header from '../../components/Header/Header';
 import Main from '../../components/Main/Main';
 import Aside from '../../components/Aside/Aside';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './Home.scss';
 
 import mapboxgl from 'mapbox-gl';
 import { useEffect, useRef, useState } from 'react';
@@ -41,7 +42,11 @@ function Home() {
 	// Fetch businesses from backend API
 	const fetchGeoJson = async (signal) => {
 		try {
-			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`, { signal });
+			const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
+			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`, {
+				signal,
+				...(isLocalBackend ? { credentials: 'include' } : {}),
+			});
 
 			const result = await response.json();
 
@@ -261,49 +266,12 @@ function Home() {
 
 			{/* Login modal */}
 			{showLogin && (
-				<div
-					style={{
-						position: 'fixed',
-						top: 0,
-						left: 0,
-						right: 0,
-						bottom: 0,
-						backgroundColor: 'rgba(0,0,0,0.7)',
-						backdropFilter: 'blur(8px)',
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						zIndex: 1000,
-						animation: 'fadeIn 0.3s ease-out',
-					}}>
-					<div
-						style={{
-							position: 'relative',
-							maxWidth: '450px',
-							width: '90%',
-							animation: 'slideIn 0.3s ease-out',
-						}}>
+				<div className='login-modal-overlay'>
+					<div className='login-modal-card'>
 						{/* Close modal button */}
 						<button
 							onClick={() => setShowLogin(false)}
-							style={{
-								position: 'absolute',
-								top: '-40px',
-								right: '10px',
-								background: 'rgba(255,255,255,0.9)',
-								border: 'none',
-								borderRadius: '50%',
-								width: '32px',
-								height: '32px',
-								fontSize: '1.2rem',
-								cursor: 'pointer',
-								display: 'flex',
-								alignItems: 'center',
-								justifyContent: 'center',
-								boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-								transition: 'all 0.3s ease',
-								zIndex: 10,
-							}}>
+							className='login-modal-close'>
 							×
 						</button>
 

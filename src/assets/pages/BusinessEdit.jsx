@@ -11,28 +11,39 @@ function BusinessEdit() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetchBusiness();
-	}, [businessId]); // eslint-disable-line react-hooks/exhaustive-deps
+		let isMounted = true;
 
-	const fetchBusiness = async () => {
-		try {
-			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`);
-			const result = await response.json();
-			const businesses = result.data || [];
-			const foundBusiness = businesses.find((b) => b._id === businessId || b.id === businessId);
+		const fetchBusiness = async () => {
+			try {
+				setLoading(true);
+				setError(null);
+				const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
+				const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`, {
+					...(isLocalBackend ? { credentials: 'include' } : {}),
+				});
+				const result = await response.json();
+				const businesses = result.data || [];
+				const foundBusiness = businesses.find((b) => b._id === businessId || b.id === businessId);
 
-			if (!foundBusiness) {
-				throw new Error('Business not found');
+				if (!foundBusiness) {
+					throw new Error('Business not found');
+				}
+
+				if (isMounted) setBusiness(foundBusiness);
+			} catch (error) {
+				console.error('Error fetching business:', error);
+				if (isMounted) setError(error.message);
+			} finally {
+				if (isMounted) setLoading(false);
 			}
+		};
 
-			setBusiness(foundBusiness);
-		} catch (error) {
-			console.error('Error fetching business:', error);
-			setError(error.message);
-		} finally {
-			setLoading(false);
-		}
-	};
+		fetchBusiness();
+
+		return () => {
+			isMounted = false;
+		};
+	}, [businessId]);
 
 	const handleUpdateSuccess = () => {
 		navigate(`/business/${businessId}`);

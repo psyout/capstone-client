@@ -13,7 +13,10 @@ function Admin() {
 
 	const fetchBusinesses = async () => {
 		try {
-			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`);
+			const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
+			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`, {
+				...(isLocalBackend ? { credentials: 'include' } : {}),
+			});
 			const result = await response.json();
 			setBusinesses(result.data || []);
 		} catch (error) {
@@ -30,8 +33,10 @@ function Admin() {
 	const handleDeleteBusiness = async (businessId) => {
 		if (window.confirm('Are you sure you want to delete this business?')) {
 			try {
+				const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
 				await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations/${businessId}`, {
 					method: 'DELETE',
+					...(isLocalBackend ? { credentials: 'include' } : {}),
 				});
 				fetchBusinesses(); // Refresh list
 			} catch (error) {

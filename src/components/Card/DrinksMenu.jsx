@@ -6,10 +6,10 @@ function DrinksMenu({ drinks, website }) {
 	const drinksArray = drinks
 		? Object.entries(drinks).map(([name, price]) => (
 				<span>
-					<strong style={{ fontWeight: 600 }}>{name}</strong>
-					<span style={{ fontWeight: 400 }}>: {price}</span>
+					<strong className='restaurant-card__menu--item-name'>{name}</strong>
+					<span className='restaurant-card__menu--item-price'>: {price}</span>
 				</span>
-		  ))
+			))
 		: [];
 
 	return (

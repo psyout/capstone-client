@@ -60,9 +60,9 @@ function Aside({ selectedBusiness, setSelectedBusiness, geoJson, search, busines
 		.map(({ properties }, index) => {
 			const isSelected = selectedBusiness === properties.name;
 			// Only expand first card on initial load (when no selection has been made)
-			const shouldExpandFirst = isFirstLoad && index === 0 && !selectedBusiness && properties.drinks;
+			const shouldExpandFirst = Boolean(isFirstLoad && index === 0 && !selectedBusiness && properties.drinks);
 			// Expand selected card when user clicks a pin (after first load)
-			const shouldExpandSelected = !isFirstLoad && isSelected && properties.drinks;
+			const shouldExpandSelected = Boolean(!isFirstLoad && isSelected && properties.drinks);
 
 			return (
 				<Card

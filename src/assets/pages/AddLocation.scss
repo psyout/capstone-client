@@ -256,6 +256,35 @@
 	}
 }
 
+.form-spacer {
+	display: block;
+	margin: 0.5rem 0;
+}
+
+.coordinates-help-link {
+	color: black;
+	font-size: 0.8rem;
+	text-decoration: underline;
+	font-style: italic;
+}
+
+.time-row {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+.time-input {
+	flex-basis: 2rem;
+}
+
+.time-separator {
+	color: black;
+	font-size: 0.8rem;
+	font-style: italic;
+	padding: 0 1rem;
+}
+
 // Responsive design
 @media (max-width: 768px) {
 	.add-location-container {

@@ -78,7 +78,7 @@ function Card({
 				{title.charAt(0)}
 			</Avatar>
 		),
-		[title]
+		[title],
 	);
 
 	// Open Google Maps
@@ -137,7 +137,7 @@ function Card({
 			)}
 
 			{/* Media */}
-			<div style={{ position: 'relative', width: '100%', height: 150 }}>
+			<div className='restaurant-card__media-wrapper'>
 				<CardMedia
 					component='img'
 					image={cardImage}
@@ -145,7 +145,7 @@ function Card({
 					sx={{ aspectRatio: '16/9', maxHeight: '150px', width: '100%', height: 150, objectFit: 'cover' }}
 					onLoad={handleImageLoad}
 					onError={handleImageLoad}
-					style={{ display: showSkeleton || !imgLoaded ? 'none' : 'block' }}
+					className={`restaurant-card__media-img ${showSkeleton || !imgLoaded ? 'restaurant-card__media-img--hidden' : ''}`}
 				/>
 				{(showSkeleton || !imgLoaded) && (
 					<Skeleton
@@ -153,7 +153,7 @@ function Card({
 						variant='rectangular'
 						width='100%'
 						height={150}
-						sx={{ position: 'absolute', top: 0, left: 0 }}
+						className='restaurant-card__media-skeleton'
 					/>
 				)}
 			</div>
@@ -169,6 +169,7 @@ function Card({
 					<Typography
 						variant='body2'
 						color='text.secondary'
+						component='div'
 						sx={{ fontFamily: 'Rubik', fontSize: '0.8rem' }}>
 						{time ? <OpenTime time={time} /> : 'No opening time available'}
 					</Typography>
@@ -210,7 +211,7 @@ function Card({
 
 				{/* Menu Buttons */}
 				{showSkeleton ? (
-					<div style={{ display: 'flex', gap: '0.5rem' }}>
+					<div className='restaurant-card__skeleton-row'>
 						<Skeleton
 							animation='wave'
 							variant='circular'
@@ -225,7 +226,7 @@ function Card({
 						/>
 					</div>
 				) : (
-					<div style={{ display: 'flex', alignItems: 'center' }}>
+					<div className='restaurant-card__menu-actions'>
 						<Typography
 							variant='body2'
 							sx={{ ...stylesMenuText }}>

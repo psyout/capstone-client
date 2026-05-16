@@ -9,6 +9,36 @@
 	marker: none;
 	border-radius: 0.4rem;
 
+	&__media-wrapper {
+		position: relative;
+		width: 100%;
+		height: 150px;
+	}
+
+	&__media-img {
+		display: block;
+
+		&--hidden {
+			display: none;
+		}
+	}
+
+	&__media-skeleton {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__skeleton-row {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	&__menu-actions {
+		display: flex;
+		align-items: center;
+	}
+
 	&__content {
 		background-color: #f2f2f2;
 		display: flex;
@@ -118,6 +148,18 @@
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
+
+		&--icon {
+			margin-left: 0.1rem;
+		}
+
+		&--item-name {
+			font-weight: 600;
+		}
+
+		&--item-price {
+			font-weight: 400;
+		}
 
 		&--title {
 			display: flex;
@@ -260,6 +302,14 @@
 	&__contact {
 		margin: 1rem 0 0.7rem;
 		display: flex;
+
+		&--clickable {
+			cursor: pointer;
+		}
+
+		&--phone-link {
+			color: #2c3359;
+		}
 
 		&--social {
 			display: flex;

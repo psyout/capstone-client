@@ -11,82 +11,62 @@ function EditBusiness() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
+		let isMounted = true;
+
+		const fetchBusiness = async () => {
+			try {
+				setLoading(true);
+				setError(null);
+				const url = `${process.env.REACT_APP_SERVER_URL}/api/locations`;
+				const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
+				const response = await fetch(url, {
+					...(isLocalBackend ? { credentials: 'include' } : {}),
+				});
+
+				if (!response.ok) {
+					throw new Error(`Failed to fetch businesses (${response.status})`);
+				}
+				const result = await response.json();
+
+				// Find the business with matching ID
+				const businesses = result.data || [];
+				const foundBusiness = businesses.find((b) => b._id === id || b.id === id);
+
+				if (!foundBusiness) {
+					throw new Error('Business not found');
+				}
+
+				if (isMounted) setBusiness(foundBusiness);
+			} catch (error) {
+				console.error('Error fetching business:', error);
+				if (isMounted) setError(error.message);
+			} finally {
+				if (isMounted) setLoading(false);
+			}
+		};
+
 		fetchBusiness();
-	}, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
-	const fetchBusiness = async () => {
-		try {
-			const url = `${process.env.REACT_APP_SERVER_URL}/api/locations`;
-			console.log('Fetching all businesses from:', url);
-			const response = await fetch(url);
-			console.log('Response status:', response.status);
-
-			if (!response.ok) {
-				throw new Error(`Failed to fetch businesses (${response.status})`);
-			}
-			const result = await response.json();
-			console.log('API response:', result);
-
-			// Find the business with matching ID
-			const businesses = result.data || [];
-			const business = businesses.find((b) => b._id === id || b.id === id);
-
-			if (!business) {
-				throw new Error('Business not found');
-			}
-
-			console.log('Found business:', business);
-			setBusiness(business);
-		} catch (error) {
-			console.error('Error fetching business:', error);
-			setError(error.message);
-		} finally {
-			setLoading(false);
-		}
-	};
+		return () => {
+			isMounted = false;
+		};
+	}, [id]);
 
 	const handleUpdateSuccess = () => {
 		navigate('/admin');
 	};
 
 	if (loading) {
-		return (
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					height: '200px',
-					fontSize: '1.2rem',
-				}}>
-				Loading business data...
-			</div>
-		);
+		return <div className='edit-business-status'>Loading business data...</div>;
 	}
 
 	if (error) {
 		return (
-			<div
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'center',
-					alignItems: 'center',
-					height: '200px',
-					fontSize: '1.2rem',
-				}}>
+			<div className='edit-business-status edit-business-status--column'>
 				<p>Error: {error}</p>
 				<button
 					onClick={() => navigate('/admin')}
-					style={{
-						padding: '0.5rem 1rem',
-						backgroundColor: '#2b2840',
-						color: 'white',
-						border: 'none',
-						borderRadius: '4px',
-						cursor: 'pointer',
-						marginTop: '1rem',
-					}}>
+					className='edit-business-status__button'>
 					Back to Admin
 				</button>
 			</div>
@@ -94,18 +74,7 @@ function EditBusiness() {
 	}
 
 	if (!business) {
-		return (
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					height: '200px',
-					fontSize: '1.2rem',
-				}}>
-				Business not found
-			</div>
-		);
+		return <div className='edit-business-status'>Business not found</div>;
 	}
 
 	return (

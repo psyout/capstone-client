@@ -7,27 +7,39 @@ function LoginForm({ onSuccess }) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState('');
 
-	// Hardcoded admin credentials
-	const ADMIN_EMAIL = 'contraviento@gmail.com';
-	const ADMIN_PASSWORD = 'Maxima@123';
-
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsLoading(true);
 		setError('');
 
-		// Simulate API call with validation
-		setTimeout(() => {
-			if (username === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-				console.log('Admin login successful');
-				setIsLoading(false);
-				if (typeof onSuccess === 'function') onSuccess();
-			} else {
-				console.log('Invalid credentials');
-				setError('Invalid email or password. Access denied.');
-				setIsLoading(false);
+		try {
+			const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/auth/login`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				credentials: 'include',
+				body: JSON.stringify({
+					email: username,
+					password,
+				}),
+			});
+
+			if (!response.ok) {
+				if (response.status === 401) {
+					setError('Invalid email or password. Access denied.');
+					return;
+				}
+				setError('Login failed. Please try again.');
+				return;
 			}
-		}, 1000);
+
+			if (typeof onSuccess === 'function') onSuccess();
+		} catch (err) {
+			setError('Login failed. Please try again.');
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (

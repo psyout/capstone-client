@@ -22,7 +22,6 @@ function AddLocation({ editMode = false, mode = 'add', existingBusiness = null, 
 	// Populate form with existing business data when in edit mode
 	useEffect(() => {
 		if (editMode && existingBusiness) {
-			console.log('Populating form with business data:', existingBusiness);
 			setName(existingBusiness.name || '');
 			setAddress(existingBusiness.address || '');
 			setCity(existingBusiness.city || '');
@@ -139,23 +138,19 @@ function AddLocation({ editMode = false, mode = 'add', existingBusiness = null, 
 		};
 
 		try {
-			let response;
 			if (editMode) {
 				// Update existing business
-				console.log('Sending update data:', locationData);
-				console.log('Business ID:', existingBusiness._id || existingBusiness.id);
-
-				response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/api/locations/${existingBusiness._id || existingBusiness.id}`, locationData, {
+				await axios.put(`${process.env.REACT_APP_SERVER_URL}/api/locations/${existingBusiness._id || existingBusiness.id}`, locationData, {
 					headers: { 'Content-Type': 'application/json' },
+					withCredentials: true,
 				});
-				console.log('Location updated:', response.data);
 				alert('Location updated successfully!');
 			} else {
 				// Create new business
-				response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/locations`, locationData, {
+				await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/locations`, locationData, {
 					headers: { 'Content-Type': 'application/json' },
+					withCredentials: true,
 				});
-				console.log('Location added:', response.data);
 				alert('Location added successfully!');
 			}
 
@@ -324,7 +319,7 @@ function AddLocation({ editMode = false, mode = 'add', existingBusiness = null, 
 							onChange={(e) => setCoordinates({ ...coordinates, lng: e.target.value })}
 							required
 						/>
-						<span style={{ display: 'block', margin: '0.5rem 0' }}></span>
+						<span className='form-spacer'></span>
 						<input
 							type='number'
 							placeholder='Latitude'
@@ -334,7 +329,7 @@ function AddLocation({ editMode = false, mode = 'add', existingBusiness = null, 
 							required
 						/>
 						<a
-							style={{ color: 'black', fontSize: '0.8rem', textDecoration: 'underline', fontStyle: 'italic' }}
+							className='coordinates-help-link'
 							href='https://www.latlong.net/'
 							target='_blank'
 							rel='noopener noreferrer'>
@@ -374,22 +369,20 @@ function AddLocation({ editMode = false, mode = 'add', existingBusiness = null, 
 									onChange={(e) => handleHoursChange(index, 'days', e.target.value)}
 									required
 								/>
-								<span style={{ margin: '0.5rem 0', display: 'block' }}></span>
+								<span className='form-spacer'></span>
 
-								<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
+								<div className='time-row'>
 									<input
 										type='time'
-										style={{ flexBasis: '2rem' }}
-										className='form-input'
+										className='form-input time-input'
 										value={hour.from}
 										onChange={(e) => handleHoursChange(index, 'from', e.target.value)}
 										required
 									/>
-									<span style={{ color: 'black', fontSize: '0.8rem', fontStyle: 'italic', padding: '0 1rem' }}>to</span>
+									<span className='time-separator'>to</span>
 									<input
 										type='time'
-										style={{ flexBasis: '2rem' }}
-										className='form-input'
+										className='form-input time-input'
 										value={hour.to}
 										onChange={(e) => handleHoursChange(index, 'to', e.target.value)}
 										required

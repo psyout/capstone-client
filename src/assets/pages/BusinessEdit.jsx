@@ -17,9 +17,8 @@ function BusinessEdit() {
 			try {
 				setLoading(true);
 				setError(null);
-				const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
 				const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/locations`, {
-					...(isLocalBackend ? { credentials: 'include' } : {}),
+					credentials: 'include',
 				});
 				const result = await response.json();
 				const businesses = result.data || [];

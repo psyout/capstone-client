@@ -18,9 +18,8 @@ function EditBusiness() {
 				setLoading(true);
 				setError(null);
 				const url = `${process.env.REACT_APP_SERVER_URL}/api/locations`;
-				const isLocalBackend = (process.env.REACT_APP_SERVER_URL || '').includes('localhost');
 				const response = await fetch(url, {
-					...(isLocalBackend ? { credentials: 'include' } : {}),
+					credentials: 'include',
 				});
 
 				if (!response.ok) {
